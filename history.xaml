@@ -1,0 +1,55 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Handy_Man_2._0.history"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28"/>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Background="White" Margin="0,0,0,-10" Grid.RowSpan="2">
+            <Grid HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="446">
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Handy Man" VerticalAlignment="Top" Height="37" Foreground="#FFF3C500"/>
+                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="117,0,0,0" TextWrapping="Wrap" Text="2.0" VerticalAlignment="Top" Foreground="#FF01A185" Height="27" Width="53"/>
+                <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="10,42,0,0" TextWrapping="Wrap" Text="History" VerticalAlignment="Top" Height="93" Width="426" FontSize="65.333" Foreground="Black"/>
+            </Grid>
+            <StackPanel HorizontalAlignment="Left" Height="633" Margin="0,135,0,0" VerticalAlignment="Top" Width="480">
+                <Grid Height="303">
+                    <Ellipse HorizontalAlignment="Left" Height="159" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="155">
+                        <Ellipse.Fill>
+                            <ImageBrush Stretch="Fill" ImageSource="/beard.jpg"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
+                <Grid Height="346">
+                    <Ellipse HorizontalAlignment="Left" Height="159" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="152">
+                        <Ellipse.Fill>
+                            <ImageBrush Stretch="Fill" ImageSource="/client_1.jpg"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
+            </StackPanel>
+            <TextBlock x:Name="textBlock3" Margin="170,159,10,364" TextWrapping="Wrap" Text="TextBlock" d:LayoutOverrides="TopPosition, BottomPosition" Foreground="Black" FontSize="26.667"/>
+            <TextBlock x:Name="textBlock4" Margin="170,0,10,29" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Bottom" Height="290" Foreground="Black" FontSize="26.667"/>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
