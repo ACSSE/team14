@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-select.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/animate.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/font-awesome.min.css" />
 <!-- for-mobile-apps -->
@@ -26,6 +27,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- js -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+              </script>
+
 <script src="js/bootstrap-select.js"></script>
 <script>
   $(document).ready(function () {
@@ -82,10 +88,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index.html"><span>HandyMan</span> 2.0</a>
+				<a href="index.aspx"><span>HandyMan</span> 2.0</a><br/>
+                <label id="userLog" runat="server" text=""></label>
 			</div>
 			<div class="header-right">
-			<a class="account" href="Login.html">My Account</a>
+			<a class="account" href="Login.aspx">Create Profile</a>
 			<a class="account" href="HowItWorks.aspx">How It Works</a>
 	<!-- Large modal -->
 			<div class="selectregion">
@@ -135,13 +142,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 
-    <div class="banner text-center">
-	  <div class="container">    
-			<h1>Find trusted   <span class="segment-heading">    Man-Of-All-Work Online </span> with HandyMan 2.0</h1>
-			<p>Maintain Your Home</p>
-			<i><img src="images/handyman-white.png" alt=" " /></i>
-	  </div>
-	</div>
+    <div class="mobile-app">
+				<div class="container">
+					<div class="col-md-5 app-left animated bounceInLeft">
+						<a href="#"><img src="images/tool3.png" alt="" /></a>
+					</div>
+					<div class="col-md-7 app-right wow animated bounceInRight">
+                <h1>Find trusted   <span class="segment-heading">    Man-Of-All-Work Online</span></h1><br/>
+			    <h3>Maintain Your Home</h3><br/>   
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
     
         <asp:ContentPlaceHolder ID="MyBody" runat="server">
         </asp:ContentPlaceHolder>

@@ -7,9 +7,9 @@
     <div class="content">
 			<div class="category">
 				<div class="container">
-					<div class="col-md-2 focus-grid">
+					<div class="col-md-2 focus-grid" >
 						<a href="RegisterClient.aspx">
-							<div class="focus-border">
+							<div class="focus-border" >
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-user"></i></div>
 									<h4 class="clrchg">Client</h4>

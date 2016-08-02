@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-select.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/animate.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/font-awesome.min.css" />
 <!-- for-mobile-apps -->
@@ -27,6 +28,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- js -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+              </script>
 <script src="js/bootstrap-select.js"></script>
 <script>
   $(document).ready(function () {
@@ -84,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="index.html"><span>HandyMan</span> 2.0</a>
 			</div>
 			<div class="header-right">
-			<a class="account" href="Login.aspx">My Account</a>
+			<a class="account" href="Login.aspx">Create Profile</a>
             <a class="account" href="HowItWorks.aspx">How It Works</a>
 			<!--<span class="active uls-trigger">Select language</span>-->
 	<!-- Large modal -->
@@ -102,28 +107,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										Please Choose Your Location</h4>
 								</div>
 								<div class="modal-body">
-									 <form class="form-horizontal" role="form">
-										<div class="form-group">
-											<select id="basic2" class="show-tick form-control" multiple>
-													<optgroup label="Ekhuruleni">
-														<option>Edenvale</option>
-														<option>Dowerglenn</option>
-														<option>Marais Steyn Park</option>
-														<option>Edenglen</option>
-														<option>Dunvegan</option>
-													</optgroup>
-													<optgroup label="Johannesburg">
-														<option>Randburg</option>
-														<option>Fourways</option>
-														<option>Midrand</option>
-														<option>Strjdom Park</option>
-														<option>Cresta</option>
-													</optgroup>			
-												
-											</select>
-										</div>
-									  </form>    
+									 <form id="form1" runat="server">
+										
+
+													<asp:DropDownList ID="cityList" runat="server" AutoPostBack="true" >
+													</asp:DropDownList>
+													
+										           <%-- <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [City] FROM [Area]"></asp:SqlDataSource>--%>		
+										
+									  </form>
 								</div>
+                                </div>
 							</div>
 						</div>
 					</div>
@@ -136,15 +130,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
             
 		</div>
-	</div>
-	<div class="main-banner banner text-center">
-	  <div class="container">    
-			<br><h1>Find trusted   <span class="segment-heading">    Man-Of-All-Work Online</span> with HandyMan 2.0</h1>
-			<br><p>Maintain Your Home</p><br>
-			<a href="ClientOrWorker.aspx">Get Started</a><br><br><br>
-          <i><img src="images/handyman-white.png" alt=" " /></i>
-	  </div>
-	</div>
+	
+	<%--<div class="main-banner banner text-center">
+	  <div class="container">
+
+            
+			    <h1>Find trusted   <span class="segment-heading">    Man-Of-All-Work Online</span></h1><br/>
+			    <p>Maintain Your Home</p><br/>
+			    <i><img style="color:#f3c500;" src="images/handyman-white.png" alt=" "/></i><br/><br /><br/>
+                <a href="ClientOrWorker.aspx" style="align-items:center">Get Started</a>
+		    
+        </div>
+
+
+	</div>--%>
+
+    <div class="mobile-app">
+				<div class="container">
+					<div class="col-md-5 app-left animated bounceInLeft">
+						<a href="#"><img src="images/tool1.png" alt="" /></a>
+					</div>
+					<div class="col-md-7 app-right wow animated bounceInRight">
+                <h1>Find trusted   <span class="segment-heading">    Man-Of-All-Work Online</span></h1><br/>
+			    <h3>Maintain Your Home</h3><br/>
+			    <i><img style="color:#f3c500;" src="images/handyman-white.png" alt=" "/></i><br/><br /><br/>
+                <a href="LoginClient.aspx" style="align-items:center">Get Started</a>    
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+   
     
         <asp:ContentPlaceHolder ID="MyBody" runat="server">
         </asp:ContentPlaceHolder>
@@ -201,16 +216,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="clearfix"></div>
 					</div>						
-				</div>	
+				</div>	                                                                                                                                                                    
 			</div>	
 			<div class="footer-bottom text-center">
 			<div class="container">
-				<div class="footer-logo">
-					<a href="index.html"><span>HandyMan</span>2.0</a>
+				<div class="footer-logo" style="align-content:center; align-items:center; align-items:center;" >
+					<a href="index.aspx"><span>HandyMan</span> 2.0</a>
 				</div>
 				<div class="footer-social-icons">
 					<ul>
-						<li><a class="facebook" href="#"><span>Facebook</span></a></li>
+                        <li><a class="facebook" href="#"><span>Facebook</span></a></li>
 						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
 						<li><a class="flickr" href="#"><span>Flickr</span></a></li>
 						<li><a class="googleplus" href="#"><span>Google+</span></a></li>

@@ -23,6 +23,15 @@ Partial Public Class Site1
     Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
+    '''userLog control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents userLog As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''MyBody control.
     '''</summary>
     '''<remarks>

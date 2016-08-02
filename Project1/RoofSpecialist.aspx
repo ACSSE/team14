@@ -2,19 +2,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
-
      <div class="trending-ads">
 				<div class="container">
 				<!-- slider -->
 
                      
 				<div class="trend-ads">
-					<h3>Roof Specialist</h3><br>
+					<h3>Roof Specialist</h3><br/>
 							<ul id="flexiselDemo3">
 								<li>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/r1.jpg"/>
+											<img src="images/imageA/o1.jpg"/>
 										</a> 
 										<div class="ad-info">
 											<h5>Specialist</h5>
@@ -23,16 +22,16 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/r2.jpg"/>
+											<img src="images/imageA/o2.jpg"/>
 										</a> 
 										<div class="ad-info">
-											<h5>Specialist</h5>
+											<h5></h5>
 											<span>Marais Steyn Park, Edenvale</span>
 										</div>
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/r3.jpg"/>
+											<img src="images/imageA/o3.jpg"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -42,7 +41,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/r4.jpg"/>
+											<img src="images/imageA/o4.jpg"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -55,7 +54,7 @@
                                 <li>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/r4.jpg"/>
+											<img src="images/imageA/o5.jpg"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -65,17 +64,17 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/r3.jpg"/>
+											<img src="images/imageA/o6.jpg"/>
 											
 										</a> 
 										<div class="ad-info">
-											<h5>Specialist</h5>
+											<h5></h5>
 											<span>Marais Steyn Park, Edenvale</span>
 										</div>
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/r2.jpg"/>
+											<img src="images/imageA/o7.jpg"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -85,7 +84,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/r1.jpg"/>
+											<img src="images/imageA/o8.jpg"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -127,21 +126,21 @@
 					   <script type="text/javascript" src="js/jquery.flexisel.js"></script>
 
                      <br><h3>Description</h3><br>
-                        <p>Electrical work can be a bit intimidating, especially for someone new to construction or DIY
-                            . Understanding more about electricity can help you determine what types of electrical projects you'd be comfortable tackling on your own.
-                            There was quite a bit of discussion on this post about changing out a wall outlet that questioned whether or not it's safe to tackle your own electrical or wiring projects. 
-                            Some projects do require permits and the use of a licensed electrician by law, 
-                            but most projects including changing wall outlets, light fixtures, and switches can be done safely by any homeowner. 
-                            Every project (and house) is a bit different so it is always best to understand your own system, the basics of how the system should work, 
-                            and gauge your comfort level with tackling different projects from there.</p><br>
-
-                    <a href="index.aspx">Go back</a><br>
-                            <a href="PostAdClient.aspx">Post Ad</a>
+                        <p>Roofing inspectors are generally called upon to examine roofs throughout the building process.
+                             These professionals inspect rooftops and materials to ensure safety, structural integrity, and code compliance.
+                             Roofing inspectors may be employed by themselves, the government, or businesses such as construction developers or even insurance companies.
+                             Roofing inspectors, like other types of construction and building inspectors, usually work full-time during business hours.
+                             Although roofing inspections must be done during the day, some weekends may be required; inspectors may write reports during evening hours. 
+                             Roofing inspectors must be comfortable with heights.
+                             There are some risks associated with the job, but inspectors can take precautionary measures against them.</p>
 					</div>
-                    
+                     <div class="modal-header" >
+                         <a href="index.aspx">Go back</a>
+                        <a style="text-align:end;margin-left:20px" href="ClientOrWorker.aspx">Return-to-login-page</a>&nbsp;&nbsp;&nbsp;
+                         <a href="FeaturedWorkers.aspx#parentVerticalTab10">Featured Workers</a>
+                    </div>
                        
 			</div>
-			<!-- //slider -->				
-			</div><br><br>
-
+			<!-- //slider -->	
+     </div>
 </asp:Content>

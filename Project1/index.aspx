@@ -3,8 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
 
-    <br>
-    <br>
+    <br/>
+    <br/>
 
     <div class="content">
 			<div class="categories">
@@ -20,7 +20,7 @@
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab2">
+						<a href="PaintDecoration.aspx#parentVerticalTab2">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-paint-brush"></i></div>
@@ -30,7 +30,7 @@
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab3">
+						<a href="PoolSpecialist.aspx#parentVerticalTab3">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-ship"></i></div>
@@ -40,7 +40,7 @@
 						</a>
 					</div>	
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab4">
+						<a href="GardenLandscaping.aspx#parentVerticalTab4">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-tree"></i></div>
@@ -50,7 +50,7 @@
 						</a>
 					</div>	
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab5">
+						<a href="SecuritySafety.aspx#parentVerticalTab5">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-fire-extinguisher"></i></div>
@@ -60,7 +60,7 @@
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab6">
+						<a href="Kitchen.aspx#parentVerticalTab6">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-spoon"></i></div>
@@ -120,7 +120,7 @@
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="Air.aspx">
+						<a href="AirConditioning.aspx">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-asterisk"></i></div>
@@ -131,7 +131,7 @@
 					</div>
 					<div class="clearfix"></div>
 				</div>
-			</div>
+			</div></div>
 
 
 

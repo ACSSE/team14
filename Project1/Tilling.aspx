@@ -2,20 +2,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
-
-
      <div class="trending-ads">
 				<div class="container">
 				<!-- slider -->
 
                      
 				<div class="trend-ads">
-					<h3>Tiling Specialist</h3><br>
+					<h3>Tilling Specialist</h3><br/>
 							<ul id="flexiselDemo3">
 								<li>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/t1.jpg"/>
+											<img src="images/imageT/t1.jpg"/>
 										</a> 
 										<div class="ad-info">
 											<h5>Specialist</h5>
@@ -24,16 +22,16 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/t2.jpg"/>
+											<img src="images/imageT/t2.jpg"/>
 										</a> 
 										<div class="ad-info">
-											<h5>Specialist</h5>
+											<h5></h5>
 											<span>Marais Steyn Park, Edenvale</span>
 										</div>
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/t3.jpg"/>
+											<img src="images/imageT/t3.jpg"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -43,7 +41,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/t4.jpg"/>
+											<img src="images/imageT/t4.jpg"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -56,7 +54,7 @@
                                 <li>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/t4.jpg"/>
+											<img src="images/imageT/t5.jpg"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -66,17 +64,17 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/t3.jpg"/>
+											<img src="images/imageT/t6.jpg"/>
 											
 										</a> 
 										<div class="ad-info">
-											<h5>Specialist</h5>
+											<h5></h5>
 											<span>Marais Steyn Park, Edenvale</span>
 										</div>
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/t2.jpg"/>
+											<img src="images/imageT/t7.jpg"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -86,7 +84,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/t1.jpg"/>
+											<img src="images/imageT/t5.jpg"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -134,15 +132,15 @@
                             Some projects do require permits and the use of a licensed electrician by law, 
                             but most projects including changing wall outlets, light fixtures, and switches can be done safely by any homeowner. 
                             Every project (and house) is a bit different so it is always best to understand your own system, the basics of how the system should work, 
-                            and gauge your comfort level with tackling different projects from there.</p><br>
-
-                    <a href="index.aspx">Go back</a><br>
-                            <a href="PostAdClient.aspx">Post Ad</a>
+                            and gauge your comfort level with tackling different projects from there.</p>
 					</div>
-                    
+                     <div class="modal-header" >
+                         <a href="index.aspx">Go back</a>
+                        <a style="text-align:end;margin-left:20px" href="ClientOrWorker.aspx">Return-to-login-page</a>&nbsp;&nbsp;&nbsp;
+                         <a href="FeaturedWorkers.aspx#parentVerticalTab9">Featured Workers</a>
+                    </div>
                        
 			</div>
-			<!-- //slider -->				
-			</div><br><br>
-
+			<!-- //slider -->	
+     </div>
 </asp:Content>
