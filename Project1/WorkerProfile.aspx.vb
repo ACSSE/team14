@@ -41,7 +41,7 @@ Public Class WorkerProfile
 
         Dim reader As SqlDataReader = command.ExecuteReader()
 
-        Dim notifications As String = "<h3>My Jobs</h3>"
+        Dim notifications As String = "<h3>My Jobs</h3> <br/>"
 
         Dim tempJob As Job ' to use as holder
 
@@ -66,7 +66,7 @@ Public Class WorkerProfile
                 HandymanJobs(size) = tempJob 'adding job to the list
                 'TO DO Build messaging service here
                 notifications &= "<h5>" & reader("AdTitle") & "</h5> "
-                notifications &= displayMessenges(ID) & "<hr/>" 'displays all the messsenges sent for this particular job
+                notifications &= ValidationClass.displayMessenges(ID) & "<hr/>" 'displays all the messsenges sent for this particular job
 
             End While
         End If
@@ -88,7 +88,7 @@ Public Class WorkerProfile
 
         Dim reader As SqlDataReader = command.ExecuteReader()
 
-        Dim notifications As String = "<h3>New Jobs</h3>"
+        Dim notifications As String = "<h3>New Jobs</h3> <br/>"
 
         Dim tempJob As Job ' to use as holder
 
@@ -114,7 +114,7 @@ Public Class WorkerProfile
                         tempJob = New Job(ID, category, title, description, clientUsername, "")
                         jobs(size) = tempJob 'adding job to the list
 
-                        notifications &= "<a href= AdDetail.aspx?ID=" & reader("PostAdID") & ">" & reader("AdTitle") & "</a> <hr/>"
+                        notifications &= "<a href= AdDetail.aspx?ID=" & reader("PostAdID") & ">" & reader("AdTitle") & "</a> <br />"
                        End If
                 End If
 
@@ -140,40 +140,16 @@ Public Class WorkerProfile
         Dim reader As SqlDataReader = command.ExecuteReader()
 
         If reader.HasRows Then
-            MsgBox("WorkerProfile:shouldADD() - reader has rows, returns true")
+            ' MsgBox("WorkerProfile:shouldADD() - reader has rows, returns true")
             adconnection.Close()
             Return False 'If there is already a response than the job should not be shown
         End If
 
 
-        MsgBox("WorkerProfile:shouldADD() - reader has no rows, returns false")
+        ' MsgBox("WorkerProfile:shouldADD() - reader has no rows, returns false")
         adconnection.Close()
         Return True 'job shown if there was no response made by handyman
     End Function
 
-    Public Function displayMessenges(jobID As Integer) As String
-        Dim Htmlmessenges As String = ""
-        Dim messenges As MessageList = New MessageList(jobID)
-        Dim size As Integer = messenges.getSize()
-        Htmlmessenges &= "<asp:DropDownList ID=messengeList>"
-        Htmlmessenges &= "<asp:ListItem Text=""Messenges""></asp:ListItem>"
-        'displaying the 3 latest messeges
-        If size <= 3 And Not size = 0 Then 'to display all the messenges
-            
-            For i As Integer = 1 To size
-                Htmlmessenges &= "<asp:ListItem Text=" & messenges.getMessage(i).getMessenge() & "></asp:ListItem>"
-            Next i
-        ElseIf Not size = 0 Then 'display the last three messenges
-            Htmlmessenges &= "<asp:ListItem Text=Messenges></asp:ListItem>"
-            Htmlmessenges &= "<asp:ListItem Text=" & messenges.getMessage(size - 2).getMessenge() & "></asp:ListItem>"
-            Htmlmessenges &= "<asp:ListItem Text=" & messenges.getMessage(size - 1).getMessenge() & "></asp:ListItem>"
-            Htmlmessenges &= "<asp:ListItem Text=" & messenges.getMessage(size).getMessenge() & "></asp:ListItem>"
-        Else
-            Htmlmessenges &= "<asp:ListItem Text= Empty></asp:ListItem>"
-        End If
-
-        Htmlmessenges &= "<asp:ListItem><a href=MessagesDetail.aspx?ID=" & jobID & ">View All/Send Messenge</a></asp;ListItem>"
-        Htmlmessenges &= "</asp:DropDownList></td>"
-        Return Htmlmessenges
-    End Function
+   
 End Class

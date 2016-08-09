@@ -82,32 +82,24 @@
 
 				</div>
 				<div class="col-md-5 product-details-grid">
-					<div class="item-price">
-						<div class="condition">
-							<p class="p-price">Work ethics</p>
-							<h4>Excellent</h4>
-							<div class="clearfix"></div>
-						</div>
-						<div class="itemtype">
-							<p class="p-price">Rating</p>
-							<h4><i><img src="images/rate1.png" alt=" " /></i></h4>
-							<div class="clearfix"></div>
-						</div>
-					</div>
+					
 					<div class="interested text-center">
+                    <br/>
 						<h4 style="text-align:center;">Interested?<br/></h4>
 						<a href="Post.aspx"><p><i class="fa fa-check-square"></i>Check Post</p></a><div class="clearfix"></div>
 					</div>
 
-                    <div class="item-price">
+                    <br/>
+                    <br/>
+                 
                         
 
-						<div class="product-price">
-							<h3 class="rate">Job offers</h3>
-                
-			           </div>
-							<div class="clearfix"></div>
+						<div class="interested text-center" id="myJobs" runat="server">
+                                 
+                           
 						</div>
+                          <div class="interested text-center" id="JobNots" runat="server">
+			           </div>
 						<!--<div class="condition">
 							<h5 class="p-price">clientK, Gauteng Edenvale</h5>
 							
@@ -119,10 +111,9 @@
 							<h5><a href="ClientProfile2.aspx">Confirm</a>&nbsp;&nbsp;&nbsp;<a href="LeaveComment.aspx"><small>Leave a comment</small></a></h5>
 							
 						</div>-->
-                             <div class="condition" id="myJobs" runat="server"></div>
-                             <div class="condition" id="JobNots" runat="server">
+                            
 						
-					</div>
+					
 
 						<!--<div class="tips">
 						<h3>Job offer</h3>
