@@ -29,7 +29,7 @@ Public Class Register
         Dim address As String = ""
 
 
-        Dim tempClient As Client = New Client(username, password)
+        Dim tempClient As Client = New Client(username)
 
         If tempClient.getUsername() = "" Then
             username = txtUsername.Text()
@@ -41,6 +41,7 @@ Public Class Register
             address = txtAddress.Text()
 
             Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region)
+
             client.saveUser()
             Dim cUser As User = client
             Session("user") = cUser
@@ -49,5 +50,7 @@ Public Class Register
         End If
 
     End Sub
+
+   
 
 End Class

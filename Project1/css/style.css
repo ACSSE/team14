@@ -11,6 +11,17 @@ body{
     background-attachment:fixed;
 }
 
+p.sender
+{
+    background-color:aquamarine;
+    border-style:dotted;
+}
+
+p.receiver
+{
+    background-color:green;
+}
+
 body a{
     transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -1437,7 +1448,25 @@ h2.head {
     color: #f3c500;
     font-size: 35px;
     margin: 35px 0;
+
 }
+h1.head
+{
+    color: #f3c500;
+    font-size: 35px;
+    margin: 35px 0;
+}
+
+h3.inline
+{
+    display:inline;
+}
+
+p.inline
+{
+    display:inline;
+}
+
 /*-- //Regions --*/
 
 
@@ -3167,6 +3196,8 @@ ul.privacy-start {
     border: 1px solid #01a185;
     outline: none;
     color: #555;
+    height: 149px;
+    width: 444px;
 }
 .post-ad-form input[type="text"]:hover,.post-ad-form textarea:hover {
     border: 1px solid #f3c500;
