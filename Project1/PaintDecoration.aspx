@@ -1,24 +1,19 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Electrician.aspx.vb" Inherits="Project1.Electrician" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="PaintDecoration.aspx.vb" Inherits="Project1.PaintDecoration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
-
-
-
-
-    <div class="trending-ads">
+     <div class="trending-ads">
 				<div class="container">
 				<!-- slider -->
 
                      
 				<div class="trend-ads">
-					<h3>Electrical Work</h3><br/>
-                    <br/><br/>
+					<h3>Paint and Decoration</h3><br/>
 							<ul id="flexiselDemo3">
 								<li>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/imagesE/elec1.png"/>
+											<img src="images/imagesD/D2.png"/>
 										</a> 
 										<div class="ad-info">
 											<h5>Specialist</h5>
@@ -27,16 +22,16 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/imagesE/elec4.png"/>
+											<img src="images/imagesP/P3.png"/>
 										</a> 
 										<div class="ad-info">
-											<h5>Electrician</h5>
+											<h5></h5>
 											<span>Marais Steyn Park, Edenvale</span>
 										</div>
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/imagesE/elec2.png"/>
+											<img src="images/imagesP/P4.png"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -46,7 +41,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/imagesE/elec3.png"/>
+											<img src="images/imagesP/P2.png"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -59,7 +54,7 @@
                                 <li>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/imagesE/elec5.png"/>
+											<img src="images/imagesP/P1.png"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -69,17 +64,17 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/imagesE/elec3.png"/>
+											<img src="images/imagesD/D3.png"/>
 											
 										</a> 
 										<div class="ad-info">
-											<h5>Electrician</h5>
+											<h5></h5>
 											<span>Marais Steyn Park, Edenvale</span>
 										</div>
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/imagesE/elec2.png"/>
+											<img src="images/imagesD/D6.png"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -89,7 +84,7 @@
 									</div>
 									<div class="col-md-3 biseller-column">
 										<a href="#">
-											<img src="images/imagesE/elec4.png"/>
+											<img src="images/imagesD/D4.png"/>
 											
 										</a> 
 										<div class="ad-info">
@@ -139,16 +134,13 @@
                             Every project (and house) is a bit different so it is always best to understand your own system, the basics of how the system should work, 
                             and gauge your comfort level with tackling different projects from there.</p>
 					</div>
-                   <div class="modal-header" >
+                     <div class="modal-header" >
                          <a href="index.aspx">Go back</a>
                         <a style="text-align:end;margin-left:20px" href="ClientOrWorker.aspx">Return-to-login-page</a>&nbsp;&nbsp;&nbsp;
-                       <a href="FeaturedWorkers.aspx">Featured Workers</a>
-                    </div>  
+                         <a href="FeaturedWorkers.aspx#parentVerticalTab2">Featured Workers</a>
+                    </div>
                        
 			</div>
-			<!-- //slider -->				
-			</div><br><br>
-    
-
-
+			<!-- //slider -->	
+     </div>
 </asp:Content>
