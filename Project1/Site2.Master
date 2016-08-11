@@ -1,4 +1,6 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.master.vb" Inherits="Project1.Site1" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site2.master.vb" Inherits="Project1.Site2" %>
+
+<!DOCTYPE html>
 
 <!DOCTYPE html>
 
@@ -95,6 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<a class="account" href="LoginClient.aspx">Create Profile</a>
 			<a class="account" href="HowItWorks.aspx">How It Works</a>
 	<!-- Large modal -->
+
 			<div class="selectregion">
 				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
 				Select Your Region</button>
@@ -141,19 +144,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		</div>
 	</div>
-
-    <div class="mobile-app">
-				<div class="container">
-					<div class="col-md-5 app-left animated bounceInLeft">
-						<a href="#"><img src="images/tool3.png" alt="" /></a>
-					</div>
-					<div class="col-md-7 app-right wow animated bounceInRight">
-                <h1>Find trusted   <span class="segment-heading">    Man-Of-All-Work Online</span></h1><br/>
-			    <h3>Maintain Your Home</h3><br/>   
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
     
         <asp:ContentPlaceHolder ID="MyBody" runat="server">
         </asp:ContentPlaceHolder>
@@ -236,3 +226,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    
 </body>
 </html>
+
