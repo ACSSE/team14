@@ -9,7 +9,6 @@ Public Class AdDetail
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ad = Request.QueryString("ID")
 
-
         Dim adstring As String = AdInfor(ad)
 
         ClientInfo.InnerHtml = ClientInfor(clientUsername)
@@ -46,8 +45,8 @@ Public Class AdDetail
         Dim selectedJob As Job = Nothing   'From n In jobs
         'Where n.getID() = ad
         '                 Select n
-
         For i As Integer = 1 To jobs.Length() - 1
+            
             If jobs(i).getID() = ad Then
                 selectedJob = jobs(i)
             End If

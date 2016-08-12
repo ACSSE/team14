@@ -23,6 +23,15 @@ Partial Public Class RatingHandyMan
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
+    '''handymanRating control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents handymanRating As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''lstTimeMan control.
     '''</summary>
     '''<remarks>
@@ -66,6 +75,33 @@ Partial Public Class RatingHandyMan
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lstAn As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''clientRating control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents clientRating As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''clientRate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents clientRate As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''txtComments control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtComments As Global.System.Web.UI.HtmlControls.HtmlTextArea
 
     '''<summary>
     '''btnRatingSubmit control.

@@ -54,6 +54,21 @@
         Return Htmlmessenges
     End Function
 
+    Public Shared Function getRateImage(rate As Integer) As String
+        Select Case rate
+            Case 1
+                Return "<i><img src=""images/star1.png"" alt="" "" style=""max-width:25%; height:auto"" /></i>"
+            Case 2
+                Return "<i><img src=""images/star2.png"" alt="" "" style=""max-width:25%; height:auto"" /></i>"
+            Case 3
+                Return "<i><img src=""images/star3.png"" alt="" "" style=""max-width:25%; height:auto"" /></i>"
+            Case 4
+                Return "<i><img src=""images/star4.png"" alt="" "" style=""max-width:25%; height:auto"" /></i>"
+            Case 5
+                Return "<i><img src=""images/star5.png"" alt="" "" style=""max-width:25%; height:auto"" /></i>"
+        End Select
+        Return "<h4><i><img src=""images/star1.png"" alt="" "" /></i></h4>"
+    End Function
     'Taking a string representation of category and turning it into Enum Category
     'Public Shared Function enumCategory(category As String) As Category
     '    Dim toR As Category

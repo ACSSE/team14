@@ -18,7 +18,7 @@ Public Class UpdateProfile
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'MsgBox("Message Test")
+
         ' user = Request.QueryString("username") 'update link will carry either user=handyman or client
         type = Request.QueryString("user")
         'MsgBox(type)
@@ -138,7 +138,7 @@ Public Class UpdateProfile
 
 
     'common elements to be changed here
-    Private Function getBasics() As String
+    Private Sub getBasics()
 
 
         Dim user As User = Session("user")
@@ -243,10 +243,10 @@ Public Class UpdateProfile
         '    paramString &= ""
         'End If
 
-        
-    End Function
 
-    Private Function updateWorker()
+    End Sub
+
+    Private Sub updateWorker()
         getBasics()
 
         Dim user As User = Session("user")
@@ -319,13 +319,13 @@ Public Class UpdateProfile
         'command = Nothing
         'reader = Nothing
 
-    End Function
+    End Sub
 
-    Private Function updateClient()
+    Private Sub updateClient()
         '  MsgBox("In updateClient()")
         getBasics()
 
-      
+
 
         Dim user As User = Session("user")
         Dim client As Client = user
@@ -343,7 +343,7 @@ Public Class UpdateProfile
 
         Response.Redirect("ClientProfile.aspx")
 
-    End Function
+    End Sub
 
 
 End Class

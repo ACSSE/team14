@@ -21,11 +21,12 @@ Public Class Responses
                 handyman = New Worker(reader("Worker"))
                 'html code ofr div tag
                 html &= displayWorker(handyman.getUsername())
-                html &= "<div class=""sun-regions col-md-9""> "
-                html &= "<ul>"
-                html &= "<p>" & reader("Comment") & "</p>"
-                html &= "<li><a href=ClientProfile.aspx?Selected=" & handyman.getUsername() & "&ID=" & adID & "> Confirm </a></li>"
-                html &= "</ul>"
+                ' html &= "<ul>"
+                html &= "<div class=""itemtype"">"
+                html &= "<p class=""p-price"">" & reader("Comment") & "</p>"
+                html &= "     <a href=ClientProfile.aspx?Selected=" & handyman.getUsername() & "&ID=" & adID & "> Confirm </a>"
+                html &= "</div>"
+                html &= "<hr/>"
 
             End While
         End If
@@ -48,7 +49,7 @@ Public Class Responses
         If reader.HasRows Then
             MsgBox("Resposes:displayWorker()-Reading woker values from database")
             reader.Read()
-            info &= "<h1>" & reader("Name") & " " & reader("Surname") & "</h1> <br />"
+            info &= "<h4>" & reader("Name") & " " & reader("Surname") & "</h4> <br />"
             info &= "<div class=""itemtype"">"
             info &= "<p class=""p-price"">Rating</p>"
             info &= "	<h4><i><img src=""images/rate1.png"" alt="" "" /></i></h4>"

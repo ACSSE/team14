@@ -55,40 +55,26 @@
 							<h3 class="rate">History</h3>
 
 						</div>
-                    <div class="happy-clients-grids">
+                    <div class="happy-clients-grids" id="divHistory" runat="server">
 
-                        <div class="col-md-6 happy-clients-grid wow bounceIn" data-wow-delay="0.4s">
-							<div class="client">
-								<img src="images/client_1.jpg" alt="" />
-							</div>
-							<div class="client-info">
-								<p>Great worker, would use im again anytime</p>
-								<h4><a href="#">Mrs Michle, </a><p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">Gauteng</a>, <a href="#">Edenvale</a></p></h4>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-                        <div class="col-md-6 happy-clients-grid span_66 wow bounceIn" data-wow-delay="0.4s">
-							<div class="client">
-								<img src="images/client_2.jpg" alt="" />
-							</div>
-							<div class="client-info">
-								<p>Great worker, would use him again anytime</p>
-								<h4><a href="#">Miss Elisabath, </a><p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">Gauteng</a>, <a href="#">Dunvegan</a></p></h4>
-							</div>
-							<div class="clearfix"></div>
-						</div>
+                       
 
                     </div>
 
 				</div>
 				<div class="col-md-5 product-details-grid">
 					
-					<div class="interested text-center">
+					<%--<div class="interested text-center">
                     <br/>
 						<h4 style="text-align:center;">Interested?<br/></h4>
 						<a href="Post.aspx"><p><i class="fa fa-check-square"></i>Check Post</p></a><div class="clearfix"></div>
-					</div>
+                         
+					</div>--%>
 
+                    <div  class="interested text-center">
+                    <div  id="divrating" runat="server">
+                        </div>
+                        </div>
                     <br/>
                     <br/>
                  
@@ -98,8 +84,11 @@
                                  
                            
 						</div>
+                        <hr />
                           <div class="interested text-center" id="JobNots" runat="server">
 			           </div>
+                       <hr />
+                       <div class="interested text-center" id="penJobs" runat="server">
 						<!--<div class="condition">
 							<h5 class="p-price">clientK, Gauteng Edenvale</h5>
 							
