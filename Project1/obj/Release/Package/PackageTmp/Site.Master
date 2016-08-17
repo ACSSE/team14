@@ -1,0 +1,371 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="Project1.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/bootstrap-select.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/animate.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Resale Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<!--fonts-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!--//fonts-->	
+<!-- js -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- js -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+              </script>
+<script src="js/bootstrap-select.js"></script>
+<script>
+  $(document).ready(function () {
+    var mySelect = $('#first-disabled2');
+
+    $('#special').on('click', function () {
+      mySelect.find('option:selected').prop('disabled', true);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#special2').on('click', function () {
+      mySelect.find('option:disabled').prop('disabled', false);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#basic2').selectpicker({
+      liveSearch: true,
+      maxOptions: 1
+    });
+  });
+</script>
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+<link href="css/jquery.uls.css" rel="stylesheet"/>
+<link href="css/jquery.uls.grid.css" rel="stylesheet"/>
+<link href="css/jquery.uls.lcd.css" rel="stylesheet"/>
+<!-- Source -->
+<script src="js/jquery.uls.data.js"></script>
+<script src="js/jquery.uls.data.utils.js"></script>
+<script src="js/jquery.uls.lcd.js"></script>
+<script src="js/jquery.uls.languagefilter.js"></script>
+<script src="js/jquery.uls.regionfilter.js"></script>
+<script src="js/jquery.uls.core.js"></script>
+<script>
+			$( document ).ready( function() {
+				$( '.uls-trigger' ).uls( {
+					onSelect : function( language ) {
+						var languageName = $.uls.data.getAutonym( language );
+						$( '.uls-trigger' ).text( languageName );
+					},
+					quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
+				} );
+			} );
+		</script>
+   
+</head>
+
+     <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+<body>
+
+    <div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"><span>HandyMan</span> 2.0</a>
+			</div>
+			<div class="header-right">
+			<a class="account" href="LoginClient.aspx">Create Profile</a>
+            <a class="account" href="HowItWorks.aspx">How It Works</a>
+			<!--<span class="active uls-trigger">Select language</span>-->
+	<!-- Large modal -->
+			<div class="selectregion">
+				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+				Select Your Region</button>
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+					aria-hidden="true">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;</button>
+									<h4 class="modal-title" id="myModalLabel">
+										Please Choose Your Location</h4>
+								</div>
+								<div class="modal-body">
+									 <form id="form1" runat="server">
+										
+
+													<asp:DropDownList ID="cityList" runat="server" AutoPostBack="true" >
+													</asp:DropDownList>
+													
+										           <%-- <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [City] FROM [Area]"></asp:SqlDataSource>--%>		
+										
+									  </form>
+								</div>
+                                </div>
+							</div>
+						</div>
+					</div>
+				<script>
+				    $('#myModal').modal('');
+				</script>
+			</div>
+                
+                
+		</div>
+            
+		</div>
+	
+	<%--<div class="main-banner banner text-center">
+	  <div class="container">
+
+            
+			    <h1>Find trusted   <span class="segment-heading">    Man-Of-All-Work Online</span></h1><br/>
+			    <p>Maintain Your Home</p><br/>
+			    <i><img style="color:#f3c500;" src="images/handyman-white.png" alt=" "/></i><br/><br /><br/>
+                <a href="ClientOrWorker.aspx" style="align-items:center">Get Started</a>
+		    
+        </div>
+
+
+	</div>--%>
+
+    <%--<div class="mobile-app">
+				<div class="container">
+					<div class="col-md-5 app-left animated bounceInLeft">
+						<a href="#"><img src="images/tool1.png" alt="" /></a>
+					</div>
+					<div class="col-md-7 app-right wow animated bounceInRight">
+                <h1>Find trusted   <span class="segment-heading">    Man-Of-All-Work Online</span></h1><br/>
+			    <h3>Maintain Your Home</h3><br/>
+			    <i><img style="color:#f3c500;" src="images/handyman-white.png" alt=" "/></i><br/><br /><br/>
+                <a href="LoginClient.aspx" style="align-items:center">Get Started</a>    
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>--%>
+
+            <div class="content">
+			<div class="categories">
+				<div class="container">
+					<div class="col-md-2 focus-grid">
+						<a href="Electrician.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-bolt"></i></div>
+									<h4 class="clrchg">Electrician</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="PaintDecoration.aspx#parentVerticalTab2">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-paint-brush"></i></div>
+									<h4 class="clrchg">Paint & Decoration</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="PoolSpecialist.aspx#parentVerticalTab3">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-ship"></i></div>
+									<h4 class="clrchg">Pool Specialist</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
+					<div class="col-md-2 focus-grid">
+						<a href="GardenLandscaping.aspx#parentVerticalTab4">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-tree"></i></div>
+									<h4 class="clrchg">Garden and Landscaping</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
+					<div class="col-md-2 focus-grid">
+						<a href="SecuritySafety.aspx#parentVerticalTab5">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-fire-extinguisher"></i></div>
+									<h4 class="clrchg">Security, Fire and Safety</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="Kitchen.aspx#parentVerticalTab6">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-spoon"></i></div>
+									<h4 class="clrchg">Kitchen Specialist</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
+					<div class="col-md-2 focus-grid">
+						<a href="GeyserSpecialist.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-fire"></i></div>
+									<h4 class="clrchg">Geyser Specialist</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
+					<div class="col-md-2 focus-grid">
+						<a href="PestControl.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-bug"></i></div>
+									<h4 class="clrchg">Pest Control</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
+					<div class="col-md-2 focus-grid">
+						<a href="Tilling.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-home"></i></div>
+									<h4 class="clrchg">Tiling Specialist</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
+					<div class="col-md-2 focus-grid">
+						<a href="RoofSpecialist.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-sun-o"></i></div>
+									<h4 class="clrchg">Roof Specialist</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="Move.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-truck"></i></div>
+									<h4 class="clrchg">Move, Removal & Storage</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="AirConditioning.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-asterisk"></i></div>
+									<h4 class="clrchg">Air conditioning</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div></div>
+   
+    
+        <asp:ContentPlaceHolder ID="MyBody" runat="server">
+        </asp:ContentPlaceHolder>
+
+    <footer>
+			<div class="footer-top">
+				<div class="container">
+					<div class="foo-grids">
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Who We Are</h4>
+							<p >Tell us what you need, what area you live & your local Handyman will call back.
+                                </p>
+							<p>Reputable tradesmen, rated by local Customers</p>
+						</div>
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Help</h4>
+							<ul>
+								<li><a href="HowItWorks.aspx">How it Works</a></li>						
+								<li><a href="Faq.aspx">Faq</a></li>
+								<li><a href="Feedback.aspx">Feedback</a></li>
+								<li><a href="contact.html">Contact</a></li>
+								
+							</ul>
+						</div>
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Information</h4>
+							<ul>
+								<li><a href="regions.html">Locations Map</a></li>	
+								<li><a href="terms.html">Terms of Use</a></li>
+								<li><a href="popular-search.html">Popular searches</a></li>	
+								<li><a href="privacy.html">Privacy Policy</a></li>	
+							</ul>
+						</div>
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Contact Us</h4>
+							<span class="hq">Our headquarters</span>
+							<address>
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-map-marker"></span></li>
+									<li>University of johannesburg</li>
+									<div class="clearfix"></div>
+								</ul>	
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-earphone"></span></li>
+									<li>+0 561 111 235</li>
+									<div class="clearfix"></div>
+								</ul>	
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-envelope"></span></li>
+									<li><a href="mailto:info@example.com">mail@uj.ac.za</a></li>
+									<div class="clearfix"></div>
+								</ul>						
+							</address>
+						</div>
+						<div class="clearfix"></div>
+					</div>						
+				</div>	                                                                                                                                                                    
+			</div>	
+			<div class="footer-bottom text-center">
+			<div class="container">
+				<div class="footer-logo text-center" >
+					<a href="index.aspx"><span>HandyMan</span> 2.0</a>
+				</div>
+				<div class="footer-social-icons text-center">
+					<ul>
+                        <li><a class="facebook" href="#"><span>Facebook</span></a></li>
+						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
+						<li><a class="flickr" href="#"><span>Flickr</span></a></li>
+						<li><a class="googleplus" href="#"><span>Google+</span></a></li>
+						<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
+					</ul>
+				</div>
+				<div class="copyrights text-center">
+					<p> © 2016 HandyMan 2.0. All Rights Reserved | Design by The Unknowns</p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		</footer>
+  
+</body>
+</html>
