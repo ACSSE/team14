@@ -89,6 +89,9 @@ Public Class WorkerProfile
         Dim query As String = "Select * FROM AdTable WHERE Category = @name AND Worker IS NULL"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
 
+        'NOTE TO SELF: use sql to get all the categories on a proper sql statement
+
+
         command.Parameters.AddWithValue("@name", categroy)
 
         Dim reader As SqlDataReader = command.ExecuteReader()
@@ -343,6 +346,13 @@ Public Class WorkerProfile
 
     End Function
 
+    Public Function getCategoriesSqlStatement(list As String) As String
+        Dim categorySQL As String = ""
+        Dim tempVal As String = ""
 
+        'NOTE TO SELF: FIND OUT HOW TO SPLIT STRINGS
+
+        Return categorySQL
+    End Function
 
 End Class
