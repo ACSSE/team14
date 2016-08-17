@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="WorkerProfile.aspx.vb" Inherits="Project1.WorkerProfile" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site2.Master" CodeBehind="WorkerProfile.aspx.vb" Inherits="Project1.WorkerProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
@@ -17,7 +17,7 @@
 					<h4>Previous work done</h4>
 					<p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">Gauteng</a>, <a href="#"><label id="lblRegion" runat="server" text=""/></a></p>
 					<div class="flexslider">
-                        <img src="images/ImagesG/g1.png" />
+                        <img src="images/p3.png" />
 						<!--<ul class="slides">
 							<li data-thumb="images/t1.jpg">
 								<img src="images/t1.jpg" />
@@ -55,59 +55,40 @@
 							<h3 class="rate">History</h3>
 
 						</div>
-                    <div class="happy-clients-grids">
+                    <div class="happy-clients-grids" id="divHistory" runat="server">
 
-                        <div class="col-md-6 happy-clients-grid wow bounceIn" data-wow-delay="0.4s">
-							<div class="client">
-								<img src="images/client_1.jpg" alt="" />
-							</div>
-							<div class="client-info">
-								<p>Great worker, would use im again anytime</p>
-								<h4><a href="#">Mrs Michle, </a><p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">Gauteng</a>, <a href="#">Edenvale</a></p></h4>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-                        <div class="col-md-6 happy-clients-grid span_66 wow bounceIn" data-wow-delay="0.4s">
-							<div class="client">
-								<img src="images/client_2.jpg" alt="" />
-							</div>
-							<div class="client-info">
-								<p>Great worker, would use him again anytime</p>
-								<h4><a href="#">Miss Elisabath, </a><p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">Gauteng</a>, <a href="#">Dunvegan</a></p></h4>
-							</div>
-							<div class="clearfix"></div>
-						</div>
+                       
 
                     </div>
 
 				</div>
 				<div class="col-md-5 product-details-grid">
-					<div class="item-price">
-						<div class="condition">
-							<p class="p-price">Work ethics</p>
-							<h4>Excellent</h4>
-							<div class="clearfix"></div>
-						</div>
-						<div class="itemtype">
-							<p class="p-price">Rating</p>
-							<h4><i><img src="images/rate1.png" alt=" " /></i></h4>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-					<div class="interested text-center">
+					
+					<%--<div class="interested text-center">
+                    <br/>
 						<h4 style="text-align:center;">Interested?<br/></h4>
 						<a href="Post.aspx"><p><i class="fa fa-check-square"></i>Check Post</p></a><div class="clearfix"></div>
-					</div>
+                         
+					</div>--%>
 
-                    <div class="item-price">
+                    <div  class="interested text-center">
+                    <div  id="divrating" runat="server">
+                        </div>
+                        </div>
+                    <br/>
+                    <br/>
+                 
                         
 
-						<div class="product-price">
-							<h3 class="rate">Job offers</h3>
-                
-			           </div>
-							<div class="clearfix"></div>
+						<div class="interested text-center" id="myJobs" runat="server">
+                                 
+                           
 						</div>
+                        <hr />
+                          <div class="interested text-center" id="JobNots" runat="server">
+			           </div>
+                       <hr />
+                       <div class="interested text-center" id="penJobs" runat="server">
 						<!--<div class="condition">
 							<h5 class="p-price">clientK, Gauteng Edenvale</h5>
 							
@@ -119,10 +100,9 @@
 							<h5><a href="ClientProfile2.aspx">Confirm</a>&nbsp;&nbsp;&nbsp;<a href="LeaveComment.aspx"><small>Leave a comment</small></a></h5>
 							
 						</div>-->
-                             <div class="condition" id="myJobs" runat="server"></div>
-                             <div class="condition" id="JobNots" runat="server">
+                            
 						
-					</div>
+					
 
 						<!--<div class="tips">
 						<h3>Job offer</h3>

@@ -246,7 +246,7 @@ a.account {
     text-decoration: none;
 }
 a.account:hover {
-	background-color: #9099a2;
+	background-color: #000  ;
 }
 span.active.uls-trigger {
     float: left;
