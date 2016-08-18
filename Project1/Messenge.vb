@@ -50,7 +50,7 @@ Public Class Messenge
 
     Public Function getMessageInfo() As String
         Dim info As String = ""
-        info &= "Sender: " & sender & "        Date: " & mdate & Environment.NewLine
+        info &= "Sender: <strong>" & sender & "</strong>        Date: " & mdate & "<br/>"
         info &= messenge
         Return info
     End Function

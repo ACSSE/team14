@@ -87,6 +87,8 @@
 
     Public MustOverride Sub updateUser()
 
-    Protected MustOverride Function getRating() As Integer
+    Public MustOverride Function getRating() As Integer
+
+    Public MustOverride Sub updateAverage(average As Integer)
 
 End Class

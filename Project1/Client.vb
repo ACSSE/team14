@@ -95,7 +95,6 @@ Public Class Client
 
         If tempClient.getUsername() = "" Then
 
-            MsgBox("In Client-saveUser(): name = " & name)
             Dim commandstring As String = "INSERT INTO Clients ( Username, Password, Name, Surname,  MobileNumber, Email, Address) VALUES (@username, @password, @name, @surname, @mobil, @email, @address)"
             connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
             connection.Open()
@@ -113,7 +112,7 @@ Public Class Client
 
             connection.Close()
         End If
-
+        addToAverageDatabase() 'to add the client to rating so that he/she can be rated
     End Sub
 
     'for updating the record in the database
@@ -142,7 +141,7 @@ Public Class Client
 
     End Sub
 
-    Protected Overrides Function getRating() As Integer
+    Public Overrides Function getRating() As Integer
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader
@@ -156,6 +155,7 @@ Public Class Client
         reader = command.ExecuteReader()
 
         If reader.HasRows Then
+            reader.Read()
             Dim rating As Integer = 0
             If Not IsDBNull(reader("AverageRating")) Then
                 rating = reader("AverageRating")
@@ -165,4 +165,27 @@ Public Class Client
         End If
         Return 0
     End Function
+
+    Public Overrides Sub updateAverage(average As Integer)
+        'update average rating
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        adconnection.Open()
+        Dim query As String = "UPDATE AverageClientRating SET AverageRating = @average WHERE Client = @worker;"
+        Dim command As SqlCommand = New SqlCommand(query, adconnection)
+        command.Parameters.AddWithValue("@average", average)
+        command.Parameters.AddWithValue("@worker", username)
+        Dim reader As SqlDataReader = command.ExecuteReader()
+        adconnection.Close()
+    End Sub
+
+    Private Sub addToAverageDatabase()
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        adconnection.Open()
+        Dim query As String = "INSERT INTO AverageClientRating (Client, AverageRating) VALUES (@worker, @average);"
+        Dim command As SqlCommand = New SqlCommand(query, adconnection)
+        command.Parameters.AddWithValue("@average", 0)
+        command.Parameters.AddWithValue("@worker", username)
+        Dim reader As SqlDataReader = command.ExecuteReader()
+        adconnection.Close()
+    End Sub
 End Class

@@ -13,9 +13,9 @@
                 Dim messenge As Messenge = messenges.getMessage(i)
 
                 If messenge.getSender() = user.getUsername() Then 'should appear in different colours
-                    html &= "<asp:TextBox ForeColor=""#99FF99"" ReadOnly=""True"" TextMode=""MultiLine"" Height=""38px"" Width=""146px"">" & messenge.getMessageInfo() & "</asp:TextBox><br />"
+                    html &= "<p style=""background-color:yellow;  margin-right: 400px; margin-left: 150px;""> " & messenge.getMessageInfo() & "</p><br />"
                 Else
-                    html &= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ForeColor=""#99CCFF"" ReadOnly=""True"" TextMode=""MultiLine"" Height=""38px"" Width=""146px"">" & messenge.getMessageInfo() & "</asp:TextBox><br />"
+                    html &= "<p style=""background-color:lightgreen;  margin-right: 600px;"">" & messenge.getMessageInfo() & "</p><br /><br/><br/>"
                 End If
             Next i
         End If

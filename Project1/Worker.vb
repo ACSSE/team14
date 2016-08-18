@@ -80,6 +80,7 @@ Public Class Worker
         reader = command.ExecuteReader()
 
         connection.Close()
+        addToAverageDatabase()
 
     End Sub
 
@@ -140,7 +141,7 @@ Public Class Worker
     End Sub
 
 
-    Protected Overrides Function getRating() As Integer
+    Public Overrides Function getRating() As Integer
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader
@@ -154,6 +155,7 @@ Public Class Worker
         reader = command.ExecuteReader()
 
         If reader.HasRows Then
+            reader.Read()
             Dim rating As Integer = 0
             If Not IsDBNull(reader("AverageRating")) Then
                 rating = reader("AverageRating")
@@ -181,4 +183,30 @@ Public Class Worker
     Public Sub updateDescription(description As String)
         Me.description = description
     End Sub
+
+    Public Overrides Sub updateAverage(average As Integer)
+        'update average rating
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        adconnection.Open()
+        Dim query As String = "UPDATE AverageWorkerRating SET AverageRating = @average WHERE Worker = @worker;"
+        Dim command As SqlCommand = New SqlCommand(query, adconnection)
+        command.Parameters.AddWithValue("@average", average)
+        command.Parameters.AddWithValue("@worker", username)
+        Dim reader As SqlDataReader = command.ExecuteReader()
+        adconnection.Close()
+        rating = average
+    End Sub
+
+
+    Private Sub addToAverageDatabase()
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        adconnection.Open()
+        Dim query As String = "INSERT INTO AverageWorkerRating (Worker, AverageRating) VALUES (@worker, @average);"
+        Dim command As SqlCommand = New SqlCommand(query, adconnection)
+        command.Parameters.AddWithValue("@average", 0)
+        command.Parameters.AddWithValue("@worker", username)
+        Dim reader As SqlDataReader = command.ExecuteReader()
+        adconnection.Close()
+    End Sub
+
 End Class

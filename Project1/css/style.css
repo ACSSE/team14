@@ -11,6 +11,17 @@ body{
     background-attachment:fixed;
 }
 
+p.sender
+{
+    background-color:aquamarine;
+    border-style:dotted;
+}
+
+p.receiver
+{
+    background-color:green;
+}
+
 body a{
     transition:0.5s all;
 	-webkit-transition:0.5s all;

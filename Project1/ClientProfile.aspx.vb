@@ -53,7 +53,7 @@ Public Class ClientProfile
     End Sub
 
 
-    Private Function displayAds() As String
+    Private Function displayAds() As String 'to display ads that client has posted but have no handyman assinged to them
         Dim size As Integer = 0 'to use as a resize reference
         Dim jobs(size) As Job 'to store all jobs
 
@@ -142,7 +142,7 @@ Public Class ClientProfile
             End While
         End If
 
-        Return "<a href=Responses.aspx?ID=" & adID & ">Responses(" & count & ")</a>"
+        Return "<a href=Responses.aspx?ID=" & adID & ">Responses(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
     End Function
 
     Private Sub changeDB() 'NOTE TO SELF when changing handyman see this function

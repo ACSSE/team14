@@ -3,19 +3,22 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
 <form runat="server">
-<div id="messagesHistory" class="submit-ad main-grid-border" runat="server">
+
+
+
+<div class="container">
+ <h2  class="head">Conversation</h2>
+
+ <div id="messagesHistory" class="submit-ad main-grid-border" runat="server">
 </div>
-    <div>
+    <div class="post-add-form">
     <asp:TextBox ID="txtMessage" runat="server" Height="109px" TextMode="MultiLine" 
         Width="264px"></asp:TextBox>
+ 
 
-        
-
-    </div>
-    
-    <div>
     <button type="submit" id="btnSend" runat="server">Send Messenge
          </button>
+    </div>
     </div>
         
 </form>

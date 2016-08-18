@@ -3,12 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
 
-<div id="page-wrapper" class="sign-in-wrapper">
+<div class="feedback text-center"  >
          <form id="form1" runat="server">
-         <h1>Rating Your Handyman</h1>
+          <p>&nbsp;</p>
+            <div id="handymanRating" runat="server">
+            <h1>Rating Your Handyman</h1>
          <h4>Please help the Handyman by gving him/her feedback on his serviceas and how he can improve himself</h4>
-             <p>&nbsp;</p>
-            <div>
+            
             <table>
     
                     <tr><td class="auto-style4" title="Submit" style="width: 362px">How would you rate the Handyman on time managenment?</td></tr>
@@ -99,11 +100,10 @@
                 </tr>
             </table>
                 <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                      <table>
     
-                    <tr><td class="auto-style2" style="width: 367px">How would you rate the HandyMan on other stuff</td></tr>
+                    <tr><td class="auto-style2" style="width: 367px">How would you rate the HandyMan on Consistency</td></tr>
                 <tr>
         
                 <td class="auto-style2" style="width: 367px">poor
@@ -122,13 +122,42 @@
                 </tr>
             </table>
 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input id="btnRatingSubmit" runat="server" type="submit" value="Submit"/>
+            
+            </div>
+
+            <div id="clientRating" class="container text-center" runat="server">
+            <h1>Rating Your Client</h1>
+         <h4>Please rate the client on how </h4>
+            
+            <table>
+                                    <tr><td class="auto-style2" style="width: 367px">How would you rate the Client?</td></tr>
+                <tr>
+        
+                <td class="auto-style2" style="width: 367px">poor
+                    <asp:RadioButtonList ID="clientRate" RepeatLayout="Flow" 
+                        RepeatDirection="Horizontal" runat="server">
+                        <asp:ListItem Value="1">1</asp:ListItem>
+                        <asp:ListItem Value="2">2</asp:ListItem>
+                        <asp:ListItem Value="3">3</asp:ListItem>
+                        <asp:ListItem Value="4">4</asp:ListItem>
+                        <asp:ListItem Value="5">5</asp:ListItem>
+                    </asp:RadioButtonList>
+                &nbsp;
+                great
+                </td>
+        
+                </tr>
+            </table>
             </div>
                 <p>
 
 
                      </p>
+                    <!--  <div class="post-ad-form">--->
+                     <textarea id="txtComments" runat="server"></textarea>
+                     <br />
+                <input id="btnRatingSubmit" runat="server" type="submit" value="Submit"/>
+               <!-- </div>-->
             </form>
     </div>
 </asp:Content>

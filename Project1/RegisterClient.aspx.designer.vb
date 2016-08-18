@@ -174,4 +174,6 @@ Partial Public Class Register
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnReg As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    
 End Class

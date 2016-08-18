@@ -270,6 +270,14 @@ lblCategory control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.apply.lstCategory">
+	<summary>
+lstCategory control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.apply.categoriesList">
 	<summary>
 categoriesList control.
@@ -558,6 +566,14 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.RatingHandyMan.handymanRating">
+	<summary>
+handymanRating control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.RatingHandyMan.lstTimeMan">
 	<summary>
 lstTimeMan control.
@@ -593,6 +609,30 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.RatingHandyMan.lstAn">
 	<summary>
 lstAn control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.RatingHandyMan.clientRating">
+	<summary>
+clientRating control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.RatingHandyMan.clientRate">
+	<summary>
+clientRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.RatingHandyMan.txtComments">
+	<summary>
+txtComments control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1015,6 +1055,22 @@ update control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.WorkerProfile.divHistory">
+	<summary>
+divHistory control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.WorkerProfile.divrating">
+	<summary>
+divrating control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.WorkerProfile.myJobs">
 	<summary>
 myJobs control.
@@ -1026,6 +1082,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.WorkerProfile.JobNots">
 	<summary>
 JobNots control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.WorkerProfile.penJobs">
+	<summary>
+penJobs control.
 </summary>
 	<remarks>
 Auto-generated field.
