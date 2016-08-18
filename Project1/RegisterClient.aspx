@@ -2,9 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
-    <form runat="server">
+    
     <div class="submit-ad main-grid-border">
 		<div class="container">
+        <form  runat="server">
 			<h2 class="head">Register With Us</h2>
 
             <div class="personal-details">
@@ -125,7 +126,8 @@
 
                 
                 <%--<a href="ClientProfile.aspx"><asp:Button ID="btnRegister" PostBackUrl="~/ClientProfile.aspx" type="submit" style="width: 250px;height: 50px; top: 0px; left: 0px;" runat="server" Text="Register" BackColor="#FBCC33" /></a>--%>
-                <button type="submit" id="btnReg"  style=" margin-left:700px;" runat="server" class="btn btn-default">Submit</button>
+                <!---<button type="submit"  runat="server" id="btnReg" >Submit</button>-->
+                 <input type="submit" runat="server" id="btnReg" value="Register"/>
                  
 
                 
@@ -200,13 +202,13 @@
 					
 
 						</form>--%>
-
+</div></form>
 						
 				</div>
 					
 			</div>
 			
-	</div></form>
+	
 
 
 </asp:Content>

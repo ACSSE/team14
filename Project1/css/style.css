@@ -789,15 +789,13 @@ p.creating{
 	font-size: 20px;
 	}
 .sign-up input[type="submit"]{
-	border-style: none;
-    border-color: inherit;
-    border-width: medium;
-    outline: none;
+	outline: none;
+    border: none;
     background: #01a185;
     color: #fff;
     font-size: 1em;
     text-align: center;
-    width: 43%;
+    width: 100%;
     padding: 10px 0;
     transition: .5s all;
     -webkit-transition: .5s all;

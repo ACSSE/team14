@@ -19,10 +19,10 @@
          
                       <asp:ListItem Text ="Selected Category" Value="0"></asp:ListItem>
 					  <asp:ListItem Text="Electrician"></asp:ListItem>
-					  <asp:ListItem Text="Paint & Decoration"></asp:ListItem>
+					  <asp:ListItem Text="Paint and Decoration"></asp:ListItem>
 					  <asp:ListItem Text="Pool Specialist"></asp:ListItem>
 					  <asp:ListItem Text="Garden and Landscaping"></asp:ListItem>
-					  <asp:ListItem Text="Security, Fire & Safety"></asp:ListItem>
+					  <asp:ListItem Text="Security, Fire and Safety"></asp:ListItem>
 					  <asp:ListItem Text="Kitchen Specialist"></asp:ListItem>
 					  <asp:ListItem Text="Geyser Specialist"></asp:ListItem>
 					  <asp:ListItem Text="Pest Control"></asp:ListItem>
