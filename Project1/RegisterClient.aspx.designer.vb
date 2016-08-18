@@ -175,16 +175,5 @@ Partial Public Class Register
     '''</remarks>
     Protected WithEvents btnReg As Global.System.Web.UI.HtmlControls.HtmlButton
 
-<<<<<<< HEAD
     
-=======
-    '''<summary>
-    '''btnReg control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnReg As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
->>>>>>> master
 End Class
