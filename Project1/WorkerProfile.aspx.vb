@@ -346,6 +346,7 @@ Public Class WorkerProfile
 
     End Function
 
+<<<<<<< HEAD
     Public Function getCategoriesSqlStatement(list As String) As String
         Dim categorySQL As String = ""
         Dim tempVal As String = ""
@@ -354,5 +355,8 @@ Public Class WorkerProfile
 
         Return categorySQL
     End Function
+=======
+
+>>>>>>> master
 
 End Class
