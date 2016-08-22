@@ -57,7 +57,7 @@ Public Class Worker
     End Sub
 
     Public Overrides Sub saveUser()
-        MsgBox("Worker:saveUser()-inside function saveUser()")
+        '  MsgBox("Worker:saveUser()-inside function saveUser()")
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader
@@ -85,7 +85,7 @@ Public Class Worker
     End Sub
 
     Public Overrides Sub updateUser()
-        MsgBox("Worker:updateUser() - name = " & name)
+        '  MsgBox("Worker:updateUser() - name = " & name)
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader

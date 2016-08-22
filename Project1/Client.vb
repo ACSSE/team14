@@ -126,7 +126,7 @@ Public Class Client
         connection.Open()
         command = New SqlCommand(commandstring, connection)
 
-        MsgBox("In Client -updateUser(): " & name) 'program messages
+        ' MsgBox("In Client -updateUser(): " & name) 'program messages
         command.Parameters.AddWithValue("@username", username)
         command.Parameters.AddWithValue("@name", name)
         command.Parameters.AddWithValue("@surname", surname)
