@@ -572,6 +572,10 @@
     </Compile>
     <Compile Include="logout.aspx.vb">
       <DependentUpon>logout.aspx</DependentUpon>
+<<<<<<< HEAD
+=======
+      <SubType>ASPXCodebehind</SubType>
+>>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
     </Compile>
     <Compile Include="MessageList.vb" />
     <Compile Include="MessengesDetail.aspx.designer.vb">
@@ -579,6 +583,10 @@
     </Compile>
     <Compile Include="MessengesDetail.aspx.vb">
       <DependentUpon>MessengesDetail.aspx</DependentUpon>
+<<<<<<< HEAD
+=======
+      <SubType>ASPXCodebehind</SubType>
+>>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
     </Compile>
     <Compile Include="Messenge.vb" />
     <Compile Include="Site2.Master.designer.vb">
@@ -794,7 +802,10 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+<<<<<<< HEAD
     <None Include="My Project\PublishProfiles\handymanWeb.pubxml" />
+=======
+>>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -802,7 +813,10 @@
     </None>
     <Content Include="Site.Master" />
     <Content Include="Site1.Master" />
+<<<<<<< HEAD
     <Content Include="Site2.Master" />
+=======
+>>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

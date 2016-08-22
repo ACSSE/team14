@@ -131,6 +131,161 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             
 		</div>
             
+<<<<<<< HEAD
+=======
+			    <h1>Find trusted   <span class="segment-heading">    Man-Of-All-Work Online</span></h1><br/>
+			    <p>Maintain Your Home</p><br/>
+			    <i><img style="color:#f3c500;" src="images/handyman-white.png" alt=" "/></i><br/><br /><br/>
+                <a href="ClientOrWorker.aspx" style="align-items:center">Get Started</a>
+		    
+        </div>
+
+
+	</div>--%>
+
+    <%--<div class="mobile-app">
+				<div class="container">
+					<div class="col-md-5 app-left animated bounceInLeft">
+						<a href="#"><img src="images/tool1.png" alt="" /></a>
+					</div>
+					<div class="col-md-7 app-right wow animated bounceInRight">
+                <h1>Find trusted   <span class="segment-heading">    Man-Of-All-Work Online</span></h1><br/>
+			    <h3>Maintain Your Home</h3><br/>
+			    <i><img style="color:#f3c500;" src="images/handyman-white.png" alt=" "/></i><br/><br /><br/>
+                <a href="LoginClient.aspx" style="align-items:center">Get Started</a>    
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>--%>
+
+            <div class="content">
+			<div class="categories">
+				<div class="container">
+					<div class="col-md-2 focus-grid">
+						<a href="Electrician.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-bolt"></i></div>
+									<h4 class="clrchg">Electrician</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="PaintDecoration.aspx#parentVerticalTab2">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-paint-brush"></i></div>
+									<h4 class="clrchg">Paint & Decoration</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="PoolSpecialist.aspx#parentVerticalTab3">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-ship"></i></div>
+									<h4 class="clrchg">Pool Specialist</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
+					<div class="col-md-2 focus-grid">
+						<a href="GardenLandscaping.aspx#parentVerticalTab4">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-tree"></i></div>
+									<h4 class="clrchg">Garden and Landscaping</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
+					<div class="col-md-2 focus-grid">
+						<a href="SecuritySafety.aspx#parentVerticalTab5">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-fire-extinguisher"></i></div>
+									<h4 class="clrchg">Security, Fire and Safety</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="Kitchen.aspx#parentVerticalTab6">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-spoon"></i></div>
+									<h4 class="clrchg">Kitchen Specialist</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
+					<div class="col-md-2 focus-grid">
+						<a href="GeyserSpecialist.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-fire"></i></div>
+									<h4 class="clrchg">Geyser Specialist</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
+					<div class="col-md-2 focus-grid">
+						<a href="PestControl.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-bug"></i></div>
+									<h4 class="clrchg">Pest Control</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
+					<div class="col-md-2 focus-grid">
+						<a href="Tilling.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-home"></i></div>
+									<h4 class="clrchg">Tiling Specialist</h4>
+								</div>
+							</div>
+						</a>
+					</div>	
+					<div class="col-md-2 focus-grid">
+						<a href="RoofSpecialist.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-sun-o"></i></div>
+									<h4 class="clrchg">Roof Specialist</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="Move.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-truck"></i></div>
+									<h4 class="clrchg">Move, Removal & Storage</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="AirConditioning.aspx">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-asterisk"></i></div>
+									<h4 class="clrchg">Air conditioning</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div></div>
+   
+>>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
     
         <asp:ContentPlaceHolder ID="MyBody" runat="server">
         </asp:ContentPlaceHolder>
