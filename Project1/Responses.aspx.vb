@@ -47,7 +47,7 @@ Public Class Responses
         Dim reader As SqlDataReader = command.ExecuteReader()
 
         If reader.HasRows Then
-            MsgBox("Resposes:displayWorker()-Reading woker values from database")
+            'MsgBox("Resposes:displayWorker()-Reading woker values from database")
             reader.Read()
             info &= "<h4>" & reader("Name") & " " & reader("Surname") & "</h4> <br />"
             info &= "<div class=""itemtype"">"
