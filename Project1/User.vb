@@ -159,7 +159,7 @@ End Class
     End Sub
 
     Public Sub updateName(cname As String)
-        MsgBox("In User-updateName(): name = " & name)
+        ' MsgBox("In User-updateName(): name = " & name)
         name = cname
     End Sub
 

@@ -46,12 +46,12 @@ Public Class apply
                     If category = "" Then
                         category = lstCategory.Items(i).Text() 'getting the slected item
                     Else
-                        category &= " & " & lstCategory.Items(i).Text()
+                        category &= "&" & lstCategory.Items(i).Text()
                     End If
                 End If
             Next i
 
-            MsgBox("RegisterWorker():btnReg- category = " & category)
+            'MsgBox("RegisterWorker():btnReg- category = " & category)
 
             description = txtDescription.Text()
 

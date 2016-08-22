@@ -442,7 +442,7 @@ Public Class UpdateProfile
     End Sub
 
     Private Sub displayHandyman()
-        MsgBox("Inside the displayHandyman()")
+        ' MsgBox("Inside the displayHandyman()")
         'Dim connection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Data.mdf;Integrated Security=True")
         'Dim query As String = "SELECT * FROM LoginWorker WHERE UserName = @name;"
         'connection.Open()
