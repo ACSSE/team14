@@ -1,7 +1,9 @@
 <<<<<<< HEAD
 ﻿Public Class ValidationClass
 
-    Public Const CONNECTIONSTRING As String = "Data Source=SQL5023.Smarterasp.net;Initial Catalog=DB_A0AFBC_HandymanDatabase;User Id=DB_A0AFBC_HandymanDatabase_admin;Password=anna98542210;"
+'Public Const CONNECTIONSTRING As String = "Data Source=SQL5023.Smarterasp.net;Initial Catalog=DB_A0AFBC_HandymanDatabase;User Id=DB_A0AFBC_HandymanDatabase_admin;Password=anna98542210;"
+
+Public Const CONNECTIONSTRING As String = "Data Source=Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True"
 
 
     Public Shared Function equateText(ByRef original As String, nuValue As String) As Boolean
