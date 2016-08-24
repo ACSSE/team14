@@ -570,24 +570,12 @@
     <Compile Include="logout.aspx.designer.vb">
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="logout.aspx.vb">
-      <DependentUpon>logout.aspx</DependentUpon>
-<<<<<<< HEAD
-=======
-      <SubType>ASPXCodebehind</SubType>
->>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
-    </Compile>
+   
     <Compile Include="MessageList.vb" />
     <Compile Include="MessengesDetail.aspx.designer.vb">
       <DependentUpon>MessengesDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MessengesDetail.aspx.vb">
-      <DependentUpon>MessengesDetail.aspx</DependentUpon>
-<<<<<<< HEAD
-=======
-      <SubType>ASPXCodebehind</SubType>
->>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
-    </Compile>
+   
     <Compile Include="Messenge.vb" />
     <Compile Include="Site2.Master.designer.vb">
       <DependentUpon>Site2.Master</DependentUpon>
