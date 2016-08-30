@@ -50,6 +50,7 @@
 						<h4>Worker email : <strong><label id="lblEmail" runat="server" text=""/></strong></h4>
                         <h4 id="update" runat="server"><a href="UpdateProfile.aspx?user=handyman">Update your profile</a></h4>
 					</div>
+                    <p id="lnkWorkHistory" runat="server"></p>
 
                     <div class="product-price">
 							<h3 class="rate">History</h3>

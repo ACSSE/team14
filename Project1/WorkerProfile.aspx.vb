@@ -31,6 +31,7 @@ Public Class WorkerProfile
         JobNots.InnerHtml = displayJobs(worker.getCategory())
         penJobs.InnerHtml = displayPendingJobs()
         getHistory() ' to display all the previous work done by the worker
+        lnkWorkHistory.InnerHtml = "<a href=""ViewHistory.aspx?handyman=" & worker.getUsername() & """>View History</a>"
     End Sub
 
     Private Function displayJobs() As String 'display jobs that the handyman has already accepted or is working on
