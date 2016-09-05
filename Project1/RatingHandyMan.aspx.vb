@@ -79,7 +79,7 @@ Public Class RatingHandyMan
 
         connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         connection.Open()
-        command = New SqlCommand("INSERT INTO Ratings (JobID, Worker, TimeManagement, Interpersonal, Quality, Profesionalism, Consistency, Comments, Pending) VALUES (@ID, @worker, @Man, @Inter, @Qual, @Prof, @Cons, @comments, @pending)", connection)
+        command = New SqlCommand("INSERT INTO Ratings (JobID, Worker, TimeManagement, Interpersonal, Quality, Profesionalism, Consistency, jobAverage, Comments, Pending) VALUES (@ID, @worker, @Man, @Inter, @Qual, @Prof, @Cons, @comments, @average, @pending)", connection)
 
         command.Parameters.AddWithValue("@ID", adID)
         command.Parameters.AddWithValue("@worker", handyman)
@@ -88,6 +88,7 @@ Public Class RatingHandyMan
         command.Parameters.AddWithValue("@Qual", qualRate)
         command.Parameters.AddWithValue("@Prof", profRate)
         command.Parameters.AddWithValue("@Cons", an)
+        command.Parameters.AddWithValue("@average", Average)
         command.Parameters.AddWithValue("@comments", comments)
         command.Parameters.AddWithValue("@pending", "true")
         reader = command.ExecuteReader()
