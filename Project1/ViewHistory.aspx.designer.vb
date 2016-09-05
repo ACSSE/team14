@@ -23,11 +23,29 @@ Partial Public Class ViewHistory
     Protected WithEvents chartArea As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Chart1 control.
+    '''jobRatings control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Chart1 As Global.System.Web.UI.DataVisualization.Charting.Chart
+    Protected WithEvents jobRatings As Global.System.Web.UI.DataVisualization.Charting.Chart
+
+    '''<summary>
+    '''home control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents home As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''container control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents container As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

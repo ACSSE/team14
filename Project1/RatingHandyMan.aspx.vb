@@ -79,7 +79,7 @@ Public Class RatingHandyMan
 
         connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         connection.Open()
-        command = New SqlCommand("INSERT INTO Ratings (JobID, Worker, TimeManagement, Interpersonal, Quality, Profesionalism, Consistency, jobAverage, Comments, Pending) VALUES (@ID, @worker, @Man, @Inter, @Qual, @Prof, @Cons, @comments, @average, @pending)", connection)
+        command = New SqlCommand("INSERT INTO Ratings (JobID, Worker, TimeManagement, Interpersonal, Quality, Profesionalism, Consistency, jobAverage, Comments, Pending) VALUES (@ID, @worker, @Man, @Inter, @Qual, @Prof, @Cons, @average, @comments,  @pending)", connection)
 
         command.Parameters.AddWithValue("@ID", adID)
         command.Parameters.AddWithValue("@worker", handyman)
@@ -132,20 +132,16 @@ Public Class RatingHandyMan
             While reader.Read()
                 count += 1
                 ReDim Preserve jobAve(count)
+                'Dim timeMan As Integer = reader("TimeManagement")
+                'Dim person As Integer = reader("Interpersonal")
+                'Dim quality As Integer = reader("Quality")
+                'Dim prof As Integer = reader("Profesionalism")
+                'Dim constin As Integer = reader("Consistency")
+                jobAve(count) = reader("jobAverage")
 
-                If IsDBNull(reader("QuickRating")) Or reader("QuickRating") = 0 Then 'if quick rating is 0 then full rating was done
-                    Dim timeMan As Integer = reader("TimeManagement")
-                    Dim person As Integer = reader("Interpersonal")
-                    Dim quality As Integer = reader("Quality")
-                    Dim prof As Integer = reader("Profesionalism")
-                    Dim constin As Integer = reader("Consistency")
-                    jobAve(count) = (timeMan + person + quality + prof + constin) / 5
+                'MsgBox("WorkerProfile:calculateAve()-Average " & count & ":" & jobAve(count))
 
-                    'MsgBox("WorkerProfile:calculateAve()-Average " & count & ":" & jobAve(count))
 
-                Else
-                    jobAve(count) = reader("QuickRating")
-                End If
 
             End While
         End If

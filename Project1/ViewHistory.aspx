@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
 <div id="chartArea" runat="server">
-    <asp:Chart ID="Chart1" runat="server" Height="331px" Width="392px">
+    <asp:Chart ID="jobRatings" runat="server" Height="331px" Width="451px">
         <Series>
             <asp:Series Name="job1" ChartType="Line"></asp:Series>
             <asp:Series ChartArea="ChartArea1" ChartType="Line" Name="job2">
@@ -23,11 +23,11 @@
 </div>
 
 <div id="myTabContent" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-						   <div>
-												<div id="container">
+						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab" runat="server">
+						   <div runat="server">
+												<div id="container" runat = "server">
 								
-							<ul class="list">
+							
 								
 								
 							<%--	<a href="WorkerProfile.aspx">
@@ -43,7 +43,7 @@
 									<div class="clearfix"></div>
 									</li> 
 								</a>--%>
-								<a href="WorkerProfile.aspx">
+							<%--	<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p2.png" title="" alt="" />
 									<section class="list-left">
@@ -94,8 +94,8 @@
 									</section>
 									<div class="clearfix"></div>
 									</li> 
-								</a>
-							</ul>
+								</a>--%>
+							
 						</div>
 							</div>
 						</div>
