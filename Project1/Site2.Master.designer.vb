@@ -11,41 +11,32 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class ViewHistory
+Partial Public Class Site2
 
     '''<summary>
-    '''chartArea control.
+    '''head control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents chartArea As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
-    '''jobRatings control.
+    '''userLog control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents jobRatings As Global.System.Web.UI.DataVisualization.Charting.Chart
+    Protected WithEvents userLog As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''home control.
+    '''MyBody control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents home As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''container control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents container As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents MyBody As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class

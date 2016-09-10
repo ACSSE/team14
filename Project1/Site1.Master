@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/bootstrap-select.css">
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/bootstrap-select.css"/>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/animate.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
@@ -92,7 +92,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <label id="userLog" runat="server" text=""></label>
 			</div>
 			<div class="header-right">
-			<a class="account" href="Login.aspx">Create Profile</a>
+			<a class="account" href="LoginClient.aspx">Create Profile</a>
 			<a class="account" href="HowItWorks.aspx">How It Works</a>
 	<!-- Large modal -->
 			<div class="selectregion">
@@ -214,10 +214,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>	
 			<div class="footer-bottom text-center">
 			<div class="container">
-				<div class="footer-logo">
+				<div class="footer-logo text-center">
 					<a href="index.html"><span>HandyMan</span>2.0</a>
 				</div>
-				<div class="footer-social-icons">
+				<div class="footer-social-icons text-center">
 					<ul>
 						<li><a class="facebook" href="#"><span>Facebook</span></a></li>
 						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
@@ -226,7 +226,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
 					</ul>
 				</div>
-				<div class="copyrights">
+				<div class="copyrights text-center">
 					<p> © 2016 HandyMan 2.0. All Rights Reserved | Design by The Unknowns</p>
 				</div>
 				<div class="clearfix"></div>

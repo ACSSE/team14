@@ -86,13 +86,11 @@
   <ItemGroup>
     <Content Include="AdDetail.aspx" />
     <Content Include="AirConditioning.aspx" />
-    <Content Include="App_Data\Data.mdf" />
-    <Content Include="App_Data\Data_log.ldf">
-      <DependentUpon>Data.mdf</DependentUpon>
+    <Content Include="App_Data\HandymanDatabase.mdf" />
+    <Content Include="App_Data\HandymanDatabase_log.ldf">
+      <DependentUpon>HandymanDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="ClientProfile.aspx" />
-    <Content Include="ClientProfile1.aspx" />
-    <Content Include="ClientProfile2.aspx" />
     <Content Include="Electrician.aspx" />
     <Content Include="Faq.aspx" />
     <Content Include="FeaturedWorkers.aspx" />
@@ -510,21 +508,7 @@
     </Compile>
     <Compile Include="ClientProfile.aspx.vb">
       <DependentUpon>ClientProfile.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="ClientProfile1.aspx.designer.vb">
-      <DependentUpon>ClientProfile1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ClientProfile1.aspx.vb">
-      <DependentUpon>ClientProfile1.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="ClientProfile2.aspx.designer.vb">
-      <DependentUpon>ClientProfile2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ClientProfile2.aspx.vb">
-      <DependentUpon>ClientProfile2.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Electrician.aspx.designer.vb">
       <DependentUpon>Electrician.aspx</DependentUpon>
@@ -572,19 +556,18 @@
     <Compile Include="logout.aspx.designer.vb">
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="logout.aspx.vb">
-      <DependentUpon>logout.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="MessageList.vb" />
     <Compile Include="MessengesDetail.aspx.designer.vb">
       <DependentUpon>MessengesDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MessengesDetail.aspx.vb">
-      <DependentUpon>MessengesDetail.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="Messenge.vb" />
+    <Compile Include="Site2.Master.designer.vb">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Master.vb">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="ValidationClass.vb" />
     <Compile Include="Worker.vb" />
     <Compile Include="HowItWorks.aspx.designer.vb">
@@ -613,7 +596,7 @@
     </Compile>
     <Compile Include="LoginClient.aspx.vb">
       <DependentUpon>LoginClient.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoginWorker.aspx.designer.vb">
       <DependentUpon>LoginWorker.aspx</DependentUpon>
@@ -655,7 +638,7 @@
     </Compile>
     <Compile Include="Post.aspx.vb">
       <DependentUpon>Post.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PostAdClient.aspx.designer.vb">
       <DependentUpon>PostAdClient.aspx</DependentUpon>
@@ -669,7 +652,7 @@
     </Compile>
     <Compile Include="RatingHandyMan.aspx.vb">
       <DependentUpon>RatingHandyMan.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="RegisterWorker.aspx.designer.vb">
       <DependentUpon>RegisterWorker.aspx</DependentUpon>
@@ -738,7 +721,7 @@
     </Compile>
     <Compile Include="SecuritySafety.aspx.vb">
       <DependentUpon>SecuritySafety.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>
@@ -766,7 +749,7 @@
     </Compile>
     <Compile Include="UpdateProfile.aspx.vb">
       <DependentUpon>UpdateProfile.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="User.vb" />
     <Compile Include="WorkerProfile.aspx.designer.vb">
@@ -774,7 +757,7 @@
     </Compile>
     <Compile Include="WorkerProfile.aspx.vb">
       <DependentUpon>WorkerProfile.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -799,6 +782,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\PublishProfiles\handymanWeb.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -806,6 +790,7 @@
     </None>
     <Content Include="Site.Master" />
     <Content Include="Site1.Master" />
+    <Content Include="Site2.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

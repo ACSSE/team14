@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
 
+
     <br/>
     <br/>
 
@@ -156,17 +157,17 @@
         <div class="mobile-app">
 				<div class="container">
 					<div class="col-md-5 app-left">
-						<a href="mobileapp.html"><img src="images/phone.png" alt=""></a>
+						<a href="mobileapp.html"><img src="images/phone.png" alt=""/></a>
 					</div>
 					<div class="col-md-7 app-right">
 						<h3>HandyMan App is the <span>Easiest</span> way for both client and worker to find themselves</h3>
 						<p>The App is a great way for worker to have their day planned and book through the site and for client to find appropriate HandyMan</p>
 						<div class="app-buttons">
 							<div class="app-button">
-								<a href="#"><img src="images/1.png" alt=""></a>
+								<a href="#"><img src="images/1.png" alt=""/></a>
 							</div>
 							<div class="app-button">
-								<a href="#"><img src="images/2.png" alt=""></a>
+								<a href="#"><img src="images/2.png" alt=""/></a>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -174,7 +175,6 @@
 					<div class="clearfix"></div>
 				</div>
 			</div>
-
 
 
 </asp:Content>

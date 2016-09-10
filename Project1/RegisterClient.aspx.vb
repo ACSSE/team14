@@ -45,7 +45,6 @@ Public Class Register
             client.saveUser()
             Dim cUser As User = client
             Session("user") = cUser
-            'Session("UserName") = User
             Response.Redirect("ClientProfile.aspx")
         End If
 

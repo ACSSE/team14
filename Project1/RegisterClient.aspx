@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="RegisterClient.aspx.vb" Inherits="Project1.Register" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site2.Master" CodeBehind="RegisterClient.aspx.vb" Inherits="Project1.Register" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
@@ -125,14 +125,13 @@
             </table>
 
                 
-                <%--<a href="ClientProfile.aspx"><asp:Button ID="btnRegister" PostBackUrl="~/ClientProfile.aspx" type="submit" style="width: 250px;height: 50px; top: 0px; left: 0px;" runat="server" Text="Register" BackColor="#FBCC33" /></a>--%>
-                <!---<button type="submit"  runat="server" id="btnReg" >Submit</button>-->
+               
                  <input type="submit" runat="server" id="btnReg" value="Register"/>
                  
 
                 
 
-				 <%--<form id="form1" runat="server">
+				 <%--<form id="form1" runat="server
 
                     <label>
                     <div class="text-left">
