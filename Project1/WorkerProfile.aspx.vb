@@ -86,7 +86,7 @@ Public Class WorkerProfile
 
         Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
-        Dim query As String = "Select * FROM AdTable WHERE Worker IS NULL"
+        Dim query As String = "Select * FROM AdTable WHERE Category = @name AND Worker IS NULL"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
 
         'NOTE TO SELF: use sql to get all the categories on a proper sql statement
@@ -108,27 +108,26 @@ Public Class WorkerProfile
             Dim category As String = ""
 
             While reader.Read() 'getting all the jobs
+                
 
-                If worker.getCategory().Contains(reader("Category")) Then
-
-                    clientUsername = reader("Client")
-                    ID = reader("PostAdId")
-                    title = reader("AdTitle")
-                    description = reader("AdDescription")
-                    category = reader("Category")
+                clientUsername = reader("Client")
+                ID = reader("PostAdId")
+                title = reader("AdTitle")
+                description = reader("AdDescription")
+                category = reader("Category")
 
 
-                    If IsDBNull(reader("Worker")) Then
-                        If shouldADD(ID) Then
-                            size += 1
-                            ReDim Preserve jobs(size)
-                            tempJob = New Job(ID, category, title, description, clientUsername, "")
-                            jobs(size) = tempJob 'adding job to the list
+                If IsDBNull(reader("Worker")) Then
+                    If shouldADD(ID) Then
+                        size += 1
+                        ReDim Preserve jobs(size)
+                        tempJob = New Job(ID, category, title, description, clientUsername, "")
+                        jobs(size) = tempJob 'adding job to the list
 
-                            notifications &= "<a href= AdDetail.aspx?ID=" & jobs(size).getID() & ">" & reader("AdTitle") & "</a> <br />"
-                        End If
+                        notifications &= "<a href= AdDetail.aspx?ID=" & jobs(size).getID() & ">" & reader("AdTitle") & "</a> <br />"
                     End If
                 End If
+
             End While
         End If
         Session("jobs") = jobs
@@ -320,7 +319,6 @@ Public Class WorkerProfile
             html &= "</div>"
         Else
             html &= ""
-<<<<<<< HEAD
         End If
 
         divHistory.InnerHtml = html
@@ -344,38 +342,10 @@ Public Class WorkerProfile
             client = New Client(username)
         End If
 
-=======
-        End If
-
-        divHistory.InnerHtml = html
-    End Sub
-
-    Public Function getHistoryClientFromJobsInfo(JobID As Integer) As Client
-
-        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        adconnection.Open()
-        Dim query As String = "Select * FROM AdTable WHERE PostAdId = @name;"
-        Dim command As SqlCommand = New SqlCommand(query, adconnection)
-        command.Parameters.AddWithValue("@name", JobID)
-
-        Dim reader As SqlDataReader = command.ExecuteReader()
-
-        Dim client As Client = Nothing
-
-        If reader.HasRows Then
-            reader.Read()
-            Dim username As String = reader("Client")
-            client = New Client(username)
-        End If
-
->>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
         Return client
 
     End Function
 
-<<<<<<< HEAD
-
-=======
     Public Function getCategoriesSqlStatement(list As String) As String
         Dim categorySQL As String = ""
         Dim tempVal As String = ""
@@ -384,6 +354,5 @@ Public Class WorkerProfile
 
         Return categorySQL
     End Function
->>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
 
 End Class

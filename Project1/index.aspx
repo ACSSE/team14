@@ -3,9 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
 
-<<<<<<< HEAD
-    
-=======
     <br/>
     <br/>
 
@@ -178,7 +175,6 @@
 				</div>
 			</div>
 
->>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
 
 
 </asp:Content>
