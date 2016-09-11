@@ -113,6 +113,33 @@ Partial Public Class Register
     Protected WithEvents regionList As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''SqlDataSource1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+
+    '''<summary>
+    '''lblSuburb control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblSuburb As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''suburbList control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents suburbList As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''lblMobile control.
     '''</summary>
     '''<remarks>
@@ -173,7 +200,5 @@ Partial Public Class Register
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnReg As Global.System.Web.UI.HtmlControls.HtmlButton
-
-    
+    Protected WithEvents btnReg As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
 End Class

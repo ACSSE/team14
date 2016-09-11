@@ -11,6 +11,10 @@ body{
     background-attachment:fixed;
 }
 
+th {
+    height: 30px;
+}
+
 p.sender
 {
     background-color:aquamarine;
