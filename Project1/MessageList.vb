@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+
+Imports System.Data.SqlClient
 
 Public Class MessengeList
     Private messages() As Messenge
