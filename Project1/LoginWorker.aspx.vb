@@ -1,5 +1,4 @@
-
-Imports System.Data
+﻿Imports System.Data
 Imports System.Data.SqlClient
 Public Class LoginWorker
     Inherits System.Web.UI.Page
@@ -68,6 +67,5 @@ Public Class LoginWorker
 
         Response.Redirect("WorkerProfile.aspx? UserName=" & Session("UserName"))
     End Sub
-
 
 End Class

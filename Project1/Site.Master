@@ -6,14 +6,14 @@
 <head runat="server">
     <title></title>
     
-<link rel="stylesheet" href="css/bootstrap.min.css"/>
-<link rel="stylesheet" href="css/bootstrap-select.css"/>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-select.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="css/animate.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/font-awesome.min.css" />
 <!-- for-mobile-apps -->
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Resale Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
@@ -89,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="index.html"><span>HandyMan</span> 2.0</a>
 			</div>
 			<div class="header-right">
-			<a class="account" href="LoginClient.aspx">Create Profile</a>
+			<a class="account" href="Login.aspx">Create Profile</a>
             <a class="account" href="HowItWorks.aspx">How It Works</a>
 			<!--<span class="active uls-trigger">Select language</span>-->
 	<!-- Large modal -->
@@ -130,7 +130,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
             
 		</div>
+	
+	<%--<div class="main-banner banner text-center">
+	  <div class="container">
+
             
+			    <h1>Find trusted   <span class="segment-heading">    Man-Of-All-Work Online</span></h1><br/>
+			    <p>Maintain Your Home</p><br/>
+			    <i><img style="color:#f3c500;" src="images/handyman-white.png" alt=" "/></i><br/><br /><br/>
+                <a href="ClientOrWorker.aspx" style="align-items:center">Get Started</a>
+		    
+        </div>
+
+
+	</div>--%>
 
     <%--<div class="mobile-app">
 				<div class="container">
@@ -274,7 +287,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div></div>
    
->>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
     
         <asp:ContentPlaceHolder ID="MyBody" runat="server">
         </asp:ContentPlaceHolder>
@@ -335,10 +347,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>	
 			<div class="footer-bottom text-center">
 			<div class="container">
-				<div class="footer-logo text-center" >
+				<div class="footer-logo" style="align-content:center; align-items:center; align-items:center;" >
 					<a href="index.aspx"><span>HandyMan</span> 2.0</a>
 				</div>
-				<div class="footer-social-icons text-center">
+				<div class="footer-social-icons">
 					<ul>
                         <li><a class="facebook" href="#"><span>Facebook</span></a></li>
 						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
@@ -347,7 +359,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
 					</ul>
 				</div>
-				<div class="copyrights text-center">
+				<div class="copyrights">
 					<p> © 2016 HandyMan 2.0. All Rights Reserved | Design by The Unknowns</p>
 				</div>
 				<div class="clearfix"></div>

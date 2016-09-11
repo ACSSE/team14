@@ -1,5 +1,4 @@
-
-Imports System.Data
+﻿Imports System.Data
 Imports System.Data.SqlClient
 Public Class LeaveComment
 
@@ -55,6 +54,5 @@ Public Class LeaveComment
 
 
     'End Sub
-
 
 End Class

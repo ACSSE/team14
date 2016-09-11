@@ -1,8 +1,6 @@
-Public Class ValidationClass
+﻿Public Class ValidationClass
 
-    'Public Const CONNECTIONSTRING As String = "Data Source=SQL5023.Smarterasp.net;Initial Catalog=DB_A0AFBC_HandymanDatabase;User Id=DB_A0AFBC_HandymanDatabase_admin;Password=anna98542210;"
-
-    Public Const CONNECTIONSTRING As String = "Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True providerName=System.Data.SqlClient"
+    Public Const CONNECTIONSTRING As String = "Data Source=KARABO-PC\MSSQLSERVER2;Initial Catalog=HandymanDatabase;Integrated Security=True"
 
 
     Public Shared Function equateText(ByRef original As String, nuValue As String) As Boolean
@@ -13,6 +11,22 @@ Public Class ValidationClass
         Return True
     End Function
 
+    Public Shared Function equateText(ByRef original As Integer, nuValue As String) As Boolean
+        If nuValue = "" Then
+            Return False
+        End If
+        original = nuValue
+        Return True
+    End Function
+
+
+    Public Shared Function equateText(ByRef original As Double, nuValue As String) As Boolean
+        If nuValue = "" Then
+            Return False
+        End If
+        original = nuValue
+        Return True
+    End Function
 
     Public Shared Function displayMessenges(jobID As Integer) As String
         Dim Htmlmessenges As String = ""
@@ -53,7 +67,7 @@ Public Class ValidationClass
             Case 5
                 Return "<i><img src=""images/star5.png"" alt="" "" style=""max-width:25%; height:auto"" /></i>"
         End Select
-        Return "<i><img src=""images/star1.png"" alt="" "" style=""max-width:25%; height:auto"" /></i>"
+        Return "<h4><i><img src=""images/star1.png"" alt="" "" /></i></h4>"
     End Function
     'Taking a string representation of category and turning it into Enum Category
     'Public Shared Function enumCategory(category As String) As Category
@@ -130,4 +144,3 @@ End Class
 '    RoofSpecialist
 '    GeyserSpecialist
 'End Enum
-

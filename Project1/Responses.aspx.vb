@@ -1,4 +1,4 @@
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class Responses
     Inherits System.Web.UI.Page
@@ -47,16 +47,15 @@ Public Class Responses
         Dim reader As SqlDataReader = command.ExecuteReader()
 
         If reader.HasRows Then
-            ' MsgBox("Resposes:displayWorker()-Reading woker values from database")
+            'MsgBox("Resposes:displayWorker()-Reading woker values from database")
             reader.Read()
             info &= "<h4>" & reader("Name") & " " & reader("Surname") & "</h4> <br />"
             info &= "<div class=""itemtype"">"
             info &= "<p class=""p-price"">Rating</p>"
-            info &= ValidationClass.getRateImage(New Worker(workerID).getRating())
+            info &= "	<h4><i><img src=""images/rate1.png"" alt="" "" /></i></h4>"
             info &= "<div class=""clearfix""></div>"
             info &= "</div>"
         End If
         Return info
     End Function
-
 End Class

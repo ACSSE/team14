@@ -1,5 +1,4 @@
-Imports System.Data.SqlClient
-
+﻿Imports System.Data.SqlClient
 
 Public Class Messenge
 
@@ -34,7 +33,7 @@ Public Class Messenge
     Public Sub saveMessenge()
         If isIdentical(jobID) = False Then
 
-            Dim connection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+            Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
             Dim query As String = "INSERT INTO Messenges (PostAdId, Messenge, Sender, Date) Values (@ID, @messenge, @sender, @date)"
             connection.Open()
 
@@ -69,6 +68,3 @@ Public Class Messenge
         Return False
     End Function
 End Class
-
-
-

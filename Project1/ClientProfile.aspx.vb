@@ -1,4 +1,4 @@
-
+﻿
 Imports System.Data.SqlClient
 
 
@@ -45,7 +45,7 @@ Public Class ClientProfile
         lblAddress.InnerText = client.getAddress() 'reader("Address")
         lblEmail.InnerText = client.getEmail  'reader("Email")
 
-        divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(client.getRating())
+
 
         AdsDiv.InnerHtml = displayAds()
 

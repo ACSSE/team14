@@ -1,5 +1,4 @@
-
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class RatingHandyMan
     Inherits System.Web.UI.Page
@@ -45,7 +44,7 @@ Public Class RatingHandyMan
         End If
 
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "UPDATE Ratings SET Pending = @false WHERE JobID = @name"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -78,9 +77,9 @@ Public Class RatingHandyMan
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         connection.Open()
-        command = New SqlCommand("INSERT INTO Ratings (JobID, Worker, TimeManagement, Interpersonal, Quality, Profesionalism, Consistency, Comments, Pending) VALUES (@ID, @worker, @Man, @Inter, @Qual, @Prof, @Cons, @comments, @pending)", connection)
+        command = New SqlCommand("INSERT INTO Ratings (JobID, Worker, TimeManagement, Interpersonal, Quality, Profesionalism, Consistency, jobAverage, Comments, Pending) VALUES (@ID, @worker, @Man, @Inter, @Qual, @Prof, @Cons, @average, @comments,  @pending)", connection)
 
         command.Parameters.AddWithValue("@ID", adID)
         command.Parameters.AddWithValue("@worker", handyman)
@@ -89,13 +88,14 @@ Public Class RatingHandyMan
         command.Parameters.AddWithValue("@Qual", qualRate)
         command.Parameters.AddWithValue("@Prof", profRate)
         command.Parameters.AddWithValue("@Cons", an)
+        command.Parameters.AddWithValue("@average", Average)
         command.Parameters.AddWithValue("@comments", comments)
         command.Parameters.AddWithValue("@pending", "true")
         reader = command.ExecuteReader()
 
         connection.Close()
         changeDB(adID)
-        '        MsgBox("Handyman " & handyman & "Thanks you for your feedback")
+        MsgBox("Handyman " & handyman & "Thanks you for your feedback")
         calculateAve(handyman)
         Response.Redirect("ClientProfile.aspx")
     End Sub
@@ -132,20 +132,16 @@ Public Class RatingHandyMan
             While reader.Read()
                 count += 1
                 ReDim Preserve jobAve(count)
+                'Dim timeMan As Integer = reader("TimeManagement")
+                'Dim person As Integer = reader("Interpersonal")
+                'Dim quality As Integer = reader("Quality")
+                'Dim prof As Integer = reader("Profesionalism")
+                'Dim constin As Integer = reader("Consistency")
+                jobAve(count) = reader("jobAverage")
 
-                If IsDBNull(reader("QuickRating")) Then 'if quick rating is 0 then full rating was done
-                    Dim timeMan As Integer = reader("TimeManagement")
-                    Dim person As Integer = reader("Interpersonal")
-                    Dim quality As Integer = reader("Quality")
-                    Dim prof As Integer = reader("Profesionalism")
-                    Dim constin As Integer = reader("Consistency")
-                    jobAve(count) = (timeMan + person + quality + prof + constin) / 5
+                'MsgBox("WorkerProfile:calculateAve()-Average " & count & ":" & jobAve(count))
 
-                    'MsgBox("WorkerProfile:calculateAve()-Average " & count & ":" & jobAve(count))
 
-                Else
-                    jobAve(count) = reader("QuickRating")
-                End If
 
             End While
         End If
@@ -192,5 +188,4 @@ Public Class RatingHandyMan
         Dim reader As SqlDataReader = command.ExecuteReader()
         adconnection.Close()
     End Sub
-
 End Class

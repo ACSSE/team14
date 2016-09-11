@@ -1,5 +1,4 @@
-
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Public Class Post
     Inherits System.Web.UI.Page
 
@@ -13,6 +12,5 @@ Public Class Post
 
         
     End Sub
-
 
 End Class

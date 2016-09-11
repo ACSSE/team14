@@ -1,4 +1,4 @@
-Public MustInherit Class User
+﻿Public MustInherit Class User
 
 
     'varaibles belonging to general users - handyman and client
@@ -63,7 +63,7 @@ Public MustInherit Class User
     End Sub
 
     Public Sub updateName(cname As String)
-        MsgBox("In User-updateName(): name = " & name)
+        ' MsgBox("In User-updateName(): name = " & name)
         name = cname
     End Sub
 

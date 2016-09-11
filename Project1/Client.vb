@@ -1,5 +1,4 @@
-
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class Client
     Inherits User
@@ -190,4 +189,3 @@ Public Class Client
         adconnection.Close()
     End Sub
 End Class
-

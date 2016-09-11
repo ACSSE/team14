@@ -31,13 +31,14 @@ Public Class WorkerProfile
         JobNots.InnerHtml = displayJobs(worker.getCategory())
         penJobs.InnerHtml = displayPendingJobs()
         getHistory() ' to display all the previous work done by the worker
+        lnkWorkHistory.InnerHtml = "<a href=""ViewHistory.aspx?pg=1"">View History</a>"
     End Sub
 
     Private Function displayJobs() As String 'display jobs that the handyman has already accepted or is working on
         Dim size As Integer
         Dim HandymanJobs(size) As Job
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "Select * FROM AdTable WHERE Worker = @name AND Status IS NULL"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -84,7 +85,7 @@ Public Class WorkerProfile
         Dim size As Integer = 0 'for resizing purposes
         Dim jobs(size) As Job 'array for jobs to be stored
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "Select * FROM AdTable WHERE Worker IS NULL"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -141,10 +142,10 @@ Public Class WorkerProfile
         Dim size As Integer = 0 'for resizing purposes
         Dim jobsID(size) As Integer 'array for job idS to be stored
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "Select * FROM Ratings WHERE Worker = @name AND Pending = @true;"
-        Dim command As SqlCommand = New SqlCommand("Select * FROM Ratings WHERE Worker = @name AND Pending = @true;", adconnection)
+        Dim command As SqlCommand = New SqlCommand(query, adconnection)
 
         command.Parameters.AddWithValue("@name", worker.getUsername())
         command.Parameters.AddWithValue("@true", "true")
@@ -188,7 +189,7 @@ Public Class WorkerProfile
 
         Dim cJob As Job = Nothing 'variable to be returned
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "Select * FROM AdTable WHERE PostAdId = @ID"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -218,7 +219,7 @@ Public Class WorkerProfile
     Private Function shouldADD(JobID As Integer) As Boolean
         'Jobs that the handyman has already answerede should not be displayed
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "Select * FROM Responses WHERE AdID = @name AND Worker = @worker"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -247,7 +248,7 @@ Public Class WorkerProfile
         Dim comments(size) As String
 
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "Select * FROM Ratings WHERE Worker = @name AND Pending = @true;"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -327,7 +328,7 @@ Public Class WorkerProfile
 
     Public Function getHistoryClientFromJobsInfo(JobID As Integer) As Client
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "Select * FROM AdTable WHERE PostAdId = @name;"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -342,7 +343,6 @@ Public Class WorkerProfile
             Dim username As String = reader("Client")
             client = New Client(username)
         End If
-
 
         Return client
 

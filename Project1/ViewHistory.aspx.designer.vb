@@ -11,68 +11,50 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class ClientProfile
+Partial Public Class ViewHistory
 
     '''<summary>
-    '''lblName control.
+    '''form1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblName As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''lblSurname control.
+    '''chartArea control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblSurname As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents chartArea As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''lblNumber control.
+    '''jobRatings control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblNumber As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents jobRatings As Global.System.Web.UI.DataVisualization.Charting.Chart
 
     '''<summary>
-    '''lblEmail control.
+    '''home control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblEmail As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents home As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''lblAddress control.
+    '''container control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblAddress As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''update control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents update As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''AdsDiv control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents AdsDiv As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents container As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class
