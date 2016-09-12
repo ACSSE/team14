@@ -59,7 +59,7 @@ Public Class Register
             suburb = suburbList.Text()
 
 
-            Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region)
+            Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region, suburb)
 
             client.saveUser()
             Dim cUser As User = client

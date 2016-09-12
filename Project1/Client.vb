@@ -66,13 +66,12 @@ Public Class Client
             Me.username = username
             name = reader("Name")
             surname = reader("Surname")
-            'email = reader("Email")
             email = ""
-            ' numbers = reader("MobileNumber")
             numbers = 0
             region = ""
-            'address = reader("Address")
             address = ""
+            suburb = ""
+
         End If
     End Sub
 
