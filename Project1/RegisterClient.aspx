@@ -90,7 +90,7 @@
                         <asp:Label ID="lblRegion" runat="server" Text="Select Town"></asp:Label></th>
 
                     <th>
-                        <asp:DropDownList ID="regionList" runat="server" DataSourceID="SqlDataSource1" DataTextField="Town" DataValueField="Town">
+                        <asp:DropDownList ID="regionList" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Town" DataValueField="Town">
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [Town] FROM [Location]"></asp:SqlDataSource>
                     </th>
@@ -101,7 +101,7 @@
                         <asp:Label ID="lblSuburb" runat="server" Text="Select Surburb"></asp:Label></th>
 
                     <th>
-                        <asp:DropDownList ID="suburbList" runat="server">
+                        <asp:DropDownList ID="suburbList" runat="server" DataSourceID="SqlDataSource2" DataTextField="Surburb" DataValueField="Surburb">
                         </asp:DropDownList></th>
                 </tr>
                 

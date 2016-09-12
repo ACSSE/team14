@@ -11,9 +11,22 @@ Public Class Register
     Private reader As SqlDataReader
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'If Not Page.IsPostBack Then
-        '    txtUsername.Focus()
-        'End If
+
+
+        Dim command As SqlCommand
+        Dim reader As SqlDataReader
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+
+        Dim commandstring As String = "SELECT DISTINCT (Town) FROM Location"
+
+        command = New SqlCommand(commandstring, connection)
+        reader = command.ExecuteReader(commandstring)
+
+        If reader.HasRows Then
+            reader.Read()
+            regionList.Items.Add(reader.GetTextReader(0).ToString)
+        End If
+
     End Sub
 
     Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.ServerClick
@@ -53,4 +66,9 @@ Public Class Register
 
    
 
+    Protected Sub regionList_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+
+
+    End Sub
 End Class
