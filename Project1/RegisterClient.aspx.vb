@@ -10,23 +10,25 @@ Public Class Register
     Private command As SqlCommand
     Private reader As SqlDataReader
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Protected Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        If Not IsPostBack Then
 
-        Dim command As SqlCommand
-        Dim reader As SqlDataReader
-        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+            Dim command As SqlCommand
+            Dim reader As SqlDataReader
+            Dim connection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
 
-        Dim commandstring As String = "SELECT DISTINCT (Town) FROM Location"
+            Dim commandstring As String = "SELECT DISTINCT (Town) FROM Location"
 
-        command = New SqlCommand(commandstring, connection)
-        reader = command.ExecuteReader(commandstring)
+            connection.Open()
+            command = New SqlCommand(commandstring, connection)
+            reader = command.ExecuteReader()
 
-        If reader.HasRows Then
-            reader.Read()
-            regionList.Items.Add(reader.GetTextReader(0).ToString)
+            While reader.Read()
+                regionList.Items.Add(reader.GetValue(0).ToString)
+            End While
+            connection.Close()
         End If
-
     End Sub
 
     Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.ServerClick
