@@ -97,6 +97,7 @@
     <Content Include="Faq.aspx" />
     <Content Include="FeaturedWorkers.aspx" />
     <Content Include="Feedback.aspx" />
+    <Content Include="findme.aspx" />
     <Content Include="GardenLandscaping.aspx" />
     <Content Include="GeyserSpecialist.aspx" />
     <Content Include="HowItWorks.aspx" />
@@ -552,6 +553,13 @@
     </Compile>
     <Compile Include="Feedback.aspx.vb">
       <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="findme.aspx.designer.vb">
+      <DependentUpon>findme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="findme.aspx.vb">
+      <DependentUpon>findme.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="GardenLandscaping.aspx.designer.vb">

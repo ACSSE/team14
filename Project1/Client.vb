@@ -95,7 +95,7 @@ Public Class Client
 
         If tempClient.getUsername() = "" Then
 
-            Dim commandstring As String = "INSERT INTO Clients ( Username, Password, Name, Surname,  MobileNumber, Email, Address) VALUES (@username, @password, @name, @surname, @mobil, @email, @address)"
+            Dim commandstring As String = "INSERT INTO Clients ( Username, Password, Name, Surname,  MobileNumber, Email, Address, Region , Suburb) VALUES (@username, @password, @name, @surname, @mobil, @email, @address, @region, @suburb)"
             connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
             connection.Open()
             command = New SqlCommand(commandstring, connection)
@@ -107,6 +107,8 @@ Public Class Client
             command.Parameters.AddWithValue("@address", address)
             command.Parameters.AddWithValue("@mobil", numbers)
             command.Parameters.AddWithValue("@email", email)
+            command.Parameters.AddWithValue("@region", region)
+            command.Parameters.AddWithValue("@suburb", suburb)
 
             reader = command.ExecuteReader()
 

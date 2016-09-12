@@ -11,9 +11,7 @@
 							<h1>Log in</h1>
 						</div>
 						<div class="signin">
-							<div class="signin-rit">
-								<div class="clearfix"> </div>
-							</div>
+							
 							<form id="Form1" runat="server">
 							<div class="log-input">
 								<div class="log-input-left">

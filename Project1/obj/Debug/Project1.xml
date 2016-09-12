@@ -6,7 +6,47 @@ Project1
 </name>
 </assembly>
 <members>
-<member name="F:Project1.apply.lblName">
+<member name="F:Project1.findme.lblTown">
+	<summary>
+lblTown control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.findme.txtTown">
+	<summary>
+txtTown control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.findme.lblSurburb">
+	<summary>
+lblSurburb control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.findme.txtSuburb">
+	<summary>
+txtSuburb control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.findme.btnReg">
+	<summary>
+btnReg control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.apply.lblName">
 	<summary>
 lblName control.
 </summary>

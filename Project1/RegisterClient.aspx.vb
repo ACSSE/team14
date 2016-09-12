@@ -41,6 +41,7 @@ Public Class Register
         Dim email As String = ""
         Dim numbers As String = ""
         Dim region As String = ""
+        Dim suburb As String = ""
         Dim address As String = ""
 
 
@@ -54,6 +55,9 @@ Public Class Register
             email = txtEmail.Text()
             numbers = txtMobile.Text()
             address = txtAddress.Text()
+            region = regionList.Text()
+            suburb = suburbList.Text()
+
 
             Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region)
 

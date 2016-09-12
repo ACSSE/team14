@@ -104,7 +104,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td>If your town isn't listed above,<br/> click <a href="#">here</a> to help us find you </td><br/>
+                    <td>If your town isn't listed above,<br/> click <a href="findme.aspx">here</a> to help us find you </td><br/>
                     
                 </tr>
                 <tr>
