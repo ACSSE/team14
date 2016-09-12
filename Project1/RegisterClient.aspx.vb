@@ -32,6 +32,38 @@ Public Class Register
         End If
     End Sub
 
+
+    Protected Sub regionList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles regionList.SelectedIndexChanged, regionList.TextChanged, suburbList.SelectedIndexChanged
+
+        MsgBox("Im here")
+        If Not IsPostBack Then
+
+
+            Dim command As SqlCommand
+            Dim reader As SqlDataReader
+            Dim connection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+
+            Dim commandstring As String = "SELECT Surburb FROM Location WHERE Town ='" + regionList.Text + "'"
+
+            connection.Open()
+            command = New SqlCommand(commandstring, connection)
+            reader = command.ExecuteReader()
+
+            If reader.HasRows Then
+
+                While reader.Read()
+                    suburbList.Items.Add(reader.GetValue(0).ToString)
+                End While
+
+            End If
+
+            connection.Close()
+        End If
+
+
+    End Sub
+
+
     Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.ServerClick
 
 
@@ -121,33 +153,5 @@ Public Class Register
     '    End If
     'End Sub
 
-    Protected Sub regionList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles regionList.SelectedIndexChanged
-
-        MsgBox("Im here")
-        If Not IsPostBack Then
-
-
-            Dim command As SqlCommand
-            Dim reader As SqlDataReader
-            Dim connection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
-
-            Dim commandstring As String = "SELECT Surburb FROM Location WHERE Town ='" + regionList.Text + "'"
-
-            connection.Open()
-            command = New SqlCommand(commandstring, connection)
-            reader = command.ExecuteReader()
-
-            If reader.HasRows Then
-
-                While reader.Read()
-                    suburbList.Items.Add(reader.GetValue(0).ToString)
-                End While
-
-            End If
-
-            connection.Close()
-        End If
-
-
-    End Sub
+    
 End Class
