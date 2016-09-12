@@ -68,9 +68,34 @@ Public Class Register
 
    
 
-    Protected Sub regionList_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Protected Sub surburbList_SelectedIndexChanged(sender As Object, e As EventArgs)
+        If Not IsPostBack Then
 
+            Dim command As SqlCommand
+            Dim reader As SqlDataReader
+            Dim connection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
 
+            Dim commandstring As String = "SELECT Surburb FROM Location WHERE Town ='" + regionList.Text + "'"
+
+            connection.Open()
+            command = New SqlCommand(commandstring, connection)
+            reader = command.ExecuteReader()
+
+            While reader.Read()
+                regionList.Items.Add(reader.GetValue(0).ToString)
+            End While
+            connection.Close()
+        End If
+       
+    End Sub
+
+    Protected Sub regionList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles regionList.SelectedIndexChanged
+
+    End Sub
+
+    Protected Sub suburbList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles suburbList.SelectedIndexChanged
+
+       
 
     End Sub
 End Class
