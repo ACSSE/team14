@@ -5,8 +5,8 @@ Public Class Client
 
     Private address As String
 
-    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String)
-        MyBase.New(vusername, vpassword, vname, vusername, vemail, mnumbers, vregion)
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String, vsuburb As String)
+        MyBase.New(vusername, vpassword, vname, vusername, vemail, mnumbers, vregion, vsuburb)
         address = vaddress
     End Sub
 
@@ -18,6 +18,8 @@ Public Class Client
     Public Sub New(username As String)
         getPartialClientInfo(username)
     End Sub
+
+    Private Property suburb As Object
 
     Private Sub getClient(username As String, password As String)
         Dim connection As SqlConnection
@@ -42,7 +44,8 @@ Public Class Client
             surname = reader("Surname")
             email = reader("Email")
             numbers = reader("MobileNumber")
-            region = ""
+            region = reader("Region")
+            suburb = reader("Suburb")
             address = reader("Address")
         End If
 
@@ -122,7 +125,7 @@ Public Class Client
         Dim command As SqlCommand
         Dim reader As SqlDataReader
         'UPDATE LoginClient Set [] WHERE Username = @user
-        Dim commandstring As String = "UPDATE Clients SET Username = @username, Name = @name,  Surname = @surname,  Address = @address, MobileNumber = @mobil, Email = @email WHERE Username = @username"
+        Dim commandstring As String = "UPDATE Clients SET Username = @username, Name = @name,  Surname = @surname,  Address = @address, MobileNumber = @mobil, Email = @email, Region = @region, Suburb = @suburb  WHERE Username = @username"
         connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         connection.Open()
         command = New SqlCommand(commandstring, connection)
@@ -135,6 +138,8 @@ Public Class Client
         command.Parameters.AddWithValue("@address", address)
         command.Parameters.AddWithValue("@mobil", numbers)
         command.Parameters.AddWithValue("@email", email)
+        c command.Parameters.AddWithValue("@region", region)
+        command.Parameters.AddWithValue("@suburb", suburb)
 
         reader = command.ExecuteReader()
 

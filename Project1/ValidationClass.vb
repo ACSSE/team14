@@ -2,7 +2,6 @@
 
     Public Const CONNECTIONSTRING As String = "Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True providerName= System.Data.SqlClient"
 
-
     Public Shared Function equateText(ByRef original As String, nuValue As String) As Boolean
         If nuValue = "" Then
             Return False
@@ -69,78 +68,5 @@
         End Select
         Return "<h4><i><img src=""images/star1.png"" alt="" "" /></i></h4>"
     End Function
-    'Taking a string representation of category and turning it into Enum Category
-    'Public Shared Function enumCategory(category As String) As Category
-    '    Dim toR As Category
-    '    MsgBox("ValidationClass:enumCategory- Category = " & category)
-    '    Select Case category
-    '        Case "Electrician"
-    '            toR = Project1.Category.Electrician
-    '            Return toR
-    '        Case "Gardnen and Landscaping"
-    '            toR = Project1.Category.GardnerNLandscaper
-    '            Return toR
-    '        Case "Kitchen Specialist"
-    '            Return Project1.Category.KitchenSpecialist
-    '        Case "Paint & Decoration"
-    '            Return Project1.Category.PaintNDecoration
-    '        Case "Security, Fire and Safety"
-    '            Return Project1.Category.SecurityFireNSafety
-    '        Case "Pest Control"
-    '            Return Project1.Category.PestControl
-    '        Case "Tilling Specialist"
-    '            Return Project1.Category.TillingSpecialist
-    '        Case "Roof Specialist"
-    '            Return Project1.Category.RoofSpecialist
-    '        Case "Geyser Specialist"
-    '            Return Project1.Category.GeyserSpecialist
-    '        Case Else
-    '            Return Nothing
-    '    End Select
-    'End Function
-
-    ''Taking the enum Category and turning it into a string category
-    'Public Shared Function stringCategory(category As Category) As String
-    '    MsgBox("ValdiationClass:stringCategory - straight msgbox =" & category.ToString())
-    '    Select Case category
-    '        Case Project1.Category.GeyserSpecialist
-    '            MsgBox("ValidationClass:stringCategory - result Geyser Specialist")
-    '            Return "Geyser Specialist"
-    '        Case Project1.Category.KitchenSpecialist
-    '            Return "Kitchen Specialist"
-    '        Case Project1.Category.GardnerNLandscaper
-    '            MsgBox("ValidationClass:stringCategory - result Gardner and Landscaping")
-    '            Return "Garden and Landscaping"
-    '        Case Project1.Category.PaintNDecoration
-    '            Return "Paint & Decoration"
-    '        Case Project1.Category.PestControl
-    '            Return "Pest Control"
-    '        Case Project1.Category.RoofSpecialist
-    '            Return "Roof Specialist"
-    '        Case Project1.Category.SecurityFireNSafety
-    '            Return "Security, Fire & Safety"
-    '        Case Project1.Category.TillingSpecialist
-    '            Return "Tilling Specialist"
-    '        Case Project1.Category.Electrician
-    '            MsgBox("ValidationClass:stringCategory - result Electrician")
-    '            Return "Electrician"
-    '        Case Else
-    '            Return ""
-    '    End Select
-    'End Function
-
 
 End Class
-
-'Public Enum Category 'category of handyman and job 
-'    Electrician
-'    GardnerNLandscaper
-'    PaintNDecoration
-'    PoolSpecialist
-'    KitchenSpecialist
-'    SecurityFireNSafety
-'    PestControl
-'    TillingSpecialist
-'    RoofSpecialist
-'    GeyserSpecialist
-'End Enum

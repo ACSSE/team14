@@ -10,6 +10,14 @@
     Protected numbers As String
     Protected region As String
     Protected rating As Integer
+    Private _vusername As String
+    Private _vpassword As String
+    Private _vname As String
+    Private _vusername1 As String
+    Private _vemail As String
+    Private _mnumbers As String
+    Private _vregion As String
+    Private _vsuburb As String
 
     'constructor for the class
     Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String)
@@ -26,6 +34,18 @@
     Public Sub New() 'basic constructor
         username = ""
         ' password = ""
+    End Sub
+
+    Protected Sub New(vusername As String, vpassword As String, vname As String, vusername1 As String, vemail As String, mnumbers As String, vregion As String, vsuburb As String)
+        ' TODO: Complete member initialization 
+        _vusername = vusername
+        _vpassword = vpassword
+        _vname = vname
+        _vusername1 = vusername1
+        _vemail = vemail
+        _mnumbers = mnumbers
+        _vregion = vregion
+        _vsuburb = vsuburb
     End Sub
 
     'Getters

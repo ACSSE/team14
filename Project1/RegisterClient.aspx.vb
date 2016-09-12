@@ -59,7 +59,7 @@ Public Class Register
             suburb = suburbList.Text()
 
 
-            Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region, suburb)
+            Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region)
 
             client.saveUser()
             Dim cUser As User = client
@@ -93,13 +93,13 @@ Public Class Register
        
     End Sub
 
-    Protected Sub regionList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles regionList.SelectedIndexChanged
+    'Protected Sub regionList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles regionList.SelectedIndexChanged
 
-    End Sub
+    'End Sub
 
-    Protected Sub suburbList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles suburbList.SelectedIndexChanged
+    'Protected Sub suburbList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles suburbList.SelectedIndexChanged
 
-       
 
-    End Sub
+
+    'End Sub
 End Class
