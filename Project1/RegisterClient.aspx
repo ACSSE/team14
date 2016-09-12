@@ -90,7 +90,7 @@
                         <asp:Label ID="lblRegion" runat="server" Text="Select Town"></asp:Label></th>
 
                     <th>
-                        <asp:DropDownList ID="regionList" runat="server" >
+                        <asp:DropDownList ID="regionList" runat="server" AutoPostBack="True" >
                         </asp:DropDownList></th>
                 </tr>
 
@@ -99,7 +99,7 @@
                         <asp:Label ID="lblSuburb" runat="server" Text="Select Surburb"></asp:Label></th>
 
                     <th>
-                        <asp:DropDownList ID="suburbList" runat="server">
+                        <asp:DropDownList ID="suburbList" runat="server" AppendDataBoundItems="True">
                         </asp:DropDownList></th>
                 </tr>
                 <tr>

@@ -138,7 +138,7 @@ Public Class Client
         command.Parameters.AddWithValue("@address", address)
         command.Parameters.AddWithValue("@mobil", numbers)
         command.Parameters.AddWithValue("@email", email)
-        c command.Parameters.AddWithValue("@region", region)
+        command.Parameters.AddWithValue("@region", region)
         command.Parameters.AddWithValue("@suburb", suburb)
 
         reader = command.ExecuteReader()
