@@ -320,7 +320,6 @@ Public Class WorkerProfile
             html &= "</div>"
         Else
             html &= ""
-<<<<<<< HEAD
         End If
 
         divHistory.InnerHtml = html
@@ -344,46 +343,10 @@ Public Class WorkerProfile
             client = New Client(username)
         End If
 
-=======
-        End If
-
-        divHistory.InnerHtml = html
-    End Sub
-
-    Public Function getHistoryClientFromJobsInfo(JobID As Integer) As Client
-
-        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        adconnection.Open()
-        Dim query As String = "Select * FROM AdTable WHERE PostAdId = @name;"
-        Dim command As SqlCommand = New SqlCommand(query, adconnection)
-        command.Parameters.AddWithValue("@name", JobID)
-
-        Dim reader As SqlDataReader = command.ExecuteReader()
-
-        Dim client As Client = Nothing
-
-        If reader.HasRows Then
-            reader.Read()
-            Dim username As String = reader("Client")
-            client = New Client(username)
-        End If
-
->>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
         Return client
 
     End Function
 
-<<<<<<< HEAD
 
-=======
-    Public Function getCategoriesSqlStatement(list As String) As String
-        Dim categorySQL As String = ""
-        Dim tempVal As String = ""
-
-        'NOTE TO SELF: FIND OUT HOW TO SPLIT STRINGS
-
-        Return categorySQL
-    End Function
->>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d
 
 End Class

@@ -56,6 +56,10 @@ Public MustInherit Class User
         Return region
     End Function
 
+    Public Function getDate() As Date
+        Return joinDate
+    End Function
+
     'Setters
     Public Sub updateUsername(vusername As String)
         username = vusername

@@ -10,8 +10,8 @@ Public Class Worker
     Private category As String
 
     'specialised constructor
-    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, description As String, category As String, logo As Image)
-        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion)
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, description As String, category As String, logo As Image, vdate As Date)
+        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vdate)
         Me.description = description
         Me.logo = logo
         Me.category = category
@@ -63,7 +63,7 @@ Public Class Worker
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        Dim commandstring As String = "INSERT INTO Workers (Name, Surname, Username, Password, MobileNumber, Email, Category, Region, Description) VALUES (@name, @surname, @username, @password, @mobil, @email, @category, @region, @description)"
+        Dim commandstring As String = "INSERT INTO Workers (Name, Surname, Username, Password, MobileNumber, Email, Category, Region, Description, JoinDate) VALUES (@name, @surname, @username, @password, @mobil, @email, @category, @region, @description, @date)"
         connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         connection.Open()
         command = New SqlCommand(commandstring, connection)
@@ -78,6 +78,7 @@ Public Class Worker
         command.Parameters.AddWithValue("@region", region)
         'command.Parameters.AddWithValue("@JobTitle", jobTitle)
         command.Parameters.AddWithValue("@description", description)
+        command.Parameters.AddWithValue("@date", joinDate)
         reader = command.ExecuteReader()
 
         connection.Close()
@@ -135,7 +136,8 @@ Public Class Worker
             ' numbers = reader("MobileNumber")
             numbers = 0
             region = ""
-
+            category = reader("Category")
+            joinDate = reader("JoinDate")
         End If
         rating = getRating()
         connection.Close()

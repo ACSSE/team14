@@ -16,10 +16,11 @@ Public Class Register
         'End If
     End Sub
 
-    Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.ServerClick
+    Protected Sub btnRegi_Click(sender As Object, e As EventArgs) Handles btnRegi.ServerClick
 
 
-        Dim username As String = ""
+
+        Dim username As String = txtUsername.Text()
         Dim password As String = ""
         Dim name As String = ""
         Dim surname As String = ""
@@ -30,9 +31,8 @@ Public Class Register
 
 
         Dim tempClient As Client = New Client(username)
-
         If tempClient.getUsername() = "" Then
-            username = txtUsername.Text()
+
             password = txtPassword.Text()
             name = txtName.Text()
             surname = txtSurname.Text()
@@ -40,7 +40,7 @@ Public Class Register
             numbers = txtMobile.Text()
             address = txtAddress.Text()
 
-            Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region)
+            Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region, Date.Now)
 
             client.saveUser()
             Dim cUser As User = client

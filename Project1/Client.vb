@@ -5,8 +5,8 @@ Public Class Client
 
     Private address As String
 
-    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String)
-        MyBase.New(vusername, vpassword, vname, vusername, vemail, mnumbers, vregion)
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String, vdate As Date)
+        MyBase.New(vusername, vpassword, vname, vusername, vemail, mnumbers, vregion, vdate)
         address = vaddress
     End Sub
 
@@ -44,6 +44,7 @@ Public Class Client
             numbers = reader("MobileNumber")
             region = ""
             address = reader("Address")
+            joinDate = reader("JoinDate")
         End If
 
     End Sub
@@ -73,6 +74,7 @@ Public Class Client
             region = ""
             'address = reader("Address")
             address = ""
+            joinDate = reader("JoinDate")
         End If
     End Sub
 
@@ -95,7 +97,7 @@ Public Class Client
 
         If tempClient.getUsername() = "" Then
 
-            Dim commandstring As String = "INSERT INTO Clients ( Username, Password, Name, Surname,  MobileNumber, Email, Address) VALUES (@username, @password, @name, @surname, @mobil, @email, @address)"
+            Dim commandstring As String = "INSERT INTO Clients ( Username, Password, Name, Surname,  MobileNumber, Email, Address, JoinDate) VALUES (@username, @password, @name, @surname, @mobil, @email, @address, @date)"
             connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
             connection.Open()
             command = New SqlCommand(commandstring, connection)
@@ -107,7 +109,7 @@ Public Class Client
             command.Parameters.AddWithValue("@address", address)
             command.Parameters.AddWithValue("@mobil", numbers)
             command.Parameters.AddWithValue("@email", email)
-
+            command.Parameters.AddWithValue("@date", joinDate)
             reader = command.ExecuteReader()
 
             connection.Close()
