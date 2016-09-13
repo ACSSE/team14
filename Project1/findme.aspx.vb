@@ -11,6 +11,7 @@ Public Class findme
         connection.Open()
         Dim query As String = "INSERT INTO Location (Town, Surburb) VALUES (@town, @suburb);"
         Dim command As SqlCommand = New SqlCommand(query, connection)
+
         command.Parameters.AddWithValue("@town", txtTown)
         command.Parameters.AddWithValue("@suburb", txtSuburb)
 
