@@ -15,7 +15,7 @@ Public Class AdminStats1
 
         VisiterStats.InnerHtml = getNewUsers()
         TotalUsers.InnerHtml = getTotalUsers()
-
+        WeekStats.InnerHtml = getWeeklyJobsOpened()
     End Sub
 
     Private Function getClients()
@@ -160,6 +160,11 @@ Public Class AdminStats1
 
     Public Function getWeeklyJobsOpened() As String
         Dim Weeks(7)() As Integer
+        Dim weekSum(7) As Integer
+
+        Dim size As Integer = 0
+        Dim jobs(size) As Job
+
         'initializing variable
         For i As Integer = 1 To 7
             ReDim Preserve Weeks(i)(10)
@@ -170,7 +175,100 @@ Public Class AdminStats1
 
         Dim query As String = "Select * FROM AdTable"
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        connection.Open()
 
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        If reader.HasRows() Then
+            While reader.Read()
+                Dim jobDate As Date = reader("OpenDate")
+                If jobDate.Year <= Date.Now.Year Then 'ensures they are in the same year... roughly
+                    If jobDate.Month <= Date.Now.Month Then 'Months are roughly close
+                        If jobDate.Day - Date.Now.Day < 7 Then 'ensures data is form the past 7 days
+                            Dim category As String = reader("Category")
+                            size += 1
+                            ReDim Preserve jobs(size)
+                            jobs(size) = New Job(category, "", "", "", "", jobDate)
+                        End If
+                    End If
+                End If
+
+            End While
+        End If
+        connection.Close()
+        'jobs to be shown in html
+
+        For i As Integer = 1 To jobs.Length - 1
+            Dim day As Integer = jobs(i).getDate().DayOfWeek + 1
+            Dim type As Integer = determineCategory(jobs(i).getCategory())
+            Weeks(day)(type) += 1
+        Next i
+
+
+        For d As Integer = 1 To 7
+            weekSum(d) = 0
+            For t As Integer = 1 To 10
+                weekSum(d) += Weeks(d)(t)
+            Next t
+        Next d
+
+        'html code here
+        Dim html As String = "<table>"
+
+        html &= " <tr>"
+        html &= " <th>Day</th>"
+        html &= " <th>Total</th>"
+        html &= "<th>Electrician</th>"
+        html &= " <th>Paint and Decoration</th>"
+        html &= " <th>Pool Specialist</th>"
+        html &= " <th>Garden and Landscaping</th>"
+        html &= " <th>Security, Fire and Safety</th>"
+        html &= " <th>Kitchen Specialist</th>"
+        html &= " <th>Geyser Specialist</th>"
+        html &= " <th>Pest Control</th>"
+        html &= " <th>Tilling Specialist</th>"
+        html &= " <th>Roof Specialist</th>"
+        html &= " </tr>"
+
+        For i As Integer = 1 To 7
+            html &= "<tr>"
+            html &= "<td>" & i & "</td>"
+            html &= "<td>" & weekSum(i) & "</td>"
+            For j As Integer = 1 To 10
+                html &= "<td>" & Weeks(i)(j) & "</td>"
+            Next j
+            html &= "</tr>"
+        Next i
+
+        html &= "</table>"
+        Return html
+    End Function
+
+    Private Function determineCategory(category As String) As Integer
+        Select Case category
+            Case "Electrician"
+                Return 1
+            Case "Paint and Decoration"
+                Return 2
+            Case "Pool Specialist"
+                Return 3
+            Case "Garden and Landscaping"
+                Return 4
+            Case "Security, Fire and Safety"
+                Return 5
+            Case "Kitchen Specialist"
+                Return 6
+            Case "Geyser Specialist"
+                Return 7
+            Case "Pest Control"
+                Return 8
+            Case "Tilling Specialist"
+                Return 9
+            Case "Roof Specialist"
+                Return 10
+        End Select
 
     End Function
 

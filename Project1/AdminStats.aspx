@@ -25,4 +25,6 @@ tr:nth-child(even) {
     <div id="VisiterStats" runat="server"></div>
     <br /><br />
     <div id="TotalUsers" runat="server"></div>
+    <br /><br />
+    <div id="WeekStats" runat="server"></div>
 </asp:Content>

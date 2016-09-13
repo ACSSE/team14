@@ -823,6 +823,14 @@ TotalUsers control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.AdminStats1.WeekStats">
+	<summary>
+WeekStats control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.UpdateProfile.Form1">
 	<summary>
 Form1 control.

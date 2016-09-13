@@ -30,4 +30,13 @@ Partial Public Class AdminStats1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TotalUsers As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''WeekStats control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents WeekStats As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class
