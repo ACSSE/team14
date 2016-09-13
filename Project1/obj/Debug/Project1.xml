@@ -815,6 +815,14 @@ VisiterStats control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.AdminStats1.TotalUsers">
+	<summary>
+TotalUsers control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.UpdateProfile.Form1">
 	<summary>
 Form1 control.
@@ -1007,7 +1015,15 @@ MyBody control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.MessagesDetail.messagesHistory">
+</member><member name="F:Project1.MessengesDetail.Form1">
+	<summary>
+Form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.MessengesDetail.messagesHistory">
 	<summary>
 messagesHistory control.
 </summary>
@@ -1015,7 +1031,7 @@ messagesHistory control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.MessagesDetail.txtMessage">
+</member><member name="F:Project1.MessengesDetail.txtMessage">
 	<summary>
 txtMessage control.
 </summary>
@@ -1023,7 +1039,7 @@ txtMessage control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.MessagesDetail.btnSend">
+</member><member name="F:Project1.MessengesDetail.btnSend">
 	<summary>
 btnSend control.
 </summary>
