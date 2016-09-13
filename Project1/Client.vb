@@ -100,7 +100,7 @@ Public Class Client
         If tempClient.getUsername() = "" Then
 
             Dim commandstring As String = "INSERT INTO Clients ( Username, Password, Name, Surname,  MobileNumber, Email, Address, Region , Suburb) VALUES (@username, @password, @name, @surname, @mobil, @email, @address, @region, @suburb)"
-            connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+            connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
             connection.Open()
             command = New SqlCommand(commandstring, connection)
 
@@ -128,7 +128,7 @@ Public Class Client
         Dim reader As SqlDataReader
         'UPDATE LoginClient Set [] WHERE Username = @user
         Dim commandstring As String = "UPDATE Clients SET Username = @username, Name = @name,  Surname = @surname,  Address = @address, MobileNumber = @mobil, Email = @email, Region = @region, Suburb = @suburb  WHERE Username = @username"
-        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         connection.Open()
         command = New SqlCommand(commandstring, connection)
 
@@ -154,7 +154,7 @@ Public Class Client
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         Dim commandstring As String = "SELECT * From AverageClientRating WHERE Client = @user"
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
@@ -176,7 +176,7 @@ Public Class Client
 
     Public Overrides Sub updateAverage(average As Integer)
         'update average rating
-        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         adconnection.Open()
         Dim query As String = "UPDATE AverageClientRating SET AverageRating = @average WHERE Client = @worker;"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -187,7 +187,7 @@ Public Class Client
     End Sub
 
     Private Sub addToAverageDatabase()
-        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         adconnection.Open()
         Dim query As String = "INSERT INTO AverageClientRating (Client, AverageRating) VALUES (@worker, @average);"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)

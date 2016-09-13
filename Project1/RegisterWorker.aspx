@@ -14,41 +14,50 @@
 
                 <table style="margin:initial">
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblName" runat="server" Text="Your Name"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblName" runat="server" Text="Your Name"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtName" runat="server"></asp:TextBox></th>
                 </tr>
                     <br/>
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblSurname" runat="server" Text="Your Surname"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtSurname"  runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblSurname" runat="server" Text="Your Surname"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtSurname"  runat="server"></asp:TextBox></th>
                 </tr>
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblUserName" runat="server" Text="Your Username"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblUserName" runat="server" Text="Your Username"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox></th>
                 </tr>
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblPassword" runat="server" Text="Your Password"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblPassword" runat="server" Text="Your Password"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"></asp:TextBox></th>
+                </tr>
+                
+             <tr>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblRepassword" runat="server" Text="Your Password Re-entered"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtRepassword" TextMode="Password" runat="server"></asp:TextBox>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtRepassword" ErrorMessage="Re-enter your pasword" ForeColor="Red" ValidateRequestMode="Enabled"></asp:CompareValidator>
+                    </th>
+                </tr>                
+                <tr>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblMobile" runat="server" Text="Your Mobile Number"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtMobile" runat="server"></asp:TextBox></th>
                 </tr>
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblMobile" runat="server" Text="Your Mobile Number"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtMobile" runat="server"></asp:TextBox></td>
-                </tr>
-                <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblEmail" runat="server" Text="Your Email"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblEmail" runat="server" Text="Your Email"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox></th>
                 </tr>
                
             
@@ -98,7 +107,7 @@
 					  <asp:ListItem Text="Pest Control"></asp:ListItem>
 					  <asp:ListItem Text="Tilling Specialist"></asp:ListItem>
 					  <asp:ListItem Text="Roof Specialist"></asp:ListItem>
-                      </asp:DropDownList></td> -->
+                      </asp:DropDownList></th> -->
                 </tr>
 
                     <tr>
