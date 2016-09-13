@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
 
     <form  runat="server">
-    <div class="post-ad-form text-center">
+    <div class="post-ad-form">
          
         <h2 class="head">Generate Quotation</h2><br/>
         <table runat="server" style="margin:initial">
