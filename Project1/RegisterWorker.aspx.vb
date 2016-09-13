@@ -55,7 +55,7 @@ Public Class apply
 
             description = txtDescription.Text()
 
-            Dim worker As Worker = New Worker(username, password, name, surname, email, numbers, region, Date.Today, description, category, Nothing)
+            Dim worker As Worker = New Worker(username, password, name, surname, email, numbers, region, Date.Today.Date, description, category, Nothing)
             worker.saveUser()
             Dim cUser As User = worker
             Session("user") = cUser

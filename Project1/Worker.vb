@@ -78,9 +78,9 @@ Public Class Worker
         command.Parameters.AddWithValue("@region", region)
         'command.Parameters.AddWithValue("@JobTitle", jobTitle)
         command.Parameters.AddWithValue("@description", description)
-        command.Parameters.AddWithValue("@date", JoinDate)
+        command.Parameters.AddWithValue("@date", Date.Today)
 
-        MsgBox(Date.Now)
+        MsgBox(Date.Today.Date)
 
         reader = command.ExecuteReader()
 
