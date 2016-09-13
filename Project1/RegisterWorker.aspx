@@ -63,13 +63,14 @@
 
                  <h3>Work Related details</h3><br/>
 
+                <div class="personal-details">
                 <table style="margin:initial">
                 <tr>
-                    <td>
-                        <asp:Label ID="lblCategory" runat="server" Text="Select Category"></asp:Label></td>
-                    <td>
+                    <th>
+                        <asp:Label ID="lblCategory" runat="server" Text="Select Category"></asp:Label></th>
+                    <th>
 
-                        <asp:CheckBoxList ID="lstCategory" runat="server">
+                        <asp:CheckBoxList ID="lstCategory" CellSpacing="1" TextAlign="Right" Width="300" runat="server">
 					  <asp:ListItem Text="Electrician"></asp:ListItem>
 					  <asp:ListItem Text="Paint and Decoration"></asp:ListItem>
 					  <asp:ListItem Text="Pool Specialist"></asp:ListItem>
@@ -82,7 +83,7 @@
 					  <asp:ListItem Text="Roof Specialist"></asp:ListItem>
                         </asp:CheckBoxList>
 
-                        
+                        </th>
 
                      <!-- <asp:DropDownList ID="categoriesList" runat="server" Width="180px">
          
@@ -101,34 +102,34 @@
                 </tr>
 
                     <tr>
-                    <td>
-                        <asp:Label ID="lblRegion" runat="server" Text="Select Region"></asp:Label></td>
-                    <td>
+                    <th>
+                        <asp:Label ID="lblRegion" runat="server" Text="Select Region"></asp:Label></th>
+                    <th>
                         <asp:DropDownList ID="regionList" runat="server" Width="180px" DataSourceID="SqlDataSource1" DataTextField="Town" DataValueField="Town">
                         <asp:ListItem Text="Select Region" Value="0" Selected="True"></asp:ListItem>
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [Town] FROM [Location]"></asp:SqlDataSource>
-                        </td>
+                        </th>
                 </tr>
                 <tr>
-                    <td style="width: 300px; height: 50px;">
-                        <asp:Label ID="lblTitle" runat="server" Text="Add Title to Job Category"></asp:Label></td>
-                    <td style="height: 50px">
+                    <th style="width: 300px; height: 50px;">
+                        <asp:Label ID="lblTitle" runat="server" Text="Add Title to Job Category"></asp:Label></th>
+                    <th style="height: 50px">
                         <asp:TextBox ID="txtTitle" runat="server" Height="25px" Width="180px"></asp:TextBox>
 
-                    </td>
+                    </th>
                 </tr>
                     <tr>
-                    <td style="width: 300px; margin:initial;">
-                        <asp:Label ID="lblDescription" runat="server" Text="Add Description"  ></asp:Label></td>
-                    <td>
-                        <asp:TextBox ID="txtDescription" TextMode="MultiLine"  runat="server" Height="52px" Width="180px"></asp:TextBox></td>
+                    <th style="width: 300px; margin:initial;">
+                        <asp:Label ID="lblDescription" runat="server" Text="Add Description"  ></asp:Label></th>
+                    <th>
+                        <asp:TextBox ID="txtDescription" TextMode="MultiLine"  runat="server" Height="52px" Width="180px"></asp:TextBox></th>
                 </tr>
 
                      <tr>
-                    <td style="width: 300px; margin:initial;">
-                        <asp:Label ID="lblLogo" runat="server" Text="Logo or Picture of your Work"></asp:Label></td>
-                    <td>
+                    <th style="width: 300px; margin:initial;">
+                        <asp:Label ID="lblLogo" runat="server" Text="Logo or Picture of your Work"></asp:Label></th>
+                    <th>
                         <div class="photos-upload-view">
 
 						<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
@@ -142,11 +143,12 @@
 							<button type="submit" id="btnUpload" runat="server">Upload Files</button>
 						</div>
 
-						</div></td>
+						</div></th>
                 </tr>
                
 
             </table>
+                    </div>
 
 				<%--<form>
 					<label>
