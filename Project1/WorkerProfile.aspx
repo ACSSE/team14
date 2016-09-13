@@ -88,6 +88,7 @@
                           <div class="interested text-center" id="JobNots" runat="server">
 			           </div>
                        <hr />
+                        
                        <div class="interested text-center" id="penJobs" runat="server">
 						<!--<div class="condition">
 							<h5 class="p-price">clientK, Gauteng Edenvale</h5>
