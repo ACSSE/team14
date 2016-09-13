@@ -21,6 +21,13 @@
                         <asp:TextBox ID="txtQuoteHours" runat="server" TextMode="Number"></asp:TextBox></th>
                 </tr>
 
+                <tr>
+                    <th>
+                        <asp:Label ID="lblQuoteAmount" runat="server" Text="Enter Estimated Amount R"></asp:Label></th>
+                    <th>
+                        <asp:TextBox ID="txtQuoteAmount" runat="server" TextMode="Number"></asp:TextBox></th>
+                </tr>
+
                </table>
         <input type="submit" runat="server" id="btnReg" value="Add"/>
         </div></form>
