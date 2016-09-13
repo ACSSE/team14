@@ -594,10 +594,14 @@
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="MessageList.vb" />
+    <Compile Include="Messenge.vb" />
     <Compile Include="MessengesDetail.aspx.designer.vb">
       <DependentUpon>MessengesDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Messenge.vb" />
+    <Compile Include="MessengesDetail.aspx.vb">
+      <DependentUpon>MessengesDetail.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Site2.Master.designer.vb">
       <DependentUpon>Site2.Master</DependentUpon>
     </Compile>
