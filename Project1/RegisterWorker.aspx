@@ -228,7 +228,7 @@
 
 						
 
-                            <input type="submit" runat="server" id="btnSubmit" value="Register"/>	
+                            <input type="submit" runat="server" id="btnSubmitWorker" value="Register"/>	
 						
 						
 					<div class="clearfix"></div>

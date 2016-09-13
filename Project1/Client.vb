@@ -5,8 +5,8 @@ Public Class Client
 
     Private address As String
 
-    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String, vsuburb As String)
-        MyBase.New(vusername, vpassword, vname, vusername, vemail, mnumbers, vregion, vsuburb)
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String, vsuburb As String, vdate As Date)
+        MyBase.New(vusername, vpassword, vname, vusername, vemail, mnumbers, vregion, vsuburb, vdate)
         address = vaddress
     End Sub
 
@@ -19,13 +19,13 @@ Public Class Client
         getPartialClientInfo(username)
     End Sub
 
-    Private Property suburb As Object
+
 
     Private Sub getClient(username As String, password As String)
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader
-        'password = Secrecy.HashPassword(password)
+        password = Secrecy.HashPassword(password)
 
         connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         Dim commandstring As String = "SELECT * From Clients WHERE Username = @user AND Password = @pass"
@@ -49,6 +49,7 @@ Public Class Client
             region = reader("Region")
             suburb = reader("Suburb")
             address = reader("Address")
+            JoinDate = reader("JoinDate")
         End If
 
     End Sub
@@ -76,6 +77,7 @@ Public Class Client
             region = ""
             address = ""
             suburb = ""
+            JoinDate = ""
 
         End If
     End Sub

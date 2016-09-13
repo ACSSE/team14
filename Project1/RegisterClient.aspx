@@ -153,7 +153,7 @@
  
 
 
-                 <input type="submit" runat="server" id="btnReg" value="Register"/>
+                 <input type="submit" runat="server" id="btnRegClient" value="Register"/>
                  
 
                 

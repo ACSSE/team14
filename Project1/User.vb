@@ -10,6 +10,9 @@
     Protected numbers As String
     Protected region As String
     Protected rating As Integer
+    Protected JoinDate As Date
+    Protected suburb As String
+
     Private _vusername As String
     Private _vpassword As String
     Private _vname As String
@@ -20,7 +23,7 @@
     Private _vsuburb As String
 
     'constructor for the class
-    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String)
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, vsuburb As String, vdate As Date)
 
         username = vusername
         password = Secrecy.HashPassword(vpassword)
@@ -29,6 +32,8 @@
         surname = vsurname
         email = vemail
         region = vregion
+        suburb = vsuburb
+        JoinDate = vdate
     End Sub
 
     Public Sub New() 'basic constructor
@@ -73,6 +78,14 @@
         Return region
     End Function
 
+    Public Function getDate() As Date
+        Return joinDate
+    End Function
+
+    Public Function getSuburb() As Date
+        Return suburb
+    End Function
+
     'Setters
     Public Sub updateUsername(vusername As String)
         username = vusername
@@ -101,6 +114,10 @@
 
     Public Sub updateRegion(vregion As String)
         region = vregion
+    End Sub
+
+    Public Sub updateSuburb(vsuburb As String)
+        suburb = vsuburb
     End Sub
 
     Public MustOverride Sub saveUser()

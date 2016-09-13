@@ -37,7 +37,8 @@ Public Class Responses
     Private Function displayWorker(workerID As String)
         Dim info As String = ""
 
-        Dim connection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True"3)
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING
+                                                            )
         Dim query As String = "SELECT * FROM Workers WHERE Username = @name;"
         connection.Open()
 

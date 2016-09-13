@@ -88,7 +88,7 @@ Public Class Register
     End Sub
 
 
-    Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.ServerClick
+    Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnRegClient.ServerClick
 
 
         Dim username As String = ""
@@ -105,7 +105,7 @@ Public Class Register
         Dim tempClient As Client = New Client(username)
 
         If tempClient.getUsername() = "" Then
-            username = txtUsername.Text()
+            ' username = txtUsername.Text()
             password = txtPassword.Text()
             name = txtName.Text()
             surname = txtSurname.Text()

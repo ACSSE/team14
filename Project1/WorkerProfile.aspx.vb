@@ -72,7 +72,7 @@ Public Class WorkerProfile
                 'TO DO Build messaging service here
                 notifications &= "<h5>" & reader("AdTitle") & "</h5> "
                 notifications &= ValidationClass.displayMessenges(ID) & "<hr/>" 'displays all the messsenges sent for this particular job
-                notifications &= "<a href=""generateQuotation.aspx""> Generate Quotation</a>"
+                notifications &= "<a href=""generateQuotation.aspx""> Generate Quotation </a>"
 
             End While
         End If

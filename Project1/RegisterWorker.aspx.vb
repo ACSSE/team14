@@ -15,7 +15,7 @@ Public Class apply
 
     End Sub
 
-    Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnSubmit.ServerClick
+    Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnSubmitWorker.ServerClick
 
 
         Dim username As String = ""

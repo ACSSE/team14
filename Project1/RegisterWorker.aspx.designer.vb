@@ -275,11 +275,11 @@ Partial Public Class apply
     Protected WithEvents btnUpload As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''btnSubmit control.
+    '''btnSubmitWorker control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnSubmit As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
+    Protected WithEvents btnSubmitWorker As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
 End Class

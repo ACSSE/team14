@@ -29,7 +29,7 @@
                 </tr>
 
                </table>
-        <input type="submit" runat="server" id="btnReg" value="Add"/>
+        <input type="submit" runat="server" id="btnReg" value="Submit"/>
         </div></form>
 
 </asp:Content>
