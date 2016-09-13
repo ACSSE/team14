@@ -63,7 +63,7 @@ Public Class Worker
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        Dim commandstring As String = "INSERT INTO Workers (Name, Surname, Username, Password, MobileNumber, Email, Category, Region, Description) VALUES (@name, @surname, @username, @password, @mobil, @email, @category, @region, @description)"
+        Dim commandstring As String = "INSERT INTO Workers (Name, Surname, Username, Password, MobileNumber, Email, Category, Region, Description, JoinDate) VALUES (@name, @surname, @username, @password, @mobil, @email, @category, @region, @description, @date)"
         connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         connection.Open()
         command = New SqlCommand(commandstring, connection)
@@ -78,6 +78,10 @@ Public Class Worker
         command.Parameters.AddWithValue("@region", region)
         'command.Parameters.AddWithValue("@JobTitle", jobTitle)
         command.Parameters.AddWithValue("@description", description)
+        command.Parameters.AddWithValue("@date", JoinDate)
+
+        MsgBox(Date.Now)
+
         reader = command.ExecuteReader()
 
         connection.Close()

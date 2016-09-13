@@ -117,7 +117,7 @@ Public Class Register
 
 
 
-            Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region, surburb)
+            Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region, surburb, Date.Now)
 
             client.saveUser()
             Dim cUser As User = client

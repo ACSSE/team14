@@ -101,7 +101,7 @@ Public Class Client
 
         If tempClient.getUsername() = "" Then
 
-            Dim commandstring As String = "INSERT INTO Clients ( Username, Password, Name, Surname,  MobileNumber, Email, Address, Region , Suburb) VALUES (@username, @password, @name, @surname, @mobil, @email, @address, @region, @suburb)"
+            Dim commandstring As String = "INSERT INTO Clients ( Username, Password, Name, Surname,  MobileNumber, Email, Address, Region , Suburb, JoinDate) VALUES (@username, @password, @name, @surname, @mobil, @email, @address, @region, @suburb, @date)"
             connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
             connection.Open()
             command = New SqlCommand(commandstring, connection)
@@ -115,7 +115,7 @@ Public Class Client
             command.Parameters.AddWithValue("@email", email)
             command.Parameters.AddWithValue("@region", region)
             command.Parameters.AddWithValue("@suburb", suburb)
-
+             command.Parameters.AddWithValue("@date", JoinDate)
             reader = command.ExecuteReader()
 
             connection.Close()

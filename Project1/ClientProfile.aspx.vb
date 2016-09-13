@@ -58,7 +58,7 @@ Public Class ClientProfile
         Dim jobs(size) As Job 'to store all jobs
 
 
-        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         adconnection.Open()
         Dim query As String = "Select * FROM AdTable WHERE Client = @name;"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
