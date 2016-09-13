@@ -99,6 +99,7 @@
     <Content Include="Feedback.aspx" />
     <Content Include="findme.aspx" />
     <Content Include="GardenLandscaping.aspx" />
+    <Content Include="generateQuotation.aspx" />
     <Content Include="GeyserSpecialist.aspx" />
     <Content Include="HowItWorks.aspx" />
     <Content Include="images\a1.jpg" />
@@ -567,6 +568,13 @@
     </Compile>
     <Compile Include="GardenLandscaping.aspx.vb">
       <DependentUpon>GardenLandscaping.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="generateQuotation.aspx.designer.vb">
+      <DependentUpon>generateQuotation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="generateQuotation.aspx.vb">
+      <DependentUpon>generateQuotation.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="GeyserSpecialist.aspx.designer.vb">
