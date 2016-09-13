@@ -6,15 +6,7 @@ Project1
 </name>
 </assembly>
 <members>
-<member name="F:Project1.AdminStats1.VisiterStats">
-	<summary>
-VisiterStats control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.WorkerProfile.JobTitle">
+<member name="F:Project1.WorkerProfile.JobTitle">
 	<summary>
 JobTitle control.
 </summary>
@@ -810,6 +802,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.Responses.HandyMen">
 	<summary>
 HandyMen control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.AdminStats1.VisiterStats">
+	<summary>
+VisiterStats control.
 </summary>
 	<remarks>
 Auto-generated field.
