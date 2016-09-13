@@ -104,15 +104,11 @@
                     <td>
                         <asp:Label ID="lblRegion" runat="server" Text="Select Region"></asp:Label></td>
                     <td>
-                        <asp:DropDownList ID="regionList" runat="server" Width="180px">
+                        <asp:DropDownList ID="regionList" runat="server" Width="180px" DataSourceID="SqlDataSource1" DataTextField="Town" DataValueField="Town">
                         <asp:ListItem Text="Select Region" Value="0" Selected="True"></asp:ListItem>
-                        <asp:ListItem Text="Edenvale" ></asp:ListItem>
-                        <asp:ListItem Text="Dunvegan" ></asp:ListItem>
-                        <asp:ListItem Text="Dowerglen" ></asp:ListItem>
-                        <asp:ListItem Text="Marais Steyn Park" ></asp:ListItem>
-                        <asp:ListItem Text="Croydon" ></asp:ListItem>
-                        <asp:ListItem Text="Isando" ></asp:ListItem>
-                        </asp:DropDownList></td>
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [Town] FROM [Location]"></asp:SqlDataSource>
+                        </td>
                 </tr>
                 <tr>
                     <td style="width: 300px; height: 50px;">
