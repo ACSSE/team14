@@ -90,8 +90,11 @@
                         <asp:Label ID="lblRegion" runat="server" Text="Select Town"></asp:Label></th>
 
                     <th>
-                        <asp:DropDownList ID="regionList" runat="server" >
-                        </asp:DropDownList></th>
+                        <asp:DropDownList ID="regionList" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Town" DataValueField="Town" >
+                            <asp:ListItem>Select</asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [Town] FROM [Location]"></asp:SqlDataSource>
+                    </th>
                 </tr>
 
                 <tr>
@@ -99,8 +102,15 @@
                         <asp:Label ID="lblSuburb" runat="server" Text="Select Surburb"></asp:Label></th>
 
                     <th>
-                        <asp:DropDownList ID="suburbList" runat="server" AppendDataBoundItems="True" Width="150px">
-                        </asp:DropDownList></th>
+                        <asp:DropDownList ID="suburbList" runat="server" DataSourceID="SqlDataSource2" Width="150px" AutoPostBack="True" DataTextField="Surburb" DataValueField="Surburb">
+                            <asp:ListItem>Select</asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Surburb FROM Location WHERE (Town = @Town)">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="regionList" Name="Town" PropertyName="SelectedValue" Type="String" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </th>
                 </tr>
                 <tr>
                     <td></td>

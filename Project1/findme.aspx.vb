@@ -13,6 +13,7 @@ Public Class findme
         Dim command As SqlCommand = New SqlCommand(query, connection)
         command.Parameters.AddWithValue("@town", txtTown)
         command.Parameters.AddWithValue("@suburb", txtSuburb)
+
         Dim reader As SqlDataReader = command.ExecuteReader()
         connection.Close()
 
