@@ -6,7 +6,7 @@ Public Class Client
     Private address As String
 
     Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String, vsuburb As String, vdate As Date)
-        MyBase.New(vusername, vpassword, vname, vusername, vemail, mnumbers, vregion, vsuburb, vdate)
+        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vsuburb, vdate)
         address = vaddress
     End Sub
 
@@ -17,6 +17,7 @@ Public Class Client
 
     Public Sub New(username As String)
         getPartialClientInfo(username)
+        getQuotation(username)
     End Sub
 
 
@@ -115,7 +116,7 @@ Public Class Client
             command.Parameters.AddWithValue("@email", email)
             command.Parameters.AddWithValue("@region", region)
             command.Parameters.AddWithValue("@suburb", suburb)
-             command.Parameters.AddWithValue("@date", JoinDate)
+            command.Parameters.AddWithValue("@date", JoinDate)
             reader = command.ExecuteReader()
 
             connection.Close()
@@ -166,14 +167,48 @@ Public Class Client
 
         If reader.HasRows Then
             reader.Read()
-            Dim rating As Integer = 0
-            If Not IsDBNull(reader("AverageRating")) Then
-                rating = reader("AverageRating")
-            End If
-            connection.Close()
-            Return rating 'returning rating value
+            Me.username = username
+            'Me.password = reader("Password")
+            name = reader("Name")
+            surname = reader("Surname")
+            email = reader("Email")
+            numbers = reader("MobileNumber")
+            region = reader("Region")
+            suburb = reader("Suburb")
+            address = reader("Address")
+            JoinDate = reader("JoinDate")
         End If
         Return 0
+    End Function
+
+    Public Function getQuotation(username As String)
+
+        Dim connection As SqlConnection
+        Dim command As SqlCommand
+        Dim reader As SqlDataReader
+
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim commandstring As String = "SELECT * From Quotation WHERE QuoteId = @quoteId"
+        command = New SqlCommand(commandstring, connection)
+        command.Parameters.AddWithValue("@quoteId", username)
+
+        command.Connection.Open()
+        reader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            reader.Read()
+            Me.username = username
+            name = reader("Name")
+            surname = reader("Surname")
+            email = reader("Email")
+            numbers = reader("MobileNumber")
+            region = reader("Region")
+            suburb = reader("Suburb")
+            address = reader("Address")
+            JoinDate = reader("JoinDate")
+
+        End If
+
     End Function
 
     Public Overrides Sub updateAverage(average As Integer)
@@ -188,6 +223,8 @@ Public Class Client
         adconnection.Close()
     End Sub
 
+
+
     Private Sub addToAverageDatabase()
         Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         adconnection.Open()
@@ -198,4 +235,9 @@ Public Class Client
         Dim reader As SqlDataReader = command.ExecuteReader()
         adconnection.Close()
     End Sub
+
+    
+
+
+
 End Class

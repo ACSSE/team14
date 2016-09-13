@@ -32,12 +32,16 @@ Public Class apply
         Dim tempClient As Worker = New Worker(username, password)
 
         If tempClient.getUsername() = "" Then
+
             username = txtUsername.Text()
             password = txtPassword.Text()
             name = txtName.Text()
             surname = txtSurname.Text()
             email = txtEmail.Text()
             numbers = txtMobile.Text()
+
+            MsgBox("Name = " & name)
+            MsgBox("surname =" & surname)
             ' category  'categoriesList.SelectedValue() 'txtTitle.Text()
 
             'To obtain string with all the selected categories

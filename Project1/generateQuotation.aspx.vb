@@ -5,32 +5,26 @@
 
     End Sub
 
-    Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.ServerClick
+    'Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.ServerClick
 
-        Dim description As String = ""
-        Dim hours As String = ""
-        Dim amount As String = ""
+    '    Dim description As String = ""
+    '    Dim hours As String = ""
+    '    Dim amount As String = ""
 
-            username = txtUsername.Text()
-            password = txtPassword.Text()
-            name = txtName.Text()
-            surname = txtSurname.Text()
-            email = txtEmail.Text()
-            numbers = txtMobile.Text()
-           
-
-            MsgBox("RegisterWorker():btnReg- category = " & category)
-
-            description = txtDescription.Text()
-
-            Dim worker As Worker = New Worker(username, password, name, surname, email, numbers, region, description, category, Nothing)
-            worker.saveUser()
-            Dim cUser As User = worker
-            Session("user") = cUser
-            'Session("UserName") = User
-            Response.Redirect("WorkerProfile.aspx")
+    '    description = txtQuoteDescription.Text()
+    '    hours = txtQuoteHours.Text()
+    '    amount = txtQuoteAmount.Text()
 
 
-    End Sub
+    '        MsgBox("RegisterWorker():btnReg- category = " & category)
+
+    '        Dim worker As Worker = New Worker(username, password, name, surname, email, numbers, region, description, category, Nothing)
+    '        worker.saveUser()
+    '        Dim cUser As User = worker
+    '        Session("user") = cUser
+    '        Response.Redirect("WorkerProfile.aspx")
+
+
+    'End Sub
 
 End Class

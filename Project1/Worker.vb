@@ -10,7 +10,7 @@ Public Class Worker
 
     'specialised constructor
     Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, vdate As Date, description As String, category As String, logo As Image)
-        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vdate)
+        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, "", vdate)
         Me.description = description
         Me.logo = logo
         Me.category = category
@@ -62,6 +62,8 @@ Public Class Worker
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader
+
+        MsgBox("Worker:SaveUser() - name = " & name)
 
         Dim commandstring As String = "INSERT INTO Workers (Name, Surname, Username, Password, MobileNumber, Email, Category, Region, Description, JoinDate) VALUES (@name, @surname, @username, @password, @mobil, @email, @category, @region, @description, @date)"
         connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
