@@ -53,7 +53,7 @@ Public Class Worker
             'jobTitle = reader("JobTitle")
             description = reader("Description")
             category = reader("Category")
-
+            joinDate = reader("JoinDate")
         End If
     End Sub
 

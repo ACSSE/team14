@@ -502,6 +502,62 @@ btnSubmit control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.FeaturedWorkers.CategoryList">
+	<summary>
+CategoryList control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.divElectrician">
+	<summary>
+divElectrician control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.PaintnDecoration">
+	<summary>
+PaintnDecoration control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.PoolSpel">
+	<summary>
+PoolSpel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.GardennLandscaping">
+	<summary>
+GardennLandscaping control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.Security">
+	<summary>
+Security control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.KitchenSpec">
+	<summary>
+KitchenSpec control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="P:Project1.My.MyWebExtension.Computer">
 	<summary>
  Returns information about the host computer.
