@@ -38,6 +38,15 @@
                     <th style="height: 30px">
                         <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"></asp:TextBox></th>
                 </tr>
+
+                <tr>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblRepassword" runat="server" Text="Your Password Re-entered"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtRepassword" TextMode="Password" runat="server"></asp:TextBox>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtRepassword" ErrorMessage="Re-enter your pasword" ForeColor="Red" ValidateRequestMode="Enabled"></asp:CompareValidator>
+                    </th>
+                </tr>
                
             
             </table>

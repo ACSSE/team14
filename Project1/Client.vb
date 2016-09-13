@@ -25,15 +25,17 @@ Public Class Client
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader
-        password = Secrecy.HashPassword(password)
+        'password = Secrecy.HashPassword(password)
 
-        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         Dim commandstring As String = "SELECT * From Clients WHERE Username = @user AND Password = @pass"
+
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
         command.Parameters.AddWithValue("@pass", password)
 
         command.Connection.Open()
+
         reader = command.ExecuteReader()
 
         If reader.HasRows Then
@@ -56,7 +58,7 @@ Public Class Client
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         Dim commandstring As String = "SELECT * From Clients WHERE Username = @user"
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
