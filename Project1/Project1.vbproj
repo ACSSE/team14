@@ -237,6 +237,7 @@
     <Content Include="PoolSpecialist.aspx" />
     <Content Include="Post.aspx" />
     <Content Include="PostAdClient.aspx" />
+    <Content Include="QuotationDisplay.aspx" />
     <Content Include="RatingHandyMan.aspx" />
     <Content Include="RegisterWorker.aspx" />
     <Content Include="ClientOrWorker.aspx" />
@@ -586,6 +587,13 @@
     </Compile>
     <Compile Include="Messenge.vb" />
     <Compile Include="Quotation.vb" />
+    <Compile Include="QuotationDisplay.aspx.designer.vb">
+      <DependentUpon>QuotationDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationDisplay.aspx.vb">
+      <DependentUpon>QuotationDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="ValidationClass.vb" />
     <Compile Include="Worker.vb" />
     <Compile Include="HowItWorks.aspx.designer.vb">

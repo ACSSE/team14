@@ -84,8 +84,13 @@ Public Class Quotation
 
     Public Function getMessageInfo() As String
         Dim info As String = ""
-        info &= "Sender: <strong>" & sender & "</strong>        Date: " & mdate & "<br/>"
-        info &= 
+
+        info &= "Invoice Number: <strong>" & quoteId & "</strong>"
+        'info &= "<p>User : " &  & Session("UserName").ToString & "</p>"
+        info &= "</br>Description: " & quoteDescription
+        info &= "</br>Estimated Hours to Complete: " & quoteHours
+        info &= "</br>Estimated Amount: " & quoteAmount
+
         Return info
     End Function
 End Class
