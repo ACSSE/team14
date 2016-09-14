@@ -55,6 +55,8 @@ Public Class Quotation
         Dim reader As SqlDataReader = command.ExecuteReader()
         connection.Close()
 
+        'Response.Redirect("QuotationDisplay.aspx")
+
     End Sub
     Public Function getQuotation(ID As Integer)
 
@@ -84,9 +86,10 @@ Public Class Quotation
 
     Public Function getMessageInfo() As String
         Dim info As String = ""
+        Dim myUser As Quotation
 
         info &= "Invoice Number: <strong>" & quoteId & "</strong>"
-        'info &= "<p>User : " &  & Session("UserName").ToString & "</p>"
+        'info &= "<p>User : " &  & "</p>"
         info &= "</br>Description: " & quoteDescription
         info &= "</br>Estimated Hours to Complete: " & quoteHours
         info &= "</br>Estimated Amount: " & quoteAmount

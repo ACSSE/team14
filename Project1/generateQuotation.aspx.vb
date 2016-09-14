@@ -23,7 +23,7 @@
         Dim quotation As Quotation = New Quotation(quoteId, quoteDescription, hours, quoteAmount)
         quotation.savequoteDescription()
 
-        Response.Redirect("WorkerProfile.aspx")
+        Response.Redirect("QuotationDisplay.aspx")
 
 
 
