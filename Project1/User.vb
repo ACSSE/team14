@@ -122,6 +122,8 @@
 
     Public MustOverride Sub saveUser()
 
+    'Public MustOverride Sub getQuotation()
+
     Public MustOverride Sub updateUser()
 
     Public MustOverride Function getRating() As Integer

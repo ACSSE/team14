@@ -54,9 +54,9 @@ txtQuoteAmount control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.generateQuotation.btnReg">
+</member><member name="F:Project1.generateQuotation.btnSubQuote">
 	<summary>
-btnReg control.
+btnSubQuote control.
 </summary>
 	<remarks>
 Auto-generated field.

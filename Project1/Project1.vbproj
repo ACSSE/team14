@@ -585,6 +585,7 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Messenge.vb" />
+    <Compile Include="Quotation.vb" />
     <Compile Include="ValidationClass.vb" />
     <Compile Include="Worker.vb" />
     <Compile Include="HowItWorks.aspx.designer.vb">

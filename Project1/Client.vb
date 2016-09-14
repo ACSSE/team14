@@ -17,7 +17,7 @@ Public Class Client
 
     Public Sub New(username As String)
         getPartialClientInfo(username)
-        getQuotation(username)
+
     End Sub
 
 
@@ -116,7 +116,7 @@ Public Class Client
             command.Parameters.AddWithValue("@email", email)
             command.Parameters.AddWithValue("@region", region)
             command.Parameters.AddWithValue("@suburb", suburb)
-            command.Parameters.AddWithValue("@date", JoinDate)
+            command.Parameters.AddWithValue("@date", JoinDate.Date)
             reader = command.ExecuteReader()
 
             connection.Close()
@@ -181,35 +181,7 @@ Public Class Client
         Return 0
     End Function
 
-    Public Function getQuotation(username As String)
-
-        Dim connection As SqlConnection
-        Dim command As SqlCommand
-        Dim reader As SqlDataReader
-
-        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
-        Dim commandstring As String = "SELECT * From Quotation WHERE QuoteId = @quoteId"
-        command = New SqlCommand(commandstring, connection)
-        command.Parameters.AddWithValue("@quoteId", username)
-
-        command.Connection.Open()
-        reader = command.ExecuteReader()
-
-        If reader.HasRows Then
-            reader.Read()
-            Me.username = username
-            name = reader("Name")
-            surname = reader("Surname")
-            email = reader("Email")
-            numbers = reader("MobileNumber")
-            region = reader("Region")
-            suburb = reader("Suburb")
-            address = reader("Address")
-            JoinDate = reader("JoinDate")
-
-        End If
-
-    End Function
+    
 
     Public Overrides Sub updateAverage(average As Integer)
         'update average rating

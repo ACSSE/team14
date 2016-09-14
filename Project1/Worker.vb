@@ -16,6 +16,7 @@ Public Class Worker
         Me.category = category
     End Sub
 
+
     'basic constructor
     Public Sub New(username As String, password As String)
         MyBase.New()
