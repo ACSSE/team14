@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+
+Imports System.Data.SqlClient
 
 Public Class AdDetail
     Inherits System.Web.UI.Page

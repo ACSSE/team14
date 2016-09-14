@@ -6,6 +6,7 @@ Project1
 </name>
 </assembly>
 <members>
+<<<<<<< HEAD
 <member name="F:Project1.findme.lblTown">
 	<summary>
 lblTown control.
@@ -47,6 +48,25 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="F:Project1.apply.lblName">
+=======
+<member name="F:Project1.WorkerProfile.JobTitle">
+>>>>>>> reports
+	<summary>
+JobTitle control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.WorkerProfile.lblRegion">
+	<summary>
+lblRegion control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.WorkerProfile.lblName">
 	<summary>
 lblName control.
 </summary>
@@ -54,15 +74,7 @@ lblName control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.apply.txtName">
-	<summary>
-txtName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.apply.lblSurname">
+</member><member name="F:Project1.WorkerProfile.lblSurname">
 	<summary>
 lblSurname control.
 </summary>
@@ -70,46 +82,39 @@ lblSurname control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.apply.txtSurname">
+</member><member name="F:Project1.WorkerProfile.lblNumber">
 	<summary>
-txtSurname control.
+lblNumber control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.apply.lblUserName">
+</member><member name="F:Project1.WorkerProfile.lblEmail">
 	<summary>
-lblUserName control.
+lblEmail control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.apply.txtUsername">
+</member><member name="F:Project1.WorkerProfile.update">
 	<summary>
-txtUsername control.
+update control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.apply.lblPassword">
+</member><member name="F:Project1.WorkerProfile.divHistory">
 	<summary>
-lblPassword control.
+divHistory control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.apply.txtPassword">
-	<summary>
-txtPassword control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.apply.lblRepassword">
 	<summary>
 lblRepassword control.
@@ -135,53 +140,67 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="F:Project1.apply.lblMobile">
+=======
+</member><member name="F:Project1.WorkerProfile.divrating">
+>>>>>>> reports
 	<summary>
-lblMobile control.
+divrating control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.apply.txtMobile">
+</member><member name="F:Project1.WorkerProfile.myJobs">
 	<summary>
-txtMobile control.
+myJobs control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.apply.lblEmail">
+</member><member name="F:Project1.WorkerProfile.JobNots">
 	<summary>
-lblEmail control.
+JobNots control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.apply.txtEmail">
+</member><member name="F:Project1.WorkerProfile.penJobs">
 	<summary>
-txtEmail control.
+penJobs control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.apply.lblCheck">
 	<summary>
 lblCheck control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.apply.lblCategory">
+=======
+</member><member name="F:Project1.LoginWorker.txtUsername">
 	<summary>
-lblCategory control.
+txtUsername control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.apply.lblCategory">
+=======
+</member><member name="F:Project1.LoginWorker.txtPassword">
+>>>>>>> reports
+	<summary>
+txtPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.apply.lstCategory">
 	<summary>
 lstCategory control.
@@ -191,29 +210,41 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="F:Project1.apply.categoriesList">
+=======
+</member><member name="F:Project1.LoginWorker.btnLog">
+>>>>>>> reports
 	<summary>
-categoriesList control.
+btnLog control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.apply.lblRegion">
+=======
+</member><member name="F:Project1.LoginWorker.lblLogin">
+>>>>>>> reports
 	<summary>
-lblRegion control.
+lblLogin control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.apply.regionList">
+=======
+</member><member name="F:Project1.AdDetail.AdHeading">
+>>>>>>> reports
 	<summary>
-regionList control.
+AdHeading control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.apply.SqlDataSource1">
 	<summary>
 SqlDataSource1 control.
@@ -223,254 +254,248 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="F:Project1.apply.lblTitle">
+=======
+</member><member name="F:Project1.AdDetail.ClientInfo">
+>>>>>>> reports
 	<summary>
-lblTitle control.
+ClientInfo control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.apply.txtTitle">
+=======
+</member><member name="F:Project1.AdDetail.AdInfo">
+>>>>>>> reports
 	<summary>
-txtTitle control.
+AdInfo control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.apply.lblDescription">
 	<summary>
 lblDescription control.
+=======
+</member><member name="F:Project1.AdDetail.txtComment">
+	<summary>
+txtComment control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.apply.txtDescription">
 	<summary>
 txtDescription control.
+=======
+</member><member name="F:Project1.AdDetail.btnConfirm">
+	<summary>
+btnConfirm control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.apply.lblLogo">
 	<summary>
 lblLogo control.
+=======
+</member><member name="F:Project1.ClientProfile1.lblComment">
+	<summary>
+lblComment control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.apply.fileSelect">
 	<summary>
 fileSelect control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.apply.btnUpload">
-	<summary>
-btnUpload control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.apply.btnSubmit">
-	<summary>
-btnSubmit control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
+=======
 </member><member name="F:Project1.LeaveComment.txtComment">
 	<summary>
 txtComment control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.apply.btnUpload">
+	<summary>
+btnUpload control.
+=======
 </member><member name="F:Project1.LeaveComment.btnSubmit">
 	<summary>
 btnSubmit control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.apply.btnSubmit">
+	<summary>
+btnSubmit control.
+=======
+</member><member name="F:Project1.Site.head">
+	<summary>
+head control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.LeaveComment.txtComment">
+	<summary>
+txtComment control.
+=======
+</member><member name="F:Project1.Site.form1">
+	<summary>
+form1 control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.LeaveComment.btnSubmit">
+	<summary>
+btnSubmit control.
+=======
+</member><member name="F:Project1.Site.cityList">
+	<summary>
+cityList control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.ClientProfile.lblName">
 	<summary>
 lblName control.
+=======
+</member><member name="F:Project1.Site.MyBody">
+	<summary>
+MyBody control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.ClientProfile.lblSurname">
 	<summary>
 lblSurname control.
+=======
+</member><member name="F:Project1.Site1.head">
+	<summary>
+head control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.Site1.userLog">
+	<summary>
+userLog control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.ClientProfile.lblNumber">
 	<summary>
 lblNumber control.
+=======
+</member><member name="F:Project1.Site1.MyBody">
+	<summary>
+MyBody control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.Login.Form1">
+	<summary>
+Form1 control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.ClientProfile.lblEmail">
 	<summary>
 lblEmail control.
+=======
+</member><member name="F:Project1.Login.txtUsername">
+	<summary>
+txtUsername control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.Login.txtPassword">
+	<summary>
+txtPassword control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.ClientProfile.lblAddress">
 	<summary>
 lblAddress control.
+=======
+</member><member name="F:Project1.Login.btnLog">
+	<summary>
+btnLog control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.ClientProfile.update">
 	<summary>
 update control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.ClientProfile.AdsDiv">
+=======
+</member><member name="F:Project1.Login.lblLogin">
 	<summary>
-AdsDiv control.
+lblLogin control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.MessagesDetail.messagesHistory">
-	<summary>
-messagesHistory control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.MessagesDetail.txtMessage">
-	<summary>
-txtMessage control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.MessagesDetail.btnSend">
-	<summary>
-btnSend control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.RatingHandyMan.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.RatingHandyMan.handymanRating">
-	<summary>
-handymanRating control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.RatingHandyMan.lstTimeMan">
-	<summary>
-lstTimeMan control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.RatingHandyMan.lstProffesion">
-	<summary>
-lstProffesion control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.RatingHandyMan.lstQuality">
-	<summary>
-lstQuality control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.RatingHandyMan.lstInterpersonal">
-	<summary>
-lstInterpersonal control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.RatingHandyMan.lstAn">
-	<summary>
-lstAn control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.RatingHandyMan.clientRating">
-	<summary>
-clientRating control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.RatingHandyMan.clientRate">
-	<summary>
-clientRate control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.RatingHandyMan.txtComments">
-	<summary>
-txtComments control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.RatingHandyMan.btnRatingSubmit">
-	<summary>
-btnRatingSubmit control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Register.lblName">
+</member><member name="F:Project1.apply.lblName">
 	<summary>
 lblName control.
 </summary>
@@ -478,38 +503,320 @@ lblName control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.apply.txtName">
+	<summary>
+txtName control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.ClientProfile.AdsDiv">
+	<summary>
+AdsDiv control.
+=======
+</member><member name="F:Project1.apply.lblSurname">
+	<summary>
+lblSurname control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.MessagesDetail.messagesHistory">
+	<summary>
+messagesHistory control.
+=======
+</member><member name="F:Project1.apply.txtSurname">
+	<summary>
+txtSurname control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.MessagesDetail.txtMessage">
+	<summary>
+txtMessage control.
+=======
+</member><member name="F:Project1.apply.lblUserName">
+	<summary>
+lblUserName control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.MessagesDetail.btnSend">
+	<summary>
+btnSend control.
+=======
+</member><member name="F:Project1.apply.txtUsername">
+	<summary>
+txtUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.apply.lblPassword">
+	<summary>
+lblPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.apply.txtPassword">
+	<summary>
+txtPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.apply.lblMobile">
+	<summary>
+lblMobile control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.RatingHandyMan.form1">
+	<summary>
+form1 control.
+=======
+</member><member name="F:Project1.apply.txtMobile">
+	<summary>
+txtMobile control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.RatingHandyMan.handymanRating">
+	<summary>
+handymanRating control.
+=======
+</member><member name="F:Project1.apply.lblEmail">
+	<summary>
+lblEmail control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.RatingHandyMan.lstTimeMan">
+	<summary>
+lstTimeMan control.
+=======
+</member><member name="F:Project1.apply.txtEmail">
+	<summary>
+txtEmail control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.RatingHandyMan.lstProffesion">
+	<summary>
+lstProffesion control.
+=======
+</member><member name="F:Project1.apply.lblCheck">
+	<summary>
+lblCheck control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.RatingHandyMan.lstQuality">
+	<summary>
+lstQuality control.
+=======
+</member><member name="F:Project1.apply.lblCategory">
+	<summary>
+lblCategory control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.RatingHandyMan.lstInterpersonal">
+	<summary>
+lstInterpersonal control.
+=======
+</member><member name="F:Project1.apply.lstCategory">
+	<summary>
+lstCategory control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.RatingHandyMan.lstAn">
+	<summary>
+lstAn control.
+=======
+</member><member name="F:Project1.apply.categoriesList">
+	<summary>
+categoriesList control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.RatingHandyMan.clientRating">
+	<summary>
+clientRating control.
+=======
+</member><member name="F:Project1.apply.lblRegion">
+	<summary>
+lblRegion control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.RatingHandyMan.clientRate">
+	<summary>
+clientRate control.
+=======
+</member><member name="F:Project1.apply.regionList">
+	<summary>
+regionList control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.RatingHandyMan.txtComments">
+	<summary>
+txtComments control.
+=======
+</member><member name="F:Project1.apply.lblTitle">
+	<summary>
+lblTitle control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.RatingHandyMan.btnRatingSubmit">
+	<summary>
+btnRatingSubmit control.
+=======
+</member><member name="F:Project1.apply.txtTitle">
+	<summary>
+txtTitle control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.Register.lblName">
+	<summary>
+lblName control.
+=======
+</member><member name="F:Project1.apply.lblDescription">
+	<summary>
+lblDescription control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.Register.txtName">
 	<summary>
 txtName control.
+=======
+</member><member name="F:Project1.apply.txtDescription">
+	<summary>
+txtDescription control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.Register.lblSurname">
 	<summary>
 lblSurname control.
+=======
+</member><member name="F:Project1.apply.lblLogo">
+	<summary>
+lblLogo control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.Register.txtSurname">
 	<summary>
 txtSurname control.
+=======
+</member><member name="F:Project1.apply.fileSelect">
+	<summary>
+fileSelect control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.Register.lblUserName">
 	<summary>
 lblUserName control.
+=======
+</member><member name="F:Project1.apply.btnUpload">
+	<summary>
+btnUpload control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.Register.txtUsername">
 	<summary>
 txtUsername control.
@@ -625,75 +932,101 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.Register.txtMobile">
 	<summary>
 txtMobile control.
+=======
+</member><member name="F:Project1.apply.btnSubmit">
+	<summary>
+btnSubmit control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.Register.lblEmail">
 	<summary>
 lblEmail control.
+=======
+</member><member name="F:Project1.FeaturedWorkers.CategoryList">
+	<summary>
+CategoryList control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.Register.txtEmail">
 	<summary>
 txtEmail control.
+=======
+</member><member name="F:Project1.FeaturedWorkers.divElectrician">
+	<summary>
+divElectrician control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.Register.lblAddress">
 	<summary>
 lblAddress control.
+=======
+</member><member name="F:Project1.FeaturedWorkers.PaintnDecoration">
+	<summary>
+PaintnDecoration control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.Register.txtAddress">
 	<summary>
 txtAddress control.
+=======
+</member><member name="F:Project1.FeaturedWorkers.PoolSpel">
+	<summary>
+PoolSpel control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.Register.btnReg">
+=======
+</member><member name="F:Project1.FeaturedWorkers.GardennLandscaping">
+>>>>>>> reports
 	<summary>
-btnReg control.
+GardennLandscaping control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.WorkerProfile.JobTitle">
+</member><member name="F:Project1.FeaturedWorkers.Security">
 	<summary>
-JobTitle control.
+Security control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.WorkerProfile.lblRegion">
+</member><member name="F:Project1.FeaturedWorkers.KitchenSpec">
 	<summary>
-lblRegion control.
+KitchenSpec control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.WorkerProfile.lblName">
-	<summary>
-lblName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
+<<<<<<< HEAD
 </member><member name="F:Project1.WorkerProfile.lblSurname">
 	<summary>
 lblSurname control.
@@ -753,91 +1086,7 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.WorkerProfile.JobNots">
 	<summary>
 JobNots control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.WorkerProfile.penJobs">
-	<summary>
-penJobs control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.LoginWorker.txtUsername">
-	<summary>
-txtUsername control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.LoginWorker.txtPassword">
-	<summary>
-txtPassword control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.LoginWorker.btnLog">
-	<summary>
-btnLog control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.LoginWorker.lblLogin">
-	<summary>
-lblLogin control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Login.Form1">
-	<summary>
-Form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Login.txtUsername">
-	<summary>
-txtUsername control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Login.txtPassword">
-	<summary>
-txtPassword control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Login.btnLog">
-	<summary>
-btnLog control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Login.lblLogin">
-	<summary>
-lblLogin control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
+=======
 </member><member name="P:Project1.My.MyWebExtension.Computer">
 	<summary>
  Returns information about the host computer.
@@ -863,185 +1112,356 @@ To modify move field declaration from designer file to code-behind file.
  Module used to define the properties that are available in the My Namespace for Web projects.
  </summary>
 	<remarks></remarks>
-</member><member name="F:Project1.Site.head">
-	<summary>
-head control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Site.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Site.cityList">
-	<summary>
-cityList control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Site.MyBody">
-	<summary>
-MyBody control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
 </member><member name="F:Project1.Post.btnLog">
 	<summary>
 btnLog control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.WorkerProfile.penJobs">
+	<summary>
+penJobs control.
+=======
 </member><member name="F:Project1.Post.Submit1">
 	<summary>
 Submit1 control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.LoginWorker.txtUsername">
+	<summary>
+txtUsername control.
+=======
 </member><member name="F:Project1.Post.Submit2">
 	<summary>
 Submit2 control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.LoginWorker.txtPassword">
+	<summary>
+txtPassword control.
+=======
 </member><member name="F:Project1.Post.Submit3">
 	<summary>
 Submit3 control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.AdDetail.AdHeading">
+<<<<<<< HEAD
+</member><member name="F:Project1.LoginWorker.btnLog">
 	<summary>
-AdHeading control.
+btnLog control.
+=======
+</member><member name="F:Project1.RatingHandyMan.form1">
+	<summary>
+form1 control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.AdDetail.ClientInfo">
+<<<<<<< HEAD
+</member><member name="F:Project1.LoginWorker.lblLogin">
 	<summary>
-ClientInfo control.
+lblLogin control.
+=======
+</member><member name="F:Project1.RatingHandyMan.handymanRating">
+	<summary>
+handymanRating control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.AdDetail.AdInfo">
+<<<<<<< HEAD
+</member><member name="F:Project1.Login.Form1">
 	<summary>
-AdInfo control.
+Form1 control.
+=======
+</member><member name="F:Project1.RatingHandyMan.lstTimeMan">
+	<summary>
+lstTimeMan control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.AdDetail.txtComment">
+<<<<<<< HEAD
+</member><member name="F:Project1.Login.txtUsername">
 	<summary>
-txtComment control.
+txtUsername control.
+=======
+</member><member name="F:Project1.RatingHandyMan.lstProffesion">
+	<summary>
+lstProffesion control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.AdDetail.btnConfirm">
+</member><member name="F:Project1.RatingHandyMan.lstQuality">
 	<summary>
-btnConfirm control.
+lstQuality control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.PostAdClient.lblCategory">
+</member><member name="F:Project1.RatingHandyMan.lstInterpersonal">
 	<summary>
-lblCategory control.
+lstInterpersonal control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.PostAdClient.categoriesList">
+</member><member name="F:Project1.RatingHandyMan.lstAn">
 	<summary>
-categoriesList control.
+lstAn control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.PostAdClient.lblTitle">
+</member><member name="F:Project1.RatingHandyMan.clientRating">
 	<summary>
-lblTitle control.
+clientRating control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.PostAdClient.txtTitle">
+</member><member name="F:Project1.RatingHandyMan.clientRate">
 	<summary>
-txtTitle control.
+clientRate control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.PostAdClient.lblDescription">
+<<<<<<< HEAD
+</member><member name="F:Project1.Site.cityList">
+=======
+</member><member name="F:Project1.RatingHandyMan.txtComments">
 	<summary>
-lblDescription control.
+txtComments control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.PostAdClient.txtDescription">
+</member><member name="F:Project1.RatingHandyMan.btnRatingSubmit">
+>>>>>>> reports
 	<summary>
-txtDescription control.
+btnRatingSubmit control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.PostAdClient.lblLogo">
+</member><member name="F:Project1.Register.lblName">
 	<summary>
-lblLogo control.
+lblName control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.PostAdClient.fileSelect">
+</member><member name="F:Project1.Register.txtName">
 	<summary>
-fileSelect control.
+txtName control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.PostAdClient.btnUpload">
+</member><member name="F:Project1.Register.lblSurname">
 	<summary>
-btnUpload control.
+lblSurname control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.PostAdClient.btnSubmit">
+</member><member name="F:Project1.Register.txtSurname">
 	<summary>
-btnSubmit control.
+txtSurname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.Post.Submit3">
+=======
+</member><member name="F:Project1.Register.lblUserName">
+	<summary>
+lblUserName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.txtUsername">
+	<summary>
+txtUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.lblPassword">
+	<summary>
+lblPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.txtPassword">
+>>>>>>> reports
+	<summary>
+txtPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.lblCheck">
+	<summary>
+lblCheck control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.lblRegion">
+	<summary>
+lblRegion control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.regionList">
+	<summary>
+regionList control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.lblMobile">
+	<summary>
+lblMobile control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.txtMobile">
+	<summary>
+txtMobile control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.lblEmail">
+	<summary>
+lblEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.lblAddress">
+	<summary>
+lblAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.txtAddress">
+	<summary>
+txtAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.btnReg">
+	<summary>
+btnReg control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Register.btnRegi">
+	<summary>
+btnRegi control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Responses.HandyMen">
+	<summary>
+HandyMen control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.AdminStats1.VisiterStats">
+	<summary>
+VisiterStats control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.AdminStats1.TotalUsers">
+	<summary>
+TotalUsers control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.AdminStats1.WeekStats">
+	<summary>
+WeekStats control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1080,6 +1500,8 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="F:Project1.UpdateProfile.lblName">
+<<<<<<< HEAD
+=======
 	<summary>
 lblName control.
 </summary>
@@ -1168,6 +1590,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="F:Project1.UpdateProfile.workerDetails">
+>>>>>>> reports
 	<summary>
 workerDetails control.
 </summary>
@@ -1215,15 +1638,7 @@ btnSave control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.Responses.HandyMen">
-	<summary>
-HandyMen control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Site1.head">
+</member><member name="F:Project1.Site2.head">
 	<summary>
 head control.
 </summary>
@@ -1231,15 +1646,26 @@ head control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.Site1.userLog">
+<<<<<<< HEAD
+</member><member name="F:Project1.UpdateProfile.txtEmail">
+	<summary>
+txtEmail control.
+=======
+</member><member name="F:Project1.Site2.userLog">
 	<summary>
 userLog control.
+>>>>>>> reports
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.Site1.MyBody">
+<<<<<<< HEAD
+</member><member name="F:Project1.UpdateProfile.clientDetails">
+	<summary>
+clientDetails control.
+=======
+</member><member name="F:Project1.Site2.MyBody">
 	<summary>
 MyBody control.
 </summary>
@@ -1247,9 +1673,196 @@ MyBody control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.ClientProfile1.lblComment">
+</member><member name="F:Project1.MessengesDetail.Form1">
 	<summary>
-lblComment control.
+Form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.MessengesDetail.messagesHistory">
+	<summary>
+messagesHistory control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.UpdateProfile.lblAddress">
+=======
+</member><member name="F:Project1.MessengesDetail.txtMessage">
+	<summary>
+txtMessage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.MessengesDetail.btnSend">
+	<summary>
+btnSend control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.ClientProfile.lblName">
+>>>>>>> reports
+	<summary>
+lblName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.ClientProfile.lblSurname">
+	<summary>
+lblSurname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.ClientProfile.lblNumber">
+	<summary>
+lblNumber control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.ClientProfile.lblEmail">
+	<summary>
+lblEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.ClientProfile.lblAddress">
+	<summary>
+lblAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.ClientProfile.update">
+	<summary>
+update control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.ClientProfile.AdsDiv">
+	<summary>
+AdsDiv control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.UpdateProfile.btnSave">
+=======
+</member><member name="F:Project1.PostAdClient.lblCategory">
+	<summary>
+lblCategory control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.PostAdClient.categoriesList">
+	<summary>
+categoriesList control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.PostAdClient.lblTitle">
+>>>>>>> reports
+	<summary>
+lblTitle control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.PostAdClient.txtTitle">
+	<summary>
+txtTitle control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.Site1.head">
+	<summary>
+head control.
+=======
+</member><member name="F:Project1.PostAdClient.lblDescription">
+	<summary>
+lblDescription control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.PostAdClient.txtDescription">
+	<summary>
+txtDescription control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.PostAdClient.lblLogo">
+	<summary>
+lblLogo control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.Site1.userLog">
+	<summary>
+userLog control.
+=======
+</member><member name="F:Project1.PostAdClient.fileSelect">
+	<summary>
+fileSelect control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+<<<<<<< HEAD
+</member><member name="F:Project1.Site1.MyBody">
+	<summary>
+MyBody control.
+=======
+</member><member name="F:Project1.PostAdClient.btnUpload">
+	<summary>
+btnUpload control.
+>>>>>>> reports
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.PostAdClient.btnSubmit">
+	<summary>
+btnSubmit control.
 </summary>
 	<remarks>
 Auto-generated field.

@@ -1,4 +1,5 @@
-﻿Public Class ValidationClass
+
+Public Class ValidationClass
 
     Public Const CONNECTIONSTRING As String = "Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True providerName= System.Data.SqlClient"
 
@@ -70,3 +71,4 @@
     End Function
 
 End Class
+

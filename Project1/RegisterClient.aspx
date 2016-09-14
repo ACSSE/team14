@@ -150,10 +150,11 @@
 
             </table>
 
- 
 
+                
+                <%--<a href="ClientProfile.aspx"><asp:Button ID="btnRegister" PostBackUrl="~/ClientProfile.aspx" type="submit" style="width: 250px;height: 50px; top: 0px; left: 0px;" runat="server" Text="Register" BackColor="#FBCC33" /></a>--%>
+                <!---<button type="submit"  runat="server" id="btnReg" >Submit</button>-->
 
-                 <input type="submit" runat="server" id="btnReg" value="Register"/>
                  
 
                 

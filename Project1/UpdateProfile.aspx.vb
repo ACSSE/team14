@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+
+Imports System.Data.SqlClient
 
 Public Class UpdateProfile
     Inherits System.Web.UI.Page
@@ -344,6 +345,5 @@ Public Class UpdateProfile
         Response.Redirect("ClientProfile.aspx")
 
     End Sub
-
 
 End Class

@@ -11,41 +11,32 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class MessengesDetail
+Partial Public Class AdminStats1
 
     '''<summary>
-    '''Form1 control.
+    '''VisiterStats control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents VisiterStats As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''messagesHistory control.
+    '''TotalUsers control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents messagesHistory As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents TotalUsers As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''txtMessage control.
+    '''WeekStats control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtMessage As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''btnSend control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnSend As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents WeekStats As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

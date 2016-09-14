@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+Imports System.Data.SqlClient
 
 Public Class Job
 
@@ -9,27 +9,29 @@ Public Class Job
     'ClientID and HandymanID is in the form of unique username
     Private client As String
     Private Handyman As String
-
+    Private OpenDate As Date
     Private messenges() As Messenge
 
     'When job already exists in database, inclusion of JOBID
-    Public Sub New(jobID As Integer, category As String, title As String, description As String, client As String, Handyman As String)
+    Public Sub New(jobID As Integer, category As String, title As String, description As String, client As String, Handyman As String, OpenDate As Date)
         Me.JobID = jobID
         Me.category = category
         Me.title = title
         Me.description = description
         Me.client = client
         Me.Handyman = Handyman
+        Me.OpenDate = OpenDate
     End Sub
 
     'When job is being newly created and added to the database
-    Public Sub New(category As String, title As String, description As String, client As String, Handyman As String)
+    Public Sub New(category As String, title As String, description As String, client As String, Handyman As String, OpenDate As Date)
         'MsgBox("Job:New()- category = " & ValidationClass.stringCategory(category))
         Me.category = category
         Me.title = title
         Me.description = description
         Me.client = client
         Me.Handyman = Handyman
+        Me.OpenDate = OpenDate
     End Sub
 
     Public Function getClient() As String
@@ -58,6 +60,10 @@ Public Class Job
 
     Public Function getCategory() As String
         Return category
+    End Function
+
+    Public Function getDate() As Date
+        Return OpenDate
     End Function
 
     Public Sub saveJob()
