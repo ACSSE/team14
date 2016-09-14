@@ -5,7 +5,7 @@ Public Class FeaturedWorkers
 
     Private workers() As Worker
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        workers = getWorkers()
+        workers = getWorkers() 'C:\Users\Karabo\Desktop\HandyMan\HandyMan\team14\Project1\ClientProfile2.aspx
 
         divElectrician.InnerHtml = getProfiles("Electrician")
         PaintnDecoration.InnerHtml = getProfiles("Paint and Decoration")
