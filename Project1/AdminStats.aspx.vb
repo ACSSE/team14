@@ -73,8 +73,9 @@ Public Class AdminStats1
             While reader.Read()
 
                 category = reader("Category")
-                joindate = reader("JoinDate")
-
+                If Not IsDBNull(reader("JoinDate")) Then
+                    joindate = reader("JoinDate")
+                End If
                 size += 1
                 ReDim Preserve workers(size)
                 workers(size) = New Worker("", "", "", "", "", "", "", "", category, Nothing, joindate)

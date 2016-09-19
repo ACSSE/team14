@@ -78,7 +78,7 @@ Public Class RatingHandyMan
 
         connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         connection.Open()
-        command = New SqlCommand("INSERT INTO Ratings (JobID, Worker, TimeManagement, Interpersonal, Quality, Profesionalism, Consistency, Comments, Pending) VALUES (@ID, @worker, @Man, @Inter, @Qual, @Prof, @Cons, @comments, @pending)", connection)
+        command = New SqlCommand("INSERT INTO Ratings (JobID, Worker, TimeManagenment, Interpersonal, Quality, Profesionalism, Consistency, Comments, Pending, JobAverage) VALUES (@ID, @worker, @Man, @Inter, @Qual, @Prof, @Cons, @comments, @pending, @average)", connection)
 
         command.Parameters.AddWithValue("@ID", adID)
         command.Parameters.AddWithValue("@worker", handyman)
@@ -89,6 +89,7 @@ Public Class RatingHandyMan
         command.Parameters.AddWithValue("@Cons", an)
         command.Parameters.AddWithValue("@comments", comments)
         command.Parameters.AddWithValue("@pending", "true")
+        command.Parameters.AddWithValue("@average", Average)
         reader = command.ExecuteReader()
 
         connection.Close()
@@ -131,8 +132,8 @@ Public Class RatingHandyMan
                 count += 1
                 ReDim Preserve jobAve(count)
 
-                If IsDBNull(reader("QuickRating")) Or reader("QuickRating") = 0 Then 'if quick rating is 0 then full rating was done
-                    Dim timeMan As Integer = reader("TimeManagement")
+                If IsDBNull(reader("QuickRating")) Then 'if quick rating is 0 then full rating was done
+                    Dim timeMan As Integer = reader("TimeManagenment")
                     Dim person As Integer = reader("Interpersonal")
                     Dim quality As Integer = reader("Quality")
                     Dim prof As Integer = reader("Profesionalism")

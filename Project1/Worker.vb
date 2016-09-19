@@ -52,7 +52,10 @@ Public Class Worker
             'jobTitle = reader("JobTitle")
             description = reader("Description")
             category = reader("Category")
-            joinDate = reader("JoinDate")
+
+            If Not (IsDBNull(reader("JoinDate"))) Then
+                joinDate = reader("JoinDate")
+            End If
         End If
     End Sub
 

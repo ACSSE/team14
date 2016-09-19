@@ -111,7 +111,8 @@
                         <asp:Label ID="lblSuburb" runat="server" Text="Select Surburb"></asp:Label></th>
 
                     <th>
-                        <asp:DropDownList ID="suburbList" runat="server" DataSourceID="SqlDataSource2" Width="150px" AutoPostBack="True" DataTextField="Surburb" DataValueField="Surburb">
+                        <asp:DropDownList ID="suburbList" runat="server" DataSourceID="SqlDataSource2" 
+                            Width="150px" DataTextField="Surburb" DataValueField="Surburb">
                             <asp:ListItem>Select</asp:ListItem>
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Surburb FROM Location WHERE (Town = @Town)">
@@ -150,87 +151,10 @@
 
             </table>
 
-
-                
-                <%--<a href="ClientProfile.aspx"><asp:Button ID="btnRegister" PostBackUrl="~/ClientProfile.aspx" type="submit" style="width: 250px;height: 50px; top: 0px; left: 0px;" runat="server" Text="Register" BackColor="#FBCC33" /></a>--%>
-                <!---<button type="submit"  runat="server" id="btnReg" >Submit</button>-->
-
-                 
-
-                
-
-				 <%--<form id="form1" runat="server">
-
-                    <label>
-                    <div class="text-left">
-                    Select Region <span>*</span></div>
-                    </label>&nbsp;<select class="">
-                        <option>Select Region</option>
-					    <option>Edenvale</option>
-					    <option>Dunvegan </option>
-					    <option>Dowerglen</option>
-					    <option>Marais Steyn Park</option>
-					    <option>Croydon</option>
-					    <option>Isando</option>
-					</select>
-
-					<div class="clearfix"></div>
-
-
-                     <label>
-                    <div class="text-left">
-                    <asp:Label ID="lblRegion" runat="server" Text="Select Region"></asp:Label></div>
-                    </label>
-                     &nbsp;<asp:DropDownList ID="regionList" runat="server">
-
-                        <asp:ListItem Text="Select Region" Value="0"></asp:ListItem>
-                        <asp:ListItem Text="Edenvale" ></asp:ListItem>
-                        <asp:ListItem Text="Dunvegan" ></asp:ListItem>
-                        <asp:ListItem Text="Dowerglen" ></asp:ListItem>
-                        <asp:ListItem Text="Marais Steyn Park" ></asp:ListItem>
-                        <asp:ListItem Text="Croydon" ></asp:ListItem>
-                        <asp:ListItem Text="Isando" ></asp:ListItem>
-
-                           </asp:DropDownList>
-                        
-					
-
-					<div class="clearfix"></div>
-
-
-
-                    <label>
-                        <div class="text-left">
-                            Your Address <span>*</span></div>
-                        </label>
-						&nbsp;<input type="text" class="phone" placeholder="">
-						<div class="clearfix"></div>
-
-                    <label>
-                        <div class="text-left">
-                            Your Mobile No <span>*</span></div>
-                        </label>
-						&nbsp;<input type="text" class="phone" placeholder="">
-						<div class="clearfix"></div>
-						<div class="text-left">
-						<label>
-                        <div style="text-align: left">
-                            Your Email Address<span>*</span></div>
-                        </label>
-						&nbsp;<input type="text" class="email" placeholder=""><div class="text-left">
-                            </div>
-                            
-
-                            <a href="WorkerProfile.aspx"><input type="button" value="Register"/></a>	
-					
-
-						&nbsp;</div>
-						<div class="clearfix"></div>
-					
-
-						</form>--%>
+            
+						<input type="submit" runat="server" id="btnSubmit" value="Register"/>
+             
 </div></form>
-						
 				</div>
 					
 			</div>

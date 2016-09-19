@@ -88,7 +88,7 @@ Public Class Register
     End Sub
 
 
-    Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.ServerClick
+    Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnSubmit.ServerClick
 
 
 
@@ -116,11 +116,11 @@ Public Class Register
             region = regionList.Text()
             surburb = suburbList.Text()
 
-
+            'MsgBox("Surburb = " & surburb)
 
             Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region, surburb, Date.Now)
 
-
+            client.getSuburb()
             client.saveUser()
             Dim cUser As User = client
             Session("user") = cUser

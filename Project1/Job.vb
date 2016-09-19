@@ -76,13 +76,14 @@ Public Class Job
         connection.Open()
 
         'JobId not included as it is autoincremented variable
-        command = New SqlCommand("INSERT INTO AdTable (Category, AdTitle, AdDescription, Client) VALUES (@category, @adtitle, @description, @user)")
+        command = New SqlCommand("INSERT INTO AdTable (Category, AdTitle, AdDescription, Client, OpenDate) VALUES (@category, @adtitle, @description, @user, @date)")
         command.Connection = connection
 
         command.Parameters.AddWithValue("@category", category)
         command.Parameters.AddWithValue("@AdTitle", title)
         command.Parameters.AddWithValue("@description", description)
         command.Parameters.AddWithValue("@user", client)
+        command.Parameters.AddWithValue("@date", OpenDate)
         'command.Parameters.AddWithValue("@img", fileSelect.PostedFile)
         'command.Parameters.AddWithValue("@logo", fileSelect.PostedFile)
 
@@ -125,7 +126,7 @@ Public Class Job
         connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "DELETE FROM AdTable WHERE PostAdId = @name;"
         connection.Open()
-        MsgBox("Job:deleteJob()-JobID = " & JobID)
+        'MsgBox("Job:deleteJob()-JobID = " & JobID)
 
         command = New SqlCommand(query, connection)
         command.Parameters.AddWithValue("@name", JobID)

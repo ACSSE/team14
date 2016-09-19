@@ -1,3 +1,4 @@
+
 <%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site2.Master" CodeBehind="FeaturedWorkers.aspx.vb" Inherits="Project1.FeaturedWorkers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

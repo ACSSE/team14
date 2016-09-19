@@ -1,6 +1,5 @@
-Public Class MessagesDetail
+﻿Public Class MessegesDetail
     Inherits System.Web.UI.Page
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim ID As Integer = Request.QueryString("ID")
         Dim messenges As MessengeList = New MessengeList(ID)
@@ -31,6 +30,7 @@ Public Class MessagesDetail
 
         Dim cMessage As Messenge = New Messenge(ID, messenge, cUser.getUsername(), mdate)
         cMessage.saveMessenge() 'commiting message into the database
-        Response.Redirect("MessengesDetail.aspx?ID=" & ID)
+        Response.Redirect("MessegesDetail.aspx?ID=" & ID)
     End Sub
+
 End Class

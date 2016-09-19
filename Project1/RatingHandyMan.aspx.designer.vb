@@ -112,4 +112,3 @@ Partial Public Class RatingHandyMan
     '''</remarks>
     Protected WithEvents btnRatingSubmit As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
 End Class
->>>>>>> reports

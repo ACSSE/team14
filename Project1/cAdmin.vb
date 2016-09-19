@@ -27,13 +27,13 @@ Public Class cAdmin
 
         If reader.HasRows Then
             reader.Read()
-            MsgBox("In the admin function")
+            'MsgBox("In the admin function")
             Me.username = vusername
             Me.password = reader("Password")
             Name = reader("Name")
             surname = reader("Surname")
             email = reader("Email")
-
+            numbers = reader("MobileNumbers")
         End If
     End Sub
 

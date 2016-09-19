@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="LoginClient.aspx.vb" Inherits="Project1.Login" %>
-=======
+
 <%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="LoginClient.aspx.vb" Inherits="Project1.Login" %>
->>>>>>> reports
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
@@ -38,7 +35,7 @@
 							
                                <input id="btnLog" runat="server" type="submit" value="Log in"/>
 						</form>
-                            	 <label id="lblLogin" style="align-content:center" runat="server" text=""></label>
+                            	 <label id="lblLogin" style="align-content:center" runat="server"></label>
 						</div>
 						<div class="new_people">
 							<h2 style="align-content:center">Are You a New User</h2>

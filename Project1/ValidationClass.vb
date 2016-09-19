@@ -1,7 +1,7 @@
 
 Public Class ValidationClass
 
-    Public Const CONNECTIONSTRING As String = "Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True providerName= System.Data.SqlClient"
+    Public Const CONNECTIONSTRING As String = "Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True"
 
     Public Shared Function equateText(ByRef original As String, nuValue As String) As Boolean
         If nuValue = "" Then
@@ -49,7 +49,7 @@ Public Class ValidationClass
             Htmlmessenges &= "<asp:ListItem Text= Empty></asp:ListItem>"
         End If
 
-        Htmlmessenges &= "<asp:ListItem><a href=MessengesDetail.aspx?ID=" & jobID & ">View All/Send Messenge</a></asp;ListItem>"
+        Htmlmessenges &= "<asp:ListItem><a href=MessegesDetail.aspx?ID=" & jobID & ">View All/Send Messenge</a></asp;ListItem>"
         Htmlmessenges &= "</asp:DropDownList></td>"
         Return Htmlmessenges
     End Function

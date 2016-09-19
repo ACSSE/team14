@@ -99,4 +99,3 @@ Public MustInherit Class User
     Public MustOverride Sub updateAverage(average As Integer)
 
 End Class
->>>>>>> reports

@@ -230,22 +230,11 @@ Partial Public Class Register
     Protected WithEvents txtAddress As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btnReg control.
+    '''btnSubmit control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-	
-	
-    Protected WithEvents btnReg As Global.System.Web.UI.HtmlControls.HtmlButton
-
-    '''<summary>
-    '''btnRegi control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnRegi As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
+    Protected WithEvents btnSubmit As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
 End Class

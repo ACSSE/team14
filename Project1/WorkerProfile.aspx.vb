@@ -56,6 +56,7 @@ Public Class WorkerProfile
             Dim title As String = ""
             Dim description As String = ""
             Dim category As String = ""
+            Dim OpenDate As Date
             While reader.Read() 'getting all the jobs
                 size += 1
                 ReDim Preserve HandymanJobs(size)
@@ -65,9 +66,11 @@ Public Class WorkerProfile
                 title = reader("AdTitle")
                 description = reader("AdDescription")
                 category = reader("Category")
-
+                If Not IsDBNull(reader("OpenDate")) Then
+                    OpenDate = reader("OpenDate")
+                End If
                 
-                tempJob = New Job(ID, category, title, description, clientUsername, "")
+                tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
                 HandymanJobs(size) = tempJob 'adding job to the list
                 'TO DO Build messaging service here
                 notifications &= "<h5>" & reader("AdTitle") & "</h5> "
@@ -87,7 +90,7 @@ Public Class WorkerProfile
 
         Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         adconnection.Open()
-        Dim query As String = "Select * FROM AdTable WHERE Category = @name AND Worker IS NULL"
+        Dim query As String = "Select * FROM AdTable WHERE Worker IS NULL"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
 
         'NOTE TO SELF: use sql to get all the categories on a proper sql statement
@@ -107,28 +110,32 @@ Public Class WorkerProfile
             Dim title As String = ""
             Dim description As String = ""
             Dim category As String = ""
+            Dim OpenDate As Date
 
             While reader.Read() 'getting all the jobs
-                
+                If worker.getCategory().Contains(reader("Category")) Then
 
-                clientUsername = reader("Client")
-                ID = reader("PostAdId")
-                title = reader("AdTitle")
-                description = reader("AdDescription")
-                category = reader("Category")
+                    clientUsername = reader("Client")
+                    ID = reader("PostAdId")
+                    title = reader("AdTitle")
+                    description = reader("AdDescription")
+                    category = reader("Category")
+                    If Not IsDBNull(reader("OpenDate")) Then
+                        OpenDate = reader("OpenDate")
+                    End If
 
 
-                If IsDBNull(reader("Worker")) Then
-                    If shouldADD(ID) Then
-                        size += 1
-                        ReDim Preserve jobs(size)
-                        tempJob = New Job(ID, category, title, description, clientUsername, "")
-                        jobs(size) = tempJob 'adding job to the list
+                    If IsDBNull(reader("Worker")) Then
+                        If shouldADD(ID) Then
+                            size += 1
+                            ReDim Preserve jobs(size)
+                            tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
+                            jobs(size) = tempJob 'adding job to the list
 
-                        notifications &= "<a href= AdDetail.aspx?ID=" & jobs(size).getID() & ">" & reader("AdTitle") & "</a> <br />"
+                            notifications &= "<a href= AdDetail.aspx?ID=" & jobs(size).getID() & ">" & reader("AdTitle") & "</a> <br />"
+                        End If
                     End If
                 End If
-
             End While
         End If
         Session("jobs") = jobs
@@ -205,8 +212,9 @@ Public Class WorkerProfile
             Dim category As String = reader("Category")
             Dim client As String = reader("Client")
             Dim worker As String = reader("Worker")
+            Dim OpenDate As Date = reader("OpenDate")
 
-            cJob = New Job(ID, category, title, description, client, worker)
+            cJob = New Job(ID, category, title, description, client, worker, OpenDate)
         End If
 
         adconnection.Close()

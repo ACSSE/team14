@@ -3,11 +3,13 @@ Imports System.Data.SqlClient
 Public Class Client
     Inherits User
 
+    Private suburb As String
     Private address As String
 
-    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String, vdate As Date)
-        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vsuburb, vdate)
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String, vsurburb As String, vdate As Date)
+        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vdate)
         address = vaddress
+        suburb = vsurburb
     End Sub
 
     Public Sub New(username As String, password As String)
@@ -19,7 +21,6 @@ Public Class Client
         getPartialClientInfo(username)
     End Sub
 
-    Private Property suburb As Object
 
     Private Sub getClient(username As String, password As String)
         Dim connection As SqlConnection
@@ -49,7 +50,9 @@ Public Class Client
             region = reader("Region")
             suburb = reader("Suburb")
             address = reader("Address")
-            joinDate = reader("JoinDate")
+            If Not (IsDBNull(reader("JoinDate"))) Then
+                joinDate = reader("JoinDate")
+            End If
         End If
 
     End Sub
@@ -134,7 +137,7 @@ Public Class Client
         connection.Open()
         command = New SqlCommand(commandstring, connection)
 
-        MsgBox("In Client -updateUser(): " & name) 'program messages
+        'MsgBox("In Client -updateUser(): " & name) 'program messages
         command.Parameters.AddWithValue("@username", username)
         command.Parameters.AddWithValue("@name", name)
         command.Parameters.AddWithValue("@surname", surname)
@@ -150,6 +153,10 @@ Public Class Client
         connection.Close()
 
     End Sub
+
+    Public Function getSuburb()
+        Return suburb
+    End Function
 
     Public Overrides Function getRating() As Integer
         Dim connection As SqlConnection
