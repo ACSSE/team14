@@ -1,6 +1,6 @@
 Public Class ValidationClass
 
-    Public Const CONNECTIONSTRING As String = "Data Source=KARABO-PC\MSSQLSERVER2;Initial Catalog=HandymanDatabase;Integrated Security=True"
+    Public Const CONNECTIONSTRING As String = "Data Source=Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True" '"Data Source=KARABO-PC\MSSQLSERVER2;Initial Catalog=HandymanDatabase;Integrated Security=True"
 
 
     Public Shared Function equateText(ByRef original As String, nuValue As String) As Boolean

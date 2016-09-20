@@ -88,21 +88,10 @@
     <Content Include="AdDetail.aspx" />
     <Content Include="AdminStats.aspx" />
     <Content Include="AirConditioning.aspx" />
-    <Content Include="App_Data\dbo.LoginClient.data.sql" />
-    <Content Include="App_Data\dbo.LoginClient.sql" />
-    <Content Include="App_Data\dbo.PostAdClient.data.sql" />
     <Content Include="App_Data\HandymanDatabase.mdf" />
     <Content Include="App_Data\HandymanDatabase_log.ldf">
       <DependentUpon>HandymanDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\SQLQuery1.sql" />
-    <Content Include="App_Data\SQLQuery2.sql" />
-    <Content Include="App_Data\SQLQuery3.sql" />
-    <Content Include="App_Data\SQLQuery4.sql" />
-    <Content Include="App_Data\SQLQuery5.sql" />
-    <Content Include="App_Data\SQLQuery6.sql" />
-    <Content Include="App_Data\SQLQuery7.sql" />
-    <Content Include="App_Data\SQLQuery8.sql" />
     <Content Include="ClientProfile.aspx" />
     <Content Include="ClientProfile1.aspx" />
     <Content Include="ClientProfile2.aspx" />
