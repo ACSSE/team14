@@ -87,13 +87,11 @@ Public Class WorkerProfile
 
         Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         adconnection.Open()
-        Dim query As String = "Select * FROM AdTable WHERE Category = @name AND Worker IS NULL"
+        Dim query As String = "Select * FROM AdTable WHERE Worker IS NULL"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
 
         'NOTE TO SELF: use sql to get all the categories on a proper sql statement
 
-
-        command.Parameters.AddWithValue("@name", categroy)
 
         Dim reader As SqlDataReader = command.ExecuteReader()
 
@@ -118,7 +116,7 @@ Public Class WorkerProfile
                 category = reader("Category")
 
 
-                If IsDBNull(reader("Worker")) Then
+                If worker.getCategory().Contains(category) Then
                     If shouldADD(ID) Then
                         size += 1
                         ReDim Preserve jobs(size)

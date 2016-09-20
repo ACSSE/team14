@@ -78,8 +78,9 @@ Public Class Client
             region = ""
             address = ""
             suburb = ""
-            JoinDate = ""
-
+            If Not IsDBNull(reader("JoinDate")) Then
+                JoinDate = reader("JoinDate")
+            End If
         End If
     End Sub
 
@@ -135,7 +136,7 @@ Public Class Client
         connection.Open()
         command = New SqlCommand(commandstring, connection)
 
-        MsgBox("In Client -updateUser(): " & name) 'program messages
+        ' MsgBox("In Client -updateUser(): " & name) 'program messages
         command.Parameters.AddWithValue("@username", username)
         command.Parameters.AddWithValue("@name", name)
         command.Parameters.AddWithValue("@surname", surname)
@@ -167,16 +168,17 @@ Public Class Client
 
         If reader.HasRows Then
             reader.Read()
-            Me.username = username
+            'Me.username = username
             'Me.password = reader("Password")
-            name = reader("Name")
-            surname = reader("Surname")
-            email = reader("Email")
-            numbers = reader("MobileNumber")
-            region = reader("Region")
-            suburb = reader("Suburb")
-            address = reader("Address")
-            JoinDate = reader("JoinDate")
+            ' name = reader("Name")
+            'surname = reader("Surname")
+            'email = reader("Email")
+            'numbers = reader("MobileNumber")
+            'region = reader("Region")
+            'suburb = reader("Suburb")
+            'address = reader("Address")
+            'JoinDate = reader("JoinDate")
+            rating = reader("AverageRating")
         End If
         Return 0
     End Function

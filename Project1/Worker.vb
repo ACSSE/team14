@@ -142,7 +142,7 @@ Public Class Worker
             ' numbers = reader("MobileNumber")
             numbers = 0
             region = ""
-            JoinDate = ""
+            JoinDate = reader("JoinDate")
 
         End If
         rating = getRating()

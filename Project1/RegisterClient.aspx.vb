@@ -105,7 +105,7 @@ Public Class Register
         Dim tempClient As Client = New Client(username)
 
         If tempClient.getUsername() = "" Then
-            ' username = txtUsername.Text()
+            username = txtUsername.Text()
             password = txtPassword.Text()
             name = txtName.Text()
             surname = txtSurname.Text()
