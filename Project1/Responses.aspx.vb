@@ -1,5 +1,4 @@
-
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class Responses
     Inherits System.Web.UI.Page
@@ -8,7 +7,7 @@ Public Class Responses
         Dim adID As Integer = Request.QueryString("ID")
         Dim html As String = ""
         Dim handyman As Worker
-        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim connection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         Dim query As String = "SELECT * FROM Responses WHERE AdID = @name;"
         connection.Open()
 
@@ -38,7 +37,8 @@ Public Class Responses
     Private Function displayWorker(workerID As String)
         Dim info As String = ""
 
-        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING
+                                                            )
         Dim query As String = "SELECT * FROM Workers WHERE Username = @name;"
         connection.Open()
 
@@ -48,7 +48,7 @@ Public Class Responses
         Dim reader As SqlDataReader = command.ExecuteReader()
 
         If reader.HasRows Then
-            'MsgBox("Resposes:displayWorker()-Reading woker values from database")
+            ' MsgBox("Resposes:displayWorker()-Reading woker values from database")
             reader.Read()
             info &= "<h4>" & reader("Name") & " " & reader("Surname") & "</h4> <br />"
             info &= "<div class=""itemtype"">"

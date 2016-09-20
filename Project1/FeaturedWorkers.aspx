@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site2.Master" CodeBehind="FeaturedWorkers.aspx.vb" Inherits="Project1.FeaturedWorkers" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="FeaturedWorkers.aspx.vb" Inherits="Project1.FeaturedWorkers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
@@ -10,7 +10,7 @@
 	<div class="total-ads main-grid-border">
 		<div class="container">
 			<div class="select-box">
-			<%--	<div class="select-city-for-local-ads ads-list">
+				<div class="select-city-for-local-ads ads-list">
 					<label>Select your city</label>
 						<select>
 												<optgroup label="Ekhuruleni">
@@ -83,12 +83,12 @@
 			  <li><a href="index.aspx">Home</a></li>
 			  <li class="active">All Category</li>
 			</ol>
---%>
+
 
 			<h2 class="head">Find your Worker</h2>
 			<div class="category-list">
 				<div id="parentVerticalTab">
-					<ul id="CategoryList" class="resp-tabs-list hor_1" runat="server">
+					<ul class="resp-tabs-list hor_1">
 						<li>Electricians</li>
 						<li>Paint & Decorations</li>
 						<li>Pool Specialist</li>
@@ -132,11 +132,10 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-                                <div id="divElectrician" runat="server">
-							
+							<ul class="list">
 								
 								
-							<%--	<a href="WorkerProfile.aspx">
+								<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p1.png" title="" alt="" />
 									<section class="list-left">
@@ -201,9 +200,7 @@
 									<div class="clearfix"></div>
 									</li> 
 								</a>
-                                
-							--%>
-                            </div>
+							</ul>
 						</div>
 							</div>
 						</div>
@@ -247,10 +244,10 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<div id="PaintnDecoration" runat="server">
+							<ul class="list">
 								
 								
-<%--								<a href="WorkerProfile.aspx">
+								<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p1.png" title="" alt="" />
 									<section class="list-left">
@@ -314,8 +311,8 @@
 									</section>
 									<div class="clearfix"></div>
 									</li> 
-								</a>--%>
-							</div>
+								</a>
+							</ul>
 						</div>
 							</div>
 						</div>
@@ -359,10 +356,10 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<div id="PoolSpel" runat="server">
+							<ul class="list">
 								
 								
-<%--								<a href="WorkerProfile.aspx">
+								<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p1.png" title="" alt="" />
 									<section class="list-left">
@@ -426,8 +423,8 @@
 									</section>
 									<div class="clearfix"></div>
 									</li> 
-								</a>--%>
-							</div>
+								</a>
+							</ul>
 						</div>
 							</div>
 						</div>
@@ -471,10 +468,10 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<div id="GardennLandscaping" runat="server">
+							<ul class="list">
 								
 								
-								<%--<a href="WorkerProfile.aspx">
+								<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p1.png" title="" alt="" />
 									<section class="list-left">
@@ -538,8 +535,8 @@
 									</section>
 									<div class="clearfix"></div>
 									</li> 
-								</a>--%>
-							</div>
+								</a>
+							</ul>
 						</div>
 							</div>
 						</div>
@@ -584,10 +581,10 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<div id="Security" runat="server">
+							<ul class="list">
 								
 								
-<%--								<a href="WorkerProfile.aspx">
+								<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p1.png" title="" alt="" />
 									<section class="list-left">
@@ -651,8 +648,8 @@
 									</section>
 									<div class="clearfix"></div>
 									</li> 
-								</a>--%>
-							</div>
+								</a>
+							</ul>
 						</div>
 							</div>
 						</div>
@@ -697,9 +694,10 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<div id="KitchenSpec" runat="server">
+							<ul class="list">
 								
-								<%--<a href="WorkerProfile.aspx">
+								
+								<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p1.png" title="" alt="" />
 									<section class="list-left">
@@ -763,8 +761,8 @@
 									</section>
 									<div class="clearfix"></div>
 									</li> 
-								</a>--%>
-							</div>
+								</a>
+							</ul>
 						</div>
 							</div>
 						</div>

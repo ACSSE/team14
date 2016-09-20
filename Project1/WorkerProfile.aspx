@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site2.Master" CodeBehind="WorkerProfile.aspx.vb" Inherits="Project1.WorkerProfile" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="WorkerProfile.aspx.vb" Inherits="Project1.WorkerProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
@@ -17,7 +17,7 @@
 					<h4>Previous work done</h4>
 					<p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">Gauteng</a>, <a href="#"><label id="lblRegion" runat="server" text=""/></a></p>
 					<div class="flexslider">
-                        <img src="images/p3.png" />
+                        <img src="images/ImagesG/g1.png" />
 						<!--<ul class="slides">
 							<li data-thumb="images/t1.jpg">
 								<img src="images/t1.jpg" />
@@ -88,6 +88,7 @@
                           <div class="interested text-center" id="JobNots" runat="server">
 			           </div>
                        <hr />
+                        
                        <div class="interested text-center" id="penJobs" runat="server">
 						<!--<div class="condition">
 							<h5 class="p-price">clientK, Gauteng Edenvale</h5>
@@ -130,4 +131,5 @@
     </label>
 
 
+    </div>
 </asp:Content>

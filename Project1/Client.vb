@@ -1,12 +1,12 @@
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class Client
     Inherits User
 
     Private address As String
 
-    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String, vdate As Date)
-        MyBase.New(vusername, vpassword, vname, vusername, vemail, mnumbers, vregion, vdate)
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String, vsuburb As String, vdate As Date)
+        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vsuburb, vdate)
         address = vaddress
     End Sub
 
@@ -17,7 +17,10 @@ Public Class Client
 
     Public Sub New(username As String)
         getPartialClientInfo(username)
+
     End Sub
+
+
 
     Private Sub getClient(username As String, password As String)
         Dim connection As SqlConnection
@@ -25,13 +28,15 @@ Public Class Client
         Dim reader As SqlDataReader
         password = Secrecy.HashPassword(password)
 
-        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         Dim commandstring As String = "SELECT * From Clients WHERE Username = @user AND Password = @pass"
+
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
         command.Parameters.AddWithValue("@pass", password)
 
         command.Connection.Open()
+
         reader = command.ExecuteReader()
 
         If reader.HasRows Then
@@ -42,9 +47,10 @@ Public Class Client
             surname = reader("Surname")
             email = reader("Email")
             numbers = reader("MobileNumber")
-            region = ""
+            region = reader("Region")
+            suburb = reader("Suburb")
             address = reader("Address")
-            joinDate = reader("JoinDate")
+            JoinDate = reader("JoinDate")
         End If
 
     End Sub
@@ -54,7 +60,7 @@ Public Class Client
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         Dim commandstring As String = "SELECT * From Clients WHERE Username = @user"
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
@@ -67,14 +73,14 @@ Public Class Client
             Me.username = username
             name = reader("Name")
             surname = reader("Surname")
-            'email = reader("Email")
             email = ""
-            ' numbers = reader("MobileNumber")
             numbers = 0
             region = ""
-            'address = reader("Address")
             address = ""
-            joinDate = reader("JoinDate")
+            suburb = ""
+            If Not IsDBNull(reader("JoinDate")) Then
+                JoinDate = reader("JoinDate")
+            End If
         End If
     End Sub
 
@@ -97,8 +103,8 @@ Public Class Client
 
         If tempClient.getUsername() = "" Then
 
-            Dim commandstring As String = "INSERT INTO Clients ( Username, Password, Name, Surname,  MobileNumber, Email, Address, JoinDate) VALUES (@username, @password, @name, @surname, @mobil, @email, @address, @date)"
-            connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+            Dim commandstring As String = "INSERT INTO Clients ( Username, Password, Name, Surname,  MobileNumber, Email, Address, Region , Suburb, JoinDate) VALUES (@username, @password, @name, @surname, @mobil, @email, @address, @region, @suburb, @date)"
+            connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
             connection.Open()
             command = New SqlCommand(commandstring, connection)
 
@@ -109,7 +115,9 @@ Public Class Client
             command.Parameters.AddWithValue("@address", address)
             command.Parameters.AddWithValue("@mobil", numbers)
             command.Parameters.AddWithValue("@email", email)
-            command.Parameters.AddWithValue("@date", joinDate)
+            command.Parameters.AddWithValue("@region", region)
+            command.Parameters.AddWithValue("@suburb", suburb)
+            command.Parameters.AddWithValue("@date", JoinDate.Date)
             reader = command.ExecuteReader()
 
             connection.Close()
@@ -123,8 +131,8 @@ Public Class Client
         Dim command As SqlCommand
         Dim reader As SqlDataReader
         'UPDATE LoginClient Set [] WHERE Username = @user
-        Dim commandstring As String = "UPDATE Clients SET Username = @username, Name = @name,  Surname = @surname,  Address = @address, MobileNumber = @mobil, Email = @email WHERE Username = @username"
-        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim commandstring As String = "UPDATE Clients SET Username = @username, Name = @name,  Surname = @surname,  Address = @address, MobileNumber = @mobil, Email = @email, Region = @region, Suburb = @suburb  WHERE Username = @username"
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         connection.Open()
         command = New SqlCommand(commandstring, connection)
 
@@ -136,6 +144,8 @@ Public Class Client
         command.Parameters.AddWithValue("@address", address)
         command.Parameters.AddWithValue("@mobil", numbers)
         command.Parameters.AddWithValue("@email", email)
+        command.Parameters.AddWithValue("@region", region)
+        command.Parameters.AddWithValue("@suburb", suburb)
 
         reader = command.ExecuteReader()
 
@@ -148,7 +158,7 @@ Public Class Client
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         Dim commandstring As String = "SELECT * From AverageClientRating WHERE Client = @user"
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
@@ -158,19 +168,26 @@ Public Class Client
 
         If reader.HasRows Then
             reader.Read()
-            Dim rating As Integer = 0
-            If Not IsDBNull(reader("AverageRating")) Then
-                rating = reader("AverageRating")
-            End If
-            connection.Close()
-            Return rating 'returning rating value
+            'Me.username = username
+            'Me.password = reader("Password")
+            ' name = reader("Name")
+            'surname = reader("Surname")
+            'email = reader("Email")
+            'numbers = reader("MobileNumber")
+            'region = reader("Region")
+            'suburb = reader("Suburb")
+            'address = reader("Address")
+            'JoinDate = reader("JoinDate")
+            rating = reader("AverageRating")
         End If
         Return 0
     End Function
 
+    
+
     Public Overrides Sub updateAverage(average As Integer)
         'update average rating
-        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         adconnection.Open()
         Dim query As String = "UPDATE AverageClientRating SET AverageRating = @average WHERE Client = @worker;"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -180,8 +197,10 @@ Public Class Client
         adconnection.Close()
     End Sub
 
+
+
     Private Sub addToAverageDatabase()
-        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         adconnection.Open()
         Dim query As String = "INSERT INTO AverageClientRating (Client, AverageRating) VALUES (@worker, @average);"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -190,4 +209,9 @@ Public Class Client
         Dim reader As SqlDataReader = command.ExecuteReader()
         adconnection.Close()
     End Sub
+
+    
+
+
+
 End Class

@@ -26,7 +26,7 @@ Public Class PostAdClient
         ValidationClass.equateText(description, txtDescription.Text())
 
         'Handyman is null upon creation of job
-        Dim job As Job = New Job(category, title, description, clientUsername, "", Date.Now)
+        Dim job As Job = New Job(category, title, description, clientUsername, "")
         job.saveJob() 'save job in the database
         'redirect to client page where new job should e displayed
         Response.Redirect("ClientProfile.aspx")

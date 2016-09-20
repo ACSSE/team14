@@ -86,6 +86,33 @@ Partial Public Class apply
     Protected WithEvents txtPassword As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''lblRepassword control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblRepassword As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''txtRepassword control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtRepassword As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''CompareValidator1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CompareValidator1 As Global.System.Web.UI.WebControls.CompareValidator
+
+    '''<summary>
     '''lblMobile control.
     '''</summary>
     '''<remarks>
@@ -176,6 +203,15 @@ Partial Public Class apply
     Protected WithEvents regionList As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''SqlDataSource1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+
+    '''<summary>
     '''lblTitle control.
     '''</summary>
     '''<remarks>
@@ -239,11 +275,11 @@ Partial Public Class apply
     Protected WithEvents btnUpload As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''btnSubmit control.
+    '''btnSubmitWorker control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnSubmit As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
+    Protected WithEvents btnSubmitWorker As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
 End Class

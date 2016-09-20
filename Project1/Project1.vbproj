@@ -45,7 +45,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web.DynamicData" />
@@ -86,20 +85,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdDetail.aspx" />
-    <Content Include="AdminStats.aspx" />
     <Content Include="AirConditioning.aspx" />
     <Content Include="App_Data\HandymanDatabase.mdf" />
     <Content Include="App_Data\HandymanDatabase_log.ldf">
       <DependentUpon>HandymanDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="ClientProfile.aspx" />
-    <Content Include="ClientProfile1.aspx" />
-    <Content Include="ClientProfile2.aspx" />
     <Content Include="Electrician.aspx" />
     <Content Include="Faq.aspx" />
     <Content Include="FeaturedWorkers.aspx" />
     <Content Include="Feedback.aspx" />
+    <Content Include="findme.aspx" />
     <Content Include="GardenLandscaping.aspx" />
+    <Content Include="generateQuotation.aspx" />
     <Content Include="GeyserSpecialist.aspx" />
     <Content Include="HowItWorks.aspx" />
     <Content Include="images\a1.jpg" />
@@ -239,6 +237,7 @@
     <Content Include="PoolSpecialist.aspx" />
     <Content Include="Post.aspx" />
     <Content Include="PostAdClient.aspx" />
+    <Content Include="QuotationDisplay.aspx" />
     <Content Include="RatingHandyMan.aspx" />
     <Content Include="RegisterWorker.aspx" />
     <Content Include="ClientOrWorker.aspx" />
@@ -499,13 +498,6 @@
       <DependentUpon>AdDetail.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="AdminStats.aspx.designer.vb">
-      <DependentUpon>AdminStats.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminStats.aspx.vb">
-      <DependentUpon>AdminStats.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="AirConditioning.aspx.designer.vb">
       <DependentUpon>AirConditioning.aspx</DependentUpon>
     </Compile>
@@ -513,27 +505,12 @@
       <DependentUpon>AirConditioning.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="cAdmin.vb" />
     <Compile Include="Client.vb" />
     <Compile Include="ClientProfile.aspx.designer.vb">
       <DependentUpon>ClientProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientProfile.aspx.vb">
       <DependentUpon>ClientProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ClientProfile1.aspx.designer.vb">
-      <DependentUpon>ClientProfile1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ClientProfile1.aspx.vb">
-      <DependentUpon>ClientProfile1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ClientProfile2.aspx.designer.vb">
-      <DependentUpon>ClientProfile2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ClientProfile2.aspx.vb">
-      <DependentUpon>ClientProfile2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Electrician.aspx.designer.vb">
@@ -564,11 +541,25 @@
       <DependentUpon>Feedback.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="findme.aspx.designer.vb">
+      <DependentUpon>findme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="findme.aspx.vb">
+      <DependentUpon>findme.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="GardenLandscaping.aspx.designer.vb">
       <DependentUpon>GardenLandscaping.aspx</DependentUpon>
     </Compile>
     <Compile Include="GardenLandscaping.aspx.vb">
       <DependentUpon>GardenLandscaping.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="generateQuotation.aspx.designer.vb">
+      <DependentUpon>generateQuotation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="generateQuotation.aspx.vb">
+      <DependentUpon>generateQuotation.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="GeyserSpecialist.aspx.designer.vb">
@@ -582,8 +573,11 @@
     <Compile Include="logout.aspx.designer.vb">
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="logout.aspx.vb">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="MessageList.vb" />
-    <Compile Include="Messenge.vb" />
     <Compile Include="MessengesDetail.aspx.designer.vb">
       <DependentUpon>MessengesDetail.aspx</DependentUpon>
     </Compile>
@@ -591,12 +585,14 @@
       <DependentUpon>MessengesDetail.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Site2.Master.designer.vb">
-      <DependentUpon>Site2.Master</DependentUpon>
+    <Compile Include="Messenge.vb" />
+    <Compile Include="Quotation.vb" />
+    <Compile Include="QuotationDisplay.aspx.designer.vb">
+      <DependentUpon>QuotationDisplay.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Site2.Master.vb">
-      <DependentUpon>Site2.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="QuotationDisplay.aspx.vb">
+      <DependentUpon>QuotationDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ValidationClass.vb" />
     <Compile Include="Worker.vb" />
@@ -626,7 +622,7 @@
     </Compile>
     <Compile Include="LoginClient.aspx.vb">
       <DependentUpon>LoginClient.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="LoginWorker.aspx.designer.vb">
       <DependentUpon>LoginWorker.aspx</DependentUpon>
@@ -668,7 +664,7 @@
     </Compile>
     <Compile Include="Post.aspx.vb">
       <DependentUpon>Post.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="PostAdClient.aspx.designer.vb">
       <DependentUpon>PostAdClient.aspx</DependentUpon>
@@ -682,7 +678,7 @@
     </Compile>
     <Compile Include="RatingHandyMan.aspx.vb">
       <DependentUpon>RatingHandyMan.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="RegisterWorker.aspx.designer.vb">
       <DependentUpon>RegisterWorker.aspx</DependentUpon>
@@ -751,7 +747,7 @@
     </Compile>
     <Compile Include="SecuritySafety.aspx.vb">
       <DependentUpon>SecuritySafety.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>
@@ -779,7 +775,7 @@
     </Compile>
     <Compile Include="UpdateProfile.aspx.vb">
       <DependentUpon>UpdateProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="User.vb" />
     <Compile Include="WorkerProfile.aspx.designer.vb">
@@ -787,7 +783,7 @@
     </Compile>
     <Compile Include="WorkerProfile.aspx.vb">
       <DependentUpon>WorkerProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -812,7 +808,6 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
-    <None Include="My Project\PublishProfiles\handymanWeb.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -820,7 +815,6 @@
     </None>
     <Content Include="Site.Master" />
     <Content Include="Site1.Master" />
-    <Content Include="Site2.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

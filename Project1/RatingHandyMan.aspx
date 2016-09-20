@@ -1,4 +1,3 @@
-
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="RatingHandyMan.aspx.vb" Inherits="Project1.RatingHandyMan" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -162,4 +161,3 @@
             </form>
     </div>
 </asp:Content>
->>>>>>> 3924db60ce15290221df9b838aeba9dff3fe785d

@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site2.Master" CodeBehind="RegisterWorker.aspx.vb" Inherits="Project1.apply" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="RegisterWorker.aspx.vb" Inherits="Project1.apply" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
      
-     <div class="submit-ad main-grid-border">
-		<div class="container">
+     <div class="submit-ad main-grid-border" runat="server">
+		<div class="container" runat="server" >
             <form runat="server">
 			<h2 class="head">Register With Us</h2>
 
@@ -14,41 +14,50 @@
 
                 <table style="margin:initial">
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblName" runat="server" Text="Your Name"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblName" runat="server" Text="Your Name"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtName" runat="server"></asp:TextBox></th>
                 </tr>
                     <br/>
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblSurname" runat="server" Text="Your Surname"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtSurname"  runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblSurname" runat="server" Text="Your Surname"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtSurname"  runat="server"></asp:TextBox></th>
                 </tr>
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblUserName" runat="server" Text="Your Username"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblUserName" runat="server" Text="Your Username"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox></th>
                 </tr>
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblPassword" runat="server" Text="Your Password"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblPassword" runat="server" Text="Your Password"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"></asp:TextBox></th>
+                </tr>
+                
+             <tr>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblRepassword" runat="server" Text="Your Password Re-entered"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtRepassword" TextMode="Password" runat="server"></asp:TextBox>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtRepassword" ErrorMessage="Re-enter your pasword" ForeColor="Red" ValidateRequestMode="Enabled"></asp:CompareValidator>
+                    </th>
+                </tr>                
+                <tr>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblMobile" runat="server" Text="Your Mobile Number"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtMobile" runat="server"></asp:TextBox></th>
                 </tr>
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblMobile" runat="server" Text="Your Mobile Number"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtMobile" runat="server"></asp:TextBox></td>
-                </tr>
-                <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblEmail" runat="server" Text="Your Email"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblEmail" runat="server" Text="Your Email"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox></th>
                 </tr>
                
             
@@ -63,13 +72,14 @@
 
                  <h3>Work Related details</h3><br/>
 
+                <div class="personal-details">
                 <table style="margin:initial">
                 <tr>
-                    <td>
-                        <asp:Label ID="lblCategory" runat="server" Text="Select Category"></asp:Label></td>
-                    <td>
+                    <th>
+                        <asp:Label ID="lblCategory" runat="server" Text="Select Category"></asp:Label></th>
+                    <th>
 
-                        <asp:CheckBoxList ID="lstCategory" runat="server">
+                        <asp:CheckBoxList ID="lstCategory" CellSpacing="1" TextAlign="Right" Width="300" runat="server">
 					  <asp:ListItem Text="Electrician"></asp:ListItem>
 					  <asp:ListItem Text="Paint and Decoration"></asp:ListItem>
 					  <asp:ListItem Text="Pool Specialist"></asp:ListItem>
@@ -82,7 +92,7 @@
 					  <asp:ListItem Text="Roof Specialist"></asp:ListItem>
                         </asp:CheckBoxList>
 
-                        
+                        </th>
 
                      <!-- <asp:DropDownList ID="categoriesList" runat="server" Width="180px">
          
@@ -97,42 +107,38 @@
 					  <asp:ListItem Text="Pest Control"></asp:ListItem>
 					  <asp:ListItem Text="Tilling Specialist"></asp:ListItem>
 					  <asp:ListItem Text="Roof Specialist"></asp:ListItem>
-                      </asp:DropDownList></td> -->
+                      </asp:DropDownList></th> -->
                 </tr>
 
                     <tr>
-                    <td>
-                        <asp:Label ID="lblRegion" runat="server" Text="Select Region"></asp:Label></td>
-                    <td>
-                        <asp:DropDownList ID="regionList" runat="server" Width="180px">
+                    <th>
+                        <asp:Label ID="lblRegion" runat="server" Text="Select Region"></asp:Label></th>
+                    <th>
+                        <asp:DropDownList ID="regionList" runat="server" Width="180px" DataSourceID="SqlDataSource1" DataTextField="Town" DataValueField="Town">
                         <asp:ListItem Text="Select Region" Value="0" Selected="True"></asp:ListItem>
-                        <asp:ListItem Text="Edenvale" ></asp:ListItem>
-                        <asp:ListItem Text="Dunvegan" ></asp:ListItem>
-                        <asp:ListItem Text="Dowerglen" ></asp:ListItem>
-                        <asp:ListItem Text="Marais Steyn Park" ></asp:ListItem>
-                        <asp:ListItem Text="Croydon" ></asp:ListItem>
-                        <asp:ListItem Text="Isando" ></asp:ListItem>
-                        </asp:DropDownList></td>
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [Town] FROM [Location]"></asp:SqlDataSource>
+                        </th>
                 </tr>
                 <tr>
-                    <td style="width: 300px; height: 50px;">
-                        <asp:Label ID="lblTitle" runat="server" Text="Add Title to Job Category"></asp:Label></td>
-                    <td style="height: 50px">
+                    <th style="width: 300px; height: 50px;">
+                        <asp:Label ID="lblTitle" runat="server" Text="Add Title to Job Category"></asp:Label></th>
+                    <th style="height: 50px">
                         <asp:TextBox ID="txtTitle" runat="server" Height="25px" Width="180px"></asp:TextBox>
 
-                    </td>
+                    </th>
                 </tr>
                     <tr>
-                    <td style="width: 300px; margin:initial;">
-                        <asp:Label ID="lblDescription" runat="server" Text="Add Description"  ></asp:Label></td>
-                    <td>
-                        <asp:TextBox ID="txtDescription" TextMode="MultiLine"  runat="server" Height="52px" Width="180px"></asp:TextBox></td>
+                    <th style="width: 300px; margin:initial;">
+                        <asp:Label ID="lblDescription" runat="server" Text="Add Description"  ></asp:Label></th>
+                    <th>
+                        <asp:TextBox ID="txtDescription" TextMode="MultiLine"  runat="server" Height="52px" Width="180px"></asp:TextBox></th>
                 </tr>
 
                      <tr>
-                    <td style="width: 300px; margin:initial;">
-                        <asp:Label ID="lblLogo" runat="server" Text="Logo or Picture of your Work"></asp:Label></td>
-                    <td>
+                    <th style="width: 300px; margin:initial;">
+                        <asp:Label ID="lblLogo" runat="server" Text="Logo or Picture of your Work"></asp:Label></th>
+                    <th>
                         <div class="photos-upload-view">
 
 						<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
@@ -146,11 +152,12 @@
 							<button type="submit" id="btnUpload" runat="server">Upload Files</button>
 						</div>
 
-						</div></td>
+						</div></th>
                 </tr>
                
 
             </table>
+                    </div>
 
 				<%--<form>
 					<label>
@@ -221,7 +228,7 @@
 
 						
 
-                            <input type="submit" runat="server" id="btnSubmit" value="Register"/>	
+                            <input type="submit" runat="server" id="btnSubmitWorker" value="Register"/>	
 						
 						
 					<div class="clearfix"></div>
