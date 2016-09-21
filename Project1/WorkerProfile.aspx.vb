@@ -5,32 +5,54 @@ Public Class WorkerProfile
     Private worker As Worker
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-      
 
-        Dim c As User = Session("user")
-        worker = c
+        Dim type As String = Request.QueryString("type")
 
 
+        If type = "client" Then
+            Dim username As String = Request.QueryString("username")
 
-        lblRegion.Visible = True
-        lblName.Visible = True
-        lblSurname.Visible = True
-        lblNumber.Visible = True
-        lblEmail.Visible = True
+            worker = New Worker(username)
 
-        divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(worker.getRating())
+            divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(worker.getRating())
 
-        JobTitle.InnerText = worker.getCategory() 'setting the correct heading category
-        lblRegion.InnerText = worker.getRegion()
-        lblName.InnerText = worker.getName()
-        lblSurname.InnerHtml = worker.getSurname()
-        lblNumber.InnerText = worker.getNumbers()
-        lblEmail.InnerText = worker.getEmail()
+            JobTitle.InnerText = worker.getCategory() 'setting the correct heading category
+            lblRegion.InnerText = worker.getRegion()
+            lblName.InnerText = worker.getName()
+            lblSurname.InnerHtml = worker.getSurname()
+            lblNumber.InnerText = worker.getNumbers()
+            lblEmail.InnerText = worker.getEmail()
 
-        myJobs.InnerHtml = displayJobs()
-        JobNots.InnerHtml = displayJobs(worker.getCategory())
-        penJobs.InnerHtml = displayPendingJobs()
-        getHistory() ' to display all the previous work done by the worker
+            getHistory() ' to display all the previous work done by the worker
+
+        Else
+            Dim c As User = Session("user")
+            worker = c
+
+
+
+            lblRegion.Visible = True
+            lblName.Visible = True
+            lblSurname.Visible = True
+            lblNumber.Visible = True
+            lblEmail.Visible = True
+
+            divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(worker.getRating())
+
+            JobTitle.InnerText = worker.getCategory() 'setting the correct heading category
+            lblRegion.InnerText = worker.getRegion()
+            lblName.InnerText = worker.getName()
+            lblSurname.InnerHtml = worker.getSurname()
+            lblNumber.InnerText = worker.getNumbers()
+            lblEmail.InnerText = worker.getEmail()
+
+            myJobs.InnerHtml = displayJobs()
+            JobNots.InnerHtml = displayJobs(worker.getCategory())
+            penJobs.InnerHtml = displayPendingJobs()
+            getHistory() ' to display all the previous work done by the worker
+        End If
+
+       
     End Sub
 
     Private Function displayJobs() As String 'display jobs that the handyman has already accepted or is working on
