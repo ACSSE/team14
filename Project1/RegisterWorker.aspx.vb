@@ -39,9 +39,9 @@ Public Class apply
             surname = txtSurname.Text()
             email = txtEmail.Text()
             numbers = txtMobile.Text()
-
-            MsgBox("Name = " & name)
-            MsgBox("surname =" & surname)
+            region = regionList.SelectedItem().ToString()
+            'MsgBox("Name = " & name)
+            'MsgBox("surname =" & surname)
             ' category  'categoriesList.SelectedValue() 'txtTitle.Text()
 
             'To obtain string with all the selected categories
