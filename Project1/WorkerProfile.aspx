@@ -74,6 +74,7 @@
                     <div  class="interested text-center">
                     <div  id="divrating" runat="server">
                         </div>
+                        <p id="personalAd" runat="server"></p>
                         </div>
                     <br/>
                     <br/>

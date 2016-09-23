@@ -22,7 +22,7 @@ Public Class WorkerProfile
             lblSurname.InnerHtml = worker.getSurname()
             lblNumber.InnerText = worker.getNumbers()
             lblEmail.InnerText = worker.getEmail()
-
+            personalAd.InnerHtml = "<a href=""PostAdClient.aspx?adType=" & worker.getUsername() & """>" & "Post an ad to " & worker.getUsername() & "</a>"
             getHistory() ' to display all the previous work done by the worker
 
         Else
@@ -107,9 +107,9 @@ Public Class WorkerProfile
         Dim size As Integer = 0 'for resizing purposes
         Dim jobs(size) As Job 'array for jobs to be stored
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
-        Dim query As String = "Select * FROM AdTable WHERE Worker IS NULL"
+        Dim query As String = "Select * FROM AdTable WHERE Worker IS NULL AND PersonalAd IS NULL"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
 
         'NOTE TO SELF: use sql to get all the categories on a proper sql statement
