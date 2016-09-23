@@ -8,8 +8,13 @@ Public Class AdDetail
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ad = Request.QueryString("ID")
-
-        Dim adstring As String = AdInfor(ad)
+        Dim isPersonalAd As String = Request.QueryString("personalAd")
+        Dim adstring As String
+        If isPersonalAd = "false" Then
+            adstring = AdInfor(ad)
+        Else
+            adstring = AdpInfo(ad)
+        End If
 
         ClientInfo.InnerHtml = ClientInfor(clientUsername)
         AdInfo.InnerHtml = adstring
@@ -38,8 +43,38 @@ Public Class AdDetail
 
     End Function
 
+
+    Private Function AdpInfo(adID As Integer)
+        Dim pJobs() As Job = Session("personalJobs")
+
+        Dim selectedJob As Job = Nothing   'From n In jobs
+        'Where n.getID() = ad
+        '                 Select n
+        For i As Integer = 1 To pJobs.Length() - 1
+
+            If pJobs(i).getID() = ad Then
+                selectedJob = pJobs(i)
+            End If
+        Next
+
+        Dim adString As String = "<hr/>"
+
+        'displaying ad details
+        If selectedJob IsNot Nothing Then
+            AdHeading.InnerText = selectedJob.getTitle()
+            'adString &= "<h1 class=""head"">" & selectedJob.getTitle() & "</h1> <br />"
+            adString &= "<h3 class=""inline"">Category: </h3> " & "<p class=""inline"">" & selectedJob.getCategory() & "</p>" & " <br />"
+            adString &= "<h3>Description: </h3>"
+            adString &= "<p>" & selectedJob.getDescription() & "</p>"
+            clientUsername = selectedJob.getClient()
+        End If
+        adString &= "<hr/>"
+
+
+        Return adString
+    End Function
+
     Private Function AdInfor(adID As Integer) As String
-        'NOTE TO SELF: use jobs from Session("jobs") with LINQ to get the right one
         Dim jobs() As Job = Session("jobs")
         'getting correct job from list carried in Session("jobs")
         Dim selectedJob As Job = Nothing   'From n In jobs

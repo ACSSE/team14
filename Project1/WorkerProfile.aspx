@@ -79,7 +79,11 @@
                     <br/>
                     <br/>
                  
-                        
+                 <div class="interested text-center" id="personalJobs" runat="server">
+                                 
+                           
+						</div>
+                        <hr />
 
 						<div class="interested text-center" id="myJobs" runat="server">
                                  

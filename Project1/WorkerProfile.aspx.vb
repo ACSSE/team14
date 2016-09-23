@@ -46,6 +46,7 @@ Public Class WorkerProfile
             lblNumber.InnerText = worker.getNumbers()
             lblEmail.InnerText = worker.getEmail()
 
+            personalJobs.InnerHtml = displayPersonalJobs()
             myJobs.InnerHtml = displayJobs()
             JobNots.InnerHtml = displayJobs(worker.getCategory())
             penJobs.InnerHtml = displayPendingJobs()
@@ -145,7 +146,7 @@ Public Class WorkerProfile
                         tempJob = New Job(ID, category, title, description, clientUsername, "")
                         jobs(size) = tempJob 'adding job to the list
 
-                        notifications &= "<a href= AdDetail.aspx?ID=" & jobs(size).getID() & ">" & reader("AdTitle") & "</a> <br />"
+                        notifications &= "<a href= AdDetail.aspx?ID=" & jobs(size).getID() & "personalAd=false>" & reader("AdTitle") & "</a> <br />"
                     End If
                 End If
 
@@ -200,6 +201,55 @@ Public Class WorkerProfile
 
             End If
         Next i
+        Return notifications
+    End Function
+
+    Public Function displayPersonalJobs() As String 'for displaying ads targeted to handyman
+        Dim size As Integer = 0
+        Dim pJobs(size) As Job
+
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        adconnection.Open()
+        Dim query As String = "Select * FROM AdTable WHERE Worker IS NULL AND PersonalAd = @pad"
+        Dim command As SqlCommand = New SqlCommand(query, adconnection)
+        command.Parameters.AddWithValue("@pad", worker.getUsername())
+
+
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        Dim notifications As String = ""
+
+        If reader.HasRows Then
+
+            notifications = "<h3>Personal Jobs</h3> <br/>"
+
+            Dim tempJob As Job ' to use as holder
+
+            Dim clientUsername As String = ""
+            Dim ID As Integer = 0
+            Dim title As String = ""
+            Dim description As String = ""
+            Dim category As String = ""
+
+            While reader.Read() 'getting all the jobs
+
+                clientUsername = reader("Client")
+                ID = reader("PostAdId")
+                title = reader("AdTitle")
+                description = reader("AdDescription")
+                category = reader("Category")
+
+                size += 1
+                ReDim Preserve pJobs(size)
+                tempJob = New Job(ID, category, title, description, clientUsername, "")
+                pJobs(size) = tempJob 'adding job to the list
+
+                notifications &= "<a href= AdDetail.aspx?ID=" & pJobs(size).getID() & "&personalAd=true>" & reader("AdTitle") & "</a> <br />"
+
+
+            End While
+        End If
+        Session("personalJobs") = pJobs 'for personal jobs
         Return notifications
     End Function
 
