@@ -10,7 +10,7 @@
 	<div class="total-ads main-grid-border">
 		<div class="container">
 			<div class="select-box">
-				<div class="select-city-for-local-ads ads-list">
+			<%--	<div class="select-city-for-local-ads ads-list">
 					<label>Select your city</label>
 						<select>
 												<optgroup label="Ekhuruleni">
@@ -83,12 +83,12 @@
 			  <li><a href="index.aspx">Home</a></li>
 			  <li class="active">All Category</li>
 			</ol>
-
+--%>
 
 			<h2 class="head">Find your Worker</h2>
 			<div class="category-list">
 				<div id="parentVerticalTab">
-					<ul class="resp-tabs-list hor_1">
+					<ul id="CategoryList" class="resp-tabs-list hor_1" runat="server">
 						<li>Electricians</li>
 						<li>Paint & Decorations</li>
 						<li>Pool Specialist</li>
@@ -132,10 +132,11 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<ul class="list">
+                                <div id="divElectrician" runat="server">
+							
 								
 								
-								<a href="WorkerProfile.aspx">
+							<%--	<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p1.png" title="" alt="" />
 									<section class="list-left">
@@ -200,7 +201,9 @@
 									<div class="clearfix"></div>
 									</li> 
 								</a>
-							</ul>
+                                
+							--%>
+                            </div>
 						</div>
 							</div>
 						</div>
@@ -224,11 +227,11 @@
 					<div class="wrapper">					
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					  
-					  <div id="myTabContent" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+					  <div id="Div1" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="Div2" aria-labelledby="home-tab">
 						   <div>
-												<div id="container">
-								<div class="view-controls-list" id="viewcontrols">
+												<div id="Div3">
+								<div class="view-controls-list" id="Div4">
 									<label>view :</label>
 									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
 									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
@@ -244,10 +247,10 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<ul class="list">
+							<div id="PaintnDecoration" runat="server">
 								
 								
-								<a href="WorkerProfile.aspx">
+<%--								<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p1.png" title="" alt="" />
 									<section class="list-left">
@@ -311,8 +314,8 @@
 									</section>
 									<div class="clearfix"></div>
 									</li> 
-								</a>
-							</ul>
+								</a>--%>
+							</div>
 						</div>
 							</div>
 						</div>
@@ -336,11 +339,11 @@
 					<div class="wrapper">					
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					  
-					  <div id="myTabContent" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+					  <div id="Div5" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="Div6" aria-labelledby="home-tab">
 						   <div>
-												<div id="container">
-								<div class="view-controls-list" id="viewcontrols">
+												<div id="Div7">
+								<div class="view-controls-list" id="Div8">
 									<label>view :</label>
 									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
 									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
@@ -356,10 +359,10 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<ul class="list">
+							<div id="PoolSpel" runat="server">
 								
 								
-								<a href="WorkerProfile.aspx">
+<%--								<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p1.png" title="" alt="" />
 									<section class="list-left">
@@ -423,8 +426,8 @@
 									</section>
 									<div class="clearfix"></div>
 									</li> 
-								</a>
-							</ul>
+								</a>--%>
+							</div>
 						</div>
 							</div>
 						</div>
@@ -448,11 +451,11 @@
 					<div class="wrapper">					
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					  
-					  <div id="myTabContent" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+					  <div id="Div9" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="Div10" aria-labelledby="home-tab">
 						   <div>
-												<div id="container">
-								<div class="view-controls-list" id="viewcontrols">
+												<div id="Div11">
+								<div class="view-controls-list" id="Div12">
 									<label>view :</label>
 									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
 									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
@@ -468,10 +471,10 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<ul class="list">
+							<div id="GardennLandscaping" runat="server">
 								
 								
-								<a href="WorkerProfile.aspx">
+								<%--<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p1.png" title="" alt="" />
 									<section class="list-left">
@@ -535,8 +538,8 @@
 									</section>
 									<div class="clearfix"></div>
 									</li> 
-								</a>
-							</ul>
+								</a>--%>
+							</div>
 						</div>
 							</div>
 						</div>
@@ -561,11 +564,11 @@
 					<div class="wrapper">					
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					  
-					  <div id="myTabContent" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+					  <div id="Div13" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="Div14" aria-labelledby="home-tab">
 						   <div>
-												<div id="container">
-								<div class="view-controls-list" id="viewcontrols">
+												<div id="Div15">
+								<div class="view-controls-list" id="Div16">
 									<label>view :</label>
 									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
 									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
@@ -581,10 +584,10 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<ul class="list">
+							<div id="Security" runat="server">
 								
 								
-								<a href="WorkerProfile.aspx">
+<%--								<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p1.png" title="" alt="" />
 									<section class="list-left">
@@ -648,8 +651,8 @@
 									</section>
 									<div class="clearfix"></div>
 									</li> 
-								</a>
-							</ul>
+								</a>--%>
+							</div>
 						</div>
 							</div>
 						</div>
@@ -674,11 +677,11 @@
 					<div class="wrapper">					
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					  
-					  <div id="myTabContent" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+					  <div id="Div17" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="Div18" aria-labelledby="home-tab">
 						   <div>
-												<div id="container">
-								<div class="view-controls-list" id="viewcontrols">
+												<div id="Div19">
+								<div class="view-controls-list" id="Div20">
 									<label>view :</label>
 									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
 									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
@@ -694,10 +697,9 @@
 									   </div>
 									 </div>
 								<div class="clearfix"></div>
-							<ul class="list">
+							<div id="KitchenSpec" runat="server">
 								
-								
-								<a href="WorkerProfile.aspx">
+								<%--<a href="WorkerProfile.aspx">
 									<li>
 									<img src="images/p1.png" title="" alt="" />
 									<section class="list-left">
@@ -761,8 +763,8 @@
 									</section>
 									<div class="clearfix"></div>
 									</li> 
-								</a>
-							</ul>
+								</a>--%>
+							</div>
 						</div>
 							</div>
 						</div>

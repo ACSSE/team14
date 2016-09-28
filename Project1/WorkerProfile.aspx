@@ -74,11 +74,16 @@
                     <div  class="interested text-center">
                     <div  id="divrating" runat="server">
                         </div>
+                        <p id="personalAd" runat="server"></p>
                         </div>
                     <br/>
                     <br/>
                  
-                        
+                 <div class="interested text-center" id="personalJobs" runat="server">
+                                 
+                           
+						</div>
+                        <hr />
 
 						<div class="interested text-center" id="myJobs" runat="server">
                                  
