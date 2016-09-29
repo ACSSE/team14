@@ -4,10 +4,12 @@ Public Class Client
     Inherits User
 
     Private address As String
+    Protected suburb As String
 
     Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String, vsuburb As String, vdate As Date)
-        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vsuburb, vdate)
+        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vdate)
         address = vaddress
+        suburb = vsuburb
     End Sub
 
     Public Sub New(username As String, password As String)
@@ -183,7 +185,7 @@ Public Class Client
         Return 0
     End Function
 
-    
+
 
     Public Overrides Sub updateAverage(average As Integer)
         'update average rating
@@ -210,7 +212,7 @@ Public Class Client
         adconnection.Close()
     End Sub
 
-    
+
 
 
 

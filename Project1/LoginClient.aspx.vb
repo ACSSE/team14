@@ -23,7 +23,7 @@ Public Class Login
     Protected Sub btnLog_Click(sender As Object, e As EventArgs) Handles btnLog.ServerClick
         loginClient()
         LoginWorker()
-
+        LoginAdmin()
     End Sub
 
 
@@ -34,7 +34,7 @@ Public Class Login
             Dim pass As String = txtPassword.Value
 
             Dim client As Client = New Client(user, pass)
-            MsgBox("Username = " & client.getUsername() & " Password = " & pass)
+            'MsgBox("Username = " & client.getUsername() & " Password = " & pass)
 
             If client.getUsername() IsNot "" Then
                 MsgBox("In client if statement")
@@ -57,6 +57,23 @@ Public Class Login
                 Session("user") = cUser
                 'Session("UserName") = user
                 Response.Redirect("WorkerProfile.aspx")
+            End If
+        End If
+
+
+    End Sub
+
+    Public Sub LoginAdmin()
+        If Page.IsValid Then
+            Dim user As String = txtUsername.Value
+            Dim pass As String = txtPassword.Value
+
+            Dim worker As cAdmin = New cAdmin(user, pass)
+            If worker.getUsername() IsNot "" Then
+                Dim cUser As User = worker
+                Session("user") = cUser
+                'Session("UserName") = user
+                Response.Redirect("AdminPage.aspx")
             End If
         End If
     End Sub
