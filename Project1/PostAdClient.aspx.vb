@@ -37,13 +37,13 @@ Public Class PostAdClient
 
         If worker.getUsername() = Nothing Or worker.getUsername() = "" Then
             'Handyman is null upon creation of job
-            Dim job As Job = New Job(category, title, description, clientUsername, "")
+            Dim job As Job = New Job(category, title, description, clientUsername, "", Date.Now)
             job.saveJob(False) 'save job in the database
             'redirect to client page where new job should e displayed
             Response.Redirect("ClientProfile.aspx")
         Else
             'Handyman is null upon creation of job
-            Dim job As Job = New Job(category, title, description, clientUsername, worker.getUsername())
+            Dim job As Job = New Job(category, title, description, clientUsername, worker.getUsername(), Date.Now)
             job.saveJob(True) 'save job in the database
             'redirect to client page where new job should e displayed
             Response.Redirect("ClientProfile.aspx")

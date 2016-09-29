@@ -3,8 +3,8 @@
 Public Class cAdmin
     Inherits User
 
-    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String)
-        MyBase.New(vusername, vpassword, vname, vusername, vemail, "", "", )
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, vdate As Date)
+        MyBase.New(vusername, vpassword, vname, vusername, vemail, "", "", vdate)
 
     End Sub
 

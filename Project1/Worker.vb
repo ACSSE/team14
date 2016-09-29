@@ -10,7 +10,7 @@ Public Class Worker
 
     'specialised constructor
     Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, vdate As Date, description As String, category As String, logo As Image)
-        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, "", vdate)
+        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vdate)
         Me.description = description
         Me.logo = logo
         Me.category = category

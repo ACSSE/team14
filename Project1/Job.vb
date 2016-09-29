@@ -10,16 +10,18 @@ Public Class Job
     Private client As String
     Private Handyman As String
 
+    Private OpenDate As Date
     Private messenges() As Messenge
 
     'When job already exists in database, inclusion of JOBID
-    Public Sub New(jobID As Integer, category As String, title As String, description As String, client As String, Handyman As String)
+    Public Sub New(jobID As Integer, category As String, title As String, description As String, client As String, Handyman As String, vdate As Date)
         Me.JobID = jobID
         Me.category = category
         Me.title = title
         Me.description = description
         Me.client = client
         Me.Handyman = Handyman
+        OpenDate = vdate
     End Sub
 
     Public Sub New()
@@ -27,7 +29,7 @@ Public Class Job
     End Sub
 
     'When job is being newly created and added to the database
-    Public Sub New(category As String, title As String, description As String, client As String, Handyman As String)
+    Public Sub New(category As String, title As String, description As String, client As String, Handyman As String, vdate As Date)
         'MsgBox("Job:New()- category = " & ValidationClass.stringCategory(category))
 
         Me.category = category
@@ -35,7 +37,7 @@ Public Class Job
         Me.description = description
         Me.client = client
         Me.Handyman = Handyman
-
+        OpenDate = vdate
     End Sub
 
     Public Function getClient() As String
@@ -158,6 +160,11 @@ Public Class Job
 
 
     End Sub
+
+
+    Public Function getDate() As Date
+        Return OpenDate
+    End Function
 End Class
 
 

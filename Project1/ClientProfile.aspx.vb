@@ -83,13 +83,14 @@ Public Class ClientProfile
                 Dim title As String = reader("AdTitle")
                 Dim description As String = reader("AdDescription")
                 Dim category As String = reader("Category")
+                Dim oDate As Date = reader("OpenDate")
 
                 Dim tempJob As Job 'Temporary container for job object
 
                 If IsDBNull(reader("Status")) Then
 
                     If reader("Worker") Is Nothing Or IsDBNull(reader("Worker")) Then
-                        tempJob = New Job(ID, category, title, description, clientUsername, "")
+                        tempJob = New Job(ID, category, title, description, clientUsername, "", oDate)
                         jobs(size) = tempJob 'adding job to the list
 
                         'building html thing language to display jobs
@@ -103,7 +104,7 @@ Public Class ClientProfile
 
                         Dim handyman As String = reader("Worker") 'to be used in constructor
 
-                        tempJob = New Job(ID, category, title, description, clientUsername, handyman)
+                        tempJob = New Job(ID, category, title, description, clientUsername, handyman, oDate)
                         jobs(size) = tempJob 'adding job to the list
 
 

@@ -31,7 +31,6 @@
         surname = vsurname
         email = vemail
         region = vregion
-        suburb = vsuburb
         JoinDate = vdate
     End Sub
 
@@ -81,9 +80,6 @@
         Return joinDate
     End Function
 
-    Public Function getSuburb() As Date
-        Return suburb
-    End Function
 
     'Setters
     Public Sub updateUsername(vusername As String)
@@ -115,9 +111,6 @@
         region = vregion
     End Sub
 
-    Public Sub updateSuburb(vsuburb As String)
-        suburb = vsuburb
-    End Sub
 
     Public MustOverride Sub saveUser()
 

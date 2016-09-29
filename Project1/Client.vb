@@ -94,6 +94,16 @@ Public Class Client
         Me.address = address
     End Sub
 
+
+    Public Function getSuburb() As Date
+        Return suburb
+    End Function
+
+
+    Public Sub updateSuburb(vsuburb As String)
+        suburb = vsuburb
+    End Sub
+
     'for svaing a new record intoi the database
     Public Overrides Sub saveUser()
 
