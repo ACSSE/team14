@@ -28,7 +28,7 @@ Public Class Client
         Dim reader As SqlDataReader
         password = Secrecy.HashPassword(password)
 
-        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim commandstring As String = "SELECT * From Clients WHERE Username = @user AND Password = @pass"
 
         command = New SqlCommand(commandstring, connection)
@@ -60,7 +60,7 @@ Public Class Client
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim commandstring As String = "SELECT * From Clients WHERE Username = @user"
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
@@ -158,7 +158,7 @@ Public Class Client
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim commandstring As String = "SELECT * From AverageClientRating WHERE Client = @user"
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
@@ -187,7 +187,7 @@ Public Class Client
 
     Public Overrides Sub updateAverage(average As Integer)
         'update average rating
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "UPDATE AverageClientRating SET AverageRating = @average WHERE Client = @worker;"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)

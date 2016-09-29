@@ -29,15 +29,17 @@ Public Class Login
 
     Public Sub loginClient()
         If Page.IsValid Then
+
             Dim user As String = txtUsername.Value
             Dim pass As String = txtPassword.Value
 
             Dim client As Client = New Client(user, pass)
-           
+            MsgBox("Username = " & client.getUsername() & " Password = " & pass)
 
-            If client.getUsername IsNot "" Then
+            If client.getUsername() IsNot "" Then
+                MsgBox("In client if statement")
                 Dim cUser As User = client
-                Session("user") = cuser
+                Session("user") = cUser
                 'Session("UserName") = user
                 Response.Redirect("ClientProfile.aspx")
             End If

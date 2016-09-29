@@ -55,7 +55,7 @@ Public Class apply
                 End If
             Next i
 
-            MsgBox("RegisterWorker():btnReg- category = " & category)
+            ' MsgBox("RegisterWorker():btnReg- category = " & category)
 
             description = txtDescription.Text()
 
