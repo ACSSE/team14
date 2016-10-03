@@ -1,5 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
+Imports System.Data.SqlClient
+
 Public Class Worker
     Inherits User
 
@@ -9,13 +11,12 @@ Public Class Worker
     Private category As String
 
     'specialised constructor
-    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, vdate As Date, description As String, category As String, logo As Image)
-        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, "", vdate)
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, description As String, category As String, logo As Image, vdate As Date)
+        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vdate)
         Me.description = description
         Me.logo = logo
         Me.category = category
     End Sub
-
 
     'basic constructor
     Public Sub New(username As String, password As String)
@@ -34,7 +35,7 @@ Public Class Worker
         Dim reader As SqlDataReader
         password = Secrecy.HashPassword(password)
 
-        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim commandstring As String = "SELECT * From Workers WHERE Username = @user AND Password = @pass"
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
@@ -53,21 +54,18 @@ Public Class Worker
             'jobTitle = reader("JobTitle")
             description = reader("Description")
             category = reader("Category")
-            JoinDate = reader("JoinDate")
-
+            joinDate = reader("JoinDate")
         End If
     End Sub
 
     Public Overrides Sub saveUser()
-        MsgBox("Worker:saveUser()-inside function saveUser()")
+        '  MsgBox("Worker:saveUser()-inside function saveUser()")
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        MsgBox("Worker:SaveUser() - name = " & name)
-
         Dim commandstring As String = "INSERT INTO Workers (Name, Surname, Username, Password, MobileNumber, Email, Category, Region, Description, JoinDate) VALUES (@name, @surname, @username, @password, @mobil, @email, @category, @region, @description, @date)"
-        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         connection.Open()
         command = New SqlCommand(commandstring, connection)
 
@@ -81,10 +79,7 @@ Public Class Worker
         command.Parameters.AddWithValue("@region", region)
         'command.Parameters.AddWithValue("@JobTitle", jobTitle)
         command.Parameters.AddWithValue("@description", description)
-        command.Parameters.AddWithValue("@date", Date.Today)
-
-        MsgBox(Date.Today.Date)
-
+        command.Parameters.AddWithValue("@date", joinDate)
         reader = command.ExecuteReader()
 
         connection.Close()
@@ -142,8 +137,8 @@ Public Class Worker
             ' numbers = reader("MobileNumber")
             numbers = 0
             region = ""
-            JoinDate = ""
-
+            category = reader("Category")
+            joinDate = reader("JoinDate")
         End If
         rating = getRating()
         connection.Close()
@@ -174,7 +169,7 @@ Public Class Worker
         End If
         Return 0
     End Function
-    
+
     'gettoers
     Public Function getCategory() As String
         Return category

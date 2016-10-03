@@ -38,7 +38,7 @@
                     <th style="height: 30px">
                         <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"></asp:TextBox></th>
                 </tr>
-
+               
                 <tr>
                     <th style="width: 300px; height: 30px;">
                         <asp:Label ID="lblRepassword" runat="server" Text="Your Password Re-entered"></asp:Label></th>
@@ -47,7 +47,7 @@
                         <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtRepassword" ErrorMessage="Re-enter your pasword" ForeColor="Red" ValidateRequestMode="Enabled"></asp:CompareValidator>
                     </th>
                 </tr>
-               
+            
             
             </table>
                 <label id="lblCheck" runat="server"  style="margin-left:0px;"></label>
@@ -124,7 +124,7 @@
                 <tr>
                     <td></td>
                     <td>If your town isn't listed above,<br/> click <a href="findme.aspx">here</a> to help us find you </td>
-                    
+                
                 </tr>
                 <tr>
                     <th style="width: 300px; height: 13px;">
@@ -150,7 +150,7 @@
 
             </table>
 
- 
+                
 
 
                  <input type="submit" runat="server" id="btnRegClient" value="Register"/>

@@ -11,8 +11,8 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class QuotationDisplay
-
+Partial Public Class displayQuotation
+    
     '''<summary>
     '''quotation control.
     '''</summary>

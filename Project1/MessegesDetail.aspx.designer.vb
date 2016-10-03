@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Login
+Partial Public Class MessegesDetail
 
     '''<summary>
     '''Form1 control.
@@ -23,38 +23,29 @@ Partial Public Class Login
     Protected WithEvents Form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''txtUsername control.
+    '''messagesHistory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtUsername As Global.System.Web.UI.HtmlControls.HtmlInputText
+    Protected WithEvents messagesHistory As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''txtPassword control.
+    '''txtMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtPassword As Global.System.Web.UI.HtmlControls.HtmlInputPassword
+    Protected WithEvents txtMessage As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btnLog control.
+    '''btnSend control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnLog As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
-
-    '''<summary>
-    '''lblLogin control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblLogin As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents btnSend As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

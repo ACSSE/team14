@@ -68,11 +68,11 @@ Partial Public Class generateQuotation
     Protected WithEvents txtQuoteAmount As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btnSubQuote control.
+    '''btnReg control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnSubQuote As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
+    Protected WithEvents btnReg As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
 End Class

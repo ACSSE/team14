@@ -20,7 +20,7 @@ Public Class AdDetail
     Private Function ClientInfor(user As String) As String
         Dim client As Client = New Client(user) 'getting partial client information
 
-   
+
 
         Dim adString As String = ""
 
@@ -46,7 +46,7 @@ Public Class AdDetail
         'Where n.getID() = ad
         '                 Select n
         For i As Integer = 1 To jobs.Length() - 1
-            
+
             If jobs(i).getID() = ad Then
                 selectedJob = jobs(i)
             End If

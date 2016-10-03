@@ -45,6 +45,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web.DynamicData" />
@@ -85,11 +86,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdDetail.aspx" />
+    <Content Include="AdminStats.aspx" />
     <Content Include="AirConditioning.aspx" />
+    <Content Include="App_Data\dbo.LoginClient.data.sql" />
+    <Content Include="App_Data\dbo.LoginClient.sql" />
+    <Content Include="App_Data\dbo.PostAdClient.data.sql" />
     <Content Include="App_Data\HandymanDatabase.mdf" />
     <Content Include="App_Data\HandymanDatabase_log.ldf">
       <DependentUpon>HandymanDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\SQLQuery1.sql" />
+    <Content Include="App_Data\SQLQuery2.sql" />
+    <Content Include="App_Data\SQLQuery3.sql" />
+    <Content Include="App_Data\SQLQuery4.sql" />
+    <Content Include="App_Data\SQLQuery5.sql" />
+    <Content Include="App_Data\SQLQuery6.sql" />
+    <Content Include="App_Data\SQLQuery7.sql" />
+    <Content Include="App_Data\SQLQuery8.sql" />
     <Content Include="ClientProfile.aspx" />
     <Content Include="Electrician.aspx" />
     <Content Include="Faq.aspx" />
@@ -498,6 +511,13 @@
       <DependentUpon>AdDetail.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="AdminStats.aspx.designer.vb">
+      <DependentUpon>AdminStats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminStats.aspx.vb">
+      <DependentUpon>AdminStats.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="AirConditioning.aspx.designer.vb">
       <DependentUpon>AirConditioning.aspx</DependentUpon>
     </Compile>
@@ -505,6 +525,7 @@
       <DependentUpon>AirConditioning.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="cAdmin.vb" />
     <Compile Include="Client.vb" />
     <Compile Include="ClientProfile.aspx.designer.vb">
       <DependentUpon>ClientProfile.aspx</DependentUpon>
@@ -578,8 +599,13 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MessageList.vb" />
+    <Compile Include="Messenge.vb" />
     <Compile Include="MessengesDetail.aspx.designer.vb">
       <DependentUpon>MessengesDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MessengesDetail.aspx.vb">
+      <DependentUpon>MessengesDetail.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MessengesDetail.aspx.vb">
       <DependentUpon>MessengesDetail.aspx</DependentUpon>

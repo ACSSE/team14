@@ -5,7 +5,7 @@ Public Class WorkerProfile
     Private worker As Worker
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-      
+
 
         Dim c As User = Session("user")
         worker = c
@@ -66,7 +66,7 @@ Public Class WorkerProfile
                 description = reader("AdDescription")
                 category = reader("Category")
 
-                
+
                 tempJob = New Job(ID, category, title, description, clientUsername, "")
                 HandymanJobs(size) = tempJob 'adding job to the list
                 'TO DO Build messaging service here
@@ -109,7 +109,7 @@ Public Class WorkerProfile
             Dim category As String = ""
 
             While reader.Read() 'getting all the jobs
-                
+
 
                 clientUsername = reader("Client")
                 ID = reader("PostAdId")
@@ -154,7 +154,7 @@ Public Class WorkerProfile
         Dim notifications As String = "<h3>Closed Jobs</h3> <br/>"
 
         If reader.HasRows Then
-         
+
 
             While reader.Read() 'getting all the job IDs from pending jobs
                 size += 1
@@ -327,7 +327,7 @@ Public Class WorkerProfile
 
     Public Function getHistoryClientFromJobsInfo(JobID As Integer) As Client
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "Select * FROM AdTable WHERE PostAdId = @name;"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -347,13 +347,6 @@ Public Class WorkerProfile
 
     End Function
 
-    Public Function getCategoriesSqlStatement(list As String) As String
-        Dim categorySQL As String = ""
-        Dim tempVal As String = ""
 
-        'NOTE TO SELF: FIND OUT HOW TO SPLIT STRINGS
-
-        Return categorySQL
-    End Function
 
 End Class

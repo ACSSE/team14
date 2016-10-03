@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
-    
+
     <form id="Form1" runat="server">
     <div class="product-details">
         <h4>UserName :<label id="lblUsername" runat="server" text=""/></h4> <p></p>
@@ -35,7 +35,7 @@
 	    <input type="text" class="user" id="txtDescription" runat="server"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Username';}"/>
         
          </div>
-     <input id="btnSave" runat="server" type="submit" value="Save"/>
+    <input id="btnSave" runat="server" type="submit" value="Save"/>
             </form>
 
 

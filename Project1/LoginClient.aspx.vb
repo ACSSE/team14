@@ -1,3 +1,4 @@
+﻿
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 
@@ -33,7 +34,7 @@ Public Class Login
             Dim pass As String = txtPassword.Value
 
             Dim client As Client = New Client(user, pass)
-           
+
 
             If client.getUsername IsNot "" Then
                 Dim cUser As User = client
@@ -168,5 +169,5 @@ Public Class Login
     ' Protected Sub btnLogIn_Click(sender As Object, e As EventArgs) Handles btnLogIn.Click
     '    loginClient()
     '   loginWorker()
-    'End Sub
+    'End 
 End Class
