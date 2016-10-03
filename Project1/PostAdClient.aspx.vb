@@ -10,7 +10,6 @@ Public Class PostAdClient
 
         If type = "" Or type = Nothing Then
             categoriesList.Focus()
-            worker = New Worker("", "", "", "", "", "", "", Nothing, "", "", Nothing)
         Else
             worker = New Worker(type)
             ' bindCategories()
@@ -36,15 +35,15 @@ Public Class PostAdClient
         ValidationClass.equateText(title, txtTitle.Text())
         ValidationClass.equateText(description, txtDescription.Text())
 
-        If worker.getUsername() = "" Then
+        If worker.getUsername() = Nothing Or worker.getUsername() = "" Then
             'Handyman is null upon creation of job
-            Dim job As Job = New Job(category, title, description, clientUsername, "", Date.Now)
+            Dim job As Job = New Job(category, title, description, clientUsername, "")
             job.saveJob(False) 'save job in the database
             'redirect to client page where new job should e displayed
             Response.Redirect("ClientProfile.aspx")
         Else
             'Handyman is null upon creation of job
-            Dim job As Job = New Job(category, title, description, clientUsername, worker.getUsername(), Date.Now)
+            Dim job As Job = New Job(category, title, description, clientUsername, worker.getUsername())
             job.saveJob(True) 'save job in the database
             'redirect to client page where new job should e displayed
             Response.Redirect("ClientProfile.aspx")

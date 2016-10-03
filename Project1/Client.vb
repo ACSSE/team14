@@ -4,12 +4,10 @@ Public Class Client
     Inherits User
 
     Private address As String
-    Protected suburb As String
 
     Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String, vsuburb As String, vdate As Date)
-        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vdate)
+        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vsuburb, vdate)
         address = vaddress
-        suburb = vsuburb
     End Sub
 
     Public Sub New(username As String, password As String)
@@ -30,7 +28,7 @@ Public Class Client
         Dim reader As SqlDataReader
         password = Secrecy.HashPassword(password)
 
-        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         Dim commandstring As String = "SELECT * From Clients WHERE Username = @user AND Password = @pass"
 
         command = New SqlCommand(commandstring, connection)
@@ -62,7 +60,7 @@ Public Class Client
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         Dim commandstring As String = "SELECT * From Clients WHERE Username = @user"
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
@@ -92,16 +90,6 @@ Public Class Client
 
     Public Sub updateAddress(address As String)
         Me.address = address
-    End Sub
-
-
-    Public Function getSuburb() As Date
-        Return suburb
-    End Function
-
-
-    Public Sub updateSuburb(vsuburb As String)
-        suburb = vsuburb
     End Sub
 
     'for svaing a new record intoi the database
@@ -170,7 +158,7 @@ Public Class Client
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         Dim commandstring As String = "SELECT * From AverageClientRating WHERE Client = @user"
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
@@ -195,11 +183,11 @@ Public Class Client
         Return 0
     End Function
 
-
+    
 
     Public Overrides Sub updateAverage(average As Integer)
         'update average rating
-        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         adconnection.Open()
         Dim query As String = "UPDATE AverageClientRating SET AverageRating = @average WHERE Client = @worker;"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -222,7 +210,7 @@ Public Class Client
         adconnection.Close()
     End Sub
 
-
+    
 
 
 

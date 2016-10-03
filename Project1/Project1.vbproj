@@ -85,8 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdDetail.aspx" />
-    <Content Include="AdminPage.aspx" />
-    <Content Include="AdminStats.aspx" />
     <Content Include="AirConditioning.aspx" />
     <Content Include="App_Data\HandymanDatabase.mdf" />
     <Content Include="App_Data\HandymanDatabase_log.ldf">
@@ -500,20 +498,6 @@
       <DependentUpon>AdDetail.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="AdminPage.aspx.designer.vb">
-      <DependentUpon>AdminPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminPage.aspx.vb">
-      <DependentUpon>AdminPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminStats.aspx.designer.vb">
-      <DependentUpon>AdminStats.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminStats.aspx.vb">
-      <DependentUpon>AdminStats.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="AirConditioning.aspx.designer.vb">
       <DependentUpon>AirConditioning.aspx</DependentUpon>
     </Compile>
@@ -521,7 +505,6 @@
       <DependentUpon>AirConditioning.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="cAdmin.vb" />
     <Compile Include="Client.vb" />
     <Compile Include="ClientProfile.aspx.designer.vb">
       <DependentUpon>ClientProfile.aspx</DependentUpon>

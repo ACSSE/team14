@@ -638,46 +638,6 @@ KitchenSpec control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.AdminPage.lblName">
-	<summary>
-lblName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.AdminPage.lblSurname">
-	<summary>
-lblSurname control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.AdminPage.lblNumber">
-	<summary>
-lblNumber control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.AdminPage.lblEmail">
-	<summary>
-lblEmail control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.AdminPage.AdsDiv">
-	<summary>
-AdsDiv control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
 </member><member name="P:Project1.My.MyWebExtension.Computer">
 	<summary>
  Returns information about the host computer.
@@ -1026,30 +986,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.Responses.HandyMen">
 	<summary>
 HandyMen control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.AdminStats1.VisiterStats">
-	<summary>
-VisiterStats control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.AdminStats1.TotalUsers">
-	<summary>
-TotalUsers control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.AdminStats1.WeekStats">
-	<summary>
-WeekStats control.
 </summary>
 	<remarks>
 Auto-generated field.

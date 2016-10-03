@@ -10,18 +10,16 @@ Public Class Job
     Private client As String
     Private Handyman As String
 
-    Private OpenDate As Date
     Private messenges() As Messenge
 
     'When job already exists in database, inclusion of JOBID
-    Public Sub New(jobID As Integer, category As String, title As String, description As String, client As String, Handyman As String, vdate As Date)
+    Public Sub New(jobID As Integer, category As String, title As String, description As String, client As String, Handyman As String)
         Me.JobID = jobID
         Me.category = category
         Me.title = title
         Me.description = description
         Me.client = client
         Me.Handyman = Handyman
-        OpenDate = vdate
     End Sub
 
     Public Sub New()
@@ -29,7 +27,7 @@ Public Class Job
     End Sub
 
     'When job is being newly created and added to the database
-    Public Sub New(category As String, title As String, description As String, client As String, Handyman As String, vdate As Date)
+    Public Sub New(category As String, title As String, description As String, client As String, Handyman As String)
         'MsgBox("Job:New()- category = " & ValidationClass.stringCategory(category))
 
         Me.category = category
@@ -37,7 +35,7 @@ Public Class Job
         Me.description = description
         Me.client = client
         Me.Handyman = Handyman
-        OpenDate = vdate
+
     End Sub
 
     Public Function getClient() As String
@@ -79,19 +77,18 @@ Public Class Job
 
         If Not isPersonalAd Then 'for a public ad, variable handyman shall be null until handyman is found
             'JobId not included as it is autoincremented variable
-            command = New SqlCommand("INSERT INTO AdTable (Category, AdTitle, AdDescription, Client, OpenDate) VALUES (@category, @adtitle, @description, @user, @date)")
+            command = New SqlCommand("INSERT INTO AdTable (Category, AdTitle, AdDescription, Client) VALUES (@category, @adtitle, @description, @user)")
             command.Connection = connection
 
             command.Parameters.AddWithValue("@category", category)
             command.Parameters.AddWithValue("@AdTitle", title)
             command.Parameters.AddWithValue("@description", description)
             command.Parameters.AddWithValue("@user", client)
-            command.Parameters.AddWithValue("@date", OpenDate)
             'command.Parameters.AddWithValue("@img", fileSelect.PostedFile)
             'command.Parameters.AddWithValue("@logo", fileSelect.PostedFile)
         Else 'for personal add where handyman variable shall be used for column PersonalAd in AdTable
             'JobId not included as it is autoincremented variable
-            command = New SqlCommand("INSERT INTO AdTable (Category, AdTitle, AdDescription, Client, OpenDate, PersonalAd) VALUES (@category, @adtitle, @description, @user, @date, @pad)")
+            command = New SqlCommand("INSERT INTO AdTable (Category, AdTitle, AdDescription, Client, PersonalAd) VALUES (@category, @adtitle, @description, @user, @pad)")
             command.Connection = connection
 
             command.Parameters.AddWithValue("@category", category)
@@ -99,12 +96,11 @@ Public Class Job
             command.Parameters.AddWithValue("@description", description)
             command.Parameters.AddWithValue("@user", client)
             command.Parameters.AddWithValue("@pad", Handyman)
-            command.Parameters.AddWithValue("@date", OpenDate)
             'command.Parameters.AddWithValue("@img", fileSelect.PostedFile)
             'command.Parameters.AddWithValue("@logo", fileSelect.PostedFile)
         End If
 
-
+        
 
         reader = command.ExecuteReader()
 
@@ -162,11 +158,6 @@ Public Class Job
 
 
     End Sub
-
-
-    Public Function getDate() As Date
-        Return OpenDate
-    End Function
 End Class
 
 
