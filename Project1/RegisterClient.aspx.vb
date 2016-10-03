@@ -87,11 +87,11 @@ Public Class Register
 
     End Sub
 
-    Protected Sub btnRegi_Click(sender As Object, e As EventArgs) Handles btnRegi.ServerClick
+
+    Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnRegClient.ServerClick
 
 
-
-        Dim username As String = txtUsername.Text()
+        Dim username As String = ""
         Dim password As String = ""
         Dim name As String = ""
         Dim surname As String = ""
@@ -103,29 +103,28 @@ Public Class Register
 
 
         Dim tempClient As Client = New Client(username)
+
         If tempClient.getUsername() = "" Then
-
-            If tempClient.getUsername() = "" Then
-                ' username = txtUsername.Text()
-                password = txtPassword.Text()
-                name = txtName.Text()
-                surname = txtSurname.Text()
-                email = txtEmail.Text()
-                numbers = txtMobile.Text()
-                address = txtAddress.Text()
-                region = regionList.Text()
-                surburb = suburbList.Text()
+            username = txtUsername.Text()
+            password = txtPassword.Text()
+            name = txtName.Text()
+            surname = txtSurname.Text()
+            email = txtEmail.Text()
+            numbers = txtMobile.Text()
+            address = txtAddress.Text()
+            region = regionList.Text()
+            surburb = suburbList.Text()
 
 
 
-                Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region, surburb, Date.Now)
+            Dim client As Client = New Client(username, password, name, surname, email, numbers, address, region, surburb, Date.Now)
 
-                client.saveUser()
-                Dim cUser As User = client
-                Session("user") = cUser
-                'Session("UserName") = User
-                Response.Redirect("ClientProfile.aspx")
-            End If
+            client.saveUser()
+            Dim cUser As User = client
+            Session("user") = cUser
+            'Session("UserName") = User
+            Response.Redirect("ClientProfile.aspx")
+        End If
 
     End Sub
 

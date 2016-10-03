@@ -23,14 +23,20 @@ Public Class Job
         Me.Handyman = Handyman
     End Sub
 
+    Public Sub New()
+
+    End Sub
+
     'When job is being newly created and added to the database
     Public Sub New(category As String, title As String, description As String, client As String, Handyman As String)
         'MsgBox("Job:New()- category = " & ValidationClass.stringCategory(category))
+
         Me.category = category
         Me.title = title
         Me.description = description
         Me.client = client
         Me.Handyman = Handyman
+
     End Sub
 
     Public Function getClient() As String
@@ -61,7 +67,7 @@ Public Class Job
         Return category
     End Function
 
-    Public Sub saveJob()
+    Public Sub saveJob(isPersonalAd As Boolean)
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader
@@ -70,16 +76,32 @@ Public Class Job
         'Dim query As String = "SELECT * FROM PostAdClient WHERE PostAdId = @post;"
         connection.Open()
 
-        'JobId not included as it is autoincremented variable
-        command = New SqlCommand("INSERT INTO AdTable (Category, AdTitle, AdDescription, Client) VALUES (@category, @adtitle, @description, @user)")
-        command.Connection = connection
+        If Not isPersonalAd Then 'for a public ad, variable handyman shall be null until handyman is found
+            'JobId not included as it is autoincremented variable
+            command = New SqlCommand("INSERT INTO AdTable (Category, AdTitle, AdDescription, Client) VALUES (@category, @adtitle, @description, @user)")
+            command.Connection = connection
 
-        command.Parameters.AddWithValue("@category", category)
-        command.Parameters.AddWithValue("@AdTitle", title)
-        command.Parameters.AddWithValue("@description", description)
-        command.Parameters.AddWithValue("@user", client)
-        'command.Parameters.AddWithValue("@img", fileSelect.PostedFile)
-        'command.Parameters.AddWithValue("@logo", fileSelect.PostedFile)
+            command.Parameters.AddWithValue("@category", category)
+            command.Parameters.AddWithValue("@AdTitle", title)
+            command.Parameters.AddWithValue("@description", description)
+            command.Parameters.AddWithValue("@user", client)
+            'command.Parameters.AddWithValue("@img", fileSelect.PostedFile)
+            'command.Parameters.AddWithValue("@logo", fileSelect.PostedFile)
+        Else 'for personal add where handyman variable shall be used for column PersonalAd in AdTable
+            'JobId not included as it is autoincremented variable
+            command = New SqlCommand("INSERT INTO AdTable (Category, AdTitle, AdDescription, Client, PersonalAd) VALUES (@category, @adtitle, @description, @user, @pad)")
+            command.Connection = connection
+
+            command.Parameters.AddWithValue("@category", category)
+            command.Parameters.AddWithValue("@AdTitle", title)
+            command.Parameters.AddWithValue("@description", description)
+            command.Parameters.AddWithValue("@user", client)
+            command.Parameters.AddWithValue("@pad", Handyman)
+            'command.Parameters.AddWithValue("@img", fileSelect.PostedFile)
+            'command.Parameters.AddWithValue("@logo", fileSelect.PostedFile)
+        End If
+
+        
 
         reader = command.ExecuteReader()
 

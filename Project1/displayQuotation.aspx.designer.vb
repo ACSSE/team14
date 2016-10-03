@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class displayQuotation
-    
+
     '''<summary>
     '''quotation control.
     '''</summary>

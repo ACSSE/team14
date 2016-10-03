@@ -1,13 +1,12 @@
-﻿
-<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="generateQuotation.aspx.vb" Inherits="Project1.generateQuotation" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="generateQuotation.aspx.vb" Inherits="Project1.generateQuotation" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
 
     <form  runat="server">
-    <div class="post-ad-form text-center">
+    <div class="post-ad-form">
          
-        <h2 class="head">Quotation</h2><br/>
+        <h2 class="head">Generate Quotation</h2><br/>
         <table runat="server" style="margin:initial">
                 <tr>
                     <th>
@@ -30,7 +29,7 @@
                 </tr>
 
                </table>
-        <input type="submit" runat="server" id="btnReg" value="Add"/>
+        <input type="submit" runat="server" id="btnSubQuote" value="Submit"/>
         </div></form>
 
 </asp:Content>

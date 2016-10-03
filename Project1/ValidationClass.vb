@@ -1,6 +1,6 @@
 ﻿Public Class ValidationClass
 
-    Public Const CONNECTIONSTRING As String = "Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True providerName= System.Data.SqlClient"
+    Public Const CONNECTIONSTRING As String = "Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True"
 
     Public Shared Function equateText(ByRef original As String, nuValue As String) As Boolean
         If nuValue = "" Then
