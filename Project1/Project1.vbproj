@@ -45,7 +45,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web.DynamicData" />
@@ -88,21 +87,10 @@
     <Content Include="AdDetail.aspx" />
     <Content Include="AdminStats.aspx" />
     <Content Include="AirConditioning.aspx" />
-    <Content Include="App_Data\dbo.LoginClient.data.sql" />
-    <Content Include="App_Data\dbo.LoginClient.sql" />
-    <Content Include="App_Data\dbo.PostAdClient.data.sql" />
     <Content Include="App_Data\HandymanDatabase.mdf" />
     <Content Include="App_Data\HandymanDatabase_log.ldf">
       <DependentUpon>HandymanDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\SQLQuery1.sql" />
-    <Content Include="App_Data\SQLQuery2.sql" />
-    <Content Include="App_Data\SQLQuery3.sql" />
-    <Content Include="App_Data\SQLQuery4.sql" />
-    <Content Include="App_Data\SQLQuery5.sql" />
-    <Content Include="App_Data\SQLQuery6.sql" />
-    <Content Include="App_Data\SQLQuery7.sql" />
-    <Content Include="App_Data\SQLQuery8.sql" />
     <Content Include="ClientProfile.aspx" />
     <Content Include="Electrician.aspx" />
     <Content Include="Faq.aspx" />
@@ -599,13 +587,8 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MessageList.vb" />
-    <Compile Include="Messenge.vb" />
     <Compile Include="MessengesDetail.aspx.designer.vb">
       <DependentUpon>MessengesDetail.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MessengesDetail.aspx.vb">
-      <DependentUpon>MessengesDetail.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MessengesDetail.aspx.vb">
       <DependentUpon>MessengesDetail.aspx</DependentUpon>
@@ -834,6 +817,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\PublishProfiles\Default Settings.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

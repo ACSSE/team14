@@ -11,23 +11,32 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class LeaveComment
+Partial Public Class MessagesDetail
 
     '''<summary>
-    '''txtComment control.
+    '''messagesHistory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtComment As Global.System.Web.UI.HtmlControls.HtmlTextArea
+    Protected WithEvents messagesHistory As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''btnSubmit control.
+    '''txtMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnSubmit As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
+    Protected WithEvents txtMessage As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''btnSend control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSend As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

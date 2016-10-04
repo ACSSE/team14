@@ -128,9 +128,9 @@ Public Class Register
 
     End Sub
 
+   
 
-
-
+  
 
     'Protected Sub regionList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles regionList.SelectedIndexChanged
 
@@ -177,5 +177,5 @@ Public Class Register
     '    End If
     'End Sub
 
-
+    
 End Class

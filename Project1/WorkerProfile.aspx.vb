@@ -53,7 +53,7 @@ Public Class WorkerProfile
             getHistory() ' to display all the previous work done by the worker
         End If
 
-
+       
     End Sub
 
     Private Function displayJobs() As String 'display jobs that the handyman has already accepted or is working on
@@ -89,7 +89,7 @@ Public Class WorkerProfile
                 description = reader("AdDescription")
                 category = reader("Category")
 
-
+                
                 tempJob = New Job(ID, category, title, description, clientUsername, "")
                 HandymanJobs(size) = tempJob 'adding job to the list
                 'TO DO Build messaging service here
@@ -130,7 +130,7 @@ Public Class WorkerProfile
             Dim category As String = ""
 
             While reader.Read() 'getting all the jobs
-
+                
 
                 clientUsername = reader("Client")
                 ID = reader("PostAdId")
@@ -175,7 +175,7 @@ Public Class WorkerProfile
         Dim notifications As String = "<h3>Closed Jobs</h3> <br/>"
 
         If reader.HasRows Then
-
+         
 
             While reader.Read() 'getting all the job IDs from pending jobs
                 size += 1

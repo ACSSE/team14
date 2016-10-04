@@ -85,38 +85,6 @@ Public Class Worker
 
         MsgBox(Date.Today.Date)
 
-        'specialised constructor
-    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, description As String, category As String, logo As Image)
-        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion)
-        Me.description = description
-        Me.logo = logo
-        Me.category = category
-    End Sub
-
-    'basic constructor
-    Public Sub New(username As String, password As String)
-        MyBase.New()
-        getWorker(username, password)
-    End Sub
-
-    Public Sub New(username As String)
-        getPartialWorkerInfo(username)
-    End Sub
-
-    'getting handyman from database
-    Private Sub getWorker(username As String, password As String)
-        Dim connection As SqlConnection
-        Dim command As SqlCommand
-        Dim reader As SqlDataReader
-        password = Secrecy.HashPassword(password)
-
-        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim commandstring As String = "SELECT * From Workers WHERE Username = @user AND Password = @pass"
-        command = New SqlCommand(commandstring, connection)
-        command.Parameters.AddWithValue("@user", username)
-        command.Parameters.AddWithValue("@pass", password)
-
-        command.Connection.Open()
         reader = command.ExecuteReader()
 
         connection.Close()
@@ -174,7 +142,7 @@ Public Class Worker
             ' numbers = reader("MobileNumber")
             numbers = 0
             region = ""
-            JoinDate = ""
+            JoinDate = reader("JoinDate")
 
         End If
         rating = getRating()
@@ -206,7 +174,7 @@ Public Class Worker
         End If
         Return 0
     End Function
-
+    
     'gettoers
     Public Function getCategory() As String
         Return category

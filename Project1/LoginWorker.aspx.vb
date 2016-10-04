@@ -1,4 +1,3 @@
-﻿
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 Public Class LoginWorker
@@ -13,7 +12,7 @@ Public Class LoginWorker
         '    End If
         'End If
 
-
+       
     End Sub
 
     Protected Sub btnLog_Click(sender As Object, e As EventArgs) Handles btnLog.ServerClick
@@ -50,7 +49,7 @@ Public Class LoginWorker
                 If found = True Then
                     Session("UserName") = username
                     Session("Browser") = Request.UserAgent.ToString
-
+                   
 
 
                 Else

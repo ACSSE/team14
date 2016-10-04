@@ -10,7 +10,7 @@ Public Class Post
         Dim command As SqlCommand = New SqlCommand(query, connection)
         command.Parameters.AddWithValue("@username", Session("UserName"))
 
-
+        
     End Sub
 
 End Class

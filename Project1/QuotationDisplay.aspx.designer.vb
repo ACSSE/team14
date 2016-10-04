@@ -11,23 +11,14 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class LeaveComment
+Partial Public Class QuotationDisplay
 
     '''<summary>
-    '''txtComment control.
+    '''quotation control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtComment As Global.System.Web.UI.HtmlControls.HtmlTextArea
-
-    '''<summary>
-    '''btnSubmit control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnSubmit As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
+    Protected WithEvents quotation As Global.System.Web.UI.HtmlControls.HtmlForm
 End Class

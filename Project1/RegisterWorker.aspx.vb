@@ -27,6 +27,8 @@ Public Class apply
         Dim region As String = ""
         Dim category As String = ""
         Dim description As String = ""
+        Dim image As Image = Nothing
+
 
 
         Dim tempClient As Worker = New Worker(username, password)
@@ -40,6 +42,9 @@ Public Class apply
             email = txtEmail.Text()
             numbers = txtMobile.Text()
             region = regionList.SelectedItem().ToString()
+            image = fileSelect.
+
+
             'MsgBox("Name = " & name)
             'MsgBox("surname =" & surname)
             ' category  'categoriesList.SelectedValue() 'txtTitle.Text()
@@ -125,7 +130,7 @@ Public Class apply
 
     Protected Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnUpload.ServerClick
 
-
+       
     End Sub
 
 End Class

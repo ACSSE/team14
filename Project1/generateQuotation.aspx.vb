@@ -12,12 +12,12 @@
         Dim quoteDescription As String = ""
         Dim hours As Integer = ""
         Dim quoteAmount As Integer = ""
-
+       
         quoteDescription = txtQuoteDescription.Text()
         hours = txtQuoteHours.Text()
         quoteAmount = txtQuoteAmount.Text
 
-
+           
 
 
         Dim quotation As Quotation = New Quotation(quoteId, quoteDescription, hours, quoteAmount)

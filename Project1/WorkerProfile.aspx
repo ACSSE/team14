@@ -1,5 +1,4 @@
-﻿
-<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="WorkerProfile.aspx.vb" Inherits="Project1.WorkerProfile" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="WorkerProfile.aspx.vb" Inherits="Project1.WorkerProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
@@ -53,7 +52,6 @@
 					</div>
 
                     <div class="product-price">
-                    <h3><a href="ViewHistory.aspx">View Work History</a></h3>
 							<h3 class="rate">History</h3>
 
 						</div>

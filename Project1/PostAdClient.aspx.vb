@@ -10,6 +10,8 @@ Public Class PostAdClient
 
         If type = "" Or type = Nothing Then
             categoriesList.Focus()
+            worker = New Worker("", "", "", "", "", "", "", Nothing, "", "", Nothing)
+
         Else
             worker = New Worker(type)
             ' bindCategories()
@@ -35,7 +37,9 @@ Public Class PostAdClient
         ValidationClass.equateText(title, txtTitle.Text())
         ValidationClass.equateText(description, txtDescription.Text())
 
-        If worker.getUsername() = Nothing Or worker.getUsername() = "" Then
+        If worker.getUsername() = "" Then
+
+
             'Handyman is null upon creation of job
             Dim job As Job = New Job(category, title, description, clientUsername, "")
             job.saveJob(False) 'save job in the database

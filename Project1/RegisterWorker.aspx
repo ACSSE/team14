@@ -3,8 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
      
-     <div class="submit-ad main-grid-border">
-		<div class="container">
+     <div class="submit-ad main-grid-border" runat="server">
+		<div class="container" runat="server" >
             <form runat="server">
 			<h2 class="head">Register With Us</h2>
 
@@ -148,9 +148,6 @@
 							<div id="filedrag">or drop file here</div>
 						</div>
 
-						<div id="submitbutton">
-							<button type="submit" id="btnUpload" runat="server">Upload Files</button>
-						</div>
 
 						</div></th>
                 </tr>
@@ -228,7 +225,7 @@
 
 						
 
-                            <input type="submit" runat="server" id="btnSubmit" value="Register"/>	
+                            <input type="submit" runat="server" id="btnSubmitWorker" value="Register"/>	
 						
 						
 					<div class="clearfix"></div>

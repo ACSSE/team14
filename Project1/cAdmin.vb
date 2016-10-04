@@ -4,7 +4,8 @@ Public Class cAdmin
     Inherits User
 
     Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String)
-        MyBase.New(vusername, vpassword, vname, vusername, vemail, "", "", Nothing)
+
+        MyBase.New(vusername, vpassword, vname, vusername, vemail, "", "", Nothing, "")
 
     End Sub
 
@@ -27,13 +28,13 @@ Public Class cAdmin
 
         If reader.HasRows Then
             reader.Read()
-            'MsgBox("In the admin function")
+            MsgBox("In the admin function")
             Me.username = vusername
             Me.password = reader("Password")
             Name = reader("Name")
             surname = reader("Surname")
             email = reader("Email")
-            numbers = reader("MobileNumbers")
+
         End If
     End Sub
 
