@@ -85,12 +85,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdDetail.aspx" />
+    <Content Include="AdminPage.aspx" />
+    <Content Include="AdminStats.aspx" />
     <Content Include="AirConditioning.aspx" />
     <Content Include="App_Data\HandymanDatabase.mdf" />
     <Content Include="App_Data\HandymanDatabase_log.ldf">
       <DependentUpon>HandymanDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="ClientProfile.aspx" />
+    <Content Include="displayQuotation.aspx" />
     <Content Include="Electrician.aspx" />
     <Content Include="Faq.aspx" />
     <Content Include="FeaturedWorkers.aspx" />
@@ -230,6 +233,7 @@
     <Content Include="LoginClient.aspx" />
     <Content Include="LoginWorker.aspx" />
     <Content Include="logout.aspx" />
+    <Content Include="MessegesDetail.aspx" />
     <Content Include="MessengesDetail.aspx" />
     <Content Include="Move.aspx" />
     <Content Include="PaintDecoration.aspx" />
@@ -485,6 +489,7 @@
     <Content Include="SecuritySafety.aspx" />
     <Content Include="Tilling.aspx" />
     <Content Include="UpdateProfile.aspx" />
+    <Content Include="ViewHistory.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -498,6 +503,20 @@
       <DependentUpon>AdDetail.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="AdminPage.aspx.designer.vb">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage.aspx.vb">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminStats.aspx.designer.vb">
+      <DependentUpon>AdminStats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminStats.aspx.vb">
+      <DependentUpon>AdminStats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="AirConditioning.aspx.designer.vb">
       <DependentUpon>AirConditioning.aspx</DependentUpon>
     </Compile>
@@ -505,6 +524,7 @@
       <DependentUpon>AirConditioning.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="cAdmin.vb" />
     <Compile Include="Client.vb" />
     <Compile Include="ClientProfile.aspx.designer.vb">
       <DependentUpon>ClientProfile.aspx</DependentUpon>
@@ -512,6 +532,13 @@
     <Compile Include="ClientProfile.aspx.vb">
       <DependentUpon>ClientProfile.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="displayQuotation.aspx.designer.vb">
+      <DependentUpon>displayQuotation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="displayQuotation.aspx.vb">
+      <DependentUpon>displayQuotation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Electrician.aspx.designer.vb">
       <DependentUpon>Electrician.aspx</DependentUpon>
@@ -578,6 +605,13 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MessageList.vb" />
+    <Compile Include="MessegesDetail.aspx.designer.vb">
+      <DependentUpon>MessegesDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MessegesDetail.aspx.vb">
+      <DependentUpon>MessegesDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="MessengesDetail.aspx.designer.vb">
       <DependentUpon>MessengesDetail.aspx</DependentUpon>
     </Compile>
@@ -594,7 +628,15 @@
       <DependentUpon>QuotationDisplay.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="QuotationList.vb" />
     <Compile Include="ValidationClass.vb" />
+    <Compile Include="ViewHistory.aspx.designer.vb">
+      <DependentUpon>ViewHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewHistory.aspx.vb">
+      <DependentUpon>ViewHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Worker.vb" />
     <Compile Include="HowItWorks.aspx.designer.vb">
       <DependentUpon>HowItWorks.aspx</DependentUpon>

@@ -1,5 +1,4 @@
-﻿Imports System.Data.SqlClient
-
+Imports System.Data.SqlClient
 Public Class RatingHandyMan
     Inherits System.Web.UI.Page
 
@@ -79,7 +78,7 @@ Public Class RatingHandyMan
 
         connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         connection.Open()
-        command = New SqlCommand("INSERT INTO Ratings (JobID, Worker, TimeManagenment, Interpersonal, Quality, Profesionalism, Consistency, Comments, Pending) VALUES (@ID, @worker, @Man, @Inter, @Qual, @Prof, @Cons, @comments, @pending)", connection)
+        command = New SqlCommand("INSERT INTO Ratings (JobID, Worker, TimeManagenment, Interpersonal, Quality, Profesionalism, Consistency, Comments, Pending, JobAverage) VALUES (@ID, @worker, @Man, @Inter, @Qual, @Prof, @Cons, @comments, @pending, @average)", connection)
 
         command.Parameters.AddWithValue("@ID", adID)
         command.Parameters.AddWithValue("@worker", handyman)
@@ -90,6 +89,7 @@ Public Class RatingHandyMan
         command.Parameters.AddWithValue("@Cons", an)
         command.Parameters.AddWithValue("@comments", comments)
         command.Parameters.AddWithValue("@pending", "true")
+        command.Parameters.AddWithValue("@average", Average)
         reader = command.ExecuteReader()
 
         connection.Close()

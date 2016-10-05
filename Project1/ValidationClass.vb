@@ -1,4 +1,5 @@
-﻿Public Class ValidationClass
+
+Public Class ValidationClass
 
     Public Const CONNECTIONSTRING As String = "Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True"
 
@@ -48,7 +49,7 @@
             Htmlmessenges &= "<asp:ListItem Text= Empty></asp:ListItem>"
         End If
 
-        Htmlmessenges &= "<asp:ListItem><a href=MessengesDetail.aspx?ID=" & jobID & ">View All/Send Messenge</a></asp;ListItem>"
+        Htmlmessenges &= "<asp:ListItem><a href=MessegesDetail.aspx?ID=" & jobID & ">View All/Send Messenge</a></asp;ListItem>"
         Htmlmessenges &= "</asp:DropDownList></td>"
         Return Htmlmessenges
     End Function
@@ -70,3 +71,4 @@
     End Function
 
 End Class
+

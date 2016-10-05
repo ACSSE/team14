@@ -1,4 +1,4 @@
-﻿Imports System.Data
+Imports System.Data
 Imports System.Data.SqlClient
 Public Class LoginWorker
     Inherits System.Web.UI.Page

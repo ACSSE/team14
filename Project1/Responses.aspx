@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Responses.aspx.vb" Inherits="Project1.Responses" %>
+<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Responses.aspx.vb" Inherits="Project1.Responses" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
 <h2 class="head"> Responses</h2>
+<a href="ClientProfile.aspx">Return to Profile Page</a>
 <div class="post-add-form">
 
 

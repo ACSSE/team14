@@ -1,4 +1,3 @@
-﻿
 Imports System.Data.SqlClient
 
 
@@ -8,6 +7,7 @@ Public Class ClientProfile
     Inherits System.Web.UI.Page
 
     Private client As Client
+    Private newRes As Boolean
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'update.InnerHtml = "<a href=""UpdateProfile.aspx?username=" & Session("UserName") & "&user=client>Update your profile</a>"
@@ -52,13 +52,29 @@ Public Class ClientProfile
 
     End Sub
 
+    Protected Overrides Sub OnInit(e As EventArgs)
+        Response.Cache.SetCacheability(HttpCacheability.NoCache)
+        Response.Cache.SetNoStore()
+        Response.Cache.SetExpires(DateTime.MinValue)
+        MyBase.OnInit(e)
+        
+    End Sub
+
+    ' protected override void OnInit(EventArgs e)
+    '{
+    '    Response.Cache.SetCacheability(HttpCacheability.NoCache);
+    '    Response.Cache.SetNoStore();
+    '    Response.Cache.SetExpires(DateTime.MinValue);
+
+    '    base.OnInit(e);
+    '}
 
     Private Function displayAds() As String 'to display ads that client has posted but have no handyman assinged to them
         Dim size As Integer = 0 'to use as a resize reference
         Dim jobs(size) As Job 'to store all jobs
 
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "Select * FROM AdTable WHERE Client = @name;"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -83,18 +99,27 @@ Public Class ClientProfile
                 Dim title As String = reader("AdTitle")
                 Dim description As String = reader("AdDescription")
                 Dim category As String = reader("Category")
-
+                Dim mdate As Date
+                If Not IsDBNull(reader("OpenDate")) Then
+                    mdate = reader("OpenDate")
+                End If
                 Dim tempJob As Job 'Temporary container for job object
 
                 If IsDBNull(reader("Status")) Then
 
                     If reader("Worker") Is Nothing Or IsDBNull(reader("Worker")) Then
-                        tempJob = New Job(ID, category, title, description, clientUsername, "")
+                        tempJob = New Job(ID, category, title, description, clientUsername, "", mdate)
                         jobs(size) = tempJob 'adding job to the list
 
                         'building html thing language to display jobs
                         newAds &= "<div>"
-                        newAds &= "<h4>" & tempJob.getTitle() & "</h4>"
+                        determineNewRes(ID)
+                        If newRes Then
+                            newAds &= "<h4>" & tempJob.getTitle() & "<b><small style=""color:red"">NEW</small></b></h4>"
+                        Else
+                            newAds &= "<h4>" & tempJob.getTitle() & "</h4>"
+                        End If
+
                         newAds &= displayResponses(tempJob.getID())
                         newAds &= "<a href=ClientProfile.aspx?function=cancel&cancelID=" & tempJob.getID() & ">Cancel</a>"
                         newAds &= "</div>" & Environment.NewLine
@@ -103,7 +128,7 @@ Public Class ClientProfile
 
                         Dim handyman As String = reader("Worker") 'to be used in constructor
 
-                        tempJob = New Job(ID, category, title, description, clientUsername, handyman)
+                        tempJob = New Job(ID, category, title, description, clientUsername, handyman, mdate)
                         jobs(size) = tempJob 'adding job to the list
 
 
@@ -126,6 +151,7 @@ Public Class ClientProfile
 
     Private Function displayResponses(adID As String) As String
         Dim count As Integer = 0
+        '  newRes = False
 
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "SELECT * FROM Responses WHERE AdID = @name;"
@@ -139,11 +165,38 @@ Public Class ClientProfile
         If reader.HasRows Then
             While reader.Read()
                 count += 1
+                
             End While
         End If
 
-        Return "<a href=Responses.aspx?ID=" & adID & ">Responses(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
+            Return "<a href=Responses.aspx?ID=" & adID & ">Responses(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
+        
     End Function
+
+    Public Sub determineNewRes(adID As Integer)
+        '  Dim count As Integer = 0
+        newRes = False
+
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim query As String = "SELECT * FROM Responses WHERE AdID = @name;"
+        connection.Open()
+
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@name", adID)
+
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            While reader.Read()
+                '   count += 1
+                If reader("Checked") = "unchecked" Then
+                    newRes = True
+                End If
+            End While
+        End If
+
+
+    End Sub
 
     Private Sub changeDB() 'NOTE TO SELF when changing handyman see this function
         Dim selected As String = Request.QueryString("Selected")

@@ -5,55 +5,32 @@ Public Class WorkerProfile
     Private worker As Worker
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+      
 
-        Dim type As String = Request.QueryString("type")
-
-
-        If type = "client" Then
-            Dim username As String = Request.QueryString("username")
-
-            worker = New Worker(username)
-
-            divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(worker.getRating())
-
-            JobTitle.InnerText = worker.getCategory() 'setting the correct heading category
-            lblRegion.InnerText = worker.getRegion()
-            lblName.InnerText = worker.getName()
-            lblSurname.InnerHtml = worker.getSurname()
-            lblNumber.InnerText = worker.getNumbers()
-            lblEmail.InnerText = worker.getEmail()
-            personalAd.InnerHtml = "<a href=""PostAdClient.aspx?adType=" & worker.getUsername() & """>" & "Post an ad to " & worker.getUsername() & "</a>"
-            getHistory() ' to display all the previous work done by the worker
-
-        Else
-            Dim c As User = Session("user")
-            worker = c
+        Dim c As User = Session("user")
+        worker = c
 
 
 
-            lblRegion.Visible = True
-            lblName.Visible = True
-            lblSurname.Visible = True
-            lblNumber.Visible = True
-            lblEmail.Visible = True
+        lblRegion.Visible = True
+        lblName.Visible = True
+        lblSurname.Visible = True
+        lblNumber.Visible = True
+        lblEmail.Visible = True
 
-            divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(worker.getRating())
+        divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(worker.getRating())
 
-            JobTitle.InnerText = worker.getCategory() 'setting the correct heading category
-            lblRegion.InnerText = worker.getRegion()
-            lblName.InnerText = worker.getName()
-            lblSurname.InnerHtml = worker.getSurname()
-            lblNumber.InnerText = worker.getNumbers()
-            lblEmail.InnerText = worker.getEmail()
+        JobTitle.InnerText = worker.getCategory() 'setting the correct heading category
+        lblRegion.InnerText = worker.getRegion()
+        lblName.InnerText = worker.getName()
+        lblSurname.InnerHtml = worker.getSurname()
+        lblNumber.InnerText = worker.getNumbers()
+        lblEmail.InnerText = worker.getEmail()
 
-            personalJobs.InnerHtml = displayPersonalJobs()
-            myJobs.InnerHtml = displayJobs()
-            JobNots.InnerHtml = displayJobs(worker.getCategory())
-            penJobs.InnerHtml = displayPendingJobs()
-            getHistory() ' to display all the previous work done by the worker
-        End If
-
-       
+        myJobs.InnerHtml = displayJobs()
+        JobNots.InnerHtml = displayJobs(worker.getCategory())
+        penJobs.InnerHtml = displayPendingJobs()
+        getHistory() ' to display all the previous work done by the worker
     End Sub
 
     Private Function displayJobs() As String 'display jobs that the handyman has already accepted or is working on
@@ -79,6 +56,7 @@ Public Class WorkerProfile
             Dim title As String = ""
             Dim description As String = ""
             Dim category As String = ""
+            Dim OpenDate As Date
             While reader.Read() 'getting all the jobs
                 size += 1
                 ReDim Preserve HandymanJobs(size)
@@ -88,14 +66,16 @@ Public Class WorkerProfile
                 title = reader("AdTitle")
                 description = reader("AdDescription")
                 category = reader("Category")
-
+                If Not IsDBNull(reader("OpenDate")) Then
+                    OpenDate = reader("OpenDate")
+                End If
                 
-                tempJob = New Job(ID, category, title, description, clientUsername, "")
+                tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
                 HandymanJobs(size) = tempJob 'adding job to the list
                 'TO DO Build messaging service here
                 notifications &= "<h5>" & reader("AdTitle") & "</h5> "
                 notifications &= ValidationClass.displayMessenges(ID) & "<hr/>" 'displays all the messsenges sent for this particular job
-                notifications &= "<a href=""generateQuotation.aspx""> Generate Quotation </a>"
+                notifications &= "<a href=""generateQuotation.aspx""> Generate Quotation</a>"
 
             End While
         End If
@@ -108,13 +88,15 @@ Public Class WorkerProfile
         Dim size As Integer = 0 'for resizing purposes
         Dim jobs(size) As Job 'array for jobs to be stored
 
-        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         adconnection.Open()
-        Dim query As String = "Select * FROM AdTable WHERE Worker IS NULL AND PersonalAd IS NULL"
+        Dim query As String = "Select * FROM AdTable WHERE Worker IS NULL"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
 
         'NOTE TO SELF: use sql to get all the categories on a proper sql statement
 
+
+        command.Parameters.AddWithValue("@name", categroy)
 
         Dim reader As SqlDataReader = command.ExecuteReader()
 
@@ -128,28 +110,32 @@ Public Class WorkerProfile
             Dim title As String = ""
             Dim description As String = ""
             Dim category As String = ""
+            Dim OpenDate As Date
 
             While reader.Read() 'getting all the jobs
-                
+                If worker.getCategory().Contains(reader("Category")) Then
 
-                clientUsername = reader("Client")
-                ID = reader("PostAdId")
-                title = reader("AdTitle")
-                description = reader("AdDescription")
-                category = reader("Category")
+                    clientUsername = reader("Client")
+                    ID = reader("PostAdId")
+                    title = reader("AdTitle")
+                    description = reader("AdDescription")
+                    category = reader("Category")
+                    If Not IsDBNull(reader("OpenDate")) Then
+                        OpenDate = reader("OpenDate")
+                    End If
 
 
-                If worker.getCategory().Contains(category) Then
-                    If shouldADD(ID) Then
-                        size += 1
-                        ReDim Preserve jobs(size)
-                        tempJob = New Job(ID, category, title, description, clientUsername, "")
-                        jobs(size) = tempJob 'adding job to the list
+                    If IsDBNull(reader("Worker")) Then
+                        If shouldADD(ID) Then
+                            size += 1
+                            ReDim Preserve jobs(size)
+                            tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
+                            jobs(size) = tempJob 'adding job to the list
 
-                        notifications &= "<a href= AdDetail.aspx?ID=" & jobs(size).getID() & "personalAd=false>" & reader("AdTitle") & "</a> <br />"
+                            notifications &= "<a href= AdDetail.aspx?ID=" & jobs(size).getID() & ">" & reader("AdTitle") & "</a> <br />"
+                        End If
                     End If
                 End If
-
             End While
         End If
         Session("jobs") = jobs
@@ -204,55 +190,6 @@ Public Class WorkerProfile
         Return notifications
     End Function
 
-    Public Function displayPersonalJobs() As String 'for displaying ads targeted to handyman
-        Dim size As Integer = 0
-        Dim pJobs(size) As Job
-
-        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        adconnection.Open()
-        Dim query As String = "Select * FROM AdTable WHERE Worker IS NULL AND PersonalAd = @pad"
-        Dim command As SqlCommand = New SqlCommand(query, adconnection)
-        command.Parameters.AddWithValue("@pad", worker.getUsername())
-
-
-        Dim reader As SqlDataReader = command.ExecuteReader()
-
-        Dim notifications As String = ""
-
-        If reader.HasRows Then
-
-            notifications = "<h3>Personal Jobs</h3> <br/>"
-
-            Dim tempJob As Job ' to use as holder
-
-            Dim clientUsername As String = ""
-            Dim ID As Integer = 0
-            Dim title As String = ""
-            Dim description As String = ""
-            Dim category As String = ""
-
-            While reader.Read() 'getting all the jobs
-
-                clientUsername = reader("Client")
-                ID = reader("PostAdId")
-                title = reader("AdTitle")
-                description = reader("AdDescription")
-                category = reader("Category")
-
-                size += 1
-                ReDim Preserve pJobs(size)
-                tempJob = New Job(ID, category, title, description, clientUsername, "")
-                pJobs(size) = tempJob 'adding job to the list
-
-                notifications &= "<a href= AdDetail.aspx?ID=" & pJobs(size).getID() & "&personalAd=true>" & reader("AdTitle") & "</a> <br />"
-
-
-            End While
-        End If
-        Session("personalJobs") = pJobs 'for personal jobs
-        Return notifications
-    End Function
-
     Public Function createJob(ID As Integer) As Job
 
 
@@ -275,8 +212,9 @@ Public Class WorkerProfile
             Dim category As String = reader("Category")
             Dim client As String = reader("Client")
             Dim worker As String = reader("Worker")
+            Dim OpenDate As Date = reader("OpenDate")
 
-            cJob = New Job(ID, category, title, description, client, worker)
+            cJob = New Job(ID, category, title, description, client, worker, OpenDate)
         End If
 
         adconnection.Close()
@@ -425,5 +363,6 @@ Public Class WorkerProfile
 
         Return categorySQL
     End Function
+
 
 End Class

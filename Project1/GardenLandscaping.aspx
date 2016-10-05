@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="GardenLandscaping.aspx.vb" Inherits="Project1.GardenLandscaping" %>
+<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site2.Master" CodeBehind="GardenLandscaping.aspx.vb" Inherits="Project1.GardenLandscaping" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
@@ -142,3 +142,4 @@
 			<!-- //slider -->	
      </div>
 </asp:Content>
+>>>>>>> reports

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="FeaturedWorkers.aspx.vb" Inherits="Project1.FeaturedWorkers" %>
+
+<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="FeaturedWorkers.aspx.vb" Inherits="Project1.FeaturedWorkers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
@@ -227,11 +228,11 @@
 					<div class="wrapper">					
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					  
-					  <div id="Div1" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="Div2" aria-labelledby="home-tab">
+					  <div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 						   <div>
-												<div id="Div3">
-								<div class="view-controls-list" id="Div4">
+												<div id="container">
+								<div class="view-controls-list" id="viewcontrols">
 									<label>view :</label>
 									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
 									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
@@ -339,11 +340,11 @@
 					<div class="wrapper">					
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					  
-					  <div id="Div5" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="Div6" aria-labelledby="home-tab">
+					  <div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 						   <div>
-												<div id="Div7">
-								<div class="view-controls-list" id="Div8">
+												<div id="container">
+								<div class="view-controls-list" id="viewcontrols">
 									<label>view :</label>
 									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
 									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
@@ -451,11 +452,11 @@
 					<div class="wrapper">					
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					  
-					  <div id="Div9" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="Div10" aria-labelledby="home-tab">
+					  <div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 						   <div>
-												<div id="Div11">
-								<div class="view-controls-list" id="Div12">
+												<div id="container">
+								<div class="view-controls-list" id="viewcontrols">
 									<label>view :</label>
 									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
 									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
@@ -564,11 +565,11 @@
 					<div class="wrapper">					
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					  
-					  <div id="Div13" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="Div14" aria-labelledby="home-tab">
+					  <div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 						   <div>
-												<div id="Div15">
-								<div class="view-controls-list" id="Div16">
+												<div id="container">
+								<div class="view-controls-list" id="viewcontrols">
 									<label>view :</label>
 									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
 									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
@@ -677,11 +678,11 @@
 					<div class="wrapper">					
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					  
-					  <div id="Div17" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="Div18" aria-labelledby="home-tab">
+					  <div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 						   <div>
-												<div id="Div19">
-								<div class="view-controls-list" id="Div20">
+												<div id="container">
+								<div class="view-controls-list" id="viewcontrols">
 									<label>view :</label>
 									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
 									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>

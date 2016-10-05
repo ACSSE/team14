@@ -3,8 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
      
-     <div class="submit-ad main-grid-border" runat="server">
-		<div class="container" runat="server" >
+     <div class="submit-ad main-grid-border">
+		<div class="container">
             <form runat="server">
 			<h2 class="head">Register With Us</h2>
 
@@ -228,7 +228,7 @@
 
 						
 
-                            <input type="submit" runat="server" id="btnSubmitWorker" value="Register"/>	
+                            <input type="submit" runat="server" id="btnSubmit" value="Register"/>	
 						
 						
 					<div class="clearfix"></div>

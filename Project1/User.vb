@@ -10,20 +10,10 @@
     Protected numbers As String
     Protected region As String
     Protected rating As Integer
-    Protected JoinDate As Date
-    Protected suburb As String
-
-    'Private _vusername As String
-    'Private _vpassword As String
-    'Private _vname As String
-    'Private _vusername1 As String
-    'Private _vemail As String
-    'Private _mnumbers As String
-    'Private _vregion As String
-    'Private _vsuburb As String
+    Protected joinDate As Date
 
     'constructor for the class
-    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, vsuburb As String, vdate As Date)
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, vdate As Date)
 
         username = vusername
         password = Secrecy.HashPassword(vpassword)
@@ -32,26 +22,14 @@
         surname = vsurname
         email = vemail
         region = vregion
-        suburb = vsuburb
-        JoinDate = vdate
+        joinDate = vdate
+
     End Sub
 
     Public Sub New() 'basic constructor
         username = ""
         ' password = ""
     End Sub
-
-    'Protected Sub New(vusername As String, vpassword As String, vname As String, vusername1 As String, vemail As String, mnumbers As String, vregion As String, vsuburb As String)
-    '    ' TODO: Complete member initialization 
-    '    _vusername = vusername
-    '    _vpassword = vpassword
-    '    _vname = vname
-    '    _vusername1 = vusername1
-    '    _vemail = vemail
-    '    _mnumbers = mnumbers
-    '    _vregion = vregion
-    '    _vsuburb = vsuburb
-    'End Sub
 
     'Getters
     Public Function getUsername() As String
@@ -82,10 +60,6 @@
         Return joinDate
     End Function
 
-    Public Function getSuburb() As Date
-        Return suburb
-    End Function
-
     'Setters
     Public Sub updateUsername(vusername As String)
         username = vusername
@@ -96,7 +70,7 @@
     End Sub
 
     Public Sub updateName(cname As String)
-        'MsgBox("In User-updateName(): name = " & name)
+        ' MsgBox("In User-updateName(): name = " & name)
         name = cname
     End Sub
 
@@ -116,19 +90,11 @@
         region = vregion
     End Sub
 
-    Public Sub updateSuburb(vsuburb As String)
-        suburb = vsuburb
-    End Sub
-
     Public MustOverride Sub saveUser()
-
-    'Public MustOverride Sub getQuotation()
 
     Public MustOverride Sub updateUser()
 
     Public MustOverride Function getRating() As Integer
-
-    'Public MustOverride Function getQuotation(username As String)
 
     Public MustOverride Sub updateAverage(average As Integer)
 
