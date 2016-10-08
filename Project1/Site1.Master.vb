@@ -9,9 +9,9 @@ Public Class Site1
             userLog.Visible = True
            
             If TypeOf cUser Is Client Then
-                userLog.InnerHtml = "<small style=""color:#FBCC33"">Welcome</small> " & "<small style=""color:#01A185""><b>" & cUser.getUsername() & "</b></small> " & "<a style="" font-size:small;""  href=""logout.aspx"">(logout)</a>&nbsp;&nbsp;&nbsp;" & countResponses()
+                userLog.InnerHtml = "<small style=""color:#FBCC33"">Welcome</small> " & "<small style=""color:#01A185""><b>" & cUser.getUsername() & "</b></small> " & "<a style="" font-size:small;""  href=""logout.aspx"">(logout)</a>&nbsp;&nbsp;&nbsp;" & countResponses() & "&nbsp;&nbsp;&nbsp;" & countMesseges()
             Else
-                userLog.InnerHtml = "<small style=""color:#FBCC33"">Welcome</small> " & "<small style=""color:#01A185""><b>" & cUser.getUsername() & "</b></small> " & "<small><a style="" font-size:small;""  href=""logout.aspx"">(logout)</a></small>"
+                userLog.InnerHtml = "<small style=""color:#FBCC33"">Welcome</small> " & "<small style=""color:#01A185""><b>" & cUser.getUsername() & "</b></small> " & "<small><a style="" font-size:small;""  href=""logout.aspx"">(logout)</a></small>&nbsp;&nbsp;&nbsp;" & countMesseges()
             End If
         End If
     End Sub
@@ -39,14 +39,46 @@ Public Class Site1
                 End While
             End If
 
-            Return "<a href=ClientProfile.aspx>" & count & ")</a>&nbsp;&nbsp;&nbsp;"
-
+            If Not (count = 0) Then
+                Return "<a href=ClientProfile.aspx>(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
+            End If
         End If
-       
+        Return ""
+    End Function
+
+    Private Function countMesseges() As String
+        Dim cUser As User = Session("user")
+        Dim count As Integer = 0
+        Dim htmlquery As String = countAds(count)
+
+        ' If count > 0 Then
+        count = 0
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim query As String = "SELECT * FROM Messenges WHERE " & htmlquery & " AND Checked = @unchecked AND Sender <> @sender;"
+        ' MsgBox(query)
+        connection.Open()
+
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@name", htmlquery)
+        command.Parameters.AddWithValue("@unchecked", "unchecked")
+        command.Parameters.AddWithValue("@sender", cUser.getUsername()) 'not the person logged in
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            While reader.Read()
+                count += 1
+            End While
+        End If
+
+        If count > 0 Then
+            Return "<a href=ClientProfile.aspx>(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
+        End If
+        'End If
+        Return ""
     End Function
 
     Private Function countAds(ByRef size As Integer) As String 'to display ads that client has posted but have no handyman assinged to them
-        Dim client As Client = Session("user")
+        Dim user As User = Session("user") 'can be handyman or client
 
         size = 0 'to use as a resize reference
         Dim jobs(size) As Integer 'to store all jobs
@@ -54,9 +86,9 @@ Public Class Site1
 
         Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
-        Dim query As String = "Select * FROM AdTable WHERE Client = @name;"
+        Dim query As String = "Select * FROM AdTable WHERE Client = @name OR Worker = @name;"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
-        command.Parameters.AddWithValue("@name", client.getUsername())
+        command.Parameters.AddWithValue("@name", user.getUsername())
 
         Dim reader As SqlDataReader = command.ExecuteReader()
 
@@ -79,7 +111,7 @@ Public Class Site1
         For i As Integer = 1 To jobs.Length - 1
             clientquery &= "AdID =" & jobs(i)
             If Not (i = jobs.Length - 1) Then
-                clientquery &= "OR"
+                clientquery &= " OR "
             End If
         Next i
 
