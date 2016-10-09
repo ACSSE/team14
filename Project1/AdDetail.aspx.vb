@@ -76,7 +76,7 @@ Public Class AdDetail
 
         Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
-        Dim query As String = "INSERT INTO Responses (AdID, Worker, Comment, Checked) VALUES (@ID, @Handyman, @comment, @check);"
+        Dim query As String = "INSERT INTO Responses (PostAdId, Worker, Comment, Checked) VALUES (@ID, @Handyman, @comment, @check);"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
         command.Parameters.AddWithValue("@ID", ad)
         command.Parameters.AddWithValue("@Handyman", worker.getUsername())

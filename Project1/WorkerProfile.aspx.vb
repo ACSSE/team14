@@ -226,9 +226,9 @@ Public Class WorkerProfile
     Private Function shouldADD(JobID As Integer) As Boolean
         'Jobs that the handyman has already answerede should not be displayed
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
-        Dim query As String = "Select * FROM Responses WHERE AdID = @name AND Worker = @worker"
+        Dim query As String = "Select * FROM Responses WHERE PostAdId = @name AND Worker = @worker"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
 
         command.Parameters.AddWithValue("@name", JobID)

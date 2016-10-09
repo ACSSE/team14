@@ -54,18 +54,18 @@ Public Class Site1
         ' If count > 0 Then
         count = 0
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "SELECT * FROM Messenges WHERE " & htmlquery & " AND Checked = @unchecked AND Sender <> @sender;"
+        Dim query As String = "SELECT * FROM Messenges WHERE (" & htmlquery & ") AND Checked = @unchecked AND NOT (Sender = @sender);"
         ' MsgBox(query)
         connection.Open()
-
+        MsgBox(query)
         Dim command As SqlCommand = New SqlCommand(query, connection)
-        command.Parameters.AddWithValue("@name", htmlquery)
         command.Parameters.AddWithValue("@unchecked", "unchecked")
         command.Parameters.AddWithValue("@sender", cUser.getUsername()) 'not the person logged in
         Dim reader As SqlDataReader = command.ExecuteReader()
 
         If reader.HasRows Then
             While reader.Read()
+                ' MsgBox(reader("Messenge"))
                 count += 1
             End While
         End If
@@ -86,7 +86,7 @@ Public Class Site1
 
         Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
-        Dim query As String = "Select * FROM AdTable WHERE Client = @name OR Worker = @name;"
+        Dim query As String = "Select * FROM AdTable WHERE Client = @name OR Worker = @name;" 'pulls data if user is hadynman or worker
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
         command.Parameters.AddWithValue("@name", user.getUsername())
 
@@ -109,12 +109,12 @@ Public Class Site1
         Dim clientquery As String = ""
 
         For i As Integer = 1 To jobs.Length - 1
-            clientquery &= "AdID =" & jobs(i)
+            clientquery &= "PostAdId =" & jobs(i)
             If Not (i = jobs.Length - 1) Then
                 clientquery &= " OR "
             End If
         Next i
-
+        ' MsgBox(clientquery)
         Return clientquery
     End Function
 End Class
