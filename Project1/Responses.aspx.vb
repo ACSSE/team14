@@ -61,8 +61,8 @@ Public Class Responses
     End Function
 
     Private Sub changeCheckedClient(id As Integer)
-        MsgBox("Inside changecheckedclient")
-        MsgBox("ID = " & id)
+        '  MsgBox("Inside changecheckedclient")
+        ' MsgBox("ID = " & id)
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "UPDATE Responses SET Checked = @value WHERE PostAdId = @name;"
         connection.Open()
