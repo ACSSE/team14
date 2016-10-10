@@ -31,6 +31,34 @@ Public Class MessengeList
         End If
     End Sub
 
+    Public Sub New(JobID As Integer, worker As String) 'to use to access the responsesmesseges instead of messenges table
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim query As String = "SELECT * FROM RespnsesMesseges WHERE PostAdId  = @name AND Worker = @worker;"
+        connection.Open()
+        'to obtain row in the responsesmesseges table
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@name", JobID)
+        command.Parameters.AddWithValue("@worker", worker)
+
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            Dim words As String
+            Dim sender As String
+            Dim mdate As Date
+            While reader.Read()
+                'reading in values
+                words = reader("Messenge")
+                sender = reader("Sender")
+                mdate = reader("Date")
+                'entering values into the list
+                size += 1
+                ReDim Preserve messages(size)
+                messages(size) = New Messenge(JobID, words, sender, mdate)
+            End While
+        End If
+    End Sub
+
     Public Function getMessage(index As Integer) As Messenge
         Return messages(index)
     End Function

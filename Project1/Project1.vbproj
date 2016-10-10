@@ -484,6 +484,7 @@
     <Content Include="js\script.js" />
     <Content Include="js\tabs.js" />
     <Content Include="RegisterClient.aspx" />
+    <Content Include="ResponseDetails.aspx" />
     <Content Include="Responses.aspx" />
     <Content Include="RoofSpecialist.aspx" />
     <Content Include="SecuritySafety.aspx" />
@@ -629,6 +630,13 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="QuotationList.vb" />
+    <Compile Include="ResponseDetails.aspx.designer.vb">
+      <DependentUpon>ResponseDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResponseDetails.aspx.vb">
+      <DependentUpon>ResponseDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="ValidationClass.vb" />
     <Compile Include="ViewHistory.aspx.designer.vb">
       <DependentUpon>ViewHistory.aspx</DependentUpon>
