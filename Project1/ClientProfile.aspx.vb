@@ -88,9 +88,7 @@ Public Class ClientProfile
         If reader.HasRows Then
             While reader.Read()
                 'If no handyman is assigned to the job/ad
-                size += 1
-                ReDim Preserve jobs(size)
-
+                
                 'varaibles to creat a new job
                 Dim client As Client = Session("user")
 
@@ -105,7 +103,9 @@ Public Class ClientProfile
                 End If
                 Dim tempJob As Job 'Temporary container for job object
 
-                If IsDBNull(reader("Status")) Then
+                If IsDBNull(reader("Status")) Then 'if job is not complete then it will be added
+                    size += 1
+                    ReDim Preserve jobs(size)
 
                     If reader("Worker") Is Nothing Or IsDBNull(reader("Worker")) Then
                         tempJob = New Job(ID, category, title, description, clientUsername, "", mdate)

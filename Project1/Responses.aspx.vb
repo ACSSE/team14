@@ -24,7 +24,7 @@ Public Class Responses
                 ' html &= "<ul>"
                 html &= "<div class=""itemtype"">"
                 html &= "<p class=""p-price"">" & reader("Comment") & "</p>"
-                html &= "<a href=ResponseDetails.aspx?ID= " & adID & "&worker=" & handyman.getUsername() & ">Send/Read Messeges</a>"
+                html &= "<a href=ResponseDetails.aspx?ID=" & adID & "&worker=" & handyman.getUsername() & ">Send/Read Messeges</a>"
                 html &= "     <a href=ClientProfile.aspx?Selected=" & handyman.getUsername() & "&ID=" & adID & "> Confirm </a>"
                 html &= "</div>"
                 html &= "<hr/>"
