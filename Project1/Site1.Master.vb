@@ -55,9 +55,8 @@ Public Class Site1
         count = 0
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "SELECT * FROM Messenges WHERE (" & htmlquery & ") AND Checked = @unchecked AND NOT (Sender = @sender);"
-        ' MsgBox(query)
+
         connection.Open()
-        MsgBox(query)
         Dim command As SqlCommand = New SqlCommand(query, connection)
         command.Parameters.AddWithValue("@unchecked", "unchecked")
         command.Parameters.AddWithValue("@sender", cUser.getUsername()) 'not the person logged in

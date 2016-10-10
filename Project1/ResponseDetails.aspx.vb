@@ -73,11 +73,12 @@ Public Class ResponseDetails
 
         Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
-        Dim query As String = "INSERT INTO ResponsesMesseges (PostAdId, Worker, Messege) VALUES (@ID, @Handyman, @messege);"
+        Dim query As String = "INSERT INTO ResponsesMesseges (PostAdId, Worker, Messege, Date) VALUES (@ID, @Handyman, @messege, @date);"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
         command.Parameters.AddWithValue("@ID", ad)
         command.Parameters.AddWithValue("@Handyman", Workername)
         command.Parameters.AddWithValue("@messege", txtComment.Value())
+        command.Parameters.AddWithValue("@date", Date.Now)
 
         Dim reader As SqlDataReader = command.ExecuteReader()
         adconnection.Close()
