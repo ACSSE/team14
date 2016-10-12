@@ -33,7 +33,7 @@ Public Class MessengeList
 
     Public Sub New(JobID As Integer, worker As String) 'to use to access the responsesmesseges instead of messenges table
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "SELECT * FROM RespnsesMesseges WHERE PostAdId  = @name AND Worker = @worker;"
+        Dim query As String = "SELECT * FROM ResponsesMesseges WHERE PostAdId  = @name AND Worker = @worker;"
         connection.Open()
         'to obtain row in the responsesmesseges table
         Dim command As SqlCommand = New SqlCommand(query, connection)

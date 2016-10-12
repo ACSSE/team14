@@ -9,7 +9,7 @@ Public Class ResponseDetails
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ad = Request.QueryString("ID")
         Dim user As User = Session("user") 'to access user's name
-        Workername = Request.QueryString("workername")
+        Workername = Request.QueryString("worker")
 
         handymanDet.InnerText = " Communication with " & Workername
 
@@ -73,12 +73,13 @@ Public Class ResponseDetails
 
         Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
-        Dim query As String = "INSERT INTO ResponsesMesseges (PostAdId, Worker, Messege, Date) VALUES (@ID, @Handyman, @messege, @date);"
+        Dim query As String = "INSERT INTO ResponsesMesseges (PostAdId, Worker, Messeges, Date, Sender) VALUES (@ID, @Handyman, @messege, @date, @sender);"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
         command.Parameters.AddWithValue("@ID", ad)
         command.Parameters.AddWithValue("@Handyman", Workername)
         command.Parameters.AddWithValue("@messege", txtComment.Value())
         command.Parameters.AddWithValue("@date", Date.Now)
+        command.Parameters.AddWithValue("@sender", worker.getUsername())
 
         Dim reader As SqlDataReader = command.ExecuteReader()
         adconnection.Close()
