@@ -84,16 +84,16 @@
                                  
                            
 						</div>
-                        <hr />
+                        <br />
 
 						<div class="interested text-center" id="myJobs" runat="server">
                                  
                            
 						</div>
-                        <hr />
+                        <br />
                           <div class="interested text-center" id="JobNots" runat="server">
 			           </div>
-                       <hr />
+                       <br />
                         
                        <div class="interested text-center" id="penJobs" runat="server">
 						<!--<div class="condition">

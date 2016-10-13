@@ -37,7 +37,7 @@ Public Class WorkerProfile
             lblNumber.Visible = True
             lblEmail.Visible = True
 
-            divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(worker.getRating())
+            divrating.InnerHtml = "<h3>Rating</h3>" & ValidationClass.getRateImage(worker.getRating())
 
             JobTitle.InnerText = worker.getCategory() 'setting the correct heading category
             lblRegion.InnerText = worker.getRegion()
@@ -172,7 +172,7 @@ Public Class WorkerProfile
 
         Dim reader As SqlDataReader = command.ExecuteReader()
 
-        Dim notifications As String = "<h3>Closed Jobs</h3> <br/>"
+        Dim notifications As String = "<h3>Jobs Closed</h3> <br/>"
 
         If reader.HasRows Then
          
