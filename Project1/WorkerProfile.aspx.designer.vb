@@ -77,6 +77,15 @@ Partial Public Class WorkerProfile
     Protected WithEvents update As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''check control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents check As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''divHistory control.
     '''</summary>
     '''<remarks>

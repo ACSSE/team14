@@ -1,11 +1,15 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site2.Master" CodeBehind="UpdateProfile.aspx.vb" Inherits="Project1.UpdateProfile" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="UpdateProfile.aspx.vb" Inherits="Project1.UpdateProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
     
     <form id="Form1" runat="server">
-   <div class="product-desc">
-       <div class="col-md-7 product-view">
+        <div class="sign-in-wrapper" runat="server" >
+            <div class="sign-in-form">
+						<div class="sign-in-form-top">
+							<h1>Update Your Profile</h1>
+						</div>
+    <div class="product-details text-center">
         <h4>UserName :<label id="lblUsername" runat="server" text=""/></h4> <p></p>
          <input type="text" class="user" id="txtUsername" runat="server"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Username';}"/> <p></p>
           <h4>Password :*******</h4> <p></p>
@@ -19,39 +23,27 @@
         <input type="text" class="user" id="txtNumber" runat="server"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Username';}"/>
 		<h4>Email : <strong><label id="lblEmail" runat="server" text=""/></strong></h4> <p></p>
 	    <input type="text" class="user" id="txtEmail" runat="server"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Username';}"/> <p></p>
-    </div></div>
+    </div>
 
-     <div class="product-desc" runat="server" >
-         <div class="col-md-7 product-view">
+    <div id="clientDetails"   class="product-details" runat="server">
         <h4>Address : </h4>
          <p id="lblAddress" runat="server"></p>
          <input type="text" class="user" id="txtAddress" runat="server"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Username';}"/>
-       </div>
+       
     </div>
 
-     <div class="product-desc" runat="server" >
-         <div class="col-md-7 product-view">
+    <div id="workerDetails" class="product-details" runat="server">
          <h4>Job Title : <strong><label id="lblTitle" runat="server" text=""/></strong></h4>
         <input type="text" class="user" id="txtTitle" runat="server"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Username';}"/>
 		<h4>Description : <strong><label runat="server" text=""/></strong></h4>
         <p id="lblDescription" runat="server"></p>
 	    <input type="text" class="user" id="txtDescription" runat="server"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Username';}"/>
         
-         </div></div>
+         </div>
      <input id="btnSave" runat="server" type="submit" value="Save"/>
-            </form>
+            </div></div>
+            </form><br/>
 
-
-    </label>
-    </label>
-    </label>
-    </label>
-
-
-    </a>
-    </label>
-    </label>
-    </label>
 
 
 </asp:Content>
