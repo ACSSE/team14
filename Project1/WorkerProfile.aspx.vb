@@ -94,8 +94,8 @@ Public Class WorkerProfile
                 HandymanJobs(size) = tempJob 'adding job to the list
                 'TO DO Build messaging service here
                 notifications &= "<h5>" & reader("AdTitle") & "</h5> "
-                notifications &= ValidationClass.displayMessenges(ID) & "<hr/>" 'displays all the messsenges sent for this particular job
-                notifications &= "<a href=""generateQuotation.aspx""> Generate Quotation </a>"
+                notifications &= ValidationClass.displayMessenges(ID) 'displays all the messsenges sent for this particular job
+                notifications &= "<a style=""color:white"" href=""generateQuotation.aspx""> Generate Quotation </a>"
 
             End While
         End If
@@ -146,7 +146,7 @@ Public Class WorkerProfile
                         tempJob = New Job(ID, category, title, description, clientUsername, Nothing)
                         jobs(size) = tempJob 'adding job to the list
 
-                        notifications &= "<a href= AdDetail.aspx?ID=" & jobs(size).getID() & "&personalAd=false>" & reader("AdTitle") & "</a> <br />"
+                        notifications &= "<a style=""color:white"" href= AdDetail.aspx?ID=" & jobs(size).getID() & "&personalAd=false>" & reader("AdTitle") & "</a> <br />"
                     End If
                 End If
 

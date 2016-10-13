@@ -6,55 +6,7 @@ Project1
 </name>
 </assembly>
 <members>
-<member name="F:Project1.Site3.head">
-	<summary>
-head control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Site3.userLog">
-	<summary>
-userLog control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Site3.ContentPlaceHolder1">
-	<summary>
-ContentPlaceHolder1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Site2.head">
-	<summary>
-head control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Site2.userLog">
-	<summary>
-userLog control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.Site2.ContentPlaceHolder1">
-	<summary>
-ContentPlaceHolder1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.QuotationDisplay.quotation">
+<member name="F:Project1.QuotationDisplay.quotation">
 	<summary>
 quotation control.
 </summary>
@@ -449,6 +401,30 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.MessagesDetail.btnSend">
 	<summary>
 btnSend control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Site2.head">
+	<summary>
+head control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Site2.userLog">
+	<summary>
+userLog control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Site2.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -921,6 +897,30 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.findme.btnReg">
 	<summary>
 btnReg control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Site3.head">
+	<summary>
+head control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Site3.userLog">
+	<summary>
+userLog control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Site3.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
 </summary>
 	<remarks>
 Auto-generated field.
