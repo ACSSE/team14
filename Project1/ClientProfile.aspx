@@ -34,10 +34,12 @@
 						<h4>Email : <strong><label id="lblEmail" runat="server" text=""></label></strong></h4>
 						<p><strong>Address</strong> : <label id="lblAddress" runat="server" text=""></label> </p>
                        
+                        <h4 id="update" runat="server"><a href="UpdateProfile.aspx?user=client">Update Your Profile</a></h4>
+                        <h4 id="check" runat="server"><a href="clientStat.aspx?user=client">Check Your Stats</a></h4>
+
 					</div>
                         
-                       <p id="update" runat="server"><a href="UpdateProfile.aspx?user=client">Update Your Profile</a></p>
-                    <p id="check" runat="server"><a href="clientStat.aspx?user=client">Check Your Stats</a></p>
+                       
 				</div>
 				<div class="col-md-5 product-details-grid">
 					<%--<div class="item-price">

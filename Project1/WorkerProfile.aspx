@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="WorkerProfile.aspx.vb" Inherits="Project1.WorkerProfile" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site2.Master" CodeBehind="WorkerProfile.aspx.vb" Inherits="Project1.WorkerProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
     <div class="single-page main-grid-border">
@@ -49,6 +49,7 @@
                         <h4>Worker Contact Number : <strong><label id="lblNumber" runat="server" text=""/></strong></h4>
 						<h4>Worker email : <strong><label id="lblEmail" runat="server" text=""/></strong></h4>
                         <h4 id="update" runat="server"><a href="UpdateProfile.aspx?user=handyman">Update your profile</a></h4>
+                        <h4 id="check" runat="server"><a href="clientStat.aspx?user=client">Check Your Stats</a></h4>
 					</div>
 
                     <div class="product-price">
