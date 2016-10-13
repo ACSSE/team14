@@ -77,7 +77,7 @@ Public Class AdminStats
 
                 size += 1
                 ReDim Preserve workers(size)
-                workers(size) = New Worker("", "", "", "", "", "", "", "", category, Nothing, joindate)
+                workers(size) = New Worker("", "", "", "", "", "", "", joindate, "", category, Nothing)
             End While
         End If
         connection.Close()
@@ -190,7 +190,7 @@ Public Class AdminStats
                             Dim category As String = reader("Category")
                             size += 1
                             ReDim Preserve jobs(size)
-                            jobs(size) = New Job(category, "", "", "", "", "", jobDate)
+                            jobs(size) = New Job(category, "", "", "", "", jobDate)
                         End If
                     End If
                 End If

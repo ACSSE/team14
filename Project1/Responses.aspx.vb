@@ -7,7 +7,7 @@ Public Class Responses
         Dim adID As Integer = Request.QueryString("ID")
         Dim html As String = ""
         Dim handyman As Worker
-        Dim connection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "SELECT * FROM Responses WHERE AdID = @name;"
         connection.Open()
 
@@ -32,13 +32,13 @@ Public Class Responses
         End If
         ' MsgBox("Resposes:Page_Load()-html values = " & html)
         HandyMen.InnerHtml = html
+        changeCheckedClient(adID)
     End Sub
 
     Private Function displayWorker(workerID As String)
         Dim info As String = ""
 
-        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING
-                                                            )
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "SELECT * FROM Workers WHERE Username = @name;"
         connection.Open()
 
@@ -48,7 +48,7 @@ Public Class Responses
         Dim reader As SqlDataReader = command.ExecuteReader()
 
         If reader.HasRows Then
-            ' MsgBox("Resposes:displayWorker()-Reading woker values from database")
+            MsgBox("Resposes:displayWorker()-Reading woker values from database")
             reader.Read()
             info &= "<h4>" & reader("Name") & " " & reader("Surname") & "</h4> <br />"
             info &= "<div class=""itemtype"">"
@@ -59,4 +59,18 @@ Public Class Responses
         End If
         Return info
     End Function
+
+    Private Sub changeCheckedClient(id As Integer)
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim query As String = "UPDATE Responses SET Checked = @value WHERE AdID = @name;"
+        connection.Open()
+
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@name", id)
+        command.Parameters.AddWithValue("@value", "checked")
+
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        connection.Close()
+    End Sub
 End Class

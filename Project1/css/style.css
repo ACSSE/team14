@@ -11,6 +11,21 @@ body{
     background-attachment:fixed;
 }
 
+.span1 {
+    background:#fff;
+    padding: 15px;
+}
+h3.tlt {
+    color: #9d9d9d;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+}
+.spansecound {
+    padding-left: 10px;
+}
+
+
 th {
     height: 30px;
 }
@@ -216,12 +231,13 @@ li.dropdown-header {
 }
 .header {
     background-color:black;
-	background-size:cover;
-    background-position:center;
-    border-bottom: 10px solid #01a185;
+	
+    
+    /*border-top: 10px solid #01a185;*/
 
-	min-height:100px;
-
+	 width: 90%;
+     margin: 0 auto 0em;
+  padding:0.8em 0em 0.8em 0em;
     
 }
 .logo {
@@ -234,7 +250,7 @@ li.dropdown-header {
 .logo a {
 	font-family: 'Ubuntu Condensed', sans-serif;
 	font-size: 50px;
-    color: #9099a2;
+    color: white;
 	text-decoration:none;
 }
 .logo a span {
@@ -342,7 +358,7 @@ border:1px solid #e7eaed;
 }
 .focus-layout h4{
 	margin: 0 0 0 0;
-	color:#4C4C4C;
+	color:#4C4C4c;
 	font-size: 18px;
 	text-align:center;
 	height: 35px;
@@ -493,7 +509,9 @@ i.real-estate {
 	width:35%;
 }
 .sign-in-wrapper{
-	background:#f9f9f9;
+	background:white;
+    width: 90%;
+  margin: 0 auto 0em;
 }
 .new_people{
 	padding:3em 0 0;
@@ -545,7 +563,7 @@ i.real-estate {
 .signin {
     padding: 2em;
 	position:relative;
-	background: #fff;
+	background: #F1FFFC;
 }
 .signin-rit {
   padding: 0.3em 0em 0em 0em;
@@ -556,7 +574,7 @@ i.real-estate {
   width: 98%;
   color: #A8A8A8;
   outline: none;
-  border: 1px solid #D3D3D3;
+  border: 2px solid #D3D3D3;
   border-radius: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -685,7 +703,7 @@ span.checkbox2 {
     background: #01a185;
     border: none;
     padding: 10px 0;
-    width: 45%;
+    width: 40%;
     display: block;
     outline: none;
     border-radius: 0;
@@ -1016,7 +1034,11 @@ span.price:after {
 
 .mobile-app {
     background-color: #01a185;
-	padding-top:20px;
+	width: 90%;
+    height:30%;
+  margin: 0 auto 0em;
+  padding:1em 0em 1em 0em;
+  
    
 
   
@@ -1090,10 +1112,12 @@ span.price:after {
 
 }
 .footer-bottom {
+    margin: 0 auto 0em;
+    width: 90%;
     background-color: black;
     padding: 30px 0;
     border-top: 10px solid #01a185;
-    margin-left:auto;
+    padding:0.8em 0em 0.8em 0em;
    
 }
 h4.footer-head {
@@ -2063,7 +2087,7 @@ form .field label + span {
 form .field input[type="text"],
 form .field textarea {
   border: none;
-  background: #E8E9EA;
+  background: #E8E9Ea;
   width: 100%;
   margin: 0;
   padding: 18px 0;
@@ -2248,10 +2272,18 @@ form.submit {
 /*-- single-page --*/
 .single-page {
 	padding:50px 0;
+    background:white;
+    width: 90%;
+  margin: 0 auto 0em;
+
+
 }
 .product-view {
     padding: 15px;
     border: 1px solid #eee;
+    
+    border-radius: 25px;
+    
 }
 .product-view h2 {
     font-size: 28px;
@@ -2276,6 +2308,7 @@ form.submit {
 }
 .product-desc {
     margin-top: 45px;
+    margin-left:100px;
 }
 .product-details h4 {
 	color:#000;
@@ -2300,7 +2333,7 @@ form.submit {
     font-size: 17px;
 }
 .item-price {
-	border: 3px solid rgba(1, 161, 133, 0.36);
+	border: 3px solid #01a185;
     margin-left: 15%;
     padding:0 15px;
 	position:relative;
@@ -2312,7 +2345,7 @@ form.submit {
     left: -50.5%;
     background-color: rgba(0,0,0,0);
     border: 105px solid rgba(0,0,0,0);
-    border-right-color: rgba(1, 161, 133, 0.36);
+    border-right-color: #01a185;
     height: 0;
     width: 0;
     top: -3px;
@@ -2357,9 +2390,10 @@ h3.rate {
 .interested {
     margin: initial
     padding: 40px 20px;
-    background: rgba(1, 161, 133, 0.36);
-    margin-left: 15%;
+    background: #01a185;
+    margin-left: 35%;
     margin-right: 0;
+    border-radius: 25px;
 }
 .interested  h4 {
 	color:#000;
@@ -2372,7 +2406,7 @@ h3.rate {
 }
 .interested p i {
     margin-right: 12px;
-    color: #FFFFFF;
+    color: #FFFFFf;
     font-size: 14px;
     background: rgba(0, 0, 0, 0.38);
     padding: 7px;
@@ -2386,7 +2420,7 @@ h3.rate {
 .tips {
     margin: 20px;
     padding: 40px 20px 15px;
-    background: rgba(1, 161, 133, 0.36);
+    background: #01a185;
     margin-left: 15%;
     margin-right: 0;
 }
@@ -2769,7 +2803,7 @@ h2.sear-head.fer {
     padding-left: 40px;
 }
 div#myTabContent {
-    border: 1px solid #CCCCCC !important;
+    border: 1px solid #CCCCCc !important;
     padding: 15px;
 	    position: relative;
 }
@@ -3149,12 +3183,26 @@ ul.privacy-start {
 
 /*-- breadcrumb --*/
 .breadcrumb {
-    background-color: #FFFFFF;
+    background-color: #F1FFFC;
     border: 1px solid #F3F3F3;
     padding: 10px 15px;
+    margin-left:initial;
 }
 .breadcrumb>li+li:before {
     color: #D1E0EE;
+}
+
+span.bell {
+  background: url(../images/bell.png)no-repeat;
+  width: 18px;
+  height: 19px;
+  color:red;
+  display: inline-block;
+    float: right;
+    cursor: pointer;
+    -webkit-animation-duration: 3s;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: infinite;
 }
 /*-- //breadcrumb --*/
 
@@ -4051,6 +4099,7 @@ label {
 	}
 	.header {
 		padding: 5px 0;
+
 	}
 	.banner h1 {
 		font-size: 33px;

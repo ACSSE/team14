@@ -143,10 +143,10 @@ Public Class WorkerProfile
                     If shouldADD(ID) Then
                         size += 1
                         ReDim Preserve jobs(size)
-                        tempJob = New Job(ID, category, title, description, clientUsername, "")
+                        tempJob = New Job(ID, category, title, description, clientUsername, Nothing)
                         jobs(size) = tempJob 'adding job to the list
 
-                        notifications &= "<a href= AdDetail.aspx?ID=" & jobs(size).getID() & "personalAd=false>" & reader("AdTitle") & "</a> <br />"
+                        notifications &= "<a href= AdDetail.aspx?ID=" & jobs(size).getID() & "&personalAd=false>" & reader("AdTitle") & "</a> <br />"
                     End If
                 End If
 

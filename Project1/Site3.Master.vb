@@ -1,6 +1,5 @@
 ﻿Imports System.Data.SqlClient
-
-Public Class Site1
+Public Class Site3
     Inherits System.Web.UI.MasterPage
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -86,4 +85,6 @@ Public Class Site1
 
         Return clientquery
     End Function
+
+
 End Class

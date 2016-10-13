@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="ClientProfile.aspx.vb" Inherits="Project1.ClientProfile" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site2.Master" CodeBehind="ClientProfile.aspx.vb" Inherits="Project1.ClientProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="single-page main-grid-border">
 		<div class="container">
@@ -35,8 +35,9 @@
 						<p><strong>Address</strong> : <label id="lblAddress" runat="server" text=""></label> </p>
                        
 					</div>
-                    
-                       <h4 id="update" runat="server"><a href="UpdateProfile.aspx?user=client">Update your profile</a></h4>
+                        
+                       <p id="update" runat="server"><a href="UpdateProfile.aspx?user=client">Update Your Profile</a></p>
+                    <p id="check" runat="server"><a href="clientStat.aspx?user=client">Check Your Stats</a></p>
 				</div>
 				<div class="col-md-5 product-details-grid">
 					<%--<div class="item-price">
@@ -49,15 +50,16 @@
 					</div>--%>
 					<div class="interested text-center">
 						<h4 style="text-align:center;">Interested?</h4>
-						<p><a href="PostAdClient.aspx">Post an ad</a></p>
-                        <p><a href="FeaturedWorkers.aspx">Check out Featured Workers</a></p>
+						<p><a href="PostAdClient.aspx" style="color:white">Post an ad</a></p>
+                        <p><a href="FeaturedWorkers.aspx" style="color:white">Check out Featured Workers</a></p>
+                        <br/>
                         
                       
 
 					</div>
                     <p style="align-content:center">&nbsp;</p>
                    <!-- <br /> <hr />-->
-                       <div class="interested text-center" id="AdsDiv" runat="server">
+                       <div class="interested text-center"  id="AdsDiv" runat="server">
                 
 			           </div>
 				</div>

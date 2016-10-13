@@ -8,11 +8,13 @@ Public Class ClientProfile
     Inherits System.Web.UI.Page
 
     Private client As Client
+    Private newRes As Boolean
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'update.InnerHtml = "<a href=""UpdateProfile.aspx?username=" & Session("UserName") & "&user=client>Update your profile</a>"
         Dim c As User = Session("user")
         client = c
+
 
         changeDB()
 
@@ -83,35 +85,42 @@ Public Class ClientProfile
                 Dim title As String = reader("AdTitle")
                 Dim description As String = reader("AdDescription")
                 Dim category As String = reader("Category")
+                Dim oDate As Date = reader("OpenDate")
 
                 Dim tempJob As Job 'Temporary container for job object
 
                 If IsDBNull(reader("Status")) Then
 
                     If reader("Worker") Is Nothing Or IsDBNull(reader("Worker")) Then
-                        tempJob = New Job(ID, category, title, description, clientUsername, "")
+                        tempJob = New Job(ID, category, title, description, clientUsername, "", oDate)
                         jobs(size) = tempJob 'adding job to the list
 
                         'building html thing language to display jobs
                         newAds &= "<div>"
-                        newAds &= "<h4>" & tempJob.getTitle() & "</h4>"
+                        determineNewRes(ID)
+                        If newRes Then
+                            newAds &= "<h4>" & tempJob.getTitle() & "</h4> <span class=""bell animated shake""> </span>"
+                        Else
+                            newAds &= "<h4>" & tempJob.getTitle() & "</h4>"
+                        End If
+                        
                         newAds &= displayResponses(tempJob.getID())
-                        newAds &= "<a href=ClientProfile.aspx?function=cancel&cancelID=" & tempJob.getID() & ">Cancel</a>"
-                        newAds &= "</div>" & Environment.NewLine
+                        newAds &= "<a style=""color:white"" href=ClientProfile.aspx?function=cancel&cancelID=" & tempJob.getID() & ">Cancel</a>"
+                        newAds &= "</div><br/>" & Environment.NewLine
 
                     Else 'if handyman has been assigned
 
                         Dim handyman As String = reader("Worker") 'to be used in constructor
 
-                        tempJob = New Job(ID, category, title, description, clientUsername, handyman)
+                        tempJob = New Job(ID, category, title, description, clientUsername, handyman, oDate)
                         jobs(size) = tempJob 'adding job to the list
 
 
                         oldAds &= "<div>"
                         oldAds &= "<h4>" & reader("AdTitle") & "</h4>"
-                        oldAds &= "<a href=RatingHandyMan.aspx?Handyman=" & tempJob.getHandyman() & "&adID=" & tempJob.getID() & ">Done</a> <br/>"
+                        oldAds &= "<a style=""color:white"" href=RatingHandyMan.aspx?Handyman=" & tempJob.getHandyman() & "&adID=" & tempJob.getID() & ">Done</a> <br/>"
                         oldAds &= ValidationClass.displayMessenges(ID) & "<hr/>" 'displays all the messsenges sent for this particular job
-                        oldAds &= "</div>" & Environment.NewLine
+                        oldAds &= "</div> <br/>" & Environment.NewLine
                     End If
                 End If
             End While
@@ -123,6 +132,32 @@ Public Class ClientProfile
 
         Return newAds & Environment.NewLine & oldAds
     End Function
+
+    Public Sub determineNewRes(adID As Integer)
+        '  Dim count As Integer = 0
+        newRes = False
+
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim query As String = "SELECT * FROM Responses WHERE AdID = @name;"
+        connection.Open()
+
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@name", adID)
+
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            While reader.Read()
+                '   count += 1
+                If reader("Checked") = "unchecked" Then
+                    newRes = True
+                End If
+            End While
+        End If
+
+
+    End Sub
+
 
     Private Function displayResponses(adID As String) As String
         Dim count As Integer = 0
@@ -142,7 +177,7 @@ Public Class ClientProfile
             End While
         End If
 
-        Return "<a href=Responses.aspx?ID=" & adID & ">Responses(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
+        Return "<a style=""color:white"" href=Responses.aspx?ID=" & adID & ">Responses(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
     End Function
 
     Private Sub changeDB() 'NOTE TO SELF when changing handyman see this function

@@ -11,50 +11,32 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Login
+Partial Public Class Site3
 
     '''<summary>
-    '''Form1 control.
+    '''head control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
-    '''txtUsername control.
+    '''userLog control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtUsername As Global.System.Web.UI.HtmlControls.HtmlInputText
+    Protected WithEvents userLog As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''txtPassword control.
+    '''ContentPlaceHolder1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtPassword As Global.System.Web.UI.HtmlControls.HtmlInputPassword
-
-    '''<summary>
-    '''myBtn control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents myBtn As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
-
-    '''<summary>
-    '''lblLogin control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblLogin As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents ContentPlaceHolder1 As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class

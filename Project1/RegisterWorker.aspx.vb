@@ -42,7 +42,7 @@ Public Class apply
             email = txtEmail.Text()
             numbers = txtMobile.Text()
             region = regionList.SelectedItem().ToString()
-            image = fileSelect.
+
 
 
             'MsgBox("Name = " & name)
@@ -128,9 +128,9 @@ Public Class apply
         'Response.Redirect("WorkerProfile.aspx? UserName=" & txtUsername.Text)
     End Sub
 
-    Protected Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnUpload.ServerClick
+    'Protected Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnUpload.ServerClick
 
-       
-    End Sub
+
+    'End Sub
 
 End Class

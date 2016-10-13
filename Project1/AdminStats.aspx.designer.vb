@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class AdminStats1
+Partial Public Class AdminStats
 
     '''<summary>
     '''VisiterStats control.
