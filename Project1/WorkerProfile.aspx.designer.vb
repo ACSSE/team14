@@ -113,6 +113,15 @@ Partial Public Class WorkerProfile
     Protected WithEvents JobNots As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''responsesNots control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents responsesNots As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''penJobs control.
     '''</summary>
     '''<remarks>

@@ -48,7 +48,7 @@ Public Class MessengeList
             Dim mdate As Date
             While reader.Read()
                 'reading in values
-                words = reader("Messenge")
+                words = reader("Messeges")
                 sender = reader("Sender")
                 mdate = reader("Date")
                 'entering values into the list

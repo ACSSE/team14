@@ -37,7 +37,7 @@ Public Class WorkerProfile
         Dim size As Integer
         Dim HandymanJobs(size) As Job
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "Select * FROM AdTable WHERE Worker = @name AND Status IS NULL"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -148,7 +148,7 @@ Public Class WorkerProfile
         Dim size As Integer = 0 'for resizing purposes
         Dim jobsID(size) As Integer 'array for job idS to be stored
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "Select * FROM Ratings WHERE Worker = @name AND Pending = @true;"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -195,7 +195,7 @@ Public Class WorkerProfile
 
         Dim cJob As Job = Nothing 'variable to be returned
 
-        Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "Select * FROM AdTable WHERE PostAdId = @ID"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
@@ -364,5 +364,40 @@ Public Class WorkerProfile
         Return categorySQL
     End Function
 
+    Public Function getResNots() As String
+        Dim html As String = ""
+
+        Dim size As Integer = 0
+        Dim IDs(size) As Integer
+
+        Dim connection As SqlConnection
+        Dim command As SqlCommand
+        Dim reader As SqlDataReader
+
+        connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+
+        Dim query As String = "SELECT * FROM ResponsesMesseges WHERE Worker = @worker;"
+        command = New SqlCommand(query, connection)
+
+        command.Parameters.AddWithValue("@worker", worker.getUsername()) 'only responses targeted to this handyman
+
+        reader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            While reader.Read()
+                Dim ishandled As Boolean = False
+
+                For i As Integer = 1 To IDs.Length - 1
+                    If IDs(i) = reader("PostAdId") Then
+                        ishandled = True
+                    End If
+                Next
+            End While
+
+        End If
+
+
+        Return html
+    End Function
 
 End Class
