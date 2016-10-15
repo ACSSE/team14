@@ -35,21 +35,26 @@ Public Class ClientProfile
             Next i
         End If
 
-        lblName.Visible = True
-        lblSurname.Visible = True
-        lblNumber.Visible = True
-        lblAddress.Visible = True
-        lblEmail.Visible = True
+        Try
+            lblName.Visible = True
+            lblSurname.Visible = True
+            lblNumber.Visible = True
+            lblAddress.Visible = True
+            lblEmail.Visible = True
 
-        lblName.InnerText = client.getName()  'reader("Name")
-        lblSurname.InnerHtml = client.getSurname()  'reader("SurName")
-        lblNumber.InnerText = client.getNumbers() 'reader("MobileNumber")
-        lblAddress.InnerText = client.getAddress() 'reader("Address")
-        lblEmail.InnerText = client.getEmail  'reader("Email")
+            lblName.InnerText = client.getName()  'reader("Name")
+            lblSurname.InnerHtml = client.getSurname()  'reader("SurName")
+            lblNumber.InnerText = client.getNumbers() 'reader("MobileNumber")
+            lblAddress.InnerText = client.getAddress() 'reader("Address")
+            lblEmail.InnerText = client.getEmail  'reader("Email")
 
 
 
-        AdsDiv.InnerHtml = displayAds()
+            AdsDiv.InnerHtml = displayAds()
+        Catch ex As Exception
+
+        End Try
+       
 
 
     End Sub

@@ -28,7 +28,7 @@
 					});
 					</script>
 					<!-- //FlexSlider -->
-					<div class="product-details">
+					<div class="product-details" runat="server" >
 						<h4>Name : <a href="#"><label id="lblName" runat="server" text=""></label> <label id="lblSurname" runat="server" text=""></label></a></h4>
                         <h4>Contact Number : <strong><label id="lblNumber" runat="server" text=""></label></strong></h4>
 						<h4>Email : <strong><label id="lblEmail" runat="server" text=""></label></strong></h4>
