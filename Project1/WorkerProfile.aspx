@@ -49,7 +49,7 @@
                         <h4>Worker Contact Number : <strong><label id="lblNumber" runat="server" text=""/></strong></h4>
 						<h4>Worker email : <strong><label id="lblEmail" runat="server" text=""/></strong></h4>
                         <h4 id="update" runat="server"><a href="UpdateProfile.aspx?user=handyman">Update your profile</a></h4>
-                        <h4 id="check" runat="server"><a href="clientStat.aspx?user=client">Check Your Stats</a></h4>
+                        <h4 id="check" runat="server"><a href="workerStat.aspx?user=worker">Check Your Stats</a></h4>
 					</div>
 
                     <div class="product-price">

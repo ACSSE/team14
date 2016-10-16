@@ -558,6 +558,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="WorkerProfile.aspx" />
+    <Content Include="workerStat.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdDetail.aspx.designer.vb">
@@ -895,6 +896,13 @@
     </Compile>
     <Compile Include="WorkerProfile.aspx.vb">
       <DependentUpon>WorkerProfile.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="workerStat.aspx.designer.vb">
+      <DependentUpon>workerStat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="workerStat.aspx.vb">
+      <DependentUpon>workerStat.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

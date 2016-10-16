@@ -3429,7 +3429,25 @@ span.bell {
     padding: 40px;
     margin-bottom: 60px;
 }
+.post-ad-form1 {
+    border: 1px solid #eee;
+    padding: 20px;
+    margin-bottom: 60px;
+    border-radius:10px;
+}
 .post-ad-form form label {
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+    color: #000;
+    margin-top: 10px;
+    display: BLOCK;
+    font-weight: 400;
+    float: left;
+    width: 16%;
+    margin-right: 4%;
+}
+.post-ad-form form1 label {
     font-size: 15px;
     text-transform: capitalize;
     margin-bottom: 8px;
@@ -3444,7 +3462,23 @@ span.bell {
 .post-ad-form form label span {
 	color:red;
 }
+.post-ad-form form1 label span {
+	color:red;
+}
 .post-ad-form input[type="text"] {
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 25px;
+    border: 1px solid #01a185;
+    outline: none;
+    color: #555;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+	float: left;
+}
+.post-ad-form1 input[type="text"] {
     padding: 10px 10px 10px 10px;
     margin-bottom: 25px;
     border: 1px solid #01a185;
@@ -3468,6 +3502,17 @@ span.bell {
     height: 149px;
     width: 444px;
 }
+.post-ad-form1 textarea {
+    outline: none;
+    resize: none;
+	padding: 10px 10px 10px 10px;
+    margin-bottom: 25px;
+    border: 1px solid #01a185;
+    outline: none;
+    color: #555;
+    height: 149px;
+    width: 444px;
+}
 .post-ad-form input[type="text"]:hover,.post-ad-form textarea:hover {
     border: 1px solid #f3c500;
     transition:0.5s all;
@@ -3476,7 +3521,22 @@ span.bell {
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+.post-ad-form1 input[type="text"]:hover,.post-ad-form textarea:hover {
+    border: 1px solid #f3c500;
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
 .post-ad-form form select {
+    border: 1px solid #01a185;
+    background-color: #fff;
+    padding: 8px;
+    width: 30%;
+    margin-bottom: 25px;
+}
+.post-ad-form1 form select {
     border: 1px solid #01a185;
     background-color: #fff;
     padding: 8px;
@@ -3503,7 +3563,53 @@ span.bell {
 	float: right;
 }
 
+.post-ad-form1 input[type="submit"] {
+    background: #f3c500;
+    color: white;
+    -webkit-appearance: none;
+    border: none;
+    text-transform: uppercase;
+    position: relative;
+    padding: 10px 50px;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    -webkit-transition: all 333ms ease-in-out;
+    -moz-transition: all 333ms ease-in-out;
+    -o-transition: all 333ms ease-in-out;
+    -ms-transition: all 333ms ease-in-out;
+    transition: all 333ms ease-in-out;
+    margin-top: 5px;
+	float: right;
+}
+
 .post-ad-form input[type="button"] {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    background: #f3c500;
+    color: white;
+    -webkit-appearance: none;
+    text-transform: uppercase;
+    position: relative;
+    padding: 10px 50px;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    -webkit-transition: all 333ms ease-in-out;
+    -moz-transition: all 333ms ease-in-out;
+    -o-transition: all 333ms ease-in-out;
+    -ms-transition: all 333ms ease-in-out;
+    transition: all 333ms ease-in-out;
+    margin-top: 20px;
+	float: right;
+    top: 0px;
+    left: 0px;
+    width: 249px;
+    height: 50px;
+}
+
+.post-ad-form1 input[type="button"] {
     border-style: none;
     border-color: inherit;
     border-width: medium;

@@ -64,6 +64,10 @@
                        <div class="interested text-center"  id="AdsDiv" runat="server">
                 
 			           </div>
+
+                    <div class="interested text-center"  id="quotationDiv" runat="server">
+                
+			           </div>
 				</div>
 			
 			</div>

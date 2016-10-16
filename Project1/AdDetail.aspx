@@ -5,14 +5,13 @@
     <div class="single-page main-grid-border">
 
     <form runat="server">
-    <div class="single-page main-grid-border">
+    
 		<div class="container">
-            <div class="post-ad-form">
+            <div class="post-ad-form1">
             <h2 class="head" id = "AdHeading" runat="server"></h2>
             
             <div id="ClientInfo" runat="server"></div>
             <div id="AdInfo" runat="server"></div>
-            
             
             
             
@@ -23,7 +22,7 @@
             <input id="btnConfirm" runat="server" type="submit" value="Confirm"/>
             </div>
 		</div>
-    </div>
+    
 
 
     </form>

@@ -142,7 +142,7 @@ Public Class ClientProfile
 
     Private Function displayQuote() As String 'to display ads that client has posted but have no handyman assinged to them
         Dim size As Integer = 0 'to use as a resize reference
-        Dim quote(size) As Job 'to store all jobs
+        Dim quote(size) As Quotation 'to store all jobs
 
 
         Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
@@ -171,40 +171,40 @@ Public Class ClientProfile
                 Dim quoteHours As Integer = reader("quoteHours")
                 Dim quoteAmount As Integer = reader("quoteAmount")
 
-                Dim tempJob As Quotation  'Temporary container for job object
+                Dim tempQuote As Quotation  'Temporary container for quotation
 
                 If IsDBNull(reader("Status")) Then
 
                     If reader("Worker") Is Nothing Or IsDBNull(reader("Worker")) Then
                         tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount)
-                        quote(size) = tempQuote 'adding job to the list
+                        quote(size) = tempQuote  'adding quotation to the list
 
                         'building html thing language to display jobs
-                        newAds &= "<div>"
+                        newQuote &= "<div>"
                         determineNewRes(ID)
                         If newRes Then
-                            newAds &= "<h4>" & tempJob.getTitle() & "</h4> <span class=""bell animated shake""> </span>"
+                            newQuote &= "<h4>" & tempQuote.getquoteId & "</h4> <span class=""bell animated shake""> </span>"
                         Else
-                            newAds &= "<h4>" & tempJob.getTitle() & "</h4>"
+                            newQuote &= "<h4>" & tempQuote.getquoteId & "</h4>"
                         End If
 
-                        newAds &= displayResponses(tempJob.getID())
-                        newAds &= "<a style=""color:white"" href=ClientProfile.aspx?function=cancel&cancelID=" & tempJob.getID() & ">Cancel</a>"
-                        newAds &= "</div><br/>" & Environment.NewLine
+                        newQuote &= displayQuotation(tempQuote.getquoteId)
+                        newQuote &= "<a style=""color:white"" href=ClientProfile.aspx?function=cancel&cancelID=" & tempJob.getID() & ">Cancel</a>"
+                        newQuote &= "</div><br/>" & Environment.NewLine
 
                     Else 'if handyman has been assigned
 
                         Dim handyman As String = reader("Worker") 'to be used in constructor
 
-                        tempJob = New Job(ID, category, title, description, clientUsername, handyman, oDate)
-                        jobs(size) = tempJob 'adding job to the list
+                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount)
+                        quote(size) = tempQuote 'adding job to the list
 
 
-                        oldAds &= "<div>"
-                        oldAds &= "<h4>" & reader("AdTitle") & "</h4>"
-                        oldAds &= "<a style=""color:white"" href=RatingHandyMan.aspx?Handyman=" & tempJob.getHandyman() & "&adID=" & tempJob.getID() & ">Done</a> <br/>"
-                        oldAds &= ValidationClass.displayMessenges(ID) & "<hr/>" 'displays all the messsenges sent for this particular job
-                        oldAds &= "</div> <br/>" & Environment.NewLine
+                        oldQuote &= "<div>"
+                        oldQuote &= "<h4>" & reader("QuoteId") & "</h4>"
+                        oldQuote &= "<a style=""color:white"" href=RatingHandyMan.aspx?Handyman=" & tempQuote.getWorker & "&adID=" & tempQuote.getquoteId & ">Done</a> <br/>"
+                        'oldQuote &= ValidationClass.displayMessenges(ID) & "<hr/>" 'displays all the messsenges sent for this particular job
+                        oldQuote &= "</div> <br/>" & Environment.NewLine
                     End If
                 End If
             End While
