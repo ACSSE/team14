@@ -14,9 +14,10 @@
             <div id="AdInfo" runat="server"></div>
             
             
-            
+            <div class="itemtype">
             <h3>Comments:</h3> <br />
             <textarea id="txtComment" runat="server"></textarea>
+                </div>
             <br />
             <br />
             <input id="btnConfirm" runat="server" type="submit" value="Confirm"/>

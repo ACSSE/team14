@@ -57,7 +57,7 @@ Public Class AdDetail
             End If
         Next
 
-        Dim adString As String = "<hr/>"
+        Dim adString As String = ""
 
         'displaying ad details
         If selectedJob IsNot Nothing Then
