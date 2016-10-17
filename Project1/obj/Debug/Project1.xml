@@ -94,6 +94,14 @@ JobNots control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.WorkerProfile.responsesNots">
+	<summary>
+responsesNots control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.WorkerProfile.penJobs">
 	<summary>
 penJobs control.
