@@ -63,9 +63,17 @@ Public Class AdDetail
         If selectedJob IsNot Nothing Then
             AdHeading.InnerText = selectedJob.getTitle()
             'adString &= "<h1 class=""head"">" & selectedJob.getTitle() & "</h1> <br />"
-            adString &= "<h3 class=""inline"">Category: </h3> " & "<p class=""inline"">" & selectedJob.getCategory() & "</p>" & " <br />"
-            adString &= "<h3>Description: </h3>"
+            adString &= "<div class=""itemtype"">"
+            adString &= "<h3 class=""p-price"">Category: </h3> "
+            adString &= "<p>" & selectedJob.getCategory() & "</p>" & " <br />"
+            adString &= "<div class=""clearfix""></div>"
+            adString &= "</div>"
+
+            adString &= "<div class=""itemtype"">"
+            adString &= "<h3 class=""p-price"">Description: </h3>"
             adString &= "<p>" & selectedJob.getDescription() & "</p>"
+            adString &= "<div class=""clearfix""></div>"
+            adString &= "</div>"
             clientUsername = selectedJob.getClient()
         End If
         adString &= "<hr/>"

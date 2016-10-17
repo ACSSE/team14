@@ -6,15 +6,17 @@ Public Class Quotation
     Private quoteDescription As String
     Private quoteHours As Integer
     Private quoteAmount As Integer
+    Private worker As String
 
 
 
-    Public Sub New(vquoteId As Integer, vquoteDescription As String, vquoteHours As Integer, vquoteAmount As Integer)
+    Public Sub New(vquoteId As Integer, vquoteDescription As String, vquoteHours As Integer, vquoteAmount As Integer, vworker As String)
         MyBase.New()
         Me.quoteId = quoteId
         Me.quoteDescription = quoteDescription
         Me.quoteHours = quoteHours
         Me.quoteAmount = quoteAmount
+        Me.worker = worker
     End Sub
 
     Public Sub New(ID As Integer)
@@ -36,14 +38,16 @@ Public Class Quotation
     Public Function getquoteAmount() As Integer
         Return quoteAmount
     End Function
-
+    Public Function getWorker() As Integer
+        Return worker
+    End Function
 
 
     Public Sub savequoteDescription()
 
 
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "INSERT INTO Quotation (QuoteId, quoteDescription, quoteHours, quoteAmount) Values (@ID, @quoteDescription, @quoteHours, @quoteAmount)"
+        Dim query As String = "INSERT INTO Quotation (QuoteId, quoteDescription, quoteHours, quoteAmount, Worker) Values (@ID, @quoteDescription, @quoteHours, @quoteAmount, @worker)"
         connection.Open()
 
         Dim command As SqlCommand = New SqlCommand(query, connection)
@@ -51,6 +55,7 @@ Public Class Quotation
         command.Parameters.AddWithValue("@quoteDescription", quoteDescription)
         command.Parameters.AddWithValue("@quoteHours", quoteHours)
         command.Parameters.AddWithValue("@quoteAmount", quoteAmount)
+        command.Parameters.AddWithValue("@worker", worker)
 
         Dim reader As SqlDataReader = command.ExecuteReader()
         connection.Close()
@@ -78,6 +83,7 @@ Public Class Quotation
             quoteDescription = reader("quoteDescription")
             quoteHours = reader("quoteHours")
             quoteAmount = reader("quoteAmount")
+            worker = reader("Worker")
 
         End If
 
@@ -86,10 +92,10 @@ Public Class Quotation
 
     Public Function getMessageInfo() As String
         Dim info As String = ""
-        Dim myUser As Quotation
+        'Dim myUser As Quotation
 
         info &= "Invoice Number: <strong>" & quoteId & "</strong>"
-        'info &= "<p>User : " &  & "</p>"
+        info &= "<p>User : " & worker & "</p>"
         info &= "</br>Description: " & quoteDescription
         info &= "</br>Estimated Hours to Complete: " & quoteHours
         info &= "</br>Estimated Amount: " & quoteAmount

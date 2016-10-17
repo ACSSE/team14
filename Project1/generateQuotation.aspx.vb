@@ -12,6 +12,9 @@
         Dim quoteDescription As String = ""
         Dim hours As Integer = ""
         Dim quoteAmount As Integer = ""
+        Dim worker As Worker = Session("user")
+
+        Dim workerUsername As String = worker.getUsername() 'worker who is writting the quotation
        
         quoteDescription = txtQuoteDescription.Text()
         hours = txtQuoteHours.Text()
@@ -20,10 +23,10 @@
            
 
 
-        Dim quotation As Quotation = New Quotation(quoteId, quoteDescription, hours, quoteAmount)
+        Dim quotation As Quotation = New Quotation(quoteId, quoteDescription, hours, quoteAmount, workerUsername)
         quotation.savequoteDescription()
 
-        Response.Redirect("QuotationDisplay.aspx")
+        Response.Redirect("WorkerProfile.aspx")
 
 
 

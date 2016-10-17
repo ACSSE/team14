@@ -142,7 +142,7 @@ Public Class ClientProfile
 
     Private Function displayQuote() As String 'to display ads that client has posted but have no handyman assinged to them
         Dim size As Integer = 0 'to use as a resize reference
-        Dim quote(size) As Quotation 'to store all jobs
+        Dim quote(size) As Quotation 'to store all quotes
 
 
         Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
@@ -165,7 +165,7 @@ Public Class ClientProfile
                 'varaibles to creat a new job
                 Dim worker As Worker = Session("user")
 
-                Dim wokerUsername As String = worker.getUsername() 'worker who is writting the quotation
+                Dim workerUsername As String = worker.getUsername() 'worker who is writting the quotation
                 Dim quoteId As Integer = reader("QuoteId")
                 Dim quoteDescription As String = reader("quoteDescription")
                 Dim quoteHours As Integer = reader("quoteHours")
@@ -176,27 +176,27 @@ Public Class ClientProfile
                 If IsDBNull(reader("Status")) Then
 
                     If reader("Worker") Is Nothing Or IsDBNull(reader("Worker")) Then
-                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount)
+                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount, workerUsername)
                         quote(size) = tempQuote  'adding quotation to the list
 
                         'building html thing language to display jobs
                         newQuote &= "<div>"
                         determineNewRes(ID)
                         If newRes Then
-                            newQuote &= "<h4>" & tempQuote.getquoteId & "</h4> <span class=""bell animated shake""> </span>"
+                            newQuote &= "<h4> Quotation: " & tempQuote.getquoteId & "</h4> <span class=""bell animated shake""> </span><br/>"
                         Else
-                            newQuote &= "<h4>" & tempQuote.getquoteId & "</h4>"
+                            newQuote &= "<h4> Quotation: " & tempQuote.getquoteId & "</h4>"
                         End If
 
                         newQuote &= displayQuotation(tempQuote.getquoteId)
-                        newQuote &= "<a style=""color:white"" href=ClientProfile.aspx?function=cancel&cancelID=" & tempJob.getID() & ">Cancel</a>"
+                        newQuote &= "<a style=""color:white"" href=ClientProfile.aspx?function=cancel&cancelID=" & tempQuote.getquoteId & ">Cancel</a>"
                         newQuote &= "</div><br/>" & Environment.NewLine
 
                     Else 'if handyman has been assigned
 
                         Dim handyman As String = reader("Worker") 'to be used in constructor
 
-                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount)
+                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount, workerUsername)
                         quote(size) = tempQuote 'adding job to the list
 
 
@@ -211,10 +211,10 @@ Public Class ClientProfile
         End If
         adconnection.Close()
 
-        Session("jobs") = jobs
+        Session("quote") = quote
 
 
-        Return newAds & Environment.NewLine & oldAds
+        Return newQuote & Environment.NewLine & oldQuote
     End Function
 
     Public Sub determineNewRes(adID As Integer)
@@ -282,7 +282,7 @@ Public Class ClientProfile
             End While
         End If
 
-        Return "<a style=""color:white"" href=QuaotationDisplay.aspx?ID=" & QuoteId & ">Responses(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
+        Return "<a style=""color:white"" href=QuaotationDisplay.aspx?ID=" & QuoteId & ">Quotation(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
     End Function
 
     Private Sub changeDB() 'NOTE TO SELF when changing handyman see this function
