@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="PostAdClient.aspx.vb" Inherits="Project1.PostAdClient" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site2.Master" CodeBehind="PostAdClient.aspx.vb" Inherits="Project1.PostAdClient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
     <div class="submit-ad main-grid-border">
@@ -9,11 +9,11 @@
             <form runat="server">
 			<h2 class="head">Post an Ad</h2>
 			<div class="post-ad-form">
-				<table style="margin:initial">
+				<table class="table" style="margin:initial; color:black;">
                 <tr>
                     <td>
                 
-                        <asp:Label ID="lblCategory" runat="server" Text="Select Category"></asp:Label></td>
+                        <asp:Label ID="lblCategory" ForeColor="Black"   runat="server" Text="Select Category"></asp:Label></td>
                     <td>
                       <asp:DropDownList ID="categoriesList" runat="server" Width="180px">
          
@@ -33,22 +33,22 @@
 
                 <tr>
                     <td style="width: 300px; height: 50px;">
-                        <asp:Label ID="lblTitle" runat="server" Text="Ad Title"></asp:Label></td>
+                        <asp:Label ID="lblTitle" ForeColor="Black"  runat="server" Text="Ad Title"></asp:Label></td>
                     <td style="height: 50px">
-                        <asp:TextBox ID="txtTitle" runat="server" Height="25px" Width="180px"></asp:TextBox>
+                        <asp:TextBox ID="txtTitle" ForeColor="Black" TextMode="MultiLine"  runat="server" Height="60px" Width="300px"></asp:TextBox>
 
                     </td>
                 </tr>
                     <tr>
                     <td style="width: 300px; margin:initial;">
-                        <asp:Label ID="lblDescription" runat="server" Text="Add Description"  ></asp:Label></td>
+                        <asp:Label ID="lblDescription" ForeColor="Black"  runat="server" Text="Add Description"  ></asp:Label></td>
                     <td>
-                        <asp:TextBox ID="txtDescription" TextMode="MultiLine"  runat="server" Height="52px" Width="180px"></asp:TextBox></td>
+                        <asp:TextBox ID="txtDescription" ForeColor="Black"  TextMode="MultiLine"  runat="server" Height="60px" Width="300px"></asp:TextBox></td>
                 </tr>
 
                      <tr>
                     <td style="width: 300px; margin:initial;">
-                        <asp:Label ID="lblLogo" runat="server" Text="Photo for your ad"></asp:Label></td>
+                        <asp:Label ID="lblLogo" runat="server" ForeColor="Black" Text="Photo for your ad"></asp:Label></td>
                     <td>
                         <div class="photos-upload-view">
 
@@ -59,9 +59,7 @@
 							<div id="filedrag">or drop file here</div>
 						</div>
 
-						<div id="submitbutton">
-							<button type="submit" id="btnUpload" runat="server">Upload Files</button>
-						</div>
+						
 
 						</div></td>
                 </tr>
