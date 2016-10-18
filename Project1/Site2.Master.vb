@@ -8,9 +8,9 @@ Public Class Site2
             userLog.Visible = True
 
             If TypeOf cUser Is Client Then
-                userLog.InnerHtml = "<small style=""color:#FBCC33"">Welcome</small> " & "<small style=""color:#01A185""><b>" & cUser.getUsername() & "</b></small> " & "<a style="" font-size:small;""  href=""logout.aspx"">(logout)</a>&nbsp;&nbsp;" & countResponses()
+                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome " & "<b style=""color:#01A185"">" & cUser.getUsername() & "</b> " & "<a style="" font-size:small;""  href=""logout.aspx"">(logout)</a></p>&nbsp;&nbsp;" & countResponses()
             Else
-                userLog.InnerHtml = "<small style=""color:#FBCC33"">Welcome</small> " & "<small style=""color:#01A185""><b>" & cUser.getUsername() & "</b></small> " & "<small><a style="" font-size:small;""  href=""logout.aspx"">(logout)</a></small>"
+                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome " & "<b style=""color:#01A185"">" & cUser.getUsername() & "</b> " & "<a  href=""logout.aspx"" style="" font-size:small;"">(logout)</a></p>"
             End If
         End If
     End Sub
