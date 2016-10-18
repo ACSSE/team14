@@ -95,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<a class="account" href="Login.aspx">Create Profile</a>
 			<a class="account" href="HowItWorks.aspx">How It Works</a>
 	<!-- Large modal -->
-			<div class="selectregion">
+<%--			<div class="selectregion">
 				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
 				Select Your Region</button>
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
@@ -137,7 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<script>
 				    $('#myModal').modal('');
 				</script>
-			</div>
+			</div>--%>
 		</div>
 		</div>
 	</div>
@@ -145,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="mobile-app">
 				<div class="container">
 					<div class="col-md-5 app-left animated bounceInLeft">
-						<a href="#"><img src="#" alt="" /></a>
+						<a href="#"><img src="tool3.png" alt="" /></a>
 					</div>
 					<div class="col-md-7 app-right wow animated bounceInRight">
                 <h1>Find trusted   <span class="segment-heading">    Man-Of-All-Work Online</span></h1><br/>

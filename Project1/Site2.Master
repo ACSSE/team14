@@ -96,7 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<a class="account" href="Login.aspx">Create Profile</a>
 			<a class="account" href="HowItWorks.aspx">How It Works</a>
 	<!-- Large modal -->
-			<div class="selectregion">
+			<%--<div class="selectregion">
 				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
 				Select Your Region</button>
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
@@ -138,7 +138,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<script>
 				    $('#myModal').modal('');
 				</script>
-			</div>
+			</div>--%>
 		</div>
 		</div>
 	</div>

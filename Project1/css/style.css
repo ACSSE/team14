@@ -281,7 +281,7 @@ span.joe {
 .logo a {
 	font-family: 'Ubuntu Condensed', sans-serif;
 	font-size: 50px;
-    color: white;
+    color: #f3c500;
 	text-decoration:none;
 }
 .logo a span {
@@ -297,7 +297,7 @@ a.account {
     text-decoration: none;
 }
 a.account:hover {
-	background-color: #9099a2;
+	background-color:#f3c500;
 }
 span.active.uls-trigger {
     float: left;
@@ -1196,7 +1196,7 @@ span.glyphicon.glyphicon-map-marker {
 }
 span.glyphicon.glyphicon-map-marker, span.glyphicon.glyphicon-earphone, .glyphicon.glyphicon-envelope {
     color: #fff;
-    font-size: 12px;
+    font-size: 15px;
     background-color: rgba(89, 194, 175, 0.68);
     padding: 6px;
     border-radius: 50%;
@@ -1310,7 +1310,7 @@ ul.location li:nth-child(2) {
 .footer-logo a {
     font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 40px;
-    color: #fff;
+    color: #f3c500;
     text-decoration: none;
     
 }
@@ -2343,7 +2343,7 @@ form.submit {
 }
 .product-details h4 {
 	color:#000;
-	font-size:18px;
+	font-size:22px;
 	margin:15px 0;
 }
 
@@ -2533,13 +2533,13 @@ span.dot2 {
 /*--alarm end here--*/
 /*--tab-sab end here--*/
 .product-details h4 a {
-	color:#f3c500;
+	color:black;
 	font-size:15.5px;
 	text-decoration:none;
 }
 .product-details p {
     line-height: 1.8;
-    color: #848484;
+    color: black;
     font-size: 13px;
     margin: 8px 0;
 }
@@ -3406,7 +3406,7 @@ ul.privacy-start {
     margin-left:initial;
 }
 .breadcrumb>li+li:before {
-    color: #D1E0EE;
+    color: #D1E0Ee;
 }
 
 span.bell {
@@ -4689,7 +4689,7 @@ label {
 	}
 	a.account:hover {
 		background: transparent;
-		color: #6D6D6D;		
+		color: #6D6D6d;		
 	}
 	.app-right {
 		margin-top: 20px;
@@ -5126,7 +5126,7 @@ label {
 		padding: 8px 10px;
 	}
 	.breadcrumb>li {
-		font-size: 12px;
+		font-size: 20px;
 	}
 	.breadcrumb>li+li:before {
 		padding: 0 3px;
