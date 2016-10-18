@@ -41,12 +41,15 @@ Public Class ClientProfile
             lblNumber.Visible = True
             lblAddress.Visible = True
             lblEmail.Visible = True
+            lblRegion.Visible = True
+
 
             lblName.InnerText = client.getName()  'reader("Name")
             lblSurname.InnerHtml = client.getSurname()  'reader("SurName")
             lblNumber.InnerText = client.getNumbers() 'reader("MobileNumber")
             lblAddress.InnerText = client.getAddress() 'reader("Address")
             lblEmail.InnerText = client.getEmail  'reader("Email")
+            lblRegion.InnerText = client.getRegion()
 
 
 
