@@ -10,30 +10,20 @@ Public Class generateQuotation
     Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnSubQuote.ServerClick
 
 
-        Dim quoteId As String = ""
-        Dim quoteDescription As String = lblQuoteDescription.Text()
-        Dim hours As Integer = lblQuoteHours.Text()
-        Dim quoteAmount As Integer
+        Dim description As String = txtQuoteDescription.Text()
+        Dim hours As Integer = txtQuoteHours.Text()
+        Dim amount As String = txtQuoteAmount.Text()
         Dim worker As Worker = Session("user")
 
         Dim workerUsername As String = worker.getUsername() 'worker who is writting the quotation
 
+        Dim cUser As User = Session("user") 'to obtain sender username
+        Dim ID As Integer = Request.QueryString("ID")
 
-
-
-        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "INSERT INTO Quotation (QuoteId, quoteDescription, quoteHours, quoteAmount, Worker) Values (@ID, @quoteDescription, @quoteHours, @quoteAmount, @worker)"
-        connection.Open()
-
-        Dim command As SqlCommand = New SqlCommand(query, connection)
-        command.Parameters.AddWithValue("@ID", quoteId)
-        command.Parameters.AddWithValue("@quoteDescription", quoteDescription)
-        command.Parameters.AddWithValue("@quoteHours", quoteHours)
-        command.Parameters.AddWithValue("@quoteAmount", quoteAmount)
-        command.Parameters.AddWithValue("@worker", worker)
-
-        Dim reader As SqlDataReader = command.ExecuteReader()
-        connection.Close()
+        Dim cQuotation As Quotation = New Quotation(ID, description, hours, amount, workerUsername)
+        cQuotation.savequoteDescription()
+        'commiting message into the database
+        Response.Redirect("WorkerProfile.aspx?ID=" & ID)
 
         'Response.Redirect("QuotationDisplay.aspx")
 

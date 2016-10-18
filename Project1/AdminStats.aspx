@@ -1,7 +1,9 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="AdminStats.aspx.vb" Inherits="Project1.AdminStats" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site3.Master" CodeBehind="AdminStats.aspx.vb" Inherits="Project1.AdminStats" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <form id="form1" runat="server">
 
     <h2>Website Statistics</h2>
     <br /><br /><br />
@@ -35,10 +37,23 @@
                     </div> </div> </div> </div>
 
 </div>--%>
+        <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource1" Palette="Fire" Width="600px">
+            <Series>
+                <asp:Series Name="Series1" XValueMember="Category" YValueMembers="JoinDate">
+                </asp:Series>
+            </Series>
+            <ChartAreas>
+                <asp:ChartArea Name="ChartArea1">
+                </asp:ChartArea>
+            </ChartAreas>
+        </asp:Chart>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Category] FROM [AdminStats]"></asp:SqlDataSource>
     </div>
     <br /><br />
     <div id="TotalUsers" runat="server"></div>
     <br /><br />
     <div id="WeekStats" runat="server"></div>
+
+    </form>
 
 </asp:Content>

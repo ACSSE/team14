@@ -16,13 +16,13 @@ Public Class Login
         '        Response.Redirect("index.aspx")
         '    End If
         'End If
-        MsgBox("Page load")
+        'MsgBox("Page load")
 
     End Sub
 
     Protected Sub btnLog_Click(sender As Object, e As EventArgs) Handles myBtn.ServerClick
 
-        MsgBox("Inside button")
+        'MsgBox("Inside button")
         loginClient()
         LoginWorker()
         LoginAdmin()
@@ -35,7 +35,7 @@ Public Class Login
             Dim user As String = txtUsername.Value
             Dim pass As String = txtPassword.Value
 
-            MsgBox("Im in" &user)
+            'MsgBox("Im in" &user)
 
             Dim client As Client = New Client(user, pass)
            
@@ -52,7 +52,7 @@ Public Class Login
     Public Sub LoginWorker()
 
         If Page.IsValid Then
-            MsgBox("In worker")
+            ' MsgBox("In worker")
             Dim user As String = txtUsername.Value
             Dim pass As String = txtPassword.Value
 

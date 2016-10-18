@@ -402,7 +402,7 @@
 									<div class="graph-container">
 										<%--<div id="graph-lines"> </div>
 										<div id="graph-bars"> </div>--%>
-									    <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource3" Height="3010px" Palette="Fire" PaletteCustomColors="243, 197, 0; 0, 0, 192" Width="890px">
+									    <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource3" Height="285px" Palette="Fire" PaletteCustomColors="243, 197, 0; 0, 0, 192" Width="750px">
                                             <series>
                                                 <asp:Series Name="Series1" XValueMember="Username" YValueMembers="JoinDate">
                                                 </asp:Series>
@@ -422,9 +422,9 @@
                     </div>
 					<div class="analytic-bottom">
 						<ul>
-							<li><h3><a href="#">R400</a></h3><p>Total Daily Earnings</p></li>
-							<li><h3><a href="#">R3200</a></h3><p>Total Monthly Earnings</p></li>
-							<li><h3><a href="#">1</a></h3><p>New Customers</p></li>
+							<li><h3><a href="#">R</a></h3><p>Total</p></li>
+							<li><h3><a href="#">R</a></h3><p>Total</p></li>
+							<li><h3><a href="#">1</a></h3><p>New</p></li>
 						</ul>
 					</div>
 			 </div>

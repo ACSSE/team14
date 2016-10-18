@@ -1111,9 +1111,33 @@ Submit3 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.AdminStats.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.AdminStats.VisiterStats">
 	<summary>
 VisiterStats control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.AdminStats.Chart1">
+	<summary>
+Chart1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.AdminStats.SqlDataSource1">
+	<summary>
+SqlDataSource1 control.
 </summary>
 	<remarks>
 Auto-generated field.

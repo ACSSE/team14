@@ -11,13 +11,13 @@
 	    	<div class="head-strip-left">
 	    		<span class="joe"><img src="images/User-icon.png" alt=""> </span>
 	    		<div class="joe-text">
-	    			<h2>Welcome back Client</h2>
+	    			<h2>Welcome back Handyman elec</h2>
 	    			<p></p>
 	    		</div>
 	    	</div>
 	    	<div class="head-strip-right">
 	    		<ul class="strip-date">
-	    			<li><span class="cal"> </span><h4 style="color:black">Wednesday.October 05</h4></li>
+	    			<li><span class="cal"> </span><h4 style="color:black">Monday.October 17</h4></li>
 	    			<li><span class="clock"> </span><h4 style="color:black">10.30a.m</h4></li>
 	    			<li><span class="sun"> </span><h4 style="color:black">Johannesburg</h4></li>
 	    		</ul>
@@ -52,7 +52,7 @@
 	    				    <img src="images/User-icon1.png" alt="">
 	    				</div>
 	    				<div class="col-md-8 user-prof-text">
-	    					<h3 style="color:black">Mr. Client</h3>
+	    					<h3 style="color:black">Mr. elec</h3>
 	    				    <p style="color:#f3c500"><i class="glyphicon glyphicon-map-marker"></i>Gauteng, Edenvale</p>
 	    				</div>
 	    			  <div class="clearfix"> </div>
@@ -84,7 +84,9 @@
                 	    <div class="clearfix"> </div>
                 	</div>
                 	<div class="skill-grid">
-							<div class="every" id="circles-1"> </div>									
+							<div class="every" id="circles-1"> </div>	
+                        
+                            
 											
 							</div>                	
 							<!---->
@@ -400,7 +402,7 @@
 									<div class="graph-container">
 										<%--<div id="graph-lines"> </div>
 										<div id="graph-bars"> </div>--%>
-									    <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource3" Height="3010px" Palette="Fire" PaletteCustomColors="243, 197, 0; 0, 0, 192" Width="890px">
+									    <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource3" Height="285px" Palette="Fire" PaletteCustomColors="243, 197, 0; 0, 0, 192" Width="750px">
                                             <series>
                                                 <asp:Series Name="Series1" XValueMember="Username" YValueMembers="JoinDate">
                                                 </asp:Series>
@@ -410,7 +412,7 @@
                                                 </asp:ChartArea>
                                             </chartareas>
                                         </asp:Chart>
-                                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Clients]"></asp:SqlDataSource>
+                                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Workers]"></asp:SqlDataSource>
                                         <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 									</div>

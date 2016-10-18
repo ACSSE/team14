@@ -1,7 +1,7 @@
 ﻿
 
 
-
+Imports System.Data.SqlClient
 
 Public Class ClientProfile
     Inherits System.Web.UI.Page
@@ -281,7 +281,7 @@ Public Class ClientProfile
             End While
         End If
 
-        Return "<a style=""color:white"" href=QuaotationDisplay.aspx?ID=" & QuoteId & ">Quotation(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
+        Return "<a style=""color:white"" href=QuotationDisplay.aspx?ID=" & QuoteId & ">Quotation(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
     End Function
 
     Private Sub changeDB() 'NOTE TO SELF when changing handyman see this function
