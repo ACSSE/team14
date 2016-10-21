@@ -17,6 +17,9 @@
 
             divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(Worker.getRating())
 
+            lblHour.InnerText = currentHour
+            lblMinute.InnerText = currentMinutes
+            lblDate.InnerText = currentDate
             JobTitle.InnerText = Worker.getCategory() 'setting the correct heading category
             lblRegion.InnerText = Worker.getRegion()
             lblName.InnerText = Worker.getName()

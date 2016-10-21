@@ -11,15 +11,15 @@
 	    	<div class="head-strip-left">
 	    		<span class="joe"><img src="images/User-icon.png" alt=""> </span>
 	    		<div class="joe-text">
-	    			<h2>Welcome back Handyman elec</h2>
+	    			<h2>Welcome back <label id="lblName" runat="server" text=""/> <label id="lblSurname" runat="server" text=""/> </h2>
 	    			<p></p>
 	    		</div>
 	    	</div>
 	    	<div class="head-strip-right">
 	    		<ul class="strip-date">
-	    			<li><span class="cal"> </span><h4 style="color:black">Monday.October 17</h4></li>
-	    			<li><span class="clock"> </span><h4 style="color:black">10.30a.m</h4></li>
-	    			<li><span class="sun"> </span><h4 style="color:black">Johannesburg</h4></li>
+	    			<li><span class="cal"> </span><h4 style="color:black">Monday.October 17 <label id="lblDate" runat="server" text=""/></h4></li>
+	    			<li><span class="clock"> </span><h4 style="color:black"><label id="lblHour" runat="server" text=""/>.<label id="lblMinute" runat="server" text=""/>a.m</h4></li>
+	    			<li><span class="sun"> </span><h4 style="color:black"><label id="lblRegion" runat="server" text=""/></h4></li>
 	    		</ul>
 	    		<%--<div class="settiing">
 	    			<div class="menu2">

@@ -12,7 +12,7 @@
 			</ol>
 			<div class="product-desc">
 				<div class="col-md-7 product-view">
-                    <h1 id="JobTitle" runat="server" ></h1>
+                    <h1 id="JobTitle" runat="server"></h1>
                     
 					<h4>Previous work done</h4>
 					<p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">Gauteng</a>, <a href="#"><label id="lblRegion" runat="server" text=""/></a></p>
