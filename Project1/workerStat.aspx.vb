@@ -8,12 +8,12 @@
         Dim currentMinutes As Integer = TimeOfDay.Minute
 
         Dim type As String = Request.QueryString("type")
-
+        Dim Worker As Worker = New Worker(username)
 
         If type = "client" Then
             Dim username As String = Request.QueryString("username")
 
-            Worker = New Worker(username)
+
 
             divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(Worker.getRating())
 
