@@ -24,7 +24,7 @@
 							</div>
 							<div class="log-input">
 								<div class="log-input-left">
-								   <input type="password" id="txtPassword" runat="server" class="lock" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
+								   <input type="password" id="txtPassword" runat="server" class="lock" value="Your Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
 								</div>
 								<span class="checkbox2" hidden>
 									 <label class="checkbox"  ><input type="checkbox" name="checkbox" checked=""/><i> </i></label>
@@ -32,10 +32,11 @@
 								<div class="clearfix"> </div>
 							</div>
 							
-                               <input id="btnLog" runat="server" type="submit" value="Log in"/>
+                               <%--<input id="btnLogIn" runat="server" type="submit" value="Log in"/>--%>
+                                <input id="myBtn" runat="server" type="submit" value="Log In"/>
 						</form>
                             	 <label id="lblLogin" style="align-content:center" runat="server" text=""></label>
-						</div>
+						
 						<div class="new_people">
 							<h2 style="align-content:center">Are You a New User</h2>
 							<p style="align-content:center">Join our awesome team and find your desired HandyMan</p>

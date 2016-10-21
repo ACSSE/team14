@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="WorkerProfile.aspx.vb" Inherits="Project1.WorkerProfile" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site3.Master" CodeBehind="WorkerProfile.aspx.vb" Inherits="Project1.WorkerProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
     <div class="single-page main-grid-border">
@@ -12,7 +12,7 @@
 			</ol>
 			<div class="product-desc">
 				<div class="col-md-7 product-view">
-                    <h1 id="JobTitle" runat="server" ></h1>
+                    <h1 id="JobTitle" runat="server"></h1>
                     
 					<h4>Previous work done</h4>
 					<p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">Gauteng</a>, <a href="#"><label id="lblRegion" runat="server" text=""/></a></p>
@@ -46,9 +46,11 @@
 					<!-- //FlexSlider -->
 					<div class="product-details">
 						<h4>Name : <a href="#"><label id="lblName" runat="server" text=""/> <label id="lblSurname" runat="server" text=""/></a></h4>
-                        <h4>Worker Contact Number : <strong><label id="lblNumber" runat="server" text=""/></strong></h4>
-						<h4>Worker email : <strong><label id="lblEmail" runat="server" text=""/></strong></h4>
-                        <h4 id="update" runat="server"><a href="UpdateProfile.aspx?user=handyman">Update your profile</a></h4>
+                        <h4>Worker Contact Number : <a href="#"><label id="lblNumber" runat="server" text=""/></a></h4>
+						<h4>Worker email : <a href="#"><label id="lblEmail" runat="server" text=""/></a></h4>
+
+                        <p id="update" runat="server"><a href="UpdateProfile.aspx?user=handyman">Update your profile</a></p>
+                        <p id="check" runat="server"><a href="workerStat.aspx?user=worker">Check Your Stats</a></p>
 					</div>
 
                     <div class="product-price">
@@ -83,16 +85,16 @@
                                  
                            
 						</div>
-                        <hr />
+                        <br />
 
 						<div class="interested text-center" id="myJobs" runat="server">
                                  
                            
 						</div>
-                        <hr />
+                        <br />
                           <div class="interested text-center" id="JobNots" runat="server">
 			           </div>
-                       <hr />
+                       <br />
                         
                        <div class="interested text-center" id="penJobs" runat="server">
 						<!--<div class="condition">

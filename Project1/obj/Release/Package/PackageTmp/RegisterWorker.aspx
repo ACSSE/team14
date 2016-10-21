@@ -148,9 +148,6 @@
 							<div id="filedrag">or drop file here</div>
 						</div>
 
-						<div id="submitbutton">
-							<button type="submit" id="btnUpload" runat="server">Upload Files</button>
-						</div>
 
 						</div></th>
                 </tr>

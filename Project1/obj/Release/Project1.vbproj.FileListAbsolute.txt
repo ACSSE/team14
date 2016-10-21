@@ -7,3 +7,4 @@ C:\Users\Anna\Documents\GitHub\team14\Project1\obj\Release\Project1.vbproj.Gener
 C:\Users\Anna\Documents\GitHub\team14\Project1\obj\Release\Project1.dll
 C:\Users\Anna\Documents\GitHub\team14\Project1\obj\Release\Project1.xml
 C:\Users\Anna\Documents\GitHub\team14\Project1\obj\Release\Project1.pdb
+C:\Users\Anna\Documents\GitHub\team14\Project1\obj\Release\Project1.vbprojResolveAssemblyReference.cache

@@ -163,10 +163,10 @@
 						<p>The App is a great way for worker to have their day planned and book through the site and for client to find appropriate HandyMan</p>
 						<div class="app-buttons">
 							<div class="app-button">
-								<a href="#"><img src="images/1.png" alt=""></a>
+								<a href="#"><img src="images/11.png" alt=""/></a>
 							</div>
 							<div class="app-button">
-								<a href="#"><img src="images/2.png" alt=""></a>
+								<a href="#"><img src="images/12.png" alt=""/></a>
 							</div>
 							<div class="clearfix"> </div>
 						</div>

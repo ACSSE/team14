@@ -1039,6 +1039,70 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.workerStat1.lblName">
+	<summary>
+lblName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.workerStat1.lblSurname">
+	<summary>
+lblSurname control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.workerStat1.lblDate">
+	<summary>
+lblDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.workerStat1.lblHour">
+	<summary>
+lblHour control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.workerStat1.lblMinute">
+	<summary>
+lblMinute control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.workerStat1.lblRegion">
+	<summary>
+lblRegion control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.workerStat1.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.workerStat1.lblRegion1">
+	<summary>
+lblRegion1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.workerStat1.Chart1">
 	<summary>
 Chart1 control.

@@ -11,12 +11,14 @@ Public Class Quotation
 
 
     Public Sub New(vquoteId As Integer, vquoteDescription As String, vquoteHours As Integer, vquoteAmount As Integer, vworker As String)
-        MyBase.New()
-        Me.quoteId = quoteId
-        Me.quoteDescription = quoteDescription
-        Me.quoteHours = quoteHours
-        Me.quoteAmount = quoteAmount
-        Me.worker = worker
+        'MyBase.New()
+        Me.quoteId = vquoteId
+        Me.quoteDescription = vquoteDescription
+        Me.quoteHours = vquoteHours
+        Me.quoteAmount = vquoteAmount
+        Me.worker = vworker
+
+        MsgBox("In Quotation class Description = " & Me.getquoteDescription)
     End Sub
 
     Public Sub New(ID As Integer)
@@ -56,6 +58,8 @@ Public Class Quotation
         command.Parameters.AddWithValue("@quoteHours", quoteHours)
         command.Parameters.AddWithValue("@quoteAmount", quoteAmount)
         command.Parameters.AddWithValue("@worker", worker)
+
+        MsgBox("Inside saveqouteDescription Description = " & quoteDescription)
 
         Dim reader As SqlDataReader = command.ExecuteReader()
         connection.Close()

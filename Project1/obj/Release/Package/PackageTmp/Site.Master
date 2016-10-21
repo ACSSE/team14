@@ -90,10 +90,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="header-right">
 			<a class="account" href="Login.aspx">Create Profile</a>
+                <a class="account" href="LoginClient.aspx">Login</a>
             <a class="account" href="HowItWorks.aspx">How It Works</a>
 			<!--<span class="active uls-trigger">Select language</span>-->
 	<!-- Large modal -->
-			<div class="selectregion">
+			<%--<div class="selectregion">
 				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
 				Select Your Region</button>
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
@@ -115,16 +116,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													
 										           <%-- <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [City] FROM [Area]"></asp:SqlDataSource>--%>		
 										
-									  </form>
+									 <%-- </form>
 								</div>
                                 </div>
 							</div>
 						</div>
-					</div>
-				<script>
+					</div>--%>&nbsp;<script>
 				    $('#myModal').modal('');
-				</script>
-			</div>
+				</script></div>
                 
                 
 		</div>
@@ -347,10 +346,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>	
 			<div class="footer-bottom text-center">
 			<div class="container">
-				<div class="footer-logo" style="align-content:center; align-items:center; align-items:center;" >
-					<a href="index.aspx"><span>HandyMan</span> 2.0</a>
+				<div class="footer-logo text-center "  >
+					<a href="index.aspx"><span>HandyMan </span> 2.0</a>
 				</div>
-				<div class="footer-social-icons">
+				<div class="footer-social-icons text-center ">
 					<ul>
                         <li><a class="facebook" href="#"><span>Facebook</span></a></li>
 						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
@@ -359,7 +358,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
 					</ul>
 				</div>
-				<div class="copyrights">
+				<div class="copyrights text-center ">
 					<p> © 2016 HandyMan 2.0. All Rights Reserved | Design by The Unknowns</p>
 				</div>
 				<div class="clearfix"></div>
