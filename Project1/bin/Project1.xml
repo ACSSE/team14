@@ -1231,6 +1231,14 @@ AdInfo control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.AdDetail.lblQuoteAmount">
+	<summary>
+lblQuoteAmount control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.AdDetail.txtComment">
 	<summary>
 txtComment control.
@@ -1239,9 +1247,9 @@ txtComment control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.AdDetail.btnConfirm">
+</member><member name="F:Project1.AdDetail.btnSubQuote">
 	<summary>
-btnConfirm control.
+btnSubQuote control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1346,14 +1354,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.PostAdClient.fileSelect">
 	<summary>
 fileSelect control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.PostAdClient.btnUpload">
-	<summary>
-btnUpload control.
 </summary>
 	<remarks>
 Auto-generated field.

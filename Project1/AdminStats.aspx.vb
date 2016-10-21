@@ -269,7 +269,7 @@ Public Class AdminStats
             Case "Roof Specialist"
                 Return 10
         End Select
-
+        Return ""
     End Function
 
 End Class

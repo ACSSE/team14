@@ -3510,6 +3510,20 @@ span.bell {
     -ms-transition: 0.5s all;
 	float: left;
 }
+
+.post-ad-form1 input[type="number"] {
+    
+    border: 1px solid #01a185;
+    outline: none;
+    color: #000;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+	float: left;
+}
+
 .post-ad-form textarea {
     outline: none;
     resize: none;
@@ -3538,6 +3552,15 @@ span.bell {
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+.post-ad-form input[type=number]:hover,.post-ad-form textarea:hover {
+    border: 1px solid #f3c500;
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+
 .post-ad-form1 input[type="text"]:hover,.post-ad-form textarea:hover {
     border: 1px solid #f3c500;
     transition:0.5s all;

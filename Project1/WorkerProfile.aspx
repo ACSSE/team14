@@ -46,10 +46,11 @@
 					<!-- //FlexSlider -->
 					<div class="product-details">
 						<h4>Name : <a href="#"><label id="lblName" runat="server" text=""/> <label id="lblSurname" runat="server" text=""/></a></h4>
-                        <h4>Worker Contact Number : <strong><label id="lblNumber" runat="server" text=""/></strong></h4>
-						<h4>Worker email : <strong><label id="lblEmail" runat="server" text=""/></strong></h4>
-                        <h4 id="update" runat="server"><a href="UpdateProfile.aspx?user=handyman">Update your profile</a></h4>
-                        <h4 id="check" runat="server"><a href="workerStat.aspx?user=worker">Check Your Stats</a></h4>
+                        <h4>Worker Contact Number : <a href="#"><label id="lblNumber" runat="server" text=""/></a></h4>
+						<h4>Worker email : <a href="#"><label id="lblEmail" runat="server" text=""/></a></h4>
+
+                        <p id="update" runat="server"><a href="UpdateProfile.aspx?user=handyman">Update your profile</a></p>
+                        <p id="check" runat="server"><a href="workerStat.aspx?user=worker">Check Your Stats</a></p>
 					</div>
 
                     <div class="product-price">

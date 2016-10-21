@@ -41,6 +41,15 @@ Partial Public Class AdDetail
     Protected WithEvents AdInfo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''lblQuoteAmount control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblQuoteAmount As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''txtComment control.
     '''</summary>
     '''<remarks>
@@ -50,11 +59,11 @@ Partial Public Class AdDetail
     Protected WithEvents txtComment As Global.System.Web.UI.HtmlControls.HtmlTextArea
 
     '''<summary>
-    '''btnConfirm control.
+    '''btnSubQuote control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnConfirm As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
+    Protected WithEvents btnSubQuote As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
 End Class

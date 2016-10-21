@@ -22,6 +22,7 @@ Public Class WorkerProfile
             lblSurname.InnerHtml = worker.getSurname()
             lblNumber.InnerText = worker.getNumbers()
             lblEmail.InnerText = worker.getEmail()
+            lblRegion.InnerText = worker.getRegion()
             personalAd.InnerHtml = "<a href=""PostAdClient.aspx?adType=" & worker.getUsername() & """>" & "Post an ad to " & worker.getUsername() & "</a>"
             getHistory() ' to display all the previous work done by the worker
 

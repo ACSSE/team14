@@ -43,7 +43,7 @@
                     <td style="width: 300px; margin:initial;">
                         <asp:Label ID="lblDescription" ForeColor="Black"  runat="server" Text="Add Description"  ></asp:Label></td>
                     <td>
-                        <asp:TextBox ID="txtDescription" ForeColor="Black"  TextMode="MultiLine"  runat="server" Height="60px" Width="300px"></asp:TextBox></td>
+                        <asp:TextBox ID="txtDescription" ForeColor="Black"  TextMode="MultiLine" Rows="3"  runat="server" Height="60px" Width="300px"></asp:TextBox></td>
                 </tr>
 
                      <tr>
