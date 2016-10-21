@@ -9,7 +9,7 @@
 	<h1 class="main-head text-center">My Stat Profile</h1><br/>
 	    <div class="head-strip">
 	    	<div class="head-strip-left">
-	    		<span class="joe"><img src="images/User-icon.png" alt=""> </span>
+	    		<span class="joe"><img src="images/User-icon.png" alt=""/> </span>
 	    		<div class="joe-text">
 	    			<h2>Welcome back <label id="lblName" runat="server" text=""/> <label id="lblSurname" runat="server" text=""/> </h2>
 	    			<p></p>

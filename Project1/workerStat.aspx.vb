@@ -8,27 +8,25 @@
         Dim currentMinutes As Integer = TimeOfDay.Minute
 
         Dim type As String = Request.QueryString("type")
+        Dim username As String = Request.QueryString("username")
         Dim Worker As Worker = New Worker(username)
 
         If type = "client" Then
-            Dim username As String = Request.QueryString("username")
 
-
-
-            divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(Worker.getRating())
+            'divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(Worker.getRating())
 
             lblHour.InnerText = currentHour
             lblMinute.InnerText = currentMinutes
             lblDate.InnerText = currentDate
-            JobTitle.InnerText = Worker.getCategory() 'setting the correct heading category
+            'JobTitle.InnerText = Worker.getCategory() 'setting the correct heading category
             lblRegion.InnerText = Worker.getRegion()
             lblName.InnerText = Worker.getName()
             lblSurname.InnerHtml = Worker.getSurname()
-            lblNumber.InnerText = Worker.getNumbers()
-            lblEmail.InnerText = Worker.getEmail()
+            'lblNumber.InnerText = Worker.getNumbers()
+            'lblEmail.InnerText = Worker.getEmail()
             lblRegion.InnerText = Worker.getRegion()
-            personalAd.InnerHtml = "<a href=""PostAdClient.aspx?adType=" & Worker.getUsername() & """>" & "Post an ad to " & Worker.getUsername() & "</a>"
-            getHistory() ' to display all the previous work done by the worker
+            'personalAd.InnerHtml = "<a href=""PostAdClient.aspx?adType=" & Worker.getUsername() & """>" & "Post an ad to " & Worker.getUsername() & "</a>"
+            ' getHistory() ' to display all the previous work done by the worker
 
         Else
             Dim c As User = Session("user")
@@ -39,23 +37,23 @@
             lblRegion.Visible = True
             lblName.Visible = True
             lblSurname.Visible = True
-            lblNumber.Visible = True
-            lblEmail.Visible = True
+            'lblNumber.Visible = True
+            'lblEmail.Visible = True
 
-            divrating.InnerHtml = "<h3>Rating</h3>" & ValidationClass.getRateImage(Worker.getRating())
+            'divrating.InnerHtml = "<h3>Rating</h3>" & ValidationClass.getRateImage(Worker.getRating())
 
-            JobTitle.InnerText = Worker.getCategory() 'setting the correct heading category
+            'JobTitle.InnerText = Worker.getCategory() 'setting the correct heading category
             lblRegion.InnerText = Worker.getRegion()
             lblName.InnerText = Worker.getName()
             lblSurname.InnerHtml = Worker.getSurname()
-            lblNumber.InnerText = Worker.getNumbers()
-            lblEmail.InnerText = Worker.getEmail()
+            'lblNumber.InnerText = Worker.getNumbers()
+            'lblEmail.InnerText = Worker.getEmail()
 
-            personalJobs.InnerHtml = displayPersonalJobs()
-            myJobs.InnerHtml = displayJobs()
-            JobNots.InnerHtml = displayJobs(Worker.getCategory())
-            penJobs.InnerHtml = displayPendingJobs()
-            getHistory() ' to display all the previous work done by the worker
+            'personalJobs.InnerHtml = displayPersonalJobs()
+            'myJobs.InnerHtml = displayJobs()
+            'JobNots.InnerHtml = displayJobs(Worker.getCategory())
+            'penJobs.InnerHtml = displayPendingJobs()
+            'getHistory() ' to display all the previous work done by the worker
         End If
 
 
