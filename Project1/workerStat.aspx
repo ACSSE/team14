@@ -52,8 +52,8 @@
 	    				    <img src="images/User-icon1.png" alt="">
 	    				</div>
 	    				<div class="col-md-8 user-prof-text">
-	    					<h3 style="color:black">Mr. elec</h3>
-	    				    <p style="color:#f3c500"><i class="glyphicon glyphicon-map-marker"></i>Gauteng, Edenvale</p>
+	    					<h3 style="color:black">Mr. <label id="Label1" runat="server" text=""/></h3>
+	    				    <p style="color:black;"><i class="glyphicon glyphicon-map-marker"></i>Gauteng, <label id="lblRegion1" runat="server" text=""/></p>
 	    				</div>
 	    			  <div class="clearfix"> </div>
 	    			</div>
