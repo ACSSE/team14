@@ -8,7 +8,7 @@ Public Class Responses
         Dim html As String = ""
         Dim handyman As Worker
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "SELECT * FROM Responses WHERE AdID = @name;"
+        Dim query As String = "SELECT * FROM Responses WHERE PostAdId = @name;"
         connection.Open()
 
         Dim command As SqlCommand = New SqlCommand(query, connection)
