@@ -11,59 +11,41 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class AdminStats
+Partial Public Class MessegesDetail
 
     '''<summary>
-    '''form1 control.
+    '''Form1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents Form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''VisiterStats control.
+    '''messagesHistory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents VisiterStats As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents messagesHistory As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Chart1 control.
+    '''txtMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Chart1 As Global.System.Web.UI.DataVisualization.Charting.Chart
+    Protected WithEvents txtMessage As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''SqlDataSource1 control.
+    '''btnSend control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
-
-    '''<summary>
-    '''TotalUsers control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TotalUsers As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''WeekStats control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents WeekStats As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents btnSend As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

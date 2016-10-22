@@ -11,59 +11,77 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class AdminStats
+Partial Public Class ResponseDetails
 
     '''<summary>
-    '''form1 control.
+    '''Form1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents Form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''VisiterStats control.
+    '''AdHeading control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents VisiterStats As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents AdHeading As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Chart1 control.
+    '''ClientInfo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Chart1 As Global.System.Web.UI.DataVisualization.Charting.Chart
+    Protected WithEvents ClientInfo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''SqlDataSource1 control.
+    '''AdInfo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents AdInfo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''TotalUsers control.
+    '''handymanDet control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TotalUsers As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents handymanDet As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''WeekStats control.
+    '''messagesHistory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents WeekStats As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents messagesHistory As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''txtComment control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtComment As Global.System.Web.UI.HtmlControls.HtmlTextArea
+
+    '''<summary>
+    '''btnConfirm control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnConfirm As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
 End Class
