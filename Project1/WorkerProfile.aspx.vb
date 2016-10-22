@@ -14,7 +14,7 @@ Public Class WorkerProfile
 
             worker = New Worker(username)
 
-            divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(worker.getRating())
+            divrating.InnerHtml = "<h3>Rating</h3>" & ValidationClass.getRateImage(worker.getRating())
 
             JobTitle.InnerText = worker.getCategory() 'setting the correct heading category
             lblRegion.InnerText = worker.getRegion()

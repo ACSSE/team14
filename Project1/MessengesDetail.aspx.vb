@@ -26,6 +26,13 @@ Public Class MessagesDetail
             Next i
         End If
         messagesHistory.InnerHtml = html
+
+        If TypeOf user Is Client Then
+            returnOption.InnerHtml = "<a href=ClientProfile.aspx> Return to Profile Page </a>"
+        Else
+            returnOption.InnerHtml = "<a href=WorkerProfile.aspx> Return to Profile Page </a>"
+        End If
+
     End Sub
 
     Protected Sub btnSend_Click(sender As Object, e As EventArgs) Handles btnSend.ServerClick
