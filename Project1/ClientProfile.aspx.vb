@@ -35,34 +35,42 @@ Public Class ClientProfile
             Next i
         End If
 
-        Try
-            lblName.Visible = True
-            lblSurname.Visible = True
-            lblNumber.Visible = True
-            lblAddress.Visible = True
-            lblEmail.Visible = True
-            lblRegion.Visible = True
+        ' Try
+        lblName.Visible = True
+        lblSurname.Visible = True
+        lblNumber.Visible = True
+        lblAddress.Visible = True
+        lblEmail.Visible = True
+        lblRegion.Visible = True
 
 
-            lblName.InnerText = client.getName()  'reader("Name")
-            lblSurname.InnerHtml = client.getSurname()  'reader("SurName")
-            lblNumber.InnerText = client.getNumbers() 'reader("MobileNumber")
-            lblAddress.InnerText = client.getAddress() 'reader("Address")
-            lblEmail.InnerText = client.getEmail  'reader("Email")
-            lblRegion.InnerText = client.getRegion()
+        lblName.InnerText = client.getName()  'reader("Name")
+        lblSurname.InnerHtml = client.getSurname()  'reader("SurName")
+        lblNumber.InnerText = client.getNumbers() 'reader("MobileNumber")
+        lblAddress.InnerText = client.getAddress() 'reader("Address")
+        lblEmail.InnerText = client.getEmail  'reader("Email")
+        lblRegion.InnerText = client.getRegion()
 
 
 
-            AdsDiv.InnerHtml = displayAds()
-            quotationDiv.InnerHtml = displayQuote()
-        Catch ex As Exception
+        AdsDiv.InnerHtml = displayAds()
+        quotationDiv.InnerHtml = displayQuote()
+        ' Catch ex As Exception
 
-        End Try
-       
+        ' End Try
+
 
 
     End Sub
 
+
+    Protected Overrides Sub OnInit(e As EventArgs)
+        Response.Cache.SetCacheability(HttpCacheability.NoCache)
+        Response.Cache.SetNoStore()
+        Response.Cache.SetExpires(DateTime.MinValue)
+        MyBase.OnInit(e)
+
+    End Sub
 
     Private Function displayAds() As String 'to display ads that client has posted but have no handyman assinged to them
         Dim size As Integer = 0 'to use as a resize reference
@@ -112,7 +120,7 @@ Public Class ClientProfile
                         Else
                             newAds &= "<h4>" & tempJob.getTitle() & "</h4>"
                         End If
-                        
+
                         newAds &= displayResponses(tempJob.getID())
                         newAds &= "<a style=""color:white"" href=ClientProfile.aspx?function=cancel&cancelID=" & tempJob.getID() & ">Cancel</a>"
                         newAds &= "</div><br/>" & Environment.NewLine
@@ -137,8 +145,6 @@ Public Class ClientProfile
         adconnection.Close()
 
         Session("jobs") = jobs
-
-
         Return newAds & Environment.NewLine & oldAds
     End Function
 
@@ -224,7 +230,7 @@ Public Class ClientProfile
         newRes = False
 
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "SELECT * FROM Responses WHERE AdID = @name;"
+        Dim query As String = "SELECT * FROM Responses WHERE PostAdId = @name;"
         connection.Open()
 
         Dim command As SqlCommand = New SqlCommand(query, connection)
@@ -249,7 +255,7 @@ Public Class ClientProfile
         Dim count As Integer = 0
 
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "SELECT * FROM Responses WHERE AdID = @name;"
+        Dim query As String = "SELECT * FROM Responses WHERE PostAdId = @name;"
         connection.Open()
 
         Dim command As SqlCommand = New SqlCommand(query, connection)

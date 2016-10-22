@@ -11,7 +11,6 @@ Public Class generateQuotation
 
 
         Dim description As String = txtQuoteDescription.Text()
-        MsgBox("Description = " & description)
         Dim hours As Integer = txtQuoteHours.Text()
         Dim amount As String = txtQuoteAmount.Text()
         Dim worker As Worker = Session("user")
@@ -21,13 +20,10 @@ Public Class generateQuotation
         Dim cUser As User = Session("user") 'to obtain sender username
         Dim ID As Integer = Request.QueryString("ID")
 
-        Dim cQuotation As Quotation = New Quotation(ID, description, hours, amount, workerUsername)
+        Dim cQuotation As Quotation = New Quotation(ID, description, hours, amount, workerUsername) 'ID is identical to job ID
         cQuotation.savequoteDescription()
         'commiting message into the database
         Response.Redirect("WorkerProfile.aspx?ID=" & ID)
-
-        'Response.Redirect("QuotationDisplay.aspx")
-
 
 
     End Sub

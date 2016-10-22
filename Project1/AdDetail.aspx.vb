@@ -25,7 +25,7 @@ Public Class AdDetail
     Private Function ClientInfor(user As String) As String
         Dim client As Client = New Client(user) 'getting partial client information
 
-   
+
 
         Dim adString As String = ""
 
@@ -90,13 +90,13 @@ Public Class AdDetail
         'Where n.getID() = ad
         '                 Select n
         For i As Integer = 1 To jobs.Length() - 1
-            
+
             If jobs(i).getID() = ad Then
                 selectedJob = jobs(i)
             End If
         Next
 
-        Dim adString As String = "<hr/>"
+        Dim adString As String = "<hr/>" 'variable storing html code
 
         'displaying ad details
         If selectedJob IsNot Nothing Then
@@ -125,11 +125,11 @@ Public Class AdDetail
 
 
     Protected Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnSubQuote.ServerClick
-        Dim worker As Worker = Session("user")
+        Dim worker As Worker = Session("user") 'WORKER FOR AdTable saving
 
         Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
-        Dim query As String = "INSERT INTO Responses (AdID, Worker, Comment, Checked) VALUES (@ID, @Handyman, @comment, @check);"
+        Dim query As String = "INSERT INTO Responses (PostAdId, Worker, Comment, Checked) VALUES (@ID, @Handyman, @comment, @check);"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
         command.Parameters.AddWithValue("@ID", ad)
         command.Parameters.AddWithValue("@Handyman", worker.getUsername())
@@ -139,7 +139,7 @@ Public Class AdDetail
         Dim reader As SqlDataReader = command.ExecuteReader()
         adconnection.Close()
 
-        Response.Redirect("generateQuotation.aspx")
+        Response.Redirect("generateQuotation.aspx?ID=" & ad)
     End Sub
 
 End Class

@@ -17,8 +17,15 @@ Public Class Quotation
         Me.quoteHours = vquoteHours
         Me.quoteAmount = vquoteAmount
         Me.worker = vworker
+    End Sub
 
-        MsgBox("In Quotation class Description = " & Me.getquoteDescription)
+    Public Sub New(vquoteDescription As String, vquoteHours As Integer, vquoteAmount As Integer, vworker As String)
+        'MyBase.New()
+        'Me.quoteId = vquoteId
+        Me.quoteDescription = vquoteDescription
+        Me.quoteHours = vquoteHours
+        Me.quoteAmount = vquoteAmount
+        Me.worker = vworker
     End Sub
 
     Public Sub New(ID As Integer)
@@ -49,7 +56,7 @@ Public Class Quotation
 
 
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "INSERT INTO Quotation (QuoteId, quoteDescription, quoteHours, quoteAmount, Worker) Values (@ID, @quoteDescription, @quoteHours, @quoteAmount, @worker)"
+        Dim query As String = "INSERT INTO Quotation (quoteID, quoteDescription, quoteHours, quoteAmount, Worker) Values (@ID, @quoteDescription, @quoteHours, @quoteAmount, @worker)"
         connection.Open()
 
         Dim command As SqlCommand = New SqlCommand(query, connection)
@@ -59,7 +66,6 @@ Public Class Quotation
         command.Parameters.AddWithValue("@quoteAmount", quoteAmount)
         command.Parameters.AddWithValue("@worker", worker)
 
-        MsgBox("Inside saveqouteDescription Description = " & quoteDescription)
 
         Dim reader As SqlDataReader = command.ExecuteReader()
         connection.Close()

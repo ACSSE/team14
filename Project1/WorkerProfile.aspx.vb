@@ -129,24 +129,24 @@ Public Class WorkerProfile
             Dim title As String = ""
             Dim description As String = ""
             Dim category As String = ""
-
+            Dim OpenDate As Date
             While reader.Read() 'getting all the jobs
-                
+
 
                 clientUsername = reader("Client")
                 ID = reader("PostAdId")
                 title = reader("AdTitle")
                 description = reader("AdDescription")
                 category = reader("Category")
-
+                OpenDate = reader("OpenDate")
 
                 If worker.getCategory().Contains(category) Then
                     If shouldADD(ID) Then
                         size += 1
                         ReDim Preserve jobs(size)
-                        tempJob = New Job(ID, category, title, description, clientUsername, Nothing)
+                        tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
                         jobs(size) = tempJob 'adding job to the list
-
+                        MsgBox("JobID = " & jobs(size).getID())
                         notifications &= "<a style=""color:white"" href= AdDetail.aspx?ID=" & jobs(size).getID() & "&personalAd=false>" & reader("AdTitle") & "</a> <br />"
                     End If
                 End If
@@ -176,7 +176,7 @@ Public Class WorkerProfile
         Dim notifications As String = "<h3>Jobs Closed</h3> <br/>"
 
         If reader.HasRows Then
-         
+
 
             While reader.Read() 'getting all the job IDs from pending jobs
                 size += 1
@@ -231,7 +231,7 @@ Public Class WorkerProfile
             Dim title As String = ""
             Dim description As String = ""
             Dim category As String = ""
-
+            Dim OpenDate As Date
             While reader.Read() 'getting all the jobs
 
                 clientUsername = reader("Client")
@@ -239,10 +239,11 @@ Public Class WorkerProfile
                 title = reader("AdTitle")
                 description = reader("AdDescription")
                 category = reader("Category")
+                OpenDate = reader("OpenDate")
 
                 size += 1
                 ReDim Preserve pJobs(size)
-                tempJob = New Job(ID, category, title, description, clientUsername, "")
+                tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
                 pJobs(size) = tempJob 'adding job to the list
 
                 notifications &= "<a href= AdDetail.aspx?ID=" & pJobs(size).getID() & "&personalAd=true>" & reader("AdTitle") & "</a> <br />"
@@ -291,7 +292,7 @@ Public Class WorkerProfile
 
         Dim adconnection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         adconnection.Open()
-        Dim query As String = "Select * FROM Responses WHERE AdID = @name AND Worker = @worker"
+        Dim query As String = "Select * FROM Responses WHERE PostAdId = @name AND Worker = @worker"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
 
         command.Parameters.AddWithValue("@name", JobID)
