@@ -23,6 +23,15 @@ Partial Public Class MessagesDetail
     Protected WithEvents messagesHistory As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''returnOption control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents returnOption As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''txtMessage control.
     '''</summary>
     '''<remarks>

@@ -1375,6 +1375,14 @@ messagesHistory control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.MessagesDetail.returnOption">
+	<summary>
+returnOption control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.MessagesDetail.txtMessage">
 	<summary>
 txtMessage control.
