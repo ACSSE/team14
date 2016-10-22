@@ -1,81 +1,115 @@
-﻿
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class Quotation
 
-    Private QuoteId As Integer
-    Private QuoteUser As String
-    Private QuoteDescription As String
-    Private QuoteHours As Integer
-    Private QuoteAmount As Integer
+    Private quoteId As Integer
+    Private quoteDescription As String
+    Private quoteHours As Integer
+    Private quoteAmount As Integer
+    Private worker As String
 
-    Public Sub New(QuoteId As Integer, QuoteUser As String, QuoteDescription As String, QuoteHours As Integer, QuoteAmount As Integer)
-        Me.QuoteId = QuoteId
-        Me.QuoteUser = QuoteUser
-        Me.QuoteDescription = QuoteDescription
-        Me.QuoteHours = QuoteHours
-        Me.QuoteAmount = QuoteAmount
+
+
+    Public Sub New(vquoteId As Integer, vquoteDescription As String, vquoteHours As Integer, vquoteAmount As Integer, vworker As String)
+        'MyBase.New()
+        Me.quoteId = vquoteId
+        Me.quoteDescription = vquoteDescription
+        Me.quoteHours = vquoteHours
+        Me.quoteAmount = vquoteAmount
+        Me.worker = vworker
     End Sub
 
-    Public Function getQuoteId() As Integer
-        Return QuoteId
+    Public Sub New(vquoteDescription As String, vquoteHours As Integer, vquoteAmount As Integer, vworker As String)
+        'MyBase.New()
+        'Me.quoteId = vquoteId
+        Me.quoteDescription = vquoteDescription
+        Me.quoteHours = vquoteHours
+        Me.quoteAmount = vquoteAmount
+        Me.worker = vworker
+    End Sub
+
+    Public Sub New(ID As Integer)
+        MyBase.New()
+        getQuotation(quoteId)
+    End Sub
+
+    Public Function getquoteId() As Integer
+        Return quoteId
     End Function
 
-    Public Function getQuoteUser() As String
-        Return QuoteUser
+    Public Function getquoteDescription() As String
+        Return quoteDescription
     End Function
 
-    Public Function getQuoteDescription() As String
-        Return QuoteDescription
+    Public Function getquoteHours() As Integer
+        Return quoteHours
+    End Function
+    Public Function getquoteAmount() As Integer
+        Return quoteAmount
+    End Function
+    Public Function getWorker() As Integer
+        Return worker
     End Function
 
-    Public Function getQuoteHours() As Integer
-        Return QuoteHours
-    End Function
 
-    Public Function getQuoteAmount() As Integer
-        Return QuoteAmount
-    End Function
-
-    Public Sub saveQuotation()
+    Public Sub savequoteDescription()
 
 
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "INSERT INTO Quotation (QuoteId, QuoteUser, QuoteDescription, QuoteHours, QuoteAmount) Values (@quoteId, @quoteUser, @quoteDescription, @quoteHours, @quoteAmount)"
+        Dim query As String = "INSERT INTO Quotation (quoteID, quoteDescription, quoteHours, quoteAmount, Worker) Values (@ID, @quoteDescription, @quoteHours, @quoteAmount, @worker)"
         connection.Open()
 
         Dim command As SqlCommand = New SqlCommand(query, connection)
-        command.Parameters.AddWithValue("@quoteId", QuoteId)
-        command.Parameters.AddWithValue("@quoteUser", QuoteUser)
-        command.Parameters.AddWithValue("@quoteDescription", QuoteDescription)
-        command.Parameters.AddWithValue("@quoteHours", QuoteHours)
-        command.Parameters.AddWithValue("@quoteAmount", QuoteAmount)
+        command.Parameters.AddWithValue("@ID", quoteId)
+        command.Parameters.AddWithValue("@quoteDescription", quoteDescription)
+        command.Parameters.AddWithValue("@quoteHours", quoteHours)
+        command.Parameters.AddWithValue("@quoteAmount", quoteAmount)
+        command.Parameters.AddWithValue("@worker", worker)
+
 
         Dim reader As SqlDataReader = command.ExecuteReader()
         connection.Close()
 
-    End Sub
+        'Response.Redirect("QuotationDisplay.aspx")
 
-    Public Function getQuotationInfo() As String
-        Dim quoteInfo As String = ""
-        quoteInfo &= "<strong>Customer: </strong>" & QuoteUser & "<br/><br/>"
-        quoteInfo &= "<strong>Description: </strong>" & QuoteDescription & "<br/>"
-        quoteInfo &= "<strong>Hours: </strong>" & QuoteHours & "<br/>"
-        quoteInfo &= "<strong>Description: </strong>" & QuoteDescription & "<br/>"
-        Return quoteInfo
+    End Sub
+    Public Function getQuotation(ID As Integer)
+
+        Dim connection As SqlConnection
+        Dim command As SqlCommand
+        Dim reader As SqlDataReader
+
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim commandstring As String = "SELECT * From Quotation WHERE QuoteId = @quoteId"
+        command = New SqlCommand(commandstring, connection)
+        command.Parameters.AddWithValue("@quoteId", ID)
+
+        command.Connection.Open()
+        reader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            reader.Read()
+            Me.quoteId = quoteId
+            quoteDescription = reader("quoteDescription")
+            quoteHours = reader("quoteHours")
+            quoteAmount = reader("quoteAmount")
+            worker = reader("Worker")
+
+        End If
+
+        Return getQuotation(quoteId)
     End Function
 
-    'To fix problems of two messenges being sent.
-    'Public Function isIdentical(ID As Integer) As Boolean
-    'Dim messenges As MessengeList = New MessengeList(ID)
+    Public Function getMessageInfo() As String
+        Dim info As String = ""
+        'Dim myUser As Quotation
 
-    'For i As Integer = 1 To messenges.getSize()
-    'If messenges.getMessage(i).getDate() = mdate And messenges.getMessage(i).getMessenge() = messenge And messenges.getMessage(i).sender = sender Then
-    'Return True
-    'End If
+        info &= "Invoice Number: <strong>" & quoteId & "</strong>"
+        info &= "<p>User : " & worker & "</p>"
+        info &= "</br>Description: " & quoteDescription
+        info &= "</br>Estimated Hours to Complete: " & quoteHours
+        info &= "</br>Estimated Amount: " & quoteAmount
 
-    'Next i
-    'Return False
-    'End Function
-
+        Return info
+    End Function
 End Class

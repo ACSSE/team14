@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="AdminPage.aspx.vb" Inherits="Project1.AdminPage" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site3.Master" CodeBehind="AdminPage.aspx.vb" Inherits="Project1.AdminPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="single-page main-grid-border">
 		<div class="container">
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
@@ -45,7 +46,11 @@
 						</div>
 					</div>--%>
 					<div class="interested text-center">
-						<a href="AdminStats.aspx">View Stats</a>
+						<h4 style="text-align:center;">Interested?</h4>
+						<p><a href="PostAdClient.aspx">Post an ad</a></p>
+                        <p><a href="AdminStats.aspx">Web Stat</a></p>
+                        <p><a href="FeaturedWorkers.aspx">Check out Featured Workers</a></p>
+                        
                       
 
 					</div>

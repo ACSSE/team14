@@ -1,5 +1,4 @@
-
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class Messenge
 
@@ -35,7 +34,7 @@ Public Class Messenge
         If isIdentical(jobID) = False Then
 
             Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-            Dim query As String = "INSERT INTO Messenges (PostAdId, Messenge, Sender, Date, Checked) Values (@ID, @messenge, @sender, @date, @unchecked)"
+            Dim query As String = "INSERT INTO Messenges (PostAdId, Messenge, Sender, Date) Values (@ID, @messenge, @sender, @date)"
             connection.Open()
 
             Dim command As SqlCommand = New SqlCommand(query, connection)
@@ -43,7 +42,6 @@ Public Class Messenge
             command.Parameters.AddWithValue("@messenge", messenge)
             command.Parameters.AddWithValue("@sender", sender)
             command.Parameters.AddWithValue("@date", mdate)
-            command.Parameters.AddWithValue("@unchecked", "unchecked")
 
             Dim reader As SqlDataReader = command.ExecuteReader()
             connection.Close()

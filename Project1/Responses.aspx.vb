@@ -1,5 +1,5 @@
+﻿Imports System.Data.SqlClient
 
-Imports System.Data.SqlClient
 Public Class Responses
     Inherits System.Web.UI.Page
 
@@ -24,7 +24,6 @@ Public Class Responses
                 ' html &= "<ul>"
                 html &= "<div class=""itemtype"">"
                 html &= "<p class=""p-price"">" & reader("Comment") & "</p>"
-                html &= "<a href=ResponseDetails.aspx?ID=" & adID & "&worker=" & handyman.getUsername() & ">Send/Read Messeges</a>"
                 html &= "     <a href=ClientProfile.aspx?Selected=" & handyman.getUsername() & "&ID=" & adID & "> Confirm </a>"
                 html &= "</div>"
                 html &= "<hr/>"
@@ -49,7 +48,7 @@ Public Class Responses
         Dim reader As SqlDataReader = command.ExecuteReader()
 
         If reader.HasRows Then
-            ' MsgBox("Resposes:displayWorker()-Reading woker values from database")
+            MsgBox("Resposes:displayWorker()-Reading woker values from database")
             reader.Read()
             info &= "<h4>" & reader("Name") & " " & reader("Surname") & "</h4> <br />"
             info &= "<div class=""itemtype"">"
@@ -62,8 +61,6 @@ Public Class Responses
     End Function
 
     Private Sub changeCheckedClient(id As Integer)
-        '  MsgBox("Inside changecheckedclient")
-        ' MsgBox("ID = " & id)
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "UPDATE Responses SET Checked = @value WHERE PostAdId = @name;"
         connection.Open()

@@ -52,17 +52,17 @@ Public Class FeaturedWorkers
                 numbers = reader("MobileNumber")
                 email = reader("Email")
                 description = reader("Description")
-
+                joindate = reader("JoinDate")
                 size += 1
                 ReDim Preserve workers(size)
-                workers(size) = New Worker(username, "", name, surname, email, numbers, "", description, category, Nothing, joindate)
+                workers(size) = New Worker(username, "", name, surname, email, numbers, "", joindate, description, category, Nothing)
             End While
         End If
         connection.Close()
         Return workers
     End Function
 
-    Private Function getProfiles(categories As string) As String
+    Private Function getProfiles(categories As String) As String
         Dim html As String = "<ul class=""list"">"
         Dim pagesize As Integer = 0
 

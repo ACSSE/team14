@@ -7,11 +7,13 @@ Public Class Site1
         If Session("user") IsNot Nothing Then
             Dim cUser As User = Session("user")
             userLog.Visible = True
-           
+
             If TypeOf cUser Is Client Then
-                userLog.InnerHtml = "<small style=""color:#FBCC33"">Welcome</small> " & "<small style=""color:#01A185""><b>" & cUser.getUsername() & "</b></small> " & "<a style="" font-size:small;""  href=""logout.aspx"">(logout)</a>&nbsp;&nbsp;&nbsp;" & countResponses() & "&nbsp;&nbsp;&nbsp;" & countMesseges()
+                MsgBox("is client")
+                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome " & "<b style=""color:#01A185"">" & cUser.getUsername() & "</b> " & "<a style="" font-size:medium;""  href=""logout.aspx"">(logout)</a>&nbsp;&nbsp;&nbsp;" & countResponses() & "&nbsp;&nbsp;&nbsp;" & countMesseges()
             Else
-                userLog.InnerHtml = "<small style=""color:#FBCC33"">Welcome</small> " & "<small style=""color:#01A185""><b>" & cUser.getUsername() & "</b></small> " & "<small><a style="" font-size:small;""  href=""logout.aspx"">(logout)</a></small>&nbsp;&nbsp;&nbsp;" & countMesseges()
+                MsgBox("Not Client")
+                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome " & "<p style=""color:#FBCC33"">Welcome " & cUser.getUsername() & "</b> " & "<a  href=""logout.aspx"" style="" font-size:medium;"">(logout)</a></p>&nbsp;&nbsp;&nbsp;" & countMesseges()
             End If
         End If
     End Sub
@@ -19,12 +21,11 @@ Public Class Site1
     Private Function countResponses() As String
         Dim count As Integer = 0
         Dim htmlquery As String = countAds(count)
-
+        MsgBox("In countResponses")
         If count > 0 Then
             count = 0
             Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-            Dim query As String = "SELECT * FROM Responses WHERE " & htmlquery & " AND Checked = @unchecked;"
-            ' MsgBox(query)
+            Dim query As String = "SELECT * FROM Responses WHERE (" & htmlquery & ") AND Checked = @unchecked;"
             connection.Open()
 
             Dim command As SqlCommand = New SqlCommand(query, connection)
@@ -38,9 +39,9 @@ Public Class Site1
                     count += 1
                 End While
             End If
-
+            MsgBox("Count in Responses is " & count)
             If Not (count = 0) Then
-                Return "<a href=ClientProfile.aspx>(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
+                Return "<small><a style="" font-size:small; color:yellow;"" href=ClientProfile.aspx>(" & count & ")</a></small>&nbsp;&nbsp;&nbsp;"
             End If
         End If
         Return ""
@@ -64,13 +65,13 @@ Public Class Site1
 
         If reader.HasRows Then
             While reader.Read()
-                ' MsgBox(reader("Messenge"))
+                MsgBox("Message counted = " & reader("Messenge"))
                 count += 1
             End While
         End If
-
+        MsgBox("Count in messages is " & count)
         If count > 0 Then
-            Return "<a href=ClientProfile.aspx>(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
+            Return "<small><a style="" font-size:small; color:red;"" href=ClientProfile.aspx>(" & count & ")</a></small>&nbsp;&nbsp;&nbsp;"
         End If
         'End If
         Return ""
@@ -113,7 +114,7 @@ Public Class Site1
                 clientquery &= " OR "
             End If
         Next i
-        ' MsgBox(clientquery)
+        MsgBox(clientquery)
         Return clientquery
     End Function
 End Class

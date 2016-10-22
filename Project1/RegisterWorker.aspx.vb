@@ -15,7 +15,7 @@ Public Class apply
 
     End Sub
 
-    Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnSubmit.ServerClick
+    Protected Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnSubmitWorker.ServerClick
 
 
         Dim username As String = ""
@@ -27,17 +27,26 @@ Public Class apply
         Dim region As String = ""
         Dim category As String = ""
         Dim description As String = ""
+        Dim image As Image = Nothing
+
 
 
         Dim tempClient As Worker = New Worker(username, password)
 
         If tempClient.getUsername() = "" Then
+
             username = txtUsername.Text()
             password = txtPassword.Text()
             name = txtName.Text()
             surname = txtSurname.Text()
             email = txtEmail.Text()
             numbers = txtMobile.Text()
+            region = regionList.SelectedItem().ToString()
+
+
+
+            'MsgBox("Name = " & name)
+            'MsgBox("surname =" & surname)
             ' category  'categoriesList.SelectedValue() 'txtTitle.Text()
 
             'To obtain string with all the selected categories
@@ -51,11 +60,11 @@ Public Class apply
                 End If
             Next i
 
-            'MsgBox("RegisterWorker():btnReg- category = " & category)
+            MsgBox("RegisterWorker():btnReg- category = " & category)
 
             description = txtDescription.Text()
 
-            Dim worker As Worker = New Worker(username, password, name, surname, email, numbers, region, description, category, Nothing, Date.Now)
+            Dim worker As Worker = New Worker(username, password, name, surname, email, numbers, region, Date.Today.Date, description, category, Nothing)
             worker.saveUser()
             Dim cUser As User = worker
             Session("user") = cUser
@@ -119,9 +128,9 @@ Public Class apply
         'Response.Redirect("WorkerProfile.aspx? UserName=" & txtUsername.Text)
     End Sub
 
-    Protected Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnUpload.ServerClick
+    'Protected Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnUpload.ServerClick
 
-       
-    End Sub
+
+    'End Sub
 
 End Class

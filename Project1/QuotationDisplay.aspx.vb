@@ -6,14 +6,18 @@
 
         If Not Page.IsPostBack Then
 
-            Dim item As Quotation
+            Dim item As Quotation = New Quotation("", "", "", "", "")
+            Dim worker As Worker = Session("user")
+
+            Dim workerUsername As String = worker.getUsername() 'worker who is writting the quotation
 
             Dim randomInvoiceNumber As Random = New Random()
 
             Dim invoiceNo As Integer = randomInvoiceNumber.Next(895623)
 
-
+            quotation.InnerHtml &= "<h1><b>Handyman: " & workerUsername & "</b><h1>"
             quotation.InnerHtml &= "<h1><b>Invoice Number: " & CStr(invoiceNo) & "</b><h1>"
+
             quotation.InnerHtml &= "<p>Customer Name : " & Session("UserName").ToString & "</p>"
 
      

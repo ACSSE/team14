@@ -23,16 +23,13 @@ Public Class Site
                 command.Connection = connection
                 command.Connection.Open()
 
-                cityList.DataSource = command.ExecuteReader()
-                cityList.DataTextField = "City"
-                cityList.DataTextField = "Id"
-                cityList.DataBind()
+                
 
                 'command.ExecuteNonQuery()
                 'reader = command.ExecuteReader(CommandBehavior.CloseConnection)
                 command.Connection.Close()
 
-                cityList.Items.Insert(0, New ListItem("--Select City--", "0"))
+
 
             Catch ex As Exception
 

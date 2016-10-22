@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class ClientProfile
 
     '''<summary>
+    '''lblRegion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblRegion As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''lblName control.
     '''</summary>
     '''<remarks>
@@ -68,6 +77,15 @@ Partial Public Class ClientProfile
     Protected WithEvents update As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''check control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents check As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''AdsDiv control.
     '''</summary>
     '''<remarks>
@@ -75,4 +93,13 @@ Partial Public Class ClientProfile
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents AdsDiv As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''quotationDiv control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents quotationDiv As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

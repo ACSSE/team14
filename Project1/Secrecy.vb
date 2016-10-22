@@ -1,4 +1,4 @@
-Imports System.Security.Cryptography
+﻿Imports System.Security.Cryptography
 
 Public Class Secrecy
 
@@ -21,3 +21,4 @@ Public Class Secrecy
     End Function
 
 End Class
+

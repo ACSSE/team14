@@ -41,13 +41,13 @@ Partial Public Class Login
     Protected WithEvents txtPassword As Global.System.Web.UI.HtmlControls.HtmlInputPassword
 
     '''<summary>
-    '''btnLog control.
+    '''myBtn control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnLog As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
+    Protected WithEvents myBtn As Global.System.Web.UI.HtmlControls.HtmlInputSubmit
 
     '''<summary>
     '''lblLogin control.

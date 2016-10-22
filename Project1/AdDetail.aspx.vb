@@ -1,5 +1,4 @@
-
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class AdDetail
     Inherits System.Web.UI.Page
@@ -9,8 +8,13 @@ Public Class AdDetail
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ad = Request.QueryString("ID")
-
-        Dim adstring As String = AdInfor(ad)
+        Dim isPersonalAd As String = Request.QueryString("personalAd")
+        Dim adstring As String
+        If isPersonalAd = "false" Then
+            adstring = AdInfor(ad)
+        Else
+            adstring = AdpInfo(ad)
+        End If
 
         ClientInfo.InnerHtml = ClientInfor(clientUsername)
         AdInfo.InnerHtml = adstring
@@ -24,6 +28,7 @@ Public Class AdDetail
    
 
         Dim adString As String = ""
+
 
         adString &= "<h3>" & client.getName() & " " & client.getSurname() & "</h3>"
         adString &= "<div class=""itemtype"">"
@@ -39,8 +44,46 @@ Public Class AdDetail
 
     End Function
 
+
+    Private Function AdpInfo(adID As Integer)
+        Dim pJobs() As Job = Session("personalJobs")
+
+        Dim selectedJob As Job = Nothing   'From n In jobs
+        'Where n.getID() = ad
+        '                 Select n
+        For i As Integer = 1 To pJobs.Length() - 1
+
+            If pJobs(i).getID() = ad Then
+                selectedJob = pJobs(i)
+            End If
+        Next
+
+        Dim adString As String = ""
+
+        'displaying ad details
+        If selectedJob IsNot Nothing Then
+            AdHeading.InnerText = selectedJob.getTitle()
+            'adString &= "<h1 class=""head"">" & selectedJob.getTitle() & "</h1> <br />"
+            adString &= "<div class=""itemtype"">"
+            adString &= "<h3 class=""p-price"" style=""color:black"">Category: </h3> "
+            adString &= "<p>" & selectedJob.getCategory() & "</p>" & " <br />"
+            adString &= "<div class=""clearfix""></div>"
+            adString &= "</div>"
+
+            adString &= "<div class=""itemtype"">"
+            adString &= "<h3 class=""p-price"" style=""color:black "">Description: </h3>"
+            adString &= "<p>" & selectedJob.getDescription() & "</p>"
+            adString &= "<div class=""clearfix""></div>"
+            adString &= "</div>"
+            clientUsername = selectedJob.getClient()
+        End If
+        adString &= "<hr/>"
+
+
+        Return adString
+    End Function
+
     Private Function AdInfor(adID As Integer) As String
-        'NOTE TO SELF: use jobs from Session("jobs") with LINQ to get the right one
         Dim jobs() As Job = Session("jobs")
         'getting correct job from list carried in Session("jobs")
         Dim selectedJob As Job = Nothing   'From n In jobs
@@ -53,15 +96,25 @@ Public Class AdDetail
             End If
         Next
 
-        Dim adString As String = "<hr/>"
+        Dim adString As String = "<hr/>" 'variable storing html code
 
         'displaying ad details
         If selectedJob IsNot Nothing Then
             AdHeading.InnerText = selectedJob.getTitle()
             'adString &= "<h1 class=""head"">" & selectedJob.getTitle() & "</h1> <br />"
-            adString &= "<h3 class=""inline"">Category: </h3> " & "<p class=""inline"">" & selectedJob.getCategory() & "</p>" & " <br />"
-            adString &= "<h3>Description: </h3>"
-            adString &= "<p>" & selectedJob.getDescription() & "</p>"
+            adString &= "<div class=""itemtype"">"
+            adString &= "<p class=""p-price"" style=""color:black "">Category: </p> "
+            adString &= "<h4>" & selectedJob.getCategory() & "</h4>" & " <br />"
+            adString &= "<div class=""clearfix""></div>"
+            adString &= "</div>"
+
+
+            adString &= "<div class=""itemtype"">"
+            adString &= "<p class=""p-price"" style=""color:black "">Description: </p>"
+            adString &= "<h4>" & selectedJob.getDescription() & "</h4>"
+            adString &= "<div class=""clearfix""></div>"
+            adString &= "</div>"
+
             clientUsername = selectedJob.getClient()
         End If
         adString &= "<hr/>"
@@ -71,8 +124,8 @@ Public Class AdDetail
     End Function
 
 
-    Protected Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.ServerClick
-        Dim worker As Worker = Session("user")
+    Protected Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnSubQuote.ServerClick
+        Dim worker As Worker = Session("user") 'WORKER FOR AdTable saving
 
         Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
@@ -86,7 +139,7 @@ Public Class AdDetail
         Dim reader As SqlDataReader = command.ExecuteReader()
         adconnection.Close()
 
-        Response.Redirect("WorkerProfile.aspx")
+        Response.Redirect("generateQuotation.aspx?ID=" & ad)
     End Sub
 
 End Class

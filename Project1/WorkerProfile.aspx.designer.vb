@@ -77,6 +77,15 @@ Partial Public Class WorkerProfile
     Protected WithEvents update As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''check control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents check As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''divHistory control.
     '''</summary>
     '''<remarks>
@@ -95,6 +104,24 @@ Partial Public Class WorkerProfile
     Protected WithEvents divrating As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''personalAd control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents personalAd As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''personalJobs control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents personalJobs As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''myJobs control.
     '''</summary>
     '''<remarks>
@@ -111,15 +138,6 @@ Partial Public Class WorkerProfile
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents JobNots As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''responsesNots control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents responsesNots As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''penJobs control.

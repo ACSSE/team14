@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class AdminStats1
+Public Class AdminStats
     Inherits System.Web.UI.Page
 
     Private clients() As Date
@@ -73,12 +73,11 @@ Public Class AdminStats1
             While reader.Read()
 
                 category = reader("Category")
-                If Not IsDBNull(reader("JoinDate")) Then
-                    joindate = reader("JoinDate")
-                End If
+                joindate = reader("JoinDate")
+
                 size += 1
                 ReDim Preserve workers(size)
-                workers(size) = New Worker("", "", "", "", "", "", "", "", category, Nothing, joindate)
+                workers(size) = New Worker("", "", "", "", "", "", "", joindate, "", category, Nothing)
             End While
         End If
         connection.Close()
@@ -270,7 +269,7 @@ Public Class AdminStats1
             Case "Roof Specialist"
                 Return 10
         End Select
-
+        Return ""
     End Function
 
 End Class
