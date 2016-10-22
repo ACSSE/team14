@@ -1,8 +1,14 @@
-﻿Public Class MessagesDetail
+﻿Imports System.Data.SqlClient
+
+Public Class MessagesDetail
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+
+
         Dim ID As Integer = Request.QueryString("ID")
+        updateMesseges(ID)
         Dim messenges As MessengeList = New MessengeList(ID)
         Dim user As User = Session("user") 'to access user's name
 
@@ -32,5 +38,19 @@
         Dim cMessage As Messenge = New Messenge(ID, messenge, cUser.getUsername(), mdate)
         cMessage.saveMessenge() 'commiting message into the database
         Response.Redirect("MessengesDetail.aspx?ID=" & ID)
+    End Sub
+
+    Private Sub updateMesseges(JobID As Integer)
+        Dim cUser As User = Session("user")
+
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim query As String = "UPDATE Messenges SET Checked = @checked WHERE PostAdId  = @name AND NOT(Sender = @sender);"
+        connection.Open()
+
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@name", JobID)
+        command.Parameters.AddWithValue("@checked", "checked")
+        command.Parameters.AddWithValue("@sender", cUser.getUsername())
+        Dim reader As SqlDataReader = command.ExecuteReader()
     End Sub
 End Class

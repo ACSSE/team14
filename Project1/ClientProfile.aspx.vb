@@ -274,6 +274,7 @@ Public Class ClientProfile
 
     Private Function displayQuotation(QuoteId As String) As String
         Dim count As Integer = 0
+        'Dim worker As Worker = worke
 
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "SELECT * FROM Quotation WHERE QuoteId = @quote;"
@@ -315,7 +316,7 @@ Public Class ClientProfile
         'delete postadid
         Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
-        Dim query As String = "DELETE FROM Responses WHERE AdID = @name;"
+        Dim query As String = "DELETE FROM Responses WHERE PostAdId = @name;"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
         command.Parameters.AddWithValue("@name", adID)
 

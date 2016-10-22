@@ -59,12 +59,10 @@ Public Class Worker
     End Sub
 
     Public Overrides Sub saveUser()
-        MsgBox("Worker:saveUser()-inside function saveUser()")
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        MsgBox("Worker:SaveUser() - name = " & name)
 
         Dim commandstring As String = "INSERT INTO Workers (Name, Surname, Username, Password, MobileNumber, Email, Category, Region, Description, JoinDate) VALUES (@name, @surname, @username, @password, @mobil, @email, @category, @region, @description, @date)"
         connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
@@ -83,7 +81,6 @@ Public Class Worker
         command.Parameters.AddWithValue("@description", description)
         command.Parameters.AddWithValue("@date", Date.Today)
 
-        MsgBox(Date.Today.Date)
 
         reader = command.ExecuteReader()
 
@@ -93,7 +90,6 @@ Public Class Worker
     End Sub
 
     Public Overrides Sub updateUser()
-        MsgBox("Worker:updateUser() - name = " & name)
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader

@@ -57,6 +57,14 @@ Public Class WorkerProfile
        
     End Sub
 
+    Protected Overrides Sub OnInit(e As EventArgs)
+        Response.Cache.SetCacheability(HttpCacheability.NoCache)
+        Response.Cache.SetNoStore()
+        Response.Cache.SetExpires(DateTime.MinValue)
+        MyBase.OnInit(e)
+
+    End Sub
+
     Private Function displayJobs() As String 'display jobs that the handyman has already accepted or is working on
         Dim size As Integer
         Dim HandymanJobs(size) As Job
@@ -80,6 +88,8 @@ Public Class WorkerProfile
             Dim title As String = ""
             Dim description As String = ""
             Dim category As String = ""
+            Dim OpenDate As Date
+
             While reader.Read() 'getting all the jobs
                 size += 1
                 ReDim Preserve HandymanJobs(size)
@@ -89,9 +99,10 @@ Public Class WorkerProfile
                 title = reader("AdTitle")
                 description = reader("AdDescription")
                 category = reader("Category")
+                OpenDate = reader("OpenDate")
 
                 
-                tempJob = New Job(ID, category, title, description, clientUsername, "")
+                tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
                 HandymanJobs(size) = tempJob 'adding job to the list
                 'TO DO Build messaging service here
                 notifications &= "<h5>" & reader("AdTitle") & "</h5> "

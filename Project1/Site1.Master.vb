@@ -10,9 +10,9 @@ Public Class Site1
 
             'displayed in banner of the site
             If TypeOf cUser Is Client Then 'if client
-                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome " & "<b style=""color:#01A185"">" & cUser.getUsername() & "</b> " & "<a style="" font-size:medium;""  href=""logout.aspx"">(logout)</a>&nbsp;&nbsp;&nbsp;" & countResponses() & "&nbsp;&nbsp;&nbsp;" & countMesseges()
+                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome " & cUser.getUsername() & "</b> " & "<a style="" font-size:medium;""  href=""logout.aspx"">(logout)</a>&nbsp;&nbsp;&nbsp;" & countResponses() & "&nbsp;&nbsp;&nbsp;" & countMesseges()
             Else 'if handyman
-                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome " & "<p style=""color:#FBCC33"">Welcome " & cUser.getUsername() & "</b> " & "<a  href=""logout.aspx"" style="" font-size:medium;"">(logout)</a></p>&nbsp;&nbsp;&nbsp;" & countMesseges()
+                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome " & cUser.getUsername() & "</b> " & "<a style="" font-size:medium;""  href=""logout.aspx"">(logout)</a></p>&nbsp;&nbsp;&nbsp;" & countMesseges()
             End If
         End If
     End Sub
@@ -64,10 +64,14 @@ Public Class Site1
         Dim reader As SqlDataReader = command.ExecuteReader()
 
         If reader.HasRows Then
+            'Reader has row- Messages Table
             While reader.Read()
                 count += 1
             End While
         End If
+
+        'Count in messages
+
         If count > 0 Then
             Return "<small><a style="" font-size:small; color:red;"" href=ClientProfile.aspx>(" & count & ")</a></small>&nbsp;&nbsp;&nbsp;"
         End If
@@ -115,4 +119,5 @@ Public Class Site1
         Next i
         Return clientquery
     End Function
+
 End Class
