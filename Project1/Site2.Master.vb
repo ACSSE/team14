@@ -77,7 +77,7 @@ Public Class Site2
         Dim clientquery As String = ""
 
         For i As Integer = 1 To jobs.Length - 1
-            clientquery &= " AdID = " & jobs(i)
+            clientquery &= " PostAdId = " & jobs(i)
             If Not (i = jobs.Length - 1) Then
                 clientquery &= " OR "
             End If

@@ -20,15 +20,12 @@ Public Class generateQuotation
         Dim cUser As User = Session("user") 'to obtain sender username
         Dim ID As Integer = Request.QueryString("ID")
 
-        Dim cQuotation As Quotation = New Quotation(ID, description, hours, amount, workerUsername)
+        Dim cQuotation As Quotation = New Quotation(ID, description, hours, amount, workerUsername) 'ID is identical to job ID
         cQuotation.savequoteDescription()
         'commiting message into the database
         Response.Redirect("WorkerProfile.aspx?ID=" & ID)
 
-        'Response.Redirect("QuotationDisplay.aspx")
-
-
-
+     
     End Sub
 
 End Class

@@ -96,7 +96,7 @@ Public Class AdDetail
             End If
         Next
 
-        Dim adString As String = "<hr/>"
+        Dim adString As String = "<hr/>" 'variable storing html code
 
         'displaying ad details
         If selectedJob IsNot Nothing Then
@@ -125,7 +125,7 @@ Public Class AdDetail
 
 
     Protected Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnSubQuote.ServerClick
-        Dim worker As Worker = Session("user")
+        Dim worker As Worker = Session("user") 'WORKER FOR AdTable saving
 
         Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
