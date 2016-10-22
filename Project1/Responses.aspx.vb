@@ -30,11 +30,11 @@ Public Class Responses
 
             End While
         End If
-        ' MsgBox("Resposes:Page_Load()-html values = " & html)
         HandyMen.InnerHtml = html
         changeCheckedClient(adID)
     End Sub
 
+    'displays worker information
     Private Function displayWorker(workerID As String)
         Dim info As String = ""
 
@@ -47,8 +47,7 @@ Public Class Responses
 
         Dim reader As SqlDataReader = command.ExecuteReader()
 
-        If reader.HasRows Then
-            MsgBox("Resposes:displayWorker()-Reading woker values from database")
+        If reader.HasRows Then 'building html string for website
             reader.Read()
             info &= "<h4>" & reader("Name") & " " & reader("Surname") & "</h4> <br />"
             info &= "<div class=""itemtype"">"

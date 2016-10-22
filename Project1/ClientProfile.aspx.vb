@@ -144,7 +144,7 @@ Public Class ClientProfile
         End If
         adconnection.Close()
 
-        Session("jobs") = jobs
+        Session("jobs") = jobs 'saved for later use in 
         Return newAds & Environment.NewLine & oldAds
     End Function
 
