@@ -11,6 +11,8 @@
 
  <div id="messagesHistory" class="submit-ad main-grid-border" runat="server">
 </div>
+    <div id="returnOption" runat="server"></div>
+    <hr />
     <div class="post-add-form">
     <asp:TextBox ID="txtMessage" runat="server" Height="109px" TextMode="MultiLine" 
         Width="264px"></asp:TextBox>

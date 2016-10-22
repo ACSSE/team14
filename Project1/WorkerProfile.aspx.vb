@@ -14,7 +14,7 @@ Public Class WorkerProfile
 
             worker = New Worker(username)
 
-            divrating.InnerHtml = "<h4>Rating</h4>" & ValidationClass.getRateImage(worker.getRating())
+            divrating.InnerHtml = "<h3>Rating</h3>" & ValidationClass.getRateImage(worker.getRating())
 
             JobTitle.InnerText = worker.getCategory() 'setting the correct heading category
             lblRegion.InnerText = worker.getRegion()
@@ -54,7 +54,15 @@ Public Class WorkerProfile
             getHistory() ' to display all the previous work done by the worker
         End If
 
-       
+
+    End Sub
+
+    Protected Overrides Sub OnInit(e As EventArgs)
+        Response.Cache.SetCacheability(HttpCacheability.NoCache)
+        Response.Cache.SetNoStore()
+        Response.Cache.SetExpires(DateTime.MinValue)
+        MyBase.OnInit(e)
+
     End Sub
 
     Private Function displayJobs() As String 'display jobs that the handyman has already accepted or is working on
@@ -80,6 +88,8 @@ Public Class WorkerProfile
             Dim title As String = ""
             Dim description As String = ""
             Dim category As String = ""
+            Dim OpenDate As Date
+
             While reader.Read() 'getting all the jobs
                 size += 1
                 ReDim Preserve HandymanJobs(size)
@@ -89,9 +99,10 @@ Public Class WorkerProfile
                 title = reader("AdTitle")
                 description = reader("AdDescription")
                 category = reader("Category")
+                OpenDate = reader("OpenDate")
 
-                
-                tempJob = New Job(ID, category, title, description, clientUsername, "")
+
+                tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
                 HandymanJobs(size) = tempJob 'adding job to the list
                 'TO DO Build messaging service here
                 notifications &= "<h5>" & reader("AdTitle") & "</h5> "
@@ -114,7 +125,6 @@ Public Class WorkerProfile
         Dim query As String = "Select * FROM AdTable WHERE Worker IS NULL AND PersonalAd IS NULL"
         Dim command As SqlCommand = New SqlCommand(query, adconnection)
 
-        'NOTE TO SELF: use sql to get all the categories on a proper sql statement
 
 
         Dim reader As SqlDataReader = command.ExecuteReader()
@@ -140,20 +150,19 @@ Public Class WorkerProfile
                 category = reader("Category")
                 OpenDate = reader("OpenDate")
 
-                If worker.getCategory().Contains(category) Then
+                If worker.getCategory().Contains(category) Then 'if job is in the right category
                     If shouldADD(ID) Then
                         size += 1
                         ReDim Preserve jobs(size)
                         tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
                         jobs(size) = tempJob 'adding job to the list
-                        MsgBox("JobID = " & jobs(size).getID())
-                        notifications &= "<a style=""color:white"" href= AdDetail.aspx?ID=" & jobs(size).getID() & "&personalAd=false>" & reader("AdTitle") & "</a> <br />"
+                        notifications &= "<a style=""color:white"" href= AdDetail.aspx?ID=" & jobs(size).getID() & "&personalAd=false>" & reader("AdTitle") & "</a> <br />" 'to display in html
                     End If
                 End If
 
             End While
         End If
-        Session("jobs") = jobs
+        Session("jobs") = jobs 'for later use to access specific jobs
 
         Return notifications
     End Function
@@ -255,7 +264,7 @@ Public Class WorkerProfile
         Return notifications
     End Function
 
-    Public Function createJob(ID As Integer) As Job
+    Public Function createJob(ID As Integer) As Job 'for jobs that have no handyman assigned to it
 
 
         Dim cJob As Job = Nothing 'variable to be returned
@@ -301,13 +310,13 @@ Public Class WorkerProfile
         Dim reader As SqlDataReader = command.ExecuteReader()
 
         If reader.HasRows Then
-            ' MsgBox("WorkerProfile:shouldADD() - reader has rows, returns true")
+            '  reader has rows, returns true"
             adconnection.Close()
             Return False 'If there is already a response than the job should not be shown
         End If
 
 
-        ' MsgBox("WorkerProfile:shouldADD() - reader has no rows, returns false")
+        ' reader has no rows, returns false"
         adconnection.Close()
         Return True 'job shown if there was no response made by handyman
     End Function
