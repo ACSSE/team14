@@ -11,7 +11,6 @@ Public Class generateQuotation
 
 
         Dim description As String = txtQuoteDescription.Text()
-        MsgBox("Description = " & description)
         Dim hours As Integer = txtQuoteHours.Text()
         Dim amount As String = txtQuoteAmount.Text()
         Dim worker As Worker = Session("user")

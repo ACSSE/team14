@@ -139,7 +139,7 @@ Public Class AdDetail
         Dim reader As SqlDataReader = command.ExecuteReader()
         adconnection.Close()
 
-        Response.Redirect("generateQuotation.aspx")
+        Response.Redirect("generateQuotation.aspx?ID=" & ad)
     End Sub
 
 End Class

@@ -56,11 +56,11 @@ Public Class Quotation
 
 
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "INSERT INTO Quotation ( quoteDescription, quoteHours, quoteAmount, Worker) Values ( @quoteDescription, @quoteHours, @quoteAmount, @worker)"
+        Dim query As String = "INSERT INTO Quotation (quoteID, quoteDescription, quoteHours, quoteAmount, Worker) Values (@ID, @quoteDescription, @quoteHours, @quoteAmount, @worker)"
         connection.Open()
 
         Dim command As SqlCommand = New SqlCommand(query, connection)
-        ' command.Parameters.AddWithValue("@ID", quoteId)
+        command.Parameters.AddWithValue("@ID", quoteId)
         command.Parameters.AddWithValue("@quoteDescription", quoteDescription)
         command.Parameters.AddWithValue("@quoteHours", quoteHours)
         command.Parameters.AddWithValue("@quoteAmount", quoteAmount)
