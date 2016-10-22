@@ -181,7 +181,7 @@ Public Class ClientProfile
                         tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount, workerUsername)
                         quote(size) = tempQuote  'adding quotation to the list
 
-                        'building html thing language to display jobs
+
                         newQuote &= "<div>"
                         determineNewRes(ID)
                         If newRes Then
@@ -194,7 +194,7 @@ Public Class ClientProfile
                         newQuote &= "<a style=""color:white"" href=ClientProfile.aspx?function=cancel&cancelID=" & tempQuote.getquoteId & ">Cancel</a>"
                         newQuote &= "</div><br/>" & Environment.NewLine
 
-                    Else 'if handyman has been assigned
+                    Else
 
                         Dim handyman As String = reader("Worker") 'to be used in constructor
 
