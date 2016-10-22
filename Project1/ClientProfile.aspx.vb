@@ -145,11 +145,6 @@ Public Class ClientProfile
         adconnection.Close()
 
         Session("jobs") = jobs
-
-
-        MsgBox("Ads HTML = " & newAds)
-
-        MsgBox("Ads HTML2 = " & oldAds)
         Return newAds & Environment.NewLine & oldAds
     End Function
 
