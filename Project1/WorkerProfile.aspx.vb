@@ -286,8 +286,9 @@ Public Class WorkerProfile
             Dim category As String = reader("Category")
             Dim client As String = reader("Client")
             Dim worker As String = reader("Worker")
+            Dim OpenDate As Date = reader("OpenDate")
 
-            cJob = New Job(ID, category, title, description, client, worker)
+            cJob = New Job(ID, category, title, description, client, worker, OpenDate)
         End If
 
         adconnection.Close()
@@ -432,7 +433,6 @@ Public Class WorkerProfile
         Dim categorySQL As String = ""
         Dim tempVal As String = ""
 
-        'NOTE TO SELF: FIND OUT HOW TO SPLIT STRINGS
 
         Return categorySQL
     End Function
