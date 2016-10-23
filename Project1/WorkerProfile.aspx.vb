@@ -3,6 +3,7 @@ Public Class WorkerProfile
     Inherits System.Web.UI.Page
 
     Private worker As Worker
+    Private newMes As Boolean 'to keep track of any new messages
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -105,8 +106,17 @@ Public Class WorkerProfile
                 tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
                 HandymanJobs(size) = tempJob 'adding job to the list
                 'TO DO Build messaging service here
+                determineNewMes(tempJob.getID())
+
                 notifications &= "<h4>" & reader("AdTitle") & "</h4> "
-                notifications &= ValidationClass.displayMessenges(ID) 'displays all the messsenges sent for this particular job
+
+                If newMes Then
+                    'if it is a new message
+                    notifications &= ValidationClass.displayMessenges(ID) & "<span class=""bell animated shake""> </span>" 'displays all the messsenges sent for this particular job
+                Else
+                    notifications &= ValidationClass.displayMessenges(ID) 'displays all the messsenges sent for this particular job
+                End If
+
                 notifications &= "<a style=""color:white"" href=""generateQuotation.aspx""> Generate Quotation </a>"
 
             End While
@@ -436,5 +446,31 @@ Public Class WorkerProfile
 
         Return categorySQL
     End Function
+
+    'To determine if there is a new message
+    Public Sub determineNewMes(adID As Integer)
+        '  Dim count As Integer = 0
+        newMes = False
+
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim query As String = "SELECT * FROM Messenges WHERE PostAdId = @name;"
+        connection.Open()
+
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@name", adID)
+
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            While reader.Read()
+                '   count += 1
+                If reader("Checked") = "unchecked" Then
+                    newMes = True
+                End If
+            End While
+        End If
+
+
+    End Sub
 
 End Class

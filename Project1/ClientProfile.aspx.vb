@@ -6,6 +6,7 @@ Public Class ClientProfile
 
     Private client As Client
     Private newRes As Boolean
+    Private newMes As Boolean
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'update.InnerHtml = "<a href=""UpdateProfile.aspx?username=" & Session("UserName") & "&user=client>Update your profile</a>"
@@ -125,11 +126,17 @@ Public Class ClientProfile
                         tempJob = New Job(ID, category, title, description, clientUsername, handyman, oDate)
                         jobs(size) = tempJob 'adding job to the list
 
-
+                        determineNewMes(tempJob.getID())
                         oldAds &= "<div>"
                         oldAds &= "<h4>" & reader("AdTitle") & "</h4>"
                         oldAds &= "<a style=""color:white"" href=RatingHandyMan.aspx?Handyman=" & tempJob.getHandyman() & "&adID=" & tempJob.getID() & ">Done</a> <br/>"
-                        oldAds &= ValidationClass.displayMessenges(ID) & "<hr/>" 'displays all the messsenges sent for this particular job
+
+                        If newMes Then
+                            'if it is a new message
+                            oldAds &= ValidationClass.displayMessenges(ID) & "<span class=""bell animated shake""> </span>" 'displays all the messsenges sent for this particular job
+                        Else
+                            oldAds &= ValidationClass.displayMessenges(ID) 'displays all the messsenges sent for this particular job
+                        End If
                         oldAds &= "</div> <br/>" & Environment.NewLine
                     End If
                 End If
@@ -315,5 +322,31 @@ Public Class ClientProfile
 
         Dim reader As SqlDataReader = command.ExecuteReader()
         adconnection.Close()
+    End Sub
+
+    'To determine if there is a new message
+    Public Sub determineNewMes(adID As Integer)
+        '  Dim count As Integer = 0
+        newMes = False
+
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim query As String = "SELECT * FROM Messenges WHERE PostAdId = @name;"
+        connection.Open()
+
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@name", adID)
+
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            While reader.Read()
+                '   count += 1
+                If reader("Checked") = "unchecked" Then
+                    newMes = True
+                End If
+            End While
+        End If
+
+
     End Sub
 End Class
