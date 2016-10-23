@@ -28,9 +28,8 @@ Public Class Quotation
         Me.worker = vworker
     End Sub
 
-    Public Sub New(ID As Integer)
-        MyBase.New()
-        getQuotation(quoteId)
+    Public Sub New(ID As Integer, worker As String)
+        getQuotation(ID, worker)
     End Sub
 
     Public Function getquoteId() As Integer
@@ -73,16 +72,17 @@ Public Class Quotation
         'Response.Redirect("QuotationDisplay.aspx")
 
     End Sub
-    Public Function getQuotation(ID As Integer)
-
+    Public Sub getQuotation(ID As Integer, worker As String)
+       
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
         connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
-        Dim commandstring As String = "SELECT * From Quotation WHERE QuoteId = @quoteId"
+        Dim commandstring As String = "SELECT * From Quotation WHERE QuoteId = @quoteId AND Worker = @worker"
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@quoteId", ID)
+        command.Parameters.AddWithValue("@worker", worker)
 
         command.Connection.Open()
         reader = command.ExecuteReader()
@@ -94,11 +94,9 @@ Public Class Quotation
             quoteHours = reader("quoteHours")
             quoteAmount = reader("quoteAmount")
             worker = reader("Worker")
-
         End If
 
-        Return getQuotation(quoteId)
-    End Function
+    End Sub
 
     Public Function getMessageInfo() As String
         Dim info As String = ""

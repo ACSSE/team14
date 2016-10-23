@@ -1,15 +1,10 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="QuotationDisplay.aspx.vb" Inherits="Project1.QuotationDisplay" %>
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="quotation" style="font-family:'Courier New'" runat="server">
-    <div>
-
-    </div>
-    </form>
-</body>
-</html>
+<form runat="server">
+<div id="quotation" runat="server"></div>
+</form>
+    
+</asp:Content>
