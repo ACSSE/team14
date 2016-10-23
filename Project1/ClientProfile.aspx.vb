@@ -1,6 +1,4 @@
 ﻿
-
-
 Imports System.Data.SqlClient
 
 Public Class ClientProfile
@@ -18,24 +16,19 @@ Public Class ClientProfile
         changeDB()
 
         Dim ifunction As String = Request.QueryString("function")
-        ' MsgBox("ClientProfile:PageLoad()-ifunction = " & ifunction)
         If ifunction = "cancel" Then
-            '  MsgBox("ClientProfile:PageLoad()-inside ifunction if-statement")
             Dim CancelAd As Integer = Request.QueryString("cancelID")
             Dim jobs() As Job = Session("jobs")
             Dim quote() As Quotation = Session("quote")
-            '  MsgBox("ClientProfile:PageLoad()-CancelIa= " & CancelAd)
             For i As Integer = 1 To jobs.Length() - 1
-                'MsgBox("ClientProfile:PageLoad()-JOBID= " & jobs(i).getID())
                 If jobs(i).getID() = CancelAd Then
-                    ' MsgBox("ClientProfile:PageLoad()-Inside the delete jobs if-statement")
                     changeDB(CancelAd)
                     jobs(i).deleteJob()
                 End If
             Next i
         End If
 
-         Try
+        ' Try
         lblName.Visible = True
         lblSurname.Visible = True
         lblNumber.Visible = True
@@ -55,9 +48,9 @@ Public Class ClientProfile
 
         AdsDiv.InnerHtml = displayAds()
         quotationDiv.InnerHtml = displayQuote()
-         Catch ex As Exception
+        ' Catch ex As Exception
 
-        End Try
+        ' End Try
 
 
 

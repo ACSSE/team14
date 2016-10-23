@@ -59,6 +59,28 @@ Public Class Responses
         Return info
     End Function
 
+    Private Function displayQuotation(QuoteId As String) As String
+        Dim quote As String = ""
+        'Dim worker As Worker = worke
+
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim query As String = "SELECT * FROM Quotation WHERE QuoteId = @quote;"
+        connection.Open()
+
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@quote", QuoteId)
+
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            While reader.Read()
+                count += 1
+            End While
+        End If
+
+        Return "<a style=""color:white"" href=QuotationDisplay.aspx?ID=" & QuoteId & ">Quotation(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
+    End Function
+
     Private Sub changeCheckedClient(id As Integer)
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "UPDATE Responses SET Checked = @value WHERE PostAdId = @name;"

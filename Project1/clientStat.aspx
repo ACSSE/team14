@@ -1,8 +1,6 @@
 ﻿
 
-<%@ Page Title="" Language="vb" Debug="true" AutoEventWireup="false" MasterPageFile="~/Site3.Master" CodeBehind="ClientProfile.aspx.vb" Inherits="Project1.ClientProfile" %>
-
-<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site3.Master" CodeBehind="ClientProfile.aspx.vb" Inherits="Project1.ClientProfile" %>
 <%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -404,7 +402,7 @@
 									<div class="graph-container">
 										<%--<div id="graph-lines"> </div>
 										<div id="graph-bars"> </div>--%>
-									    <%--<asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource3" Height="285px" Palette="Fire" PaletteCustomColors="243, 197, 0; 0, 0, 192" Width="750px">
+									    <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource3" Height="285px" Palette="Fire" PaletteCustomColors="243, 197, 0; 0, 0, 192" Width="750px">
                                             <series>
                                                 <asp:Series Name="Series1" XValueMember="Username" YValueMembers="JoinDate">
                                                 </asp:Series>
@@ -416,15 +414,7 @@
                                         </asp:Chart>
                                         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Clients]"></asp:SqlDataSource>
                                         <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
-                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>--%>
-                                        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="277px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
-                                            <LocalReport ReportPath="Report2.rdlc">
-                                                <DataSources>
-                                                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
-                                                </DataSources>
-                                            </LocalReport>
-                                        </rsweb:ReportViewer>
-									    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="Project1.HandymanDatabaseDataSet1TableAdapters.MessengesTableAdapter"></asp:ObjectDataSource>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 									</div>
 								</div>
 							<!-- end Graph HTML -->

@@ -56,7 +56,7 @@
 
 						<div>
 							<input type="file" runat="server" id="fileSelect" name="fileselect[]" multiple="multiple" /><br/>
-							
+							<div id="filedrag">or drop file here</div>
 						</div>
 
 						

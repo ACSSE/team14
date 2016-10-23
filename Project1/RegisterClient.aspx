@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site3.Master" CodeBehind="RegisterClient.aspx.vb" Inherits="Project1.Register" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="RegisterClient.aspx.vb" Inherits="Project1.Register" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MyBody" runat="server">
     
     <div class="submit-ad main-grid-border">
 		<div class="container">
@@ -14,38 +14,38 @@
 
                 <table style="margin:initial">
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblName" runat="server" Text="Your Name"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblName" runat="server" Text="Your Name"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtName" runat="server"></asp:TextBox></th>
                 </tr>
                     <br/>
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblSurname" runat="server" Text="Your Surname"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtSurname"  runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblSurname" runat="server" Text="Your Surname"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtSurname"  runat="server"></asp:TextBox></th>
                 </tr>
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblUserName" runat="server" Text="Your Username"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblUserName" runat="server" Text="Your Username"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox></th>
                 </tr>
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblPassword" runat="server" Text="Your Password"></asp:Label></td>
-                    <td style="height: 30px">
-                        <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"></asp:TextBox></td>
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblPassword" runat="server" Text="Your Password"></asp:Label></th>
+                    <th style="height: 30px">
+                        <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"></asp:TextBox></th>
                 </tr>
 
                 <tr>
-                    <td style="width: 300px; height: 30px;">
-                        <asp:Label ID="lblRepassword" runat="server" Text="Your Password Re-entered"></asp:Label></td>
-                    <td style="height: 30px">
+                    <th style="width: 300px; height: 30px;">
+                        <asp:Label ID="lblRepassword" runat="server" Text="Your Password Re-entered"></asp:Label></th>
+                    <th style="height: 30px">
                         <asp:TextBox ID="txtRepassword" TextMode="Password" runat="server"></asp:TextBox>
                         <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtRepassword" ErrorMessage="Re-enter your pasword" ForeColor="Red" ValidateRequestMode="Enabled"></asp:CompareValidator>
-                    </td>
+                    </th>
                 </tr>
                
             
@@ -95,22 +95,22 @@
 
                 <table style="margin:initial">
                 <tr>
-                    <td>
-                        <asp:Label ID="lblRegion" runat="server" Text="Select Town"></asp:Label></td>
+                    <th>
+                        <asp:Label ID="lblRegion" runat="server" Text="Select Town"></asp:Label></th>
 
-                    <td>
+                    <th>
                         <asp:DropDownList ID="regionList" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Town" DataValueField="Town" >
                             <asp:ListItem>Select</asp:ListItem>
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [Town] FROM [Location]"></asp:SqlDataSource>
-                    </td>
+                    </th>
                 </tr>
 
                 <tr>
-                    <td>
-                        <asp:Label ID="lblSuburb" runat="server" Text="Select Surburb"></asp:Label></td>
+                    <th>
+                        <asp:Label ID="lblSuburb" runat="server" Text="Select Surburb"></asp:Label></th>
 
-                    <td>
+                    <th>
                         <asp:DropDownList ID="suburbList" runat="server" DataSourceID="SqlDataSource2" Width="150px" AutoPostBack="True" DataTextField="Surburb" DataValueField="Surburb">
                             <asp:ListItem>Select</asp:ListItem>
                         </asp:DropDownList>
@@ -119,7 +119,7 @@
                                 <asp:ControlParameter ControlID="regionList" Name="Town" PropertyName="SelectedValue" Type="String" />
                             </SelectParameters>
                         </asp:SqlDataSource>
-                    </td>
+                    </th>
                 </tr>
                 <tr>
                     <td></td>
@@ -127,24 +127,24 @@
                     
                 </tr>
                 <tr>
-                    <td style="width: 300px; height: 13px;">
-     <asp:Label ID="lblMobile" runat="server" Text="Your Mobile Number"></asp:Label></td>
-                    <td style="height: 13px">
-                        <asp:TextBox ID="txtMobile" TextMode="Phone" runat="server" Height="25px" Width="130px"></asp:TextBox></td>
+                    <th style="width: 300px; height: 13px;">
+     <asp:Label ID="lblMobile" runat="server" Text="Your Mobile Number"></asp:Label></th>
+                    <th style="height: 13px">
+                        <asp:TextBox ID="txtMobile" TextMode="Phone" runat="server" Height="25px" Width="130px"></asp:TextBox></th>
                 </tr>
                 <tr>
-                    <td style="width: 300px; height: 50px;">
-                        <asp:Label ID="lblEmail" runat="server" Text="Your Email"></asp:Label></td>
-                    <td style="height: 50px">
+                    <th style="width: 300px; height: 50px;">
+                        <asp:Label ID="lblEmail" runat="server" Text="Your Email"></asp:Label></th>
+                    <th style="height: 50px">
                         <asp:TextBox ID="txtEmail" runat="server" Height="25px" Width="130px"></asp:TextBox>
 
-                    </td>
+                    </th>
                 </tr>
                     <tr>
-                    <td style="width: 300px; margin:initial;">
-                        <asp:Label ID="lblAddress" runat="server" Text="Your Address"  ></asp:Label></td>
-                    <td>
-                        <asp:TextBox ID="txtAddress" TextMode="MultiLine"  runat="server" Height="52px" Width="130px"></asp:TextBox></td>
+                    <th style="width: 300px; margin:initial;">
+                        <asp:Label ID="lblAddress" runat="server" Text="Your Address"  ></asp:Label></th>
+                    <th>
+                        <asp:TextBox ID="txtAddress" TextMode="MultiLine"  runat="server" Height="52px" Width="130px"></asp:TextBox></th>
                 </tr>
                
 

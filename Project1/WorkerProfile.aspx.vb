@@ -204,10 +204,10 @@ Public Class WorkerProfile
             idx += 1 'increasing the number of jobs
             ReDim Preserve jobs(idx) 'increasing container
             jobs(idx) = createJob(jobsID(idx))
-
+            '"&adID=" & jobs(idx).getID() &
             If jobs(idx) IsNot Nothing Then
                 notifications &= "<h5>" & jobs(idx).getTitle() & "</h5> "
-                notifications &= "<a style=""color:white"" href=RatingHandyMan.aspx?Client=" & jobs(idx).getClient() & "&adID=" & jobs(idx).getID() & ">Rate Client</a> <br/>" 'displays all the messsenges sent for this particular job
+                notifications &= "<a style=""color:white"" href=RatingHandyMan.aspx?adID=" & jobs(idx).getID() & "&Client=" & jobs(idx).getClient() & ">Rate Client</a> <br/>" 'displays all the messsenges sent for this particular job
 
             End If
         Next i
