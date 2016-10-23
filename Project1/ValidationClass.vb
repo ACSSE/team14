@@ -48,7 +48,7 @@
             Htmlmessenges &= "<asp:ListItem Text= Empty></asp:ListItem>"
         End If
 
-        Htmlmessenges &= "<asp:ListItem><a href=MessengesDetail.aspx?ID=" & jobID & ">View All/Send Messenge</a></asp;ListItem>"
+        Htmlmessenges &= "<asp:ListItem><a style=""color:white"" href=MessengesDetail.aspx?ID=" & jobID & ">View All/Send Messenge</a></asp;ListItem>"
         Htmlmessenges &= "</asp:DropDownList></td>"
         Return Htmlmessenges
     End Function
