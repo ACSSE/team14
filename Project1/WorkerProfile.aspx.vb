@@ -23,7 +23,7 @@ Public Class WorkerProfile
             lblNumber.InnerText = worker.getNumbers()
             lblEmail.InnerText = worker.getEmail()
             lblRegion.InnerText = worker.getRegion()
-            personalAd.InnerHtml = "<a href=""PostAdClient.aspx?adType=" & worker.getUsername() & """>" & "Post an ad to " & worker.getUsername() & "</a>"
+            personalAd.InnerHtml = "<a style=""color:white"" href=""PostAdClient.aspx?adType=" & worker.getUsername() & """>" & "Post an ad to " & worker.getUsername() & "</a>"
             getHistory() ' to display all the previous work done by the worker
 
         Else
@@ -105,7 +105,7 @@ Public Class WorkerProfile
                 tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
                 HandymanJobs(size) = tempJob 'adding job to the list
                 'TO DO Build messaging service here
-                notifications &= "<h5>" & reader("AdTitle") & "</h5> "
+                notifications &= "<h4>" & reader("AdTitle") & "</h4> "
                 notifications &= ValidationClass.displayMessenges(ID) 'displays all the messsenges sent for this particular job
                 notifications &= "<a style=""color:white"" href=""generateQuotation.aspx""> Generate Quotation </a>"
 
@@ -207,7 +207,7 @@ Public Class WorkerProfile
 
             If jobs(idx) IsNot Nothing Then
                 notifications &= "<h5>" & jobs(idx).getTitle() & "</h5> "
-                notifications &= "<a href=RatingHandyMan.aspx?Client=" & jobs(idx).getClient() & "&adID=" & jobs(idx).getID() & ">Rate Client</a> <br/>" 'displays all the messsenges sent for this particular job
+                notifications &= "<a style=""color:white"" href=RatingHandyMan.aspx?Client=" & jobs(idx).getClient() & "&adID=" & jobs(idx).getID() & ">Rate Client</a> <br/>" 'displays all the messsenges sent for this particular job
 
             End If
         Next i
@@ -255,7 +255,7 @@ Public Class WorkerProfile
                 tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
                 pJobs(size) = tempJob 'adding job to the list
 
-                notifications &= "<a href= AdDetail.aspx?ID=" & pJobs(size).getID() & "&personalAd=true>" & reader("AdTitle") & "</a> <br />"
+                notifications &= "<a style=""color:white"" href= AdDetail.aspx?ID=" & pJobs(size).getID() & "&personalAd=true>" & reader("AdTitle") & "</a> <br />"
 
 
             End While

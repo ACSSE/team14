@@ -2379,4 +2379,7 @@ strong.tad-timer {
 small.pen {
   margin: 0.7em 4.5em 0em 0em;
 }
-}
+  a.visible
+    {
+        color: white;
+    }

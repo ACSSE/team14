@@ -5409,4 +5409,13 @@ label {
 	.category {
 		padding: 20px 0px;
 	}
+
+    a.visible
+    {
+        color: white;
+    }
 }
+  a.visible
+    {
+        color: white;
+    }
