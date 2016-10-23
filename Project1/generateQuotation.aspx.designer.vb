@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class generateQuotation
 
     '''<summary>
+    '''prevQ control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents prevQ As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''lblQuoteDescription control.
     '''</summary>
     '''<remarks>

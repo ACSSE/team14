@@ -1503,6 +1503,14 @@ quotationDiv control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.generateQuotation.prevQ">
+	<summary>
+prevQ control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.generateQuotation.lblQuoteDescription">
 	<summary>
 lblQuoteDescription control.

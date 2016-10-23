@@ -3,7 +3,18 @@
 Public Class generateQuotation
     Inherits System.Web.UI.Page
 
+    Private cQuotation As Quotation
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Dim worker As Worker = Session("user")
+
+        Dim ID As Integer = Request.QueryString("ID")
+        cQuotation = New Quotation(ID, worker.getUsername())
+
+        If Not (cQuotation.getWorker() = "") Then
+            prevQ.InnerHtml = "<a href=QuotationDisplay.aspx?ID=" & ID & "&worker=" & worker.getUsername() & ">View Previously made Quotation</a>"
+        End If
 
     End Sub
 
@@ -17,7 +28,6 @@ Public Class generateQuotation
 
         Dim workerUsername As String = worker.getUsername() 'worker who is writting the quotation
 
-        Dim cUser As User = Session("user") 'to obtain sender username
         Dim ID As Integer = Request.QueryString("ID")
 
         Dim cQuotation As Quotation = New Quotation(ID, description, hours, amount, workerUsername) 'ID is identical to job ID

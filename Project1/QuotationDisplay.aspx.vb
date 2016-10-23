@@ -5,6 +5,8 @@ Public Class QuotationDisplay
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        Dim cUser As User = Session("user")
+
         Dim adID As Integer = Request.QueryString("ID")
         Dim workername As String = ""
         workername = Request.QueryString("worker")
@@ -27,7 +29,12 @@ Public Class QuotationDisplay
 
         End If
 
-        quotation.InnerHtml &= "<p><a href=ClientProfile.aspx> Click here to go back to the profile page</a></p>"
+        If TypeOf cUser Is Client Then
+            quotation.InnerHtml &= "<p><a href=Responses.aspx?ID=" & adID & "> Click here to go back to Responses</a></p>"
+        Else
+            quotation.InnerHtml &= "<p><a href=generateQuotation.aspx?ID=" & adID & "> Click here to go back to generate a new quotation</a></p>"
+        End If
+
 
 
 

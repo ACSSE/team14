@@ -8,6 +8,9 @@
 		<div class="container">
             <form runat="server">
 			<h2 class="head">Generate Quotation</h2>
+
+            <div id="prevQ" runat="server"></div>
+
 			<div class="post-ad-form">
 				<table class="table" style="margin:initial; color:black;">
                 <tr>

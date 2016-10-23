@@ -117,7 +117,7 @@ Public Class WorkerProfile
                     notifications &= ValidationClass.displayMessenges(ID) 'displays all the messsenges sent for this particular job
                 End If
 
-                notifications &= "<a style=""color:white"" href=""generateQuotation.aspx""> Generate Quotation </a>"
+                notifications &= "<a style=""color:white"" href=generateQuotation.aspx?ID=" & ID & "> Generate Quotation </a>"
 
             End While
         End If

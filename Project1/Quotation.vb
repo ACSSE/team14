@@ -46,7 +46,7 @@ Public Class Quotation
     Public Function getquoteAmount() As Integer
         Return quoteAmount
     End Function
-    Public Function getWorker() As Integer
+    Public Function getWorker() As String
         Return worker
     End Function
 
@@ -93,7 +93,7 @@ Public Class Quotation
             quoteDescription = reader("quoteDescription")
             quoteHours = reader("quoteHours")
             quoteAmount = reader("quoteAmount")
-            worker = reader("Worker")
+            Me.worker = reader("Worker")
         End If
 
     End Sub
