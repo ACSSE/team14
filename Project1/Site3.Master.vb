@@ -63,7 +63,7 @@ Public Class Site3
         ' If count > 0 Then
         count = 0
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "SELECT * FROM Messenges WHERE (" & htmlquery & ") AND Checked = @unchecked AND NOT (Sender = @sender);"
+        Dim query As String = "SELECT * FROM Messenges WHERE (" & htmlquery & ") AND Checked = @unchecked AND NOT (Sender = @sender)"
 
         connection.Open()
         Dim command As SqlCommand = New SqlCommand(query, connection)

@@ -1,4 +1,6 @@
 ﻿
+
+
 Imports System.Data.SqlClient
 
 Public Class ClientProfile
@@ -33,7 +35,7 @@ Public Class ClientProfile
             Next i
         End If
 
-        ' Try
+         Try
         lblName.Visible = True
         lblSurname.Visible = True
         lblNumber.Visible = True
@@ -53,9 +55,9 @@ Public Class ClientProfile
 
         AdsDiv.InnerHtml = displayAds()
         quotationDiv.InnerHtml = displayQuote()
-        ' Catch ex As Exception
+         Catch ex As Exception
 
-        ' End Try
+        End Try
 
 
 

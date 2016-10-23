@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site3.Master" CodeBehind="workerStat.aspx.vb" Inherits="Project1.workerStat1" %>
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -402,6 +403,7 @@
 									<div class="graph-container">
 										<%--<div id="graph-lines"> </div>
 										<div id="graph-bars"> </div>--%>
+                                        
 									    <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource3" Height="285px" Palette="Fire" PaletteCustomColors="243, 197, 0; 0, 0, 192" Width="750px">
                                             <series>
                                                 <asp:Series Name="Series1" XValueMember="Username" YValueMembers="JoinDate">
@@ -413,6 +415,7 @@
                                             </chartareas>
                                         </asp:Chart>
                                         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Workers]"></asp:SqlDataSource>
+                                        
                                         <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 									</div>
@@ -681,5 +684,14 @@
 <!--header1 end here-->
 
     </form>
+
+    </label>
+    </label>
+    </label>
+    </label>
+    </label>
+    </label>
+    </label>
+    </label>
 
 </asp:Content>

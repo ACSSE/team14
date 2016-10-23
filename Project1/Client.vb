@@ -15,6 +15,11 @@ Public Class Client
         getClient(username, password)
     End Sub
 
+    Public Sub New(username As String, password As String, userLevel As String)
+        MyBase.New()
+        getClientLevel(username, password, userLevel)
+    End Sub
+
     Public Sub New(username As String)
         getPartialClientInfo(username)
 
@@ -121,6 +126,20 @@ Public Class Client
             reader = command.ExecuteReader()
 
             connection.Close()
+        ElseIf tempClient.getUsername() = "" Then
+
+            Dim commandstring As String = "INSERT INTO UserTable ( Username, Password, UserLevel) VALUES (@username, @password, @userLevel)"
+            connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+            connection.Open()
+            command = New SqlCommand(commandstring, connection)
+
+            command.Parameters.AddWithValue("@name", name)
+            command.Parameters.AddWithValue("@surname", surname)
+            command.Parameters.AddWithValue("@userLevel", 1)
+           
+            reader = command.ExecuteReader()
+
+            connection.Close()
         End If
         addToAverageDatabase() 'to add the client to rating so that he/she can be rated
     End Sub
@@ -210,8 +229,32 @@ Public Class Client
         adconnection.Close()
     End Sub
 
-    
+    Private Sub getClientLevel(username As String, password As String, userLevel As String)
+        Dim connection As SqlConnection
+        Dim command As SqlCommand
+        Dim reader As SqlDataReader
+        password = Secrecy.HashPassword(password)
 
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim commandstring As String = "SELECT * From Clients WHERE Username = @user AND Password = @pass AND UserLevel = @userLevel"
+
+        command = New SqlCommand(commandstring, connection)
+        command.Parameters.AddWithValue("@user", username)
+        command.Parameters.AddWithValue("@pass", password)
+        command.Parameters.AddWithValue("@userLevel", 1)
+
+        command.Connection.Open()
+
+        reader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            reader.Read()
+            Me.username = username
+            Me.password = reader("Password")
+            userLevel = reader("UserLevel")
+
+        End If
+    End Sub
 
 
 End Class
