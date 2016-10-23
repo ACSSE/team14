@@ -86,6 +86,15 @@ Partial Public Class ClientProfile
     Protected WithEvents check As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''divrating control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divrating As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''AdsDiv control.
     '''</summary>
     '''<remarks>

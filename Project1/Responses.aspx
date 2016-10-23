@@ -8,8 +8,6 @@
             <form runat="server">
 			<h2 class="head" id = "AdHeading" runat="server"> Responses</h2>
             
-                <div class="post-ad-form" ></div>
-
                 <div id="HandyMen" class="single-page main-grid-border" runat="server" 
             style="width: 952px; margin-left: 189px">
                 </div>

@@ -168,17 +168,8 @@ Public Class Client
 
         If reader.HasRows Then
             reader.Read()
-            'Me.username = username
-            'Me.password = reader("Password")
-            ' name = reader("Name")
-            'surname = reader("Surname")
-            'email = reader("Email")
-            'numbers = reader("MobileNumber")
-            'region = reader("Region")
-            'suburb = reader("Suburb")
-            'address = reader("Address")
-            'JoinDate = reader("JoinDate")
             rating = reader("AverageRating")
+            Return rating
         End If
         Return 0
     End Function

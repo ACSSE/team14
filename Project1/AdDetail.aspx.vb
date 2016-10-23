@@ -33,7 +33,7 @@ Public Class AdDetail
         adString &= "<h3>" & client.getName() & " " & client.getSurname() & "</h3>"
         adString &= "<div class=""itemtype"">"
         adString &= "<p class=""p-price"">Rating</p>"
-        adString &= "	<h4><i><img src=""images/rate1.png"" alt="" "" /></i></h4>"
+        adString &= "	<h4>" & ValidationClass.getRateImage(client.getRating()) & "</h4>"
         adString &= "<div class=""clearfix""></div>"
         adString &= "</div>"
 
@@ -126,19 +126,32 @@ Public Class AdDetail
 
     Protected Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnSubQuote.ServerClick
         Dim worker As Worker = Session("user") 'WORKER FOR AdTable saving
+        Dim isPersonalAd As String = Request.QueryString("personalAd")
 
-        Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        adconnection.Open()
-        Dim query As String = "INSERT INTO Responses (PostAdId, Worker, Comment, Checked) VALUES (@ID, @Handyman, @comment, @check);"
-        Dim command As SqlCommand = New SqlCommand(query, adconnection)
-        command.Parameters.AddWithValue("@ID", ad)
-        command.Parameters.AddWithValue("@Handyman", worker.getUsername())
-        command.Parameters.AddWithValue("@comment", txtComment.Value())
-        command.Parameters.AddWithValue("@check", "unchecked")
+        If isPersonalAd = "true" Then
+             Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+            adconnection.Open()
+            Dim query As String = "UPDATE AdTable SET Worker = @handyman WHERE PostAdId = @name"
+            Dim command As SqlCommand = New SqlCommand(query, adconnection)
+            command.Parameters.AddWithValue("@handyman", worker.getUsername())
+            command.Parameters.AddWithValue("@name", ad)
 
-        Dim reader As SqlDataReader = command.ExecuteReader()
-        adconnection.Close()
 
+            Dim reader As SqlDataReader = command.ExecuteReader()
+            adconnection.Close()
+        Else
+            Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+            adconnection.Open()
+            Dim query As String = "INSERT INTO Responses (PostAdId, Worker, Comment, Checked) VALUES (@ID, @Handyman, @comment, @check);"
+            Dim command As SqlCommand = New SqlCommand(query, adconnection)
+            command.Parameters.AddWithValue("@ID", ad)
+            command.Parameters.AddWithValue("@Handyman", worker.getUsername())
+            command.Parameters.AddWithValue("@comment", txtComment.Value())
+            command.Parameters.AddWithValue("@check", "unchecked")
+
+            Dim reader As SqlDataReader = command.ExecuteReader()
+            adconnection.Close()
+        End If
         Response.Redirect("generateQuotation.aspx?ID=" & ad)
     End Sub
 

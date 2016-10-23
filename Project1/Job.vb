@@ -145,7 +145,6 @@ Public Class Job
         connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "DELETE FROM AdTable WHERE PostAdId = @name;"
         connection.Open()
-        MsgBox("Job:deleteJob()-JobID = " & JobID)
 
         command = New SqlCommand(query, connection)
         command.Parameters.AddWithValue("@name", JobID)

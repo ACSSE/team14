@@ -37,7 +37,7 @@ Public Class Responses
     'displays worker information
     Private Function displayWorker(workerID As String)
         Dim info As String = ""
-
+        Dim worker As Worker
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "SELECT * FROM Workers WHERE Username = @name;"
         connection.Open()
@@ -49,10 +49,11 @@ Public Class Responses
 
         If reader.HasRows Then 'building html string for website
             reader.Read()
+            worker = New Worker(reader("Username"))
             info &= "<h4>" & reader("Name") & " " & reader("Surname") & "</h4> <br />"
             info &= "<div class=""itemtype"">"
             info &= "<p class=""p-price"">Rating</p>"
-            info &= "	<h4><i><img src=""images/rate1.png"" alt="" "" /></i></h4>"
+            info &= "	<h4>" & ValidationClass.getRateImage(worker.getRating()) & "</h4>"
             info &= "<div class=""clearfix""></div>"
             info &= "</div>"
         End If

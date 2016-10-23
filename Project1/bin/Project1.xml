@@ -1119,6 +1119,14 @@ btnRegClient control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.Responses.AdHeading">
+	<summary>
+AdHeading control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.Responses.HandyMen">
 	<summary>
 HandyMen control.
@@ -1466,6 +1474,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.ClientProfile.check">
 	<summary>
 check control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.ClientProfile.divrating">
+	<summary>
+divrating control.
 </summary>
 	<remarks>
 Auto-generated field.

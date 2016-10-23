@@ -56,17 +56,17 @@
     Public Shared Function getRateImage(rate As Integer) As String
         Select Case rate
             Case 1
-                Return "<i><img src=""images/star1.png"" alt="" "" style=""max-width:25%; height:auto"" /></i>"
+                Return "<i><img src=""images/star1.png"" alt="" "" style=""max-width:35%; height:auto"" /></i>"
             Case 2
-                Return "<i><img src=""images/star2.png"" alt="" "" style=""max-width:25%; height:auto"" /></i>"
+                Return "<i><img src=""images/star2.png"" alt="" "" style=""max-width:35%; height:auto"" /></i>"
             Case 3
-                Return "<i><img src=""images/star3.png"" alt="" "" style=""max-width:25%; height:auto"" /></i>"
+                Return "<i><img src=""images/star3.png"" alt="" "" style=""max-width:35%; height:auto"" /></i>"
             Case 4
-                Return "<i><img src=""images/star4.png"" alt="" "" style=""max-width:25%; height:auto"" /></i>"
+                Return "<i><img src=""images/star4.png"" alt="" "" style=""max-width:35%; height:auto"" /></i>"
             Case 5
-                Return "<i><img src=""images/star5.png"" alt="" "" style=""max-width:25%; height:auto"" /></i>"
+                Return "<i><img src=""images/star5.png"" alt="" "" style=""max-width:35%; height:auto"" /></i>"
         End Select
-        Return "<h4><i><img src=""images/star1.png"" alt="" "" /></i></h4>"
+        Return "<h4><i><img src=""images/star1.png"" alt="" "" style=""max-width:35%; height:auto"" /></i></h4>"
     End Function
 
 End Class

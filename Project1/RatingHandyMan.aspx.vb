@@ -43,7 +43,7 @@ Public Class RatingHandyMan
             cClient.updateAverage(overallRating)
         End If
 
-
+        MsgBox("Inside Rate Client")
         Dim adconnection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         adconnection.Open()
         Dim query As String = "UPDATE Ratings SET Pending = @false WHERE JobID = @name"

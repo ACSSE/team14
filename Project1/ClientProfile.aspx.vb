@@ -16,17 +16,12 @@ Public Class ClientProfile
         changeDB()
 
         Dim ifunction As String = Request.QueryString("function")
-        ' MsgBox("ClientProfile:PageLoad()-ifunction = " & ifunction)
         If ifunction = "cancel" Then
-            '  MsgBox("ClientProfile:PageLoad()-inside ifunction if-statement")
             Dim CancelAd As Integer = Request.QueryString("cancelID")
             Dim jobs() As Job = Session("jobs")
             Dim quote() As Quotation = Session("quote")
-            '  MsgBox("ClientProfile:PageLoad()-CancelIa= " & CancelAd)
             For i As Integer = 1 To jobs.Length() - 1
-                'MsgBox("ClientProfile:PageLoad()-JOBID= " & jobs(i).getID())
                 If jobs(i).getID() = CancelAd Then
-                    ' MsgBox("ClientProfile:PageLoad()-Inside the delete jobs if-statement")
                     changeDB(CancelAd)
                     jobs(i).deleteJob()
                 End If
@@ -40,7 +35,7 @@ Public Class ClientProfile
         lblAddress.Visible = True
         lblEmail.Visible = True
         lblRegion.Visible = True
-
+        divrating.InnerHtml = "<h3>Rating</h3>" & ValidationClass.getRateImage(client.getRating())
 
         lblName.InnerText = client.getName()  'reader("Name")
         lblSurname.InnerHtml = client.getSurname()  'reader("SurName")
@@ -83,14 +78,13 @@ Public Class ClientProfile
 
         Dim reader As SqlDataReader = command.ExecuteReader()
 
-        Dim oldAds As String = ""
+        Dim oldAds As String = "<h2>In Progress</h2>"
         Dim newAds As String = ""
 
         If reader.HasRows Then
             While reader.Read()
                 'If no handyman is assigned to the job/ad
-                size += 1
-                ReDim Preserve jobs(size)
+                
 
                 'varaibles to creat a new job
                 Dim client As Client = Session("user")
@@ -105,7 +99,8 @@ Public Class ClientProfile
                 Dim tempJob As Job 'Temporary container for job object
 
                 If IsDBNull(reader("Status")) Then
-
+                    size += 1
+                    ReDim Preserve jobs(size)
                     If reader("Worker") Is Nothing Or IsDBNull(reader("Worker")) Then
                         tempJob = New Job(ID, category, title, description, clientUsername, "", oDate)
                         jobs(size) = tempJob 'adding job to the list
