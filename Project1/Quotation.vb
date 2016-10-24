@@ -7,16 +7,21 @@ Public Class Quotation
     Private quoteHours As Integer
     Private quoteAmount As Integer
     Private worker As String
+    Private checked As String
 
 
 
-    Public Sub New(vquoteId As Integer, vquoteDescription As String, vquoteHours As Integer, vquoteAmount As Integer, vworker As String)
+    Public Sub New(vquoteId As Integer, vquoteDescription As String, vquoteHours As Integer, vquoteAmount As Integer, vworker As String, vchecked As String)
         'MyBase.New()
         Me.quoteId = vquoteId
         Me.quoteDescription = vquoteDescription
         Me.quoteHours = vquoteHours
         Me.quoteAmount = vquoteAmount
         Me.worker = vworker
+        Me.checked = vchecked
+    End Sub
+    Public Sub New(username As String)
+        getPartialQuotationInfo(username)
     End Sub
 
     Public Sub New(vquoteDescription As String, vquoteHours As Integer, vquoteAmount As Integer, vworker As String)
@@ -26,12 +31,14 @@ Public Class Quotation
         Me.quoteHours = vquoteHours
         Me.quoteAmount = vquoteAmount
         Me.worker = vworker
+
+
     End Sub
 
-    Public Sub New(ID As Integer)
-        MyBase.New()
-        getQuotation(quoteId)
-    End Sub
+    'Public Sub New(ID As Integer)
+    '    MyBase.New()
+    '    getQuotation(quoteId)
+    'End Sub
 
     Public Function getquoteId() As Integer
         Return quoteId
@@ -50,13 +57,16 @@ Public Class Quotation
     Public Function getWorker() As Integer
         Return worker
     End Function
+    Public Function getChecked() As Integer
+        Return checked
+    End Function
 
 
     Public Sub savequoteDescription()
 
 
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "INSERT INTO Quotation (quoteID, quoteDescription, quoteHours, quoteAmount, Worker) Values (@ID, @quoteDescription, @quoteHours, @quoteAmount, @worker)"
+        Dim query As String = "INSERT INTO Quotation (quoteID, quoteDescription, quoteHours, quoteAmount, Worker, Checked) Values (@ID, @quoteDescription, @quoteHours, @quoteAmount, @worker, @checked)"
         connection.Open()
 
         Dim command As SqlCommand = New SqlCommand(query, connection)
@@ -65,6 +75,7 @@ Public Class Quotation
         command.Parameters.AddWithValue("@quoteHours", quoteHours)
         command.Parameters.AddWithValue("@quoteAmount", quoteAmount)
         command.Parameters.AddWithValue("@worker", worker)
+        command.Parameters.AddWithValue("@checked", "unchecked")
 
 
         Dim reader As SqlDataReader = command.ExecuteReader()
@@ -112,4 +123,33 @@ Public Class Quotation
 
         Return info
     End Function
+
+    Private Sub getPartialQuotationInfo(quotation As String)
+        Dim connection As SqlConnection
+        Dim command As SqlCommand
+        Dim reader As SqlDataReader
+
+        connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+        Dim commandstring As String = "SELECT * From Quotation WHERE Worker = @user"
+        command = New SqlCommand(commandstring, connection)
+        command.Parameters.AddWithValue("@user", quotation)
+
+        command.Connection.Open()
+        reader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            reader.Read()
+            Me.worker = worker
+            quoteDescription = reader("quoteDescription")
+            quoteAmount = reader("quoteAmount")
+            'email = reader("Email")
+            quoteHours = reader("quoteHours")
+            ' numbers = reader("MobileNumber")
+            
+
+        End If
+
+        connection.Close()
+    End Sub
+
 End Class

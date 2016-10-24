@@ -6,7 +6,7 @@
 
         If Not Page.IsPostBack Then
 
-            Dim item As Quotation = New Quotation("", "", "", "", "")
+            Dim item As Quotation = New Quotation("", "", "", "", "", "")
             Dim worker As Worker = Session("user")
 
             Dim workerUsername As String = worker.getUsername() 'worker who is writting the quotation
@@ -25,10 +25,9 @@
             quotation.InnerHtml &= "</br>Estimated Hours to Complete: " & CStr(item.getquoteHours)
             quotation.InnerHtml &= "</br>Estimated Amount: " & CStr(item.getquoteAmount)
 
+            quotation.InnerHtml &= "<br/>"
 
-
-            quotation.InnerHtml &= "<p><a href=ClientProfile.aspx> Click here to go back to the profile page</a></p>"
-
+            quotation.InnerHtml &= "<p><a href=Responses.aspx> Click here to go back</a></p>"
 
         End If
 

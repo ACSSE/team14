@@ -171,13 +171,14 @@ Public Class ClientProfile
                 Dim quoteDescription As String = reader("quoteDescription")
                 Dim quoteHours As Integer = reader("quoteHours")
                 Dim quoteAmount As Integer = reader("quoteAmount")
+                Dim checked As Integer = reader("Checked")
 
                 Dim tempQuote As Quotation  'Temporary container for quotation
 
                 If IsDBNull(reader("Status")) Then
 
                     If reader("Worker") Is Nothing Or IsDBNull(reader("Worker")) Then
-                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount, workerUsername)
+                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount, workerUsername, checked)
                         quote(size) = tempQuote  'adding quotation to the list
 
                         'building html thing language to display jobs
@@ -197,7 +198,7 @@ Public Class ClientProfile
 
                         Dim handyman As String = reader("Worker") 'to be used in constructor
 
-                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount, workerUsername)
+                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount, workerUsername, checked)
                         quote(size) = tempQuote 'adding job to the list
 
 

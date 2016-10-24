@@ -7,6 +7,7 @@ Public Class Responses
         Dim adID As Integer = Request.QueryString("ID")
         Dim html As String = ""
         Dim handyman As Worker
+        Dim worker As Quotation
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "SELECT * FROM Responses WHERE PostAdId = @name;"
         connection.Open()
@@ -19,12 +20,18 @@ Public Class Responses
         If reader.HasRows Then
             While reader.Read()
                 handyman = New Worker(reader("Worker"))
+                worker = New Quotation(reader("Worker"))
                 'html code ofr div tag
+                html &= "<div class=""itemtype"">"
                 html &= displayWorker(handyman.getUsername())
-                ' html &= "<ul>"
+                html &= "</div>"
+
                 html &= "<div class=""itemtype"">"
                 html &= "<p class=""p-price"">" & reader("Comment") & "</p>"
                 html &= "     <a href=ClientProfile.aspx?Selected=" & handyman.getUsername() & "&ID=" & adID & "> Confirm </a>"
+                html &= "</div>"
+                html &= "<div class=""itemtype"">"
+                html &= "<p class=""p-price"">" & displayQuotation(worker.getWorker) & "</p>"
                 html &= "</div>"
                 html &= "<hr/>"
 
@@ -32,6 +39,7 @@ Public Class Responses
         End If
         HandyMen.InnerHtml = html
         changeCheckedClient(adID)
+        changeCheckedQuotation(adID)
     End Sub
 
     'displays worker information
@@ -59,31 +67,51 @@ Public Class Responses
         Return info
     End Function
 
-    Private Function displayQuotation(QuoteId As String) As String
+    Private Function displayQuotation(WorkerId As String) As String
         Dim quote As String = ""
-        'Dim worker As Worker = worke
+        Dim handyman As Worker
+        Dim adID As Integer = Request.QueryString("ID")
 
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "SELECT * FROM Quotation WHERE QuoteId = @quote;"
+        Dim query As String = "SELECT * FROM Quotation WHERE Worker = @worker;"
         connection.Open()
 
         Dim command As SqlCommand = New SqlCommand(query, connection)
-        command.Parameters.AddWithValue("@quote", QuoteId)
+        command.Parameters.AddWithValue("@worker", WorkerId)
 
         Dim reader As SqlDataReader = command.ExecuteReader()
 
         If reader.HasRows Then
-            While reader.Read()
-                count += 1
-            End While
+            reader.Read()
+            handyman = New Worker(reader("Worker"))
+
+            quote &= "<p class=""p-price"">Quotation</p>"
+            quote &= "<a href=QuotationDisplay.aspx?Selected=" & handyman.getUsername & "> View </a>"
+            quote &= "<div class=""clearfix""></div>"
+            quote &= "</div>"
+
         End If
 
-        Return "<a style=""color:white"" href=QuotationDisplay.aspx?ID=" & QuoteId & ">Quotation(" & count & ")</a>&nbsp;&nbsp;&nbsp;"
+        Return quote
     End Function
 
     Private Sub changeCheckedClient(id As Integer)
         Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
         Dim query As String = "UPDATE Responses SET Checked = @value WHERE PostAdId = @name;"
+        connection.Open()
+
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@name", id)
+        command.Parameters.AddWithValue("@value", "checked")
+
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        connection.Close()
+    End Sub
+
+    Private Sub changeCheckedQuotation(id As Integer)
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim query As String = "UPDATE Quotation SET Checked = @value WHERE QuoteId = @name;"
         connection.Open()
 
         Dim command As SqlCommand = New SqlCommand(query, connection)

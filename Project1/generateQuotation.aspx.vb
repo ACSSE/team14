@@ -14,13 +14,14 @@ Public Class generateQuotation
         Dim hours As Integer = txtQuoteHours.Text()
         Dim amount As String = txtQuoteAmount.Text()
         Dim worker As Worker = Session("user")
-
+        Dim checked As String = "unchecked"
         Dim workerUsername As String = worker.getUsername() 'worker who is writting the quotation
+
 
         Dim cUser As User = Session("user") 'to obtain sender username
         Dim ID As Integer = Request.QueryString("ID")
 
-        Dim cQuotation As Quotation = New Quotation(ID, description, hours, amount, workerUsername) 'ID is identical to job ID
+        Dim cQuotation As Quotation = New Quotation(ID, description, hours, amount, workerUsername, checked) 'ID is identical to job ID
         cQuotation.savequoteDescription()
         'commiting message into the database
         Response.Redirect("WorkerProfile.aspx?ID=" & ID)
