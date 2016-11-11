@@ -82,3 +82,18 @@ C:\Users\Karabo\Desktop\the latest\team14\Project1\obj\Debug\Project1.vbproj.Gen
 C:\Users\Karabo\Desktop\the latest\team14\Project1\obj\Debug\Project1.dll
 C:\Users\Karabo\Desktop\the latest\team14\Project1\obj\Debug\Project1.xml
 C:\Users\Karabo\Desktop\the latest\team14\Project1\obj\Debug\Project1.pdb
+C:\Users\Anna\Documents\GitHub\team14\Project1\obj\Debug\RdlCompile.cache
+C:\Users\Anna\Documents\GitHub\team14\Project1\obj\Debug\RdlCompile.compiled
+C:\Users\Karabo\Desktop\team14\Project1\obj\Debug\Project1.vbprojResolveAssemblyReference.cache
+C:\Users\Karabo\Desktop\team14\Project1\obj\Debug\Project1.Resources.resources
+C:\Users\Karabo\Desktop\team14\Project1\obj\Debug\Project1.vbproj.GenerateResource.Cache
+C:\Users\Karabo\Desktop\team14\Project1\obj\Debug\RdlCompile.cache
+C:\Users\Karabo\Desktop\team14\Project1\obj\Debug\RdlCompile.compiled
+C:\Users\Karabo\Desktop\team14\Project1\obj\Debug\Project1.dll
+C:\Users\Karabo\Desktop\team14\Project1\obj\Debug\Project1.xml
+C:\Users\Karabo\Desktop\team14\Project1\obj\Debug\Project1.pdb
+C:\Users\Karabo\Desktop\team14\Project1\bin\Project1.dll
+C:\Users\Karabo\Desktop\team14\Project1\bin\Project1.pdb
+C:\Users\Karabo\Desktop\team14\Project1\bin\Project1.xml
+C:\Users\Karabo\Desktop\HandyMan\HandyMan\team14\Project1\obj\Debug\RdlCompile.cache
+C:\Users\Karabo\Desktop\HandyMan\HandyMan\team14\Project1\obj\Debug\RdlCompile.compiled

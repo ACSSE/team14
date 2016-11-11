@@ -54,22 +54,23 @@ Public Class Site2
 
         ' If count > 0 Then
         count = 0
-        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim query As String = "SELECT * FROM Messenges WHERE (" & htmlquery & ") AND Checked = @unchecked AND NOT (Sender = @sender);"
+        If Not (htmlquery = "") Then
+            Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+            Dim query As String = "SELECT * FROM Messenges WHERE (" & htmlquery & ") AND Checked = @unchecked AND NOT (Sender = @sender);"
 
-        connection.Open()
-        Dim command As SqlCommand = New SqlCommand(query, connection)
-        command.Parameters.AddWithValue("@unchecked", "unchecked")
-        command.Parameters.AddWithValue("@sender", cUser.getUsername()) 'not the person logged in
-        Dim reader As SqlDataReader = command.ExecuteReader()
+            connection.Open()
+            Dim command As SqlCommand = New SqlCommand(query, connection)
+            command.Parameters.AddWithValue("@unchecked", "unchecked")
+            command.Parameters.AddWithValue("@sender", cUser.getUsername()) 'not the person logged in
+            Dim reader As SqlDataReader = command.ExecuteReader()
 
-        If reader.HasRows Then
-            'Reader has row- Messages Table
-            While reader.Read()
-                count += 1
-            End While
+            If reader.HasRows Then
+                'Reader has row- Messages Table
+                While reader.Read()
+                    count += 1
+                End While
+            End If
         End If
-
         'Count in messages
 
         If count > 0 Then

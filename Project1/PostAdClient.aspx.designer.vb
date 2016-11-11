@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class PostAdClient
 
     '''<summary>
+    '''lblHeading control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblHeading As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''lblCategory control.
     '''</summary>
     '''<remarks>
@@ -30,6 +39,15 @@ Partial Public Class PostAdClient
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents categoriesList As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''errlabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents errlabel As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''lblTitle control.

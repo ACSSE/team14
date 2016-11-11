@@ -6,6 +6,7 @@ Public Class ClientProfile
 
     Private client As Client
     Private newRes As Boolean
+    Private newMes As Boolean
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'update.InnerHtml = "<a href=""UpdateProfile.aspx?username=" & Session("UserName") & "&user=client>Update your profile</a>"
@@ -35,7 +36,7 @@ Public Class ClientProfile
         lblAddress.Visible = True
         lblEmail.Visible = True
         lblRegion.Visible = True
-
+        divrating.InnerHtml = "<h3>Rating</h3>" & ValidationClass.getRateImage(client.getRating())
 
         lblName.InnerText = client.getName()  'reader("Name")
         lblSurname.InnerHtml = client.getSurname()  'reader("SurName")
@@ -78,14 +79,13 @@ Public Class ClientProfile
 
         Dim reader As SqlDataReader = command.ExecuteReader()
 
-        Dim oldAds As String = ""
+        Dim oldAds As String = "<h2>In Progress</h2>"
         Dim newAds As String = ""
 
         If reader.HasRows Then
             While reader.Read()
                 'If no handyman is assigned to the job/ad
-                size += 1
-                ReDim Preserve jobs(size)
+                
 
                 'varaibles to creat a new job
                 Dim client As Client = Session("user")
@@ -100,7 +100,8 @@ Public Class ClientProfile
                 Dim tempJob As Job 'Temporary container for job object
 
                 If IsDBNull(reader("Status")) Then
-
+                    size += 1
+                    ReDim Preserve jobs(size)
                     If reader("Worker") Is Nothing Or IsDBNull(reader("Worker")) Then
                         tempJob = New Job(ID, category, title, description, clientUsername, "", oDate)
                         jobs(size) = tempJob 'adding job to the list
@@ -125,11 +126,17 @@ Public Class ClientProfile
                         tempJob = New Job(ID, category, title, description, clientUsername, handyman, oDate)
                         jobs(size) = tempJob 'adding job to the list
 
-
+                        determineNewMes(tempJob.getID())
                         oldAds &= "<div>"
                         oldAds &= "<h4>" & reader("AdTitle") & "</h4>"
                         oldAds &= "<a style=""color:white"" href=RatingHandyMan.aspx?Handyman=" & tempJob.getHandyman() & "&adID=" & tempJob.getID() & ">Done</a> <br/>"
-                        oldAds &= ValidationClass.displayMessenges(ID) & "<hr/>" 'displays all the messsenges sent for this particular job
+
+                        If newMes Then
+                            'if it is a new message
+                            oldAds &= ValidationClass.displayMessenges(ID) & "<span class=""bell animated shake""> </span>" 'displays all the messsenges sent for this particular job
+                        Else
+                            oldAds &= ValidationClass.displayMessenges(ID) 'displays all the messsenges sent for this particular job
+                        End If
                         oldAds &= "</div> <br/>" & Environment.NewLine
                     End If
                 End If
@@ -171,14 +178,13 @@ Public Class ClientProfile
                 Dim quoteDescription As String = reader("quoteDescription")
                 Dim quoteHours As Integer = reader("quoteHours")
                 Dim quoteAmount As Integer = reader("quoteAmount")
-                Dim checked As Integer = reader("Checked")
 
                 Dim tempQuote As Quotation  'Temporary container for quotation
 
                 If IsDBNull(reader("Status")) Then
 
                     If reader("Worker") Is Nothing Or IsDBNull(reader("Worker")) Then
-                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount, workerUsername, checked)
+                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount, workerUsername)
                         quote(size) = tempQuote  'adding quotation to the list
 
                         'building html thing language to display jobs
@@ -198,7 +204,7 @@ Public Class ClientProfile
 
                         Dim handyman As String = reader("Worker") 'to be used in constructor
 
-                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount, workerUsername, checked)
+                        tempQuote = New Quotation(quoteId, quoteDescription, quoteHours, quoteAmount, workerUsername)
                         quote(size) = tempQuote 'adding job to the list
 
 
@@ -316,5 +322,31 @@ Public Class ClientProfile
 
         Dim reader As SqlDataReader = command.ExecuteReader()
         adconnection.Close()
+    End Sub
+
+    'To determine if there is a new message
+    Public Sub determineNewMes(adID As Integer)
+        '  Dim count As Integer = 0
+        newMes = False
+
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim query As String = "SELECT * FROM Messenges WHERE PostAdId = @name;"
+        connection.Open()
+
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@name", adID)
+
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            While reader.Read()
+                '   count += 1
+                If reader("Checked") = "unchecked" Then
+                    newMes = True
+                End If
+            End While
+        End If
+
+
     End Sub
 End Class

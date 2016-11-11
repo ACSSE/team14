@@ -7,7 +7,7 @@
     <div class="submit-ad main-grid-border">
 		<div class="container">
             <form runat="server">
-			<h2 class="head">Post an Ad</h2>
+			<h2 class="head" id="lblHeading" runat="server">Post an Ad</h2>
 			<div class="post-ad-form">
 				<table class="table" style="margin:initial; color:black;">
                 <tr>
@@ -29,6 +29,7 @@
 					  <asp:ListItem Text="Tilling Specialist"></asp:ListItem>
 					  <asp:ListItem Text="Roof Specialist"></asp:ListItem>
                       </asp:DropDownList></td>
+                     <asp:Label ID="errlabel" style="color:red" runat="server">Please Select a Category</asp:Label>
                 </tr>
 
                 <tr>

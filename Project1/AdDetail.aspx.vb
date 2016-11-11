@@ -33,7 +33,7 @@ Public Class AdDetail
         adString &= "<h3>" & client.getName() & " " & client.getSurname() & "</h3>"
         adString &= "<div class=""itemtype"">"
         adString &= "<p class=""p-price"">Rating</p>"
-        adString &= "	<h4><i><img src=""images/rate1.png"" alt="" "" /></i></h4>"
+        adString &= "	<h4>" & ValidationClass.getRateImage(client.getRating()) & "</h4>"
         adString &= "<div class=""clearfix""></div>"
         adString &= "</div>"
 

@@ -31,7 +31,7 @@
 								</span>
 								<div class="clearfix"> </div>
 							</div>
-							
+							<asp:Label ID="errlabel" style="color:red" runat="server">Incorrect Log In Details</asp:Label>
                                <%--<input id="btnLogIn" runat="server" type="submit" value="Log in"/>--%>
                                 <input id="myBtn" runat="server" type="submit" value="Log In"/>
 						</form>

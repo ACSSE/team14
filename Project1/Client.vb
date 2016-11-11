@@ -29,12 +29,12 @@ Public Class Client
         password = Secrecy.HashPassword(password)
 
         connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
-        Dim commandstring As String = "SELECT * From Clients WHERE Username = @user AND Password = @pass"
+        Dim commandstring As String = "SELECT * From Clients WHERE Username = @user AND Password = @pass AND Status = @open"
 
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
         command.Parameters.AddWithValue("@pass", password)
-
+        command.Parameters.AddWithValue("@open", "OPEN")
         command.Connection.Open()
 
         reader = command.ExecuteReader()
@@ -168,17 +168,8 @@ Public Class Client
 
         If reader.HasRows Then
             reader.Read()
-            'Me.username = username
-            'Me.password = reader("Password")
-            ' name = reader("Name")
-            'surname = reader("Surname")
-            'email = reader("Email")
-            'numbers = reader("MobileNumber")
-            'region = reader("Region")
-            'suburb = reader("Suburb")
-            'address = reader("Address")
-            'JoinDate = reader("JoinDate")
             rating = reader("AverageRating")
+            Return rating
         End If
         Return 0
     End Function

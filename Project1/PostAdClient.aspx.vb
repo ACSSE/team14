@@ -4,9 +4,18 @@ Public Class PostAdClient
     Inherits System.Web.UI.Page
 
     Private worker As Worker
+    Private type As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ' If Page.IsPostBack Then
-        Dim type As String = Request.QueryString("adType")
+        type = Request.QueryString("adType")
+        errlabel.Visible = False
+
+        Dim func As String = Request.QueryString("ifunction") 'for checking if page is reloaded from an error
+
+        If func = "ERROR" Then
+            errlabel.Visible = True 'inform user
+        End If
+
 
         If type = "" Or type = Nothing Then
             categoriesList.Focus()
@@ -14,6 +23,7 @@ Public Class PostAdClient
 
         Else
             worker = New Worker(type)
+            lblHeading.InnerText = "Post an Ad to " & worker.getName() & " " & worker.getSurname()
             ' bindCategories()
         End If
 
@@ -37,8 +47,14 @@ Public Class PostAdClient
         ValidationClass.equateText(title, txtTitle.Text())
         ValidationClass.equateText(description, txtDescription.Text())
 
+
+        If category = "Select Category" Or category = "0" Then 'if user did not select anything
+            Response.Redirect("PostAdClient.aspx?adType=" & type & "&ifunction=ERROR")
+        End If
+
         If worker.getUsername() = "" Then
 
+           
 
             'Handyman is null upon creation of job
             Dim job As Job = New Job(category, title, description, clientUsername, "", Date.Now)

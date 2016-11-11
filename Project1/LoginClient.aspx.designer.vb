@@ -41,6 +41,15 @@ Partial Public Class Login
     Protected WithEvents txtPassword As Global.System.Web.UI.HtmlControls.HtmlInputPassword
 
     '''<summary>
+    '''errlabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents errlabel As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''myBtn control.
     '''</summary>
     '''<remarks>

@@ -35,10 +35,11 @@ Public Class Worker
         password = Secrecy.HashPassword(password)
 
         connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
-        Dim commandstring As String = "SELECT * From Workers WHERE Username = @user AND Password = @pass"
+        Dim commandstring As String = "SELECT * From Workers WHERE Username = @user AND Password = @pass AND Status = @open"
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", username)
         command.Parameters.AddWithValue("@pass", password)
+        command.Parameters.AddWithValue("@open", "OPEN")
 
         command.Connection.Open()
         reader = command.ExecuteReader()

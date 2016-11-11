@@ -50,8 +50,11 @@
 							<div class="clearfix"></div>
 						</div>
 					</div>--%>
+
+
 					<div class="interested text-center">
-						<h4 style="text-align:center;">Interested?</h4>
+						
+                    <div  id="divrating"  runat="server"></div> 
 						<p><a href="PostAdClient.aspx" style="color:white">Post an ad</a></p>
                         <p><a href="FeaturedWorkers.aspx" style="color:white">Check out Featured Workers</a></p>
                         <br/>
@@ -80,4 +83,5 @@
 
    
 
+    </div>
 </asp:Content>

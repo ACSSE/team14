@@ -18,10 +18,11 @@ Public Class cAdmin
         password = vpassword
 
         connection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
-        Dim commandstring As String = "SELECT * From Administrators WHERE Username = @user AND Password = @pass"
+        Dim commandstring As String = "SELECT * From Administrators WHERE Username = @user AND Password = @pass AND Status = @open"
         command = New SqlCommand(commandstring, connection)
         command.Parameters.AddWithValue("@user", vusername)
         command.Parameters.AddWithValue("@pass", vpassword)
+        command.Parameters.AddWithValue("@open", "OPEN")
 
         command.Connection.Open()
         reader = command.ExecuteReader()

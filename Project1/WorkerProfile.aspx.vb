@@ -3,6 +3,7 @@ Public Class WorkerProfile
     Inherits System.Web.UI.Page
 
     Private worker As Worker
+    Private newMes As Boolean 'to keep track of any new messages
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -26,7 +27,28 @@ Public Class WorkerProfile
             personalAd.InnerHtml = "<a style=""color:white"" href=""PostAdClient.aspx?adType=" & worker.getUsername() & """>" & "Post an ad to " & worker.getUsername() & "</a>"
             getHistory() ' to display all the previous work done by the worker
 
+        ElseIf type = "admin" Then
+
+
+            Dim username As String = Request.QueryString("username")
+
+            worker = New Worker(username)
+            Dim blockuser As String = "<a href=""UserRemoved.aspx?username=" & worker.getUsername() & ">BLOCK</a>"
+            divrating.InnerHtml = "<h3>Rating</h3>" & ValidationClass.getRateImage(worker.getRating())
+
+            JobTitle.InnerText = worker.getCategory() 'setting the correct heading category
+            lblRegion.InnerText = worker.getRegion()
+            lblName.InnerText = worker.getName()
+            lblSurname.InnerHtml = worker.getSurname()
+            lblNumber.InnerText = worker.getNumbers()
+            lblEmail.InnerText = worker.getEmail()
+            lblRegion.InnerText = worker.getRegion() & blockuser
+
+            getHistory() ' to display all the previous work done by the worker
+
+
         Else
+
             Dim c As User = Session("user")
             worker = c
 
@@ -105,9 +127,18 @@ Public Class WorkerProfile
                 tempJob = New Job(ID, category, title, description, clientUsername, "", OpenDate)
                 HandymanJobs(size) = tempJob 'adding job to the list
                 'TO DO Build messaging service here
+                determineNewMes(tempJob.getID())
+
                 notifications &= "<h4>" & reader("AdTitle") & "</h4> "
-                notifications &= ValidationClass.displayMessenges(ID) 'displays all the messsenges sent for this particular job
-                notifications &= "<a style=""color:white"" href=""generateQuotation.aspx""> Generate Quotation </a>"
+
+                If newMes Then
+                    'if it is a new message
+                    notifications &= ValidationClass.displayMessenges(ID) & "<span class=""bell animated shake""> </span>" 'displays all the messsenges sent for this particular job
+                Else
+                    notifications &= ValidationClass.displayMessenges(ID) 'displays all the messsenges sent for this particular job
+                End If
+
+                notifications &= "<a style=""color:white"" href=generateQuotation.aspx?ID=" & ID & "> Generate Quotation </a>"
 
             End While
         End If
@@ -206,7 +237,7 @@ Public Class WorkerProfile
             jobs(idx) = createJob(jobsID(idx))
             '"&adID=" & jobs(idx).getID() &
             If jobs(idx) IsNot Nothing Then
-                notifications &= "<h5>" & jobs(idx).getTitle() & "</h5> "
+                notifications &= "<h4>" & jobs(idx).getTitle() & "</h4> "
                 notifications &= "<a style=""color:white"" href=RatingHandyMan.aspx?adID=" & jobs(idx).getID() & "&Client=" & jobs(idx).getClient() & ">Rate Client</a> <br/>" 'displays all the messsenges sent for this particular job
 
             End If
@@ -436,5 +467,31 @@ Public Class WorkerProfile
 
         Return categorySQL
     End Function
+
+    'To determine if there is a new message
+    Public Sub determineNewMes(adID As Integer)
+        '  Dim count As Integer = 0
+        newMes = False
+
+        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim query As String = "SELECT * FROM Messenges WHERE PostAdId = @name;"
+        connection.Open()
+
+        Dim command As SqlCommand = New SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@name", adID)
+
+        Dim reader As SqlDataReader = command.ExecuteReader()
+
+        If reader.HasRows Then
+            While reader.Read()
+                '   count += 1
+                If reader("Checked") = "unchecked" Then
+                    newMes = True
+                End If
+            End While
+        End If
+
+
+    End Sub
 
 End Class

@@ -20,5 +20,5 @@ Partial Public Class QuotationDisplay
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents quotation As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents quotation As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class
