@@ -16,6 +16,14 @@ Public Class Worker
         Me.category = category
     End Sub
 
+    'for use of ststus (admin only)
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, vdate As Date, description As String, category As String, logo As Image, status As String)
+        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, "", vdate, status)
+        Me.description = description
+        Me.logo = logo
+        Me.category = category
+    End Sub
+
 
     'basic constructor
     Public Sub New(username As String, password As String)
@@ -65,7 +73,7 @@ Public Class Worker
         Dim reader As SqlDataReader
 
 
-        Dim commandstring As String = "INSERT INTO Workers (Name, Surname, Username, Password, MobileNumber, Email, Category, Region, Description, JoinDate) VALUES (@name, @surname, @username, @password, @mobil, @email, @category, @region, @description, @date)"
+        Dim commandstring As String = "INSERT INTO Workers (Name, Surname, Username, Password, MobileNumber, Email, Category, Region, Description, JoinDate, Status) VALUES (@name, @surname, @username, @password, @mobil, @email, @category, @region, @description, @date, @status)"
         connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         connection.Open()
         command = New SqlCommand(commandstring, connection)
@@ -81,7 +89,7 @@ Public Class Worker
         'command.Parameters.AddWithValue("@JobTitle", jobTitle)
         command.Parameters.AddWithValue("@description", description)
         command.Parameters.AddWithValue("@date", Date.Today)
-
+        command.Parameters.AddWithValue("@status", "OPEN")
 
         reader = command.ExecuteReader()
 

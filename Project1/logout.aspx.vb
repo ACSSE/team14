@@ -4,6 +4,7 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Session("user") = Nothing
         Session("Username") = Nothing
+        Session("viewer") = Nothing
         Response.Redirect("LoginClient.aspx")
 
     End Sub

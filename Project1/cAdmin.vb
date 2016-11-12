@@ -29,7 +29,6 @@ Public Class cAdmin
 
         If reader.HasRows Then
             reader.Read()
-            MsgBox("In the admin function")
             Me.username = vusername
             Me.password = reader("Password")
             Name = reader("Name")

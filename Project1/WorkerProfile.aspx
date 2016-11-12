@@ -8,9 +8,9 @@
 		<div class="container">
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
 				<li><a href="index.html">Home</a></li>
-				<li class="active">Worker's Profile</li>
+				<li class="active">Worker's Profile</li> 
 			</ol>
-			<div class="product-desc">
+			<div class="product-desc"> 
 				<div class="col-md-7 product-view">
                     <h1 id="JobTitle" runat="server"></h1>
                     
@@ -52,7 +52,7 @@
                         <p id="update" runat="server"><a href="UpdateProfile.aspx?user=handyman">Update your profile</a></p>
                         <p id="check" runat="server"><a href="workerStat.aspx?user=worker">Check Your Stats</a></p>
 					</div>
-
+                    <div id="divblock" runat="server"></div>
                     <div class="product-price">
 							<h3 class="rate">History</h3>
 
@@ -72,7 +72,7 @@
 						<a href="Post.aspx"><p><i class="fa fa-check-square"></i>Check Post</p></a><div class="clearfix"></div>
                          
 					</div>--%>
-
+                    
                     <div  class="interested text-center">
                     <div  id="divrating" runat="server">
                         </div>

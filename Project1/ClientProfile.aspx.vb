@@ -11,48 +11,69 @@ Public Class ClientProfile
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'update.InnerHtml = "<a href=""UpdateProfile.aspx?username=" & Session("UserName") & "&user=client>Update your profile</a>"
         Dim c As User = Session("user")
-        client = c
 
 
-        changeDB()
+        If TypeOf c Is Client Then
+            client = c
 
-        Dim ifunction As String = Request.QueryString("function")
-        If ifunction = "cancel" Then
-            Dim CancelAd As Integer = Request.QueryString("cancelID")
-            Dim jobs() As Job = Session("jobs")
-            Dim quote() As Quotation = Session("quote")
-            For i As Integer = 1 To jobs.Length() - 1
-                If jobs(i).getID() = CancelAd Then
-                    changeDB(CancelAd)
-                    jobs(i).deleteJob()
-                End If
-            Next i
+
+            changeDB()
+
+            Dim ifunction As String = Request.QueryString("function")
+            If ifunction = "cancel" Then
+                Dim CancelAd As Integer = Request.QueryString("cancelID")
+                Dim jobs() As Job = Session("jobs")
+                Dim quote() As Quotation = Session("quote")
+                For i As Integer = 1 To jobs.Length() - 1
+                    If jobs(i).getID() = CancelAd Then
+                        changeDB(CancelAd)
+                        jobs(i).deleteJob()
+                    End If
+                Next i
+            End If
+
+            ' Try
+            lblName.Visible = True
+            lblSurname.Visible = True
+            lblNumber.Visible = True
+            lblAddress.Visible = True
+            lblEmail.Visible = True
+            lblRegion.Visible = True
+            divrating.InnerHtml = "<h3>Rating</h3>" & ValidationClass.getRateImage(client.getRating())
+
+            lblName.InnerText = client.getName()  'reader("Name")
+            lblSurname.InnerHtml = client.getSurname()  'reader("SurName")
+            lblNumber.InnerText = client.getNumbers() 'reader("MobileNumber")
+            lblAddress.InnerText = client.getAddress() 'reader("Address")
+            lblEmail.InnerText = client.getEmail  'reader("Email")
+            lblRegion.InnerText = client.getRegion()
+
+
+
+            AdsDiv.InnerHtml = displayAds()
+            quotationDiv.InnerHtml = displayQuote()
+
+            Session("viewer") = "client" 'for viewing list of clients
+
+        Else
+            Dim username As String = Request.QueryString("username")
+            Dim client As Client = New Client(username)
+
+            lblName.Visible = True
+            lblSurname.Visible = True
+            lblEmail.Visible = True
+            lblRegion.Visible = True
+            divrating.InnerHtml = "<h3>Rating</h3>" & ValidationClass.getRateImage(client.getRating())
+
+            lblName.InnerText = client.getName()  'reader("Name")
+            lblSurname.InnerHtml = client.getSurname()  'reader("SurName")
+            lblEmail.InnerText = client.getEmail  'reader("Email")
+            lblRegion.InnerText = client.getRegion()
+
+            Dim blockuser As String = "<a href=""UserRemoved.aspx?username=" & client.getUsername() & """&type=client>BLOCK</a>"
+            divblock.InnerHtml = blockuser
         End If
-
-        ' Try
-        lblName.Visible = True
-        lblSurname.Visible = True
-        lblNumber.Visible = True
-        lblAddress.Visible = True
-        lblEmail.Visible = True
-        lblRegion.Visible = True
-        divrating.InnerHtml = "<h3>Rating</h3>" & ValidationClass.getRateImage(client.getRating())
-
-        lblName.InnerText = client.getName()  'reader("Name")
-        lblSurname.InnerHtml = client.getSurname()  'reader("SurName")
-        lblNumber.InnerText = client.getNumbers() 'reader("MobileNumber")
-        lblAddress.InnerText = client.getAddress() 'reader("Address")
-        lblEmail.InnerText = client.getEmail  'reader("Email")
-        lblRegion.InnerText = client.getRegion()
-
-
-
-        AdsDiv.InnerHtml = displayAds()
-        quotationDiv.InnerHtml = displayQuote()
-        ' Catch ex As Exception
-
-        ' End Try
-
+       
 
 
     End Sub

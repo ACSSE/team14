@@ -71,6 +71,7 @@
                     <div class="interested text-center"  id="quotationDiv" runat="server">
                 
 			           </div>
+                       <div id="divblock" runat="server"></div>
 				</div>
 			
 			</div>

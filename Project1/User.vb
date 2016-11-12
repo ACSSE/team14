@@ -12,15 +12,8 @@
     Protected rating As Integer
     Protected JoinDate As Date
     Protected suburb As String
-
-    'Private _vusername As String
-    'Private _vpassword As String
-    'Private _vname As String
-    'Private _vusername1 As String
-    'Private _vemail As String
-    'Private _mnumbers As String
-    'Private _vregion As String
-    'Private _vsuburb As String
+    Protected status As String
+  
 
     'constructor for the class
     Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, vsuburb As String, vdate As Date)
@@ -35,6 +28,21 @@
         suburb = vsuburb
         JoinDate = vdate
     End Sub
+
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vregion As String, vsuburb As String, vdate As Date, status As String)
+
+        username = vusername
+        password = Secrecy.HashPassword(vpassword)
+        numbers = mnumbers
+        name = vname
+        surname = vsurname
+        email = vemail
+        region = vregion
+        suburb = vsuburb
+        JoinDate = vdate
+        Me.status = status
+    End Sub
+
 
     Public Sub New() 'basic constructor
         username = ""
@@ -84,6 +92,10 @@
 
     Public Function getSuburb() As Date
         Return suburb
+    End Function
+
+    Public Function getStatus() As String
+        Return status
     End Function
 
     'Setters

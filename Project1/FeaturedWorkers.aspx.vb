@@ -30,6 +30,8 @@ Public Class FeaturedWorkers
         Dim joindate As Date
         Dim email As String
         Dim description As String
+        Dim status As String
+
         Dim connection As SqlConnection
         Dim command As SqlCommand
         Dim reader As SqlDataReader
@@ -53,9 +55,10 @@ Public Class FeaturedWorkers
                 email = reader("Email")
                 description = reader("Description")
                 joindate = reader("JoinDate")
+                status = reader("Status")
                 size += 1
                 ReDim Preserve workers(size)
-                workers(size) = New Worker(username, "", name, surname, email, numbers, "", joindate, description, category, Nothing)
+                workers(size) = New Worker(username, "", name, surname, email, numbers, "", joindate, description, category, Nothing, status)
             End While
         End If
         connection.Close()
@@ -67,12 +70,12 @@ Public Class FeaturedWorkers
         Dim pagesize As Integer = 0
 
         For i As Integer = 1 To workers.Length - 1
-            If workers(i).getCategory().Contains(categories) And pagesize <= 5 Then
+            If workers(i).getCategory().Contains(categories) And pagesize <= 5 And workers(i).getStatus() = "OPEN" Then
                 pagesize += 1
                 If Session("viewer") = "client" Then
                     html &= "  <a href=""WorkerProfile.aspx?type=client&username=" & workers(i).getUsername() & """ > "
-                Else
-                    html &= "  <a href=""WorkerProfile.aspx?type=client&username=" & workers(i).getUsername() & """ > "
+                Else 'for administrators
+                    html &= "  <a href=""WorkerProfile.aspx?type=admin&username=" & workers(i).getUsername() & """ > "
                 End If
                 html &= "<li>"
                 html &= "<img src=""images/p1.png"" title="""" alt="""" />"

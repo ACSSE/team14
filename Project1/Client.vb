@@ -10,6 +10,11 @@ Public Class Client
         address = vaddress
     End Sub
 
+    Public Sub New(vusername As String, vpassword As String, vname As String, vsurname As String, vemail As String, mnumbers As String, vaddress As String, vregion As String, vsuburb As String, vdate As Date, status As String)
+        MyBase.New(vusername, vpassword, vname, vsurname, vemail, mnumbers, vregion, vsuburb, vdate, status)
+        address = vaddress
+    End Sub
+
     Public Sub New(username As String, password As String)
         MyBase.New()
         getClient(username, password)
@@ -103,7 +108,7 @@ Public Class Client
 
         If tempClient.getUsername() = "" Then
 
-            Dim commandstring As String = "INSERT INTO Clients ( Username, Password, Name, Surname,  MobileNumber, Email, Address, Region , Suburb, JoinDate) VALUES (@username, @password, @name, @surname, @mobil, @email, @address, @region, @suburb, @date)"
+            Dim commandstring As String = "INSERT INTO Clients ( Username, Password, Name, Surname,  MobileNumber, Email, Address, Region , Suburb, JoinDate, Status) VALUES (@username, @password, @name, @surname, @mobil, @email, @address, @region, @suburb, @date, @status)"
             connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
             connection.Open()
             command = New SqlCommand(commandstring, connection)
@@ -118,6 +123,7 @@ Public Class Client
             command.Parameters.AddWithValue("@region", region)
             command.Parameters.AddWithValue("@suburb", suburb)
             command.Parameters.AddWithValue("@date", JoinDate.Date)
+            command.Parameters.AddWithValue("@status", "OPEN")
             reader = command.ExecuteReader()
 
             connection.Close()
