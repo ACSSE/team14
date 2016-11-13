@@ -109,6 +109,7 @@
     <Content Include="css\styleOriginale.css" />
     <Content Include="Electrician.aspx" />
     <Content Include="Faq.aspx" />
+    <Content Include="FeaturedClients.aspx" />
     <Content Include="FeaturedWorkers.aspx" />
     <Content Include="Feedback.aspx" />
     <Content Include="findme.aspx" />
@@ -630,6 +631,13 @@
     </Compile>
     <Compile Include="Faq.aspx.vb">
       <DependentUpon>Faq.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="FeaturedClients.aspx.designer.vb">
+      <DependentUpon>FeaturedClients.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FeaturedClients.aspx.vb">
+      <DependentUpon>FeaturedClients.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="FeaturedWorkers.aspx.designer.vb">

@@ -50,7 +50,7 @@
 						<p><a href="PostAdClient.aspx">Post an ad</a></p>
                         <p><a href="AdminStats.aspx">Web Stat</a></p>
                         <p><a href="FeaturedWorkers.aspx">Check out Featured Workers</a></p>
-                        
+                        <p><a href="FeaturedClients.aspx">Check out Featured Clients</a></p>
                       
 
 					</div>
