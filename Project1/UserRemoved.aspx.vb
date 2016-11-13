@@ -11,13 +11,14 @@ Public Class UserRemoved
 
         If type = "client" Then
             'blockClient(user)
-            cuser = New Client(user)
+            cuser = New Client(user, True)
         Else
             'blockWorker(user)
-            cuser = New Worker(user)
+            cuser = New Worker(user, True)
         End If
         cuser.updateStatus("BLOCKED") 'changing user to blocked
         cuser.updateUser() 'updating user
+        divMes.InnerHtml = "<p>User " & cuser.getUsername() & " is now blocked</p>"
     End Sub
 
     Private Sub blockWorker(username As String)

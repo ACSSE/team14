@@ -134,20 +134,20 @@ Public Class Worker
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        Dim commandstring As String = "UPDATE Workers SET Username = @username, Name = @name, Surname = @surname, Password = @password, MobileNumber = @mobil, Email = @email, Category = @category, Description = @des, Status = @status WHERE Username = @user"
+        Dim commandstring As String = "UPDATE Workers SET Username = @username, Name = @name, Surname = @surname, Password = @password, MobileNumber = @mobil, Email = @email, Category = @category, Description = @des, Status = @status WHERE Username = @username"
         connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         connection.Open()
         command = New SqlCommand(commandstring, connection)
 
         command.Parameters.AddWithValue("@name", name)
         command.Parameters.AddWithValue("@surname", surname)
-        command.Parameters.AddWithValue("@user", username)
+        command.Parameters.AddWithValue("@username", username)
         command.Parameters.AddWithValue("@password", password)
         command.Parameters.AddWithValue("@mobil", numbers)
         command.Parameters.AddWithValue("@email", email)
         'command.Parameters.AddWithValue("@title", jobTitle)
         command.Parameters.AddWithValue("@des", description)
-        command.Parameters.AddWithValue("@dcategory", category)
+        command.Parameters.AddWithValue("@category", category)
         command.Parameters.AddWithValue("@status", status)
         reader = command.ExecuteReader()
 
