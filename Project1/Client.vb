@@ -25,6 +25,38 @@ Public Class Client
 
     End Sub
 
+    Public Sub New(username As String, authorized As Boolean)
+        If authorized Then
+            Dim connection As SqlConnection
+            Dim command As SqlCommand
+            Dim reader As SqlDataReader
+            password = Secrecy.HashPassword(password)
+
+            connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+            Dim commandstring As String = "SELECT * From Clients WHERE Username = @user"
+
+            command = New SqlCommand(commandstring, connection)
+            command.Parameters.AddWithValue("@user", username)
+            command.Connection.Open()
+
+            reader = command.ExecuteReader()
+
+            If reader.HasRows Then
+                reader.Read()
+                Me.username = username
+                Me.password = reader("Password")
+                name = reader("Name")
+                surname = reader("Surname")
+                email = reader("Email")
+                numbers = reader("MobileNumber")
+                region = reader("Region")
+                suburb = reader("Suburb")
+                address = reader("Address")
+                JoinDate = reader("JoinDate")
+            End If
+        End If
+    End Sub
+
 
 
     Private Sub getClient(username As String, password As String)
@@ -137,7 +169,7 @@ Public Class Client
         Dim command As SqlCommand
         Dim reader As SqlDataReader
         'UPDATE LoginClient Set [] WHERE Username = @user
-        Dim commandstring As String = "UPDATE Clients SET Username = @username, Name = @name,  Surname = @surname,  Address = @address, MobileNumber = @mobil, Email = @email, Region = @region, Suburb = @suburb  WHERE Username = @username"
+        Dim commandstring As String = "UPDATE Clients SET Username = @username, Name = @name,  Surname = @surname,  Address = @address, MobileNumber = @mobil, Email = @email, Region = @region, Suburb = @suburb, Status = @status  WHERE Username = @username"
         connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         connection.Open()
         command = New SqlCommand(commandstring, connection)
@@ -152,6 +184,7 @@ Public Class Client
         command.Parameters.AddWithValue("@email", email)
         command.Parameters.AddWithValue("@region", region)
         command.Parameters.AddWithValue("@suburb", suburb)
+        command.Parameters.AddWithValue("@status", status)
 
         reader = command.ExecuteReader()
 

@@ -5,15 +5,19 @@ Public Class UserRemoved
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim user As String = Request.QueryString("username")
-
         Dim type As String = Request.QueryString("type")
 
-        If type = "client" Then
-            blockClient(user)
-        Else
-            blockWorker(user)
-        End If
+        Dim cuser As User
 
+        If type = "client" Then
+            'blockClient(user)
+            cuser = New Client(user)
+        Else
+            'blockWorker(user)
+            cuser = New Worker(user)
+        End If
+        cuser.updateStatus("BLOCKED") 'changing user to blocked
+        cuser.updateUser() 'updating user
     End Sub
 
     Private Sub blockWorker(username As String)

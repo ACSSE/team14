@@ -35,6 +35,37 @@ Public Class Worker
         getPartialWorkerInfo(username)
     End Sub
 
+    Public Sub New(username As String, authorized As Boolean)
+        If authorized Then
+            Dim connection As SqlConnection
+            Dim command As SqlCommand
+            Dim reader As SqlDataReader
+            password = Secrecy.HashPassword(password)
+
+            connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
+            Dim commandstring As String = "SELECT * From Workers WHERE Username = @user"
+            command = New SqlCommand(commandstring, connection)
+            command.Parameters.AddWithValue("@user", username)
+
+            command.Connection.Open()
+            reader = command.ExecuteReader()
+            If reader.HasRows Then
+                reader.Read()
+                Me.username = username
+                name = reader("Name")
+                surname = reader("Surname")
+                email = reader("Email")
+                numbers = reader("MobileNumber")
+                region = reader("Region")
+                'jobTitle = reader("JobTitle")
+                description = reader("Description")
+                category = reader("Category")
+                JoinDate = reader("JoinDate")
+
+            End If
+        End If
+    End Sub
+
     'getting handyman from database
     Private Sub getWorker(username As String, password As String)
         Dim connection As SqlConnection
@@ -58,7 +89,7 @@ Public Class Worker
             surname = reader("Surname")
             email = reader("Email")
             numbers = reader("MobileNumber")
-            region = ""
+            region = reader("Region")
             'jobTitle = reader("JobTitle")
             description = reader("Description")
             category = reader("Category")
@@ -103,7 +134,7 @@ Public Class Worker
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        Dim commandstring As String = "UPDATE Workers SET Username = @username, Name = @name, Surname = @surname, Password = @password, MobileNumber = @mobil, Email = @email, Category = @category, Description = @des WHERE Username = @user"
+        Dim commandstring As String = "UPDATE Workers SET Username = @username, Name = @name, Surname = @surname, Password = @password, MobileNumber = @mobil, Email = @email, Category = @category, Description = @des, Status = @status WHERE Username = @user"
         connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         connection.Open()
         command = New SqlCommand(commandstring, connection)
@@ -117,7 +148,7 @@ Public Class Worker
         'command.Parameters.AddWithValue("@title", jobTitle)
         command.Parameters.AddWithValue("@des", description)
         command.Parameters.AddWithValue("@dcategory", category)
-
+        command.Parameters.AddWithValue("@status", status)
         reader = command.ExecuteReader()
 
         connection.Close()

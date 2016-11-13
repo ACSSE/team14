@@ -132,6 +132,10 @@
         suburb = vsuburb
     End Sub
 
+    Public Sub updateStatus(status As String)
+        Me.status = status
+    End Sub
+
     Public MustOverride Sub saveUser()
 
     'Public MustOverride Sub getQuotation()
