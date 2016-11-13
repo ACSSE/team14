@@ -6,63 +6,7 @@ Project1
 </name>
 </assembly>
 <members>
-<member name="F:Project1.FeaturedClients.CategoryList">
-	<summary>
-CategoryList control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.FeaturedClients.divNonBlocked">
-	<summary>
-divNonBlocked control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.FeaturedClients.divBlocked">
-	<summary>
-divBlocked control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.FeaturedClients.PoolSpel">
-	<summary>
-PoolSpel control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.FeaturedClients.GardennLandscaping">
-	<summary>
-GardennLandscaping control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.FeaturedClients.Security">
-	<summary>
-Security control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.FeaturedClients.KitchenSpec">
-	<summary>
-KitchenSpec control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Project1.WorkerProfile.JobTitle">
+<member name="F:Project1.WorkerProfile.JobTitle">
 	<summary>
 JobTitle control.
 </summary>
@@ -185,6 +129,62 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.WorkerProfile.penJobs">
 	<summary>
 penJobs control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedClients.CategoryList">
+	<summary>
+CategoryList control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedClients.divNonBlocked">
+	<summary>
+divNonBlocked control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedClients.divBlocked">
+	<summary>
+divBlocked control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedClients.PoolSpel">
+	<summary>
+PoolSpel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedClients.GardennLandscaping">
+	<summary>
+GardennLandscaping control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedClients.Security">
+	<summary>
+Security control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedClients.KitchenSpec">
+	<summary>
+KitchenSpec control.
 </summary>
 	<remarks>
 Auto-generated field.

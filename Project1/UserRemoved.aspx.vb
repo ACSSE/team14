@@ -6,13 +6,15 @@ Public Class UserRemoved
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim user As String = Request.QueryString("username")
         Dim type As String = Request.QueryString("type")
-
+        'MsgBox("type=" & type)
         Dim cuser As User
 
         If type = "client" Then
+            'MsgBox("in client if-statement")
             'blockClient(user)
             cuser = New Client(user, True)
         Else
+            'MsgBox("in else if-statement")
             'blockWorker(user)
             cuser = New Worker(user, True)
         End If

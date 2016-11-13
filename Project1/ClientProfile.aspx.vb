@@ -70,7 +70,7 @@ Public Class ClientProfile
             lblEmail.InnerText = client.getEmail  'reader("Email")
             lblRegion.InnerText = client.getRegion()
 
-            Dim blockuser As String = "<a href=""UserRemoved.aspx?username=" & client.getUsername() & """&type=client>BLOCK</a>"
+            Dim blockuser As String = "<a href=""UserRemoved.aspx?type=client&username=" & client.getUsername() & """&type=client>BLOCK</a>"
             divblock.InnerHtml = blockuser
         End If
        

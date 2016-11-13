@@ -7,7 +7,7 @@ Public Class FeaturedWorkers
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         workers = getWorkers() 'C:\Users\Karabo\Desktop\HandyMan\HandyMan\team14\Project1\ClientProfile2.aspx
 
-        divElectrician.InnerHtml = getProfiles("Electrician")
+        divElectrician.InnerHtml = displayClosed() 'getProfiles("Electrician")
         PaintnDecoration.InnerHtml = getProfiles("Paint and Decoration")
         PoolSpel.InnerHtml = getProfiles("Pool Specialist")
         Security.InnerHtml = getProfiles("Security, Fire and Safety")
@@ -82,6 +82,34 @@ Public Class FeaturedWorkers
                 html &= "<section class=""list-left"">"
                 html &= "<h5 class=""title"">" & workers(i).getName() & " " & workers(i).getSurname() & "</h5>"
                 html &= "<h5 class=""title"">" & categories & "</h5>"
+                'html &= "<span class=""adprice""><p> <i class=""glyphicon glyphicon-map-marker""></i><a href=""#"">Gauteng</a>, <a href=""#"">Dowerglen</a></p></span>"
+                html &= "<p class=""catpath"">Visit Profile</p>"
+                html &= "</section>"
+                html &= "<section class=""list-right"">"
+                html &= "</section>"
+                html &= "<div class=""clearfix""></div>"
+                html &= "</li> "
+                html &= "</a>"
+            End If
+        Next i
+        html &= "</ul>"
+        Return html
+    End Function
+
+    Private Function displayClosed() 'to display clients who no longer have access
+        Dim html As String = "<ul class=""list"">"
+        Dim pagesize As Integer = 0
+
+        For i As Integer = 1 To workers.Length - 1 'to run through every client
+            If workers(i).getStatus() = "BLOCKED" And pagesize <= 5 Then
+                pagesize += 1
+
+                html &= "  <a href=""WorkerProfile.aspx?type=admin&username=" & workers(i).getUsername() & """ > "
+                html &= "<li>"
+                html &= "<img src=""images/p1.png"" title="""" alt="""" />"
+                html &= "<section class=""list-left"">"
+                html &= "<h5 class=""title"">" & workers(i).getName() & " " & workers(i).getSurname() & "</h5>"
+                'html &= "<h5 class=""title"">" & categories & "</h5>"
                 'html &= "<span class=""adprice""><p> <i class=""glyphicon glyphicon-map-marker""></i><a href=""#"">Gauteng</a>, <a href=""#"">Dowerglen</a></p></span>"
                 html &= "<p class=""catpath"">Visit Profile</p>"
                 html &= "</section>"

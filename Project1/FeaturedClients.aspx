@@ -106,7 +106,7 @@
 					<div class="resp-tabs-container hor_1">
 						<span class="active total" style="display:block;" data-toggle="modal" data-target="#myModal"><strong>All Areas</strong> (Select your area to see local workers)</span>
 						
-<%--Electricians--%>
+<%--NonBlocked--%>
                         <div>
                         
 					<div class="wrapper">					
