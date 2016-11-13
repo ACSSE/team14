@@ -6,13 +6,19 @@ Public Class FeaturedWorkers
     Private workers() As Worker
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         workers = getWorkers() 'C:\Users\Karabo\Desktop\HandyMan\HandyMan\team14\Project1\ClientProfile2.aspx
-
-        divElectrician.InnerHtml = displayClosed() 'getProfiles("Electrician")
+        blockedsect.Visible = False
+        divElectrician.InnerHtml = getProfiles("Electrician")
         PaintnDecoration.InnerHtml = getProfiles("Paint and Decoration")
         PoolSpel.InnerHtml = getProfiles("Pool Specialist")
         Security.InnerHtml = getProfiles("Security, Fire and Safety")
         KitchenSpec.InnerHtml = getProfiles("Kitchen Specialist")
         GardennLandscaping.InnerHtml = getProfiles("Garden and Landscaping")
+
+        Dim cUser As User = Session("user")
+        If TypeOf cUser Is cAdmin Then
+            blockedsect.Visible = True
+            ' divBlocked.InnerHtml = displayClosed()
+        End If
     End Sub
 
 
@@ -101,7 +107,7 @@ Public Class FeaturedWorkers
         Dim pagesize As Integer = 0
 
         For i As Integer = 1 To workers.Length - 1 'to run through every client
-            If workers(i).getStatus() = "BLOCKED" And pagesize <= 5 Then
+            If workers(i).getStatus() = "BLOCKED" Then
                 pagesize += 1
 
                 html &= "  <a href=""WorkerProfile.aspx?type=admin&username=" & workers(i).getUsername() & """ > "

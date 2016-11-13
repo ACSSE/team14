@@ -33,7 +33,15 @@ Public Class WorkerProfile
             Dim username As String = Request.QueryString("username")
 
             worker = New Worker(username)
-            Dim blockuser As String = "<a href=""UserRemoved.aspx?username=" & worker.getUsername() & """&type=handyman>BLOCK</a>"
+            Dim blockuser As String 
+            If worker.getStatus() = "OPEN" Then
+                blockuser = "<a href=""UserRemoved.aspx?username=" & worker.getUsername() & """&type=handyman>BLOCK</a>"
+
+            Else
+                blockuser = "<a href=""UserReturned.aspx?username=" & worker.getUsername() & """&type=handyman>UNBLOCK</a>"
+
+            End If
+
             divrating.InnerHtml = "<h3>Rating</h3>" & ValidationClass.getRateImage(worker.getRating())
 
             JobTitle.InnerText = worker.getCategory() 'setting the correct heading category

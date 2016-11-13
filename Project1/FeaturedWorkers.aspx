@@ -101,6 +101,7 @@
 						<li>Roof Specialist</li>
 						<li>Move, Removal & Storage</li>
 						<li>Air Conditioning</li>
+                        <li id="blockedsect" runat="server">Blocked</li>
 						<a href="all-classifieds.html">All Categories</a>
 					</ul>
 					<div class="resp-tabs-container hor_1">
@@ -782,7 +783,55 @@
 				</div>
 						
 						
+
+<%--Blocked--%>
+
+                        
+                        <div>
+                        
+					<div class="wrapper">					
+					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+					  
+					  <div id="Div21" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="Div22" aria-labelledby="home-tab">
+						   <div>
+												<div id="Div23">
+								<div class="view-controls-list" id="Div24">
+									<label>view :</label>
+									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
+									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
+								</div>
+								<div class="sort">
+								   <div class="sort-by">
+										<label>Sort By : </label>
+										<select>
+														<option value="">Most Rated</option>
+														<option value="">Rate:  Low to High</option>
+														<option value="">Rate:  High to Low</option>
+										</select>
+									   </div>
+									 </div>
+								<div class="clearfix"></div>
+							<div id="divBlocked" runat="server">
+								Blocked Divs
+
+							</div>
+						</div>
+							</div>
+						</div>
 						
+						
+						<ul class="pagination pagination-sm">
+							<li><a href="#">Prev</a></li>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">Next</a></li>
+						</ul>
+					  </div>
+					</div>
+				</div>
+				</div>
+
 						
 						
 						
@@ -794,6 +843,8 @@
 				</div>
 			</div>
 		</div>
+
+
 	</div>
 	<!--Plug-in Initialisation-->
 	<script type="text/javascript">

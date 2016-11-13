@@ -561,6 +561,7 @@
     <Content Include="Tilling.aspx" />
     <Content Include="UpdateProfile.aspx" />
     <Content Include="UserRemoved.aspx" />
+    <Content Include="UserReturned.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -750,6 +751,13 @@
     </Compile>
     <Compile Include="UserRemoved.aspx.vb">
       <DependentUpon>UserRemoved.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="UserReturned.aspx.designer.vb">
+      <DependentUpon>UserReturned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserReturned.aspx.vb">
+      <DependentUpon>UserReturned.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ValidationClass.vb" />

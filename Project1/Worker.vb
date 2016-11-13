@@ -178,7 +178,7 @@ Public Class Worker
             numbers = 0
             region = ""
             JoinDate = reader("JoinDate")
-
+            status = reader("Status")
         End If
         rating = getRating()
         connection.Close()

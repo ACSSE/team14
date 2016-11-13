@@ -10,9 +10,11 @@ Public Class Site2
 
             'displayed in banner of the site
             If TypeOf cUser Is Client Then 'if client
-                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome " & cUser.getUsername() & "</b> " & "<a style="" font-size:medium;""  href=""logout.aspx"">(logout)</a>&nbsp;&nbsp;&nbsp;" & countResponses() & "&nbsp;&nbsp;&nbsp;" & countMesseges()
-            Else 'if handyman
-                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome " & cUser.getUsername() & "</b> " & "<a style="" font-size:medium;""  href=""logout.aspx"">(logout)</a></p>&nbsp;&nbsp;&nbsp;" & countMesseges()
+                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome <a style="" font-size:medium;"" href=""ClientProfile.aspx"">" & cUser.getUsername() & "</a></b> " & "<a style="" font-size:medium;""  href=""logout.aspx"">(logout)</a>&nbsp;&nbsp;&nbsp;" & countResponses() & "&nbsp;&nbsp;&nbsp;" & countMesseges()
+            ElseIf TypeOf cUser Is Worker Then  'if handyman
+                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome <a style="" font-size:medium;"" href=""WorkerProfile.aspx"">" & cUser.getUsername() & "</a></b> " & "<a style="" font-size:medium;""  href=""logout.aspx"">(logout)</a></p>&nbsp;&nbsp;&nbsp;" & countMesseges()
+            Else
+                userLog.InnerHtml = "<p style=""color:#FBCC33"">Welcome <a style="" font-size:medium;"" href=""AdminPage.aspx"">" & cUser.getUsername() & "</a></b> " & "<a style="" font-size:medium;""  href=""logout.aspx"">(logout)</a></p>&nbsp;&nbsp;&nbsp;" & countMesseges()
             End If
         End If
     End Sub

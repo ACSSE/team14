@@ -118,6 +118,8 @@ Public Class Client
             If Not IsDBNull(reader("JoinDate")) Then
                 JoinDate = reader("JoinDate")
             End If
+
+            status = reader("Status")
         End If
     End Sub
 

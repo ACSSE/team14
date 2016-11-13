@@ -6,7 +6,15 @@ Project1
 </name>
 </assembly>
 <members>
-<member name="F:Project1.WorkerProfile.JobTitle">
+<member name="F:Project1.UserReturned.divMes">
+	<summary>
+divMes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.WorkerProfile.JobTitle">
 	<summary>
 JobTitle control.
 </summary>
@@ -342,17 +350,25 @@ MyBody control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.Site4.form1">
+</member><member name="F:Project1.Site4.head">
 	<summary>
-form1 control.
+head control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.Site4.ContentPlaceHolder1">
+</member><member name="F:Project1.Site4.userLog">
 	<summary>
-ContentPlaceHolder1 control.
+userLog control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Site4.MyBody">
+	<summary>
+MyBody control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -774,6 +790,14 @@ CategoryList control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.FeaturedWorkers.blockedsect">
+	<summary>
+blockedsect control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.FeaturedWorkers.divElectrician">
 	<summary>
 divElectrician control.
@@ -817,6 +841,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.FeaturedWorkers.KitchenSpec">
 	<summary>
 KitchenSpec control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.divBlocked">
+	<summary>
+divBlocked control.
 </summary>
 	<remarks>
 Auto-generated field.

@@ -23,6 +23,15 @@ Partial Public Class FeaturedWorkers
     Protected WithEvents CategoryList As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''blockedsect control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents blockedsect As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''divElectrician control.
     '''</summary>
     '''<remarks>
@@ -75,4 +84,13 @@ Partial Public Class FeaturedWorkers
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents KitchenSpec As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''divBlocked control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divBlocked As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

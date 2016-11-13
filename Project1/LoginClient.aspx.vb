@@ -70,9 +70,9 @@ Public Class Login
             Dim user As String = txtUsername.Value
             Dim pass As String = txtPassword.Value
 
-            Dim worker As cAdmin = New cAdmin(user, pass)
-            If worker.getUsername() IsNot "" Then
-                Dim cUser As User = worker
+            Dim admin As cAdmin = New cAdmin(user, pass)
+            If admin.getUsername() IsNot "" Then
+                Dim cUser As User = admin
                 Session("user") = cUser
                 'Session("UserName") = user
                 Response.Redirect("AdminPage.aspx")

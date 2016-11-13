@@ -69,11 +69,15 @@ Public Class ClientProfile
             lblSurname.InnerHtml = client.getSurname()  'reader("SurName")
             lblEmail.InnerText = client.getEmail  'reader("Email")
             lblRegion.InnerText = client.getRegion()
-
-            Dim blockuser As String = "<a href=""UserRemoved.aspx?type=client&username=" & client.getUsername() & """&type=client>BLOCK</a>"
+            Dim blockuser As String
+            If client.getStatus() = "OPEN" Then
+                blockuser = "<a href=""UserRemoved.aspx?type=client&username=" & client.getUsername() & """&type=client>BLOCK</a>"
+            Else
+                blockuser = "<a href=""UserReturned.aspx?type=client&username=" & client.getUsername() & """&type=client>UNBLOCK</a>"
+            End If
             divblock.InnerHtml = blockuser
-        End If
-       
+            End If
+
 
 
     End Sub
