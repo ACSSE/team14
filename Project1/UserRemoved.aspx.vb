@@ -18,7 +18,7 @@ Public Class UserRemoved
 
     Private Sub blockWorker(username As String)
 
-        Dim connection As SqlConnection = New SqlConnection(ValidationClass.CONNECTIONSTRING)
+        Dim connection As SqlConnection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         connection.Open()
 
         Dim query As String = "UPDATE Workers SET Status = @blocked WHERE Username = @name"
