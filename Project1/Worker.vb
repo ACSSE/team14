@@ -40,7 +40,6 @@ Public Class Worker
             Dim connection As SqlConnection
             Dim command As SqlCommand
             Dim reader As SqlDataReader
-            password = Secrecy.HashPassword(password)
 
             connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
             Dim commandstring As String = "SELECT * From Workers WHERE Username = @user"
@@ -134,7 +133,7 @@ Public Class Worker
         Dim command As SqlCommand
         Dim reader As SqlDataReader
 
-        Dim commandstring As String = "UPDATE Workers SET Username = @username, Name = @name, Surname = @surname, Password = @password, MobileNumber = @mobil, Email = @email, Category = @category, Description = @des, Status = @status WHERE Username = @username"
+        Dim commandstring As String = "UPDATE Workers SET Username = @username, Name = @name, Surname = @surname,  MobileNumber = @mobil, Email = @email, Category = @category, Description = @des, Status = @status WHERE Username = @username"
         connection = New SqlConnection("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HandymanDatabase.mdf;Integrated Security=True")
         connection.Open()
         command = New SqlCommand(commandstring, connection)
@@ -142,7 +141,7 @@ Public Class Worker
         command.Parameters.AddWithValue("@name", name)
         command.Parameters.AddWithValue("@surname", surname)
         command.Parameters.AddWithValue("@username", username)
-        command.Parameters.AddWithValue("@password", password)
+        ' command.Parameters.AddWithValue("@password", password)
         command.Parameters.AddWithValue("@mobil", numbers)
         command.Parameters.AddWithValue("@email", email)
         'command.Parameters.AddWithValue("@title", jobTitle)
