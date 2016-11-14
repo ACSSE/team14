@@ -6,7 +6,79 @@ Project1
 </name>
 </assembly>
 <members>
-<member name="F:Project1.WorkerProfile.JobTitle">
+<member name="F:Project1.mComplaint.Form1">
+	<summary>
+Form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.mComplaint.lblHeading">
+	<summary>
+lblHeading control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.mComplaint.lblTitle">
+	<summary>
+lblTitle control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.mComplaint.txtTitle">
+	<summary>
+txtTitle control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.mComplaint.lblDescription">
+	<summary>
+lblDescription control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.mComplaint.txtDescription">
+	<summary>
+txtDescription control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.mComplaint.lblLogo">
+	<summary>
+lblLogo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.mComplaint.fileSelect">
+	<summary>
+fileSelect control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.mComplaint.btnSubmit">
+	<summary>
+btnSubmit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.WorkerProfile.JobTitle">
 	<summary>
 JobTitle control.
 </summary>

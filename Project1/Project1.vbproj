@@ -305,6 +305,7 @@
     <Content Include="LoginClient.aspx" />
     <Content Include="LoginWorker.aspx" />
     <Content Include="logout.aspx" />
+    <Content Include="mComplaint.aspx" />
     <Content Include="MessengesDetail.aspx" />
     <Content Include="Move.aspx" />
     <Content Include="PaintDecoration.aspx" />
@@ -706,6 +707,13 @@
     </Compile>
     <Compile Include="logout.aspx.vb">
       <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="mComplaint.aspx.designer.vb">
+      <DependentUpon>mComplaint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mComplaint.aspx.vb">
+      <DependentUpon>mComplaint.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MessageList.vb" />
