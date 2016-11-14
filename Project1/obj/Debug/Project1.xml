@@ -358,6 +358,14 @@ userLog control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.Site4.lnkReport">
+	<summary>
+lnkReport control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.Site4.MyBody">
 	<summary>
 MyBody control.
@@ -377,6 +385,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.Site1.userLog">
 	<summary>
 userLog control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Site1.lnkReport">
+	<summary>
+lnkReport control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -833,6 +849,54 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Project1.FeaturedWorkers.KitchenSpec">
 	<summary>
 KitchenSpec control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.GeyserSpec">
+	<summary>
+GeyserSpec control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.PestCon">
+	<summary>
+PestCon control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.tilingspec">
+	<summary>
+tilingspec control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.roofspec">
+	<summary>
+roofspec control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.MRstore">
+	<summary>
+MRstore control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.FeaturedWorkers.airCon">
+	<summary>
+airCon control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1731,6 +1795,14 @@ userLog control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:Project1.Site2.lnkReport">
+	<summary>
+lnkReport control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Project1.Site2.ContentPlaceHolder1">
 	<summary>
 ContentPlaceHolder1 control.
@@ -2199,9 +2271,17 @@ userLog control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Project1.Site3.ContentPlaceHolder2">
+</member><member name="F:Project1.Site3.lnkReport">
 	<summary>
-ContentPlaceHolder2 control.
+lnkReport control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Project1.Site3.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
 </summary>
 	<remarks>
 Auto-generated field.

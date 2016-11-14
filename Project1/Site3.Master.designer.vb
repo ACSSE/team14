@@ -32,11 +32,20 @@ Partial Public Class Site3
     Protected WithEvents userLog As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''ContentPlaceHolder2 control.
+    '''lnkReport control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ContentPlaceHolder2 As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents lnkReport As Global.System.Web.UI.HtmlControls.HtmlAnchor
+
+    '''<summary>
+    '''ContentPlaceHolder1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ContentPlaceHolder1 As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class

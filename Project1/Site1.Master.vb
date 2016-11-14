@@ -4,7 +4,11 @@ Public Class Site1
     Inherits System.Web.UI.MasterPage
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        lnkReport.Visible = False
+
+
         If Session("user") IsNot Nothing Then 'user logged in (if)
+            lnkReport.Visible = True
             Dim cUser As User = Session("user")
             userLog.Visible = True
 

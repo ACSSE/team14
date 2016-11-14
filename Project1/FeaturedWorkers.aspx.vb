@@ -13,11 +13,17 @@ Public Class FeaturedWorkers
         Security.InnerHtml = getProfiles("Security, Fire and Safety")
         KitchenSpec.InnerHtml = getProfiles("Kitchen Specialist")
         GardennLandscaping.InnerHtml = getProfiles("Garden and Landscaping")
+        GeyserSpec.InnerHtml = getProfiles("Gesyer Specialist")
+        PestCon.InnerHtml = getProfiles("Pest Control")
+        tilingspec.InnerHtml = getProfiles("Tilling Specialist")
+        roofspec.InnerHtml = getProfiles("Roof Specialist")
+        MRstore.InnerHtml = getProfiles("Move, Removal and Storage")
+        airCon.InnerHtml = getProfiles("Air Condition")
 
         Dim cUser As User = Session("user")
         If TypeOf cUser Is cAdmin Then
             blockedsect.Visible = True
-            ' divBlocked.InnerHtml = displayClosed()
+            divBlocked.InnerHtml = displayClosed()
         End If
     End Sub
 

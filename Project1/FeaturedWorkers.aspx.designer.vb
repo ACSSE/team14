@@ -86,6 +86,60 @@ Partial Public Class FeaturedWorkers
     Protected WithEvents KitchenSpec As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''GeyserSpec control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents GeyserSpec As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''PestCon control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PestCon As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''tilingspec control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tilingspec As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''roofspec control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents roofspec As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''MRstore control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents MRstore As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''airCon control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents airCon As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''divBlocked control.
     '''</summary>
     '''<remarks>
